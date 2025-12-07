@@ -3,6 +3,7 @@ const songs = [
         title: "Al Alto y Sublime",
         artist: "Gadiel Espinosa",
         key: "A",
+        type: "Adoración",
         content: `
 <span class="g"><span class="chord">A</span>A</span> el alto y sublime que <span class="g"><span class="chord">D</span>habita en la eternidad</span>
 Y su <span class="g"><span class="chord">Bm</span>nombre</span> es el santo de <span class="g"><span class="chord">E</span>Israel.</span>
@@ -23,6 +24,7 @@ Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humil
         title: "Digno y Santo",
         artist: "Ingrid Rosario",
         key: "D",
+        type: "Adoración",
         content: `
 <span class="g"><span class="chord">D</span>Digno</span> y santo el <span class="g"><span class="chord">Am</span>cordero</span>
 <span class="g"><span class="chord">C</span>Inmolado</span> en la <span class="g"><span class="chord">G</span>cruz,</span>
@@ -54,6 +56,7 @@ Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humil
         title: "Santo Eres Tú",
         artist: "Rey de Reyes",
         key: "G",
+        type: "Adoración",
         content: `
 <span class="g"><span class="chord">G</span>Se</span> oye un son del cielo
 <span class="g"><span class="chord">G</span>Como</span> el de muchas aguas
@@ -71,9 +74,10 @@ Te adoran <span class="g"><span class="chord">Em</span>hoy,</span><span class="g
     },
 
     {
-        title: "Ven (Es hora de adorarle)",
+        title: "Ven",
         artist: "Marco Barrientos",
         key: "D",
+        type: "Alabanza",
         content: `
 <span class="g"><span class="chord">D</span>Ven,</span> es hora de ado<span class="g"><span class="chord">G</span>rar</span><span class="g"><span class="chord">D</span>le</span>
 <span class="g"><span class="chord">A</span>Ven,</span> abre tu cora<span class="g"><span class="chord">Em7</span>zón</span> a <span class="g"><span class="chord">G</span>Él</span>
@@ -95,6 +99,7 @@ El es <span class="g"><span class="chord">D</span>Rey.</span>`
         title: "Algo Está Cayendo Aquí",
         artist: "José Luis Reyes",
         key: "G",
+        type: "Adoración",
         content: `
 <span class="g"><span class="chord">G</span>Algo</span> está cayendo <span class="g"><span class="chord">Am</span>aquí</span>
 <span class="g"><span class="chord">D</span>Es</span> tan fuerte sobre <span class="g"><span class="chord">G</span>mí</span>
@@ -117,6 +122,7 @@ Su gloria está <span class="g"><span class="chord">Em</span>aquí.</span> <span
         title: "De los Montes",
         artist: "Marco Barrientos",
         key: "D",
+        type: "Alabanza",
         content: `
 <span class="g"><span class="chord">D</span>Llenas</span> nuestro hogar de danza
 <span class="g"><span class="chord">Bm</span>De</span> tu <span class="g"><span class="chord">G</span>gozo</span> la <span class="g"><span class="chord">A</span>Ciudad</span>
@@ -144,6 +150,7 @@ Ale</span><span class="g"><span class="chord">G</span>luya</span> <span class="g
         title: "Al que es Digno",
         artist: "Marcos Witt",
         key: "C",
+        type: "Alabanza",
         content: `
 <span class="g"><span class="chord">C</span>Al</span> que es digno de <span class="g"><span class="chord">F</span>recibir</span> la <span class="g"><span class="chord">G</span>gloria</span>
 <span class="g"><span class="chord">C</span>Al</span> que es digno de <span class="g"><span class="chord">F</span>recibir</span> <span class="g"><span class="chord">G</span>honor</span>
@@ -160,6 +167,7 @@ Al que <span class="g"><span class="chord">F</span>vive</span> vive por <span cl
         title: "Atrae mi Corazón",
         artist: "Marcos Brunet",
         key: "C",
+        type: "Adoración",
         content: `
 <span class="g"><span class="chord">C</span>Es</span> a Ti a quien a <span class="g"><span class="chord">F</span>anhelo</span>
 Es por Ti que yo <span class="g"><span class="chord">Dm</span>suspiro</span>
