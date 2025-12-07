@@ -1,79 +1,53 @@
 const songs = [
     {
-        title: "Al el Alto y Sublime",
+        title: "Al Alto y Sublime",
         artist: "Gadiel Espinosa",
         key: "A",
-        content:
-`        <span class="chord">A</span>                          <span class="chord">D</span>
-A el alto y sublime que habita en la eternidad
-    <span class="chord">Bm</span>                        <span class="chord">E</span>    
-Y su nombre es el santo de Israel
-<span class="chord">A</span>                             <span class="chord">D</span>
-Al que habita en las alturas y en la santidad
-        <span class="chord">Bm</span>                          <span class="chord">E</span> 
-Y con el quebrantado y humilde de espiritu
+        content: `
+<span class="g"><span class="chord">A</span>A</span> el alto y sublime que <span class="g"><span class="chord">D</span>habita en la eternidad</span>
+Y su <span class="g"><span class="chord">Bm</span>nombre</span> es el santo de <span class="g"><span class="chord">E</span>Israel.</span>
+<span class="g"><span class="chord">A</span>Al</span> que habita en las alturas y <span class="g"><span class="chord">D</span>en la santidad,</span>
+Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humilde de <span class="g"><span class="chord">E</span>espíritu.</span>
 
-<span class="chord">F#m</span>                  <span class="chord">D</span>
-Para hacer vivir el espiritu humilde
-<span class="chord">F#m</span>                    <span class="chord">D</span>         <span class="chord">E</span>
-Y para vivificar el corazon quebrantado
+[Puente]
+<span class="g"><span class="chord">F#m</span>Para</span> hacer vivir el <span class="g"><span class="chord">D</span>espíritu humilde,</span>
+<span class="g"><span class="chord">F#m</span>Y</span> para vivificar el <span class="g"><span class="chord">D</span>corazón</span> <span class="g"><span class="chord">E</span>quebrantado.</span>
 
-<span class="chord">A</span>               <span class="chord">E</span>      <span class="chord">Bm</span>        <span class="chord">D</span>   <span class="chord">E</span>
-Sea la gloria  honor  alabanza y  poder
-<span class="chord">A</span>                   <span class="chord">E</span>          <span class="chord">Bm</span> 
-Al que reina por los siglos y su nombre
-<span class="chord">D</span> <span class="chord">E</span>  <span class="chord">A</span>
-Santo  es.`
+[Coro]
+<span class="g"><span class="chord">A</span>Sea</span> la gloria <span class="g"><span class="chord">E</span>honor</span> <span class="g"><span class="chord">Bm</span>alabanza</span> y <span class="g"><span class="chord">D</span>poder</span> <span class="g"><span class="chord">E</span>...</span>
+<span class="g"><span class="chord">A</span>Al</span> que reina por los <span class="g"><span class="chord">E</span>siglos</span> y su <span class="g"><span class="chord">Bm</span>nombre</span>
+<span class="g"><span class="chord">D</span>San</span> <span class="g"><span class="chord">E</span>to</span> <span class="g"><span class="chord">A</span>es.</span>`
     },
 
     {
         title: "Digno y Santo",
-        artist: "Kari Jobe",
+        artist: "Ingrid Rosario",
         key: "D",
         content: `
-<span class="chord">D</span>           <span class="chord">Am</span>        <span class="chord">C</span>              <span class="chord">G</span>
-Digno y santo el cordero inmolado en la cruz
-<span class="chord">D</span>          <span class="chord">Am</span>          <span class="chord">C</span>                  <span class="chord">G</span>
-Nuevo canto levantaremos al que en su trono esta
+<span class="g"><span class="chord">D</span>Digno</span> y santo el <span class="g"><span class="chord">Am</span>cordero</span>
+<span class="g"><span class="chord">C</span>Inmolado</span> en la <span class="g"><span class="chord">G</span>cruz,</span>
+<span class="g"><span class="chord">D</span>Nuevo</span> canto levan<span class="g"><span class="chord">Am</span>taremos</span>
+<span class="g"><span class="chord">C</span>Al</span> quien su trono <span class="g"><span class="chord">G</span>está.</span>
 
-<span class="chord">D</span>                 <span class="chord">Am</span>
-Santo, santo, santo Dios todo poderoso
-<span class="chord">C</span>                                    <span class="chord">G</span>
-Quien fue, quien es y quien vendrá
-<span class="chord">D</span>                  <span class="chord">Am</span>
-La creación te canta hosanna al gran yo soy
-<span class="chord">C</span>                <span class="chord">G</span>
-Tu eres mi todo y yo te adorare
+[Coro]
+<span class="g"><span class="chord">D</span>Santo.</span> santo, santo,
+<span class="g"><span class="chord">Am</span>Dios</span> todo poderoso,
+<span class="g"><span class="chord">C</span>Quien</span> fue, quien es y quien <span class="g"><span class="chord">G</span>vendrá.</span>
+<span class="g"><span class="chord">D</span>La</span> creación te canta,
+<span class="g"><span class="chord">Am</span>Hosanna</span> al gran yo soy,
+<span class="g"><span class="chord">C</span>Tu</span> eres mi todo,
+<span class="g"><span class="chord">G</span>Y</span> yo te adoraré.
 
-<span class="chord">D</span>            <span class="chord">Am</span>           <span class="chord">C</span>                <span class="chord">G</span>
-De un arco iris estas vestido tu voz resuena como un estruendo
-<span class="chord">D</span>                 <span class="chord">Am</span>               <span class="chord">C</span>              <span class="chord">G</span>
-Recibe honor y gloria, poder y majestad a ti al único rey
+[Verso 2]
+<span class="g"><span class="chord">D</span>De</span> un arco iris, esta <span class="g"><span class="chord">Am</span>vestido,</span>
+<span class="g"><span class="chord">C</span>Tu</span> voz resuena como los <span class="g"><span class="chord">G</span>truenos.</span>
+<span class="g"><span class="chord">D</span>Recibe</span> honor y gloria,
+<span class="g"><span class="chord">Am</span>Poder</span> y majestad,
+<span class="g"><span class="chord">C</span>A</span> ti al único <span class="g"><span class="chord">G</span>rey.</span>
 
-<span class="chord">D</span>                 <span class="chord">Am</span>
-Santo, santo, santo Dios todo poderoso
-<span class="chord">C</span>                                    <span class="chord">G</span>
-quien fue, quien es y quien vendrá
-<span class="chord">D</span>                  <span class="chord">Am</span>
-La creación te canta hosanna al gran yo soy
-<span class="chord">C</span>                <span class="chord">G</span>
-Tu eres mi todo y yo te adorare
-
-<span class="chord">D</span>            <span class="chord">Am</span>           <span class="chord">C</span>           <span class="chord">G</span>
-Tan grandioso, asombroso con solo decir Jesús
-<span class="chord">D</span>              <span class="chord">Am</span>
-Cristo tu nombre es grande fuerte inagotable
-<span class="chord">C</span>               <span class="chord">G</span>
-Tu misterio glorioso es
-
-<span class="chord">D</span>                 <span class="chord">Am7</span>
-Santo,santo, santo Dios todo poderoso
-<span class="chord">C</span>                                    <span class="chord">G</span>
-Quien fue, quien es y quien vendra
- <span class="chord">D</span>                  <span class="chord">Am7</span>
-La creación te canta hosanna al gran yo soy
-<span class="chord">C</span>                <span class="chord">G</span>
-Tu eres mi todo y yo te adorare.`
+[Puente]
+<span class="g"><span class="chord">D</span>Tan</span> grandioso, <span class="g"><span class="chord">Am</span>asombroso</span>
+<span class="g"><span class="chord">C</span>Con</span> solo decir <span class="g"><span class="chord">G</span>Jesús.</span>`
     },
 
     {
@@ -81,61 +55,40 @@ Tu eres mi todo y yo te adorare.`
         artist: "Rey de Reyes",
         key: "G",
         content: `
-<span class="chord">G</span>
-Se oye un son del cielo
-<span class="chord">G</span>
-Como el de muchas aguas
-<span class="chord">G</span>                       <span class="chord">D</span>
-Desde el trono viene, adoración
-        <span class="chord">C</span>     <span class="chord">D</span>     <span class="chord">Em</span>
-Se oye un grito de alabanza
-<span class="chord">C</span>     <span class="chord">D</span>    <span class="chord">Em</span>
-Desde las naciones
-<span class="chord">C</span>           <span class="chord">Am</span>       <span class="chord">D</span>         <span class="chord">D7</span>
-y su gloria dan a conocer, Cantando.
+<span class="g"><span class="chord">G</span>Se</span> oye un son del cielo
+<span class="g"><span class="chord">G</span>Como</span> el de muchas aguas
+<span class="g"><span class="chord">G</span>Desde</span> el trono viene, <span class="g"><span class="chord">D</span>adoración</span>
+Se oye un <span class="g"><span class="chord">C</span>grito</span> <span class="g"><span class="chord">D</span>de</span> <span class="g"><span class="chord">Em</span>alabanza</span>
+<span class="g"><span class="chord">C</span>Desde</span> <span class="g"><span class="chord">D</span>las</span> <span class="g"><span class="chord">Em</span>naciones</span>
+<span class="g"><span class="chord">C</span>y</span> su gloria <span class="g"><span class="chord">Am</span>dan</span> a <span class="g"><span class="chord">D</span>conocer,</span> <span class="g"><span class="chord">D7</span>Cantando.</span>
 
 [Coro]
-<span class="chord">G</span>            <span class="chord">Bm</span>             <span class="chord">C</span>
-Santo, Santo Santo  es el Señor.
-<span class="chord">D</span>                        <span class="chord">Bm</span>
-Santo, Santo Santo  es el Señor.
-<span class="chord">C</span>             <span class="chord">D</span>          <span class="chord">Bm7</span>
-Multitud de ángeles, y redimidos
-        <span class="chord">Em7</span>  <span class="chord">D</span>
-Te adoran hoy,
-<span class="chord">C</span>             <span class="chord">D</span>          <span class="chord">G</span>
-Santo, Santo, Santo eres Tú.`
+<span class="g"><span class="chord">G</span>Santo, Santo</span> <span class="g"><span class="chord">Bm</span>Santo</span> es el <span class="g"><span class="chord">C</span>Señor.</span>
+<span class="g"><span class="chord">D</span>Santo,</span> Santo Santo  es el <span class="g"><span class="chord">Bm</span>Señor.</span>
+<span class="g"><span class="chord">C</span>Multitud</span> de <span class="g"><span class="chord">D</span>ángeles,</span> y <span class="g"><span class="chord">Bm7</span>redimidos</span>
+Te adoran <span class="g"><span class="chord">Em</span>hoy,</span><span class="g"><span class="chord">D</span>...</span>
+<span class="g"><span class="chord">C</span>Santo, Santo</span> <span class="g"><span class="chord">D</span>Santo,</span> eres <span class="g"><span class="chord">G</span>Tú.</span>`
     },
 
     {
-        title: "Ven",
+        title: "Ven (Es hora de adorarle)",
         artist: "Marco Barrientos",
         key: "D",
         content: `
-<span class="chord">D</span>                 <span class="chord">G</span>    <span class="chord">D</span>
-Ven, es hora de adorarle
-<span class="chord">A</span>               <span class="chord">Em7</span>  <span class="chord">G</span>
-Ven, abre tu corazón a Él
-<span class="chord">D</span>                   <span class="chord">G</span>  <span class="chord">D</span>
-Ven, ante su trono estamos
-<span class="chord">A</span>               <span class="chord">Em7</span>       <span class="chord">G</span>    <span class="chord">D</span>
-Ven, ante la majestad de Dios, ven
+<span class="g"><span class="chord">D</span>Ven,</span> es hora de ado<span class="g"><span class="chord">G</span>rar</span><span class="g"><span class="chord">D</span>le</span>
+<span class="g"><span class="chord">A</span>Ven,</span> abre tu cora<span class="g"><span class="chord">Em7</span>zón</span> a <span class="g"><span class="chord">G</span>Él</span>
+<span class="g"><span class="chord">D</span>Ven,</span> ante su trono es<span class="g"><span class="chord">G</span>ta</span><span class="g"><span class="chord">D</span>mos</span>
+<span class="g"><span class="chord">A</span>Ven,</span> ante la majes<span class="g"><span class="chord">Em7</span>tad</span> de <span class="g"><span class="chord">G</span>Dios,</span> <span class="g"><span class="chord">D</span>ven</span>
 
 [Coro]
-<span class="chord">G</span>                  <span class="chord">D</span>
-Toda lengua confesará que Él es Dios
-<span class="chord">G</span>                   <span class="chord">D</span>
-Las rodillas se doblarán
-<span class="chord">G</span>                   <span class="chord">Bm</span>
-Y un tesoro eterno tendrás en Él
-    <span class="chord">Em</span>         <span class="chord">A</span>
-Si escoges su amor.
+<span class="g"><span class="chord">G</span>Toda</span> lengua confesará <span class="g"><span class="chord">D</span>que Él es Dios</span>
+<span class="g"><span class="chord">G</span>Las</span> rodillas se dobla<span class="g"><span class="chord">D</span>rán</span>
+<span class="g"><span class="chord">G</span>Y</span> un tesoro eterno <span class="g"><span class="chord">Bm</span>tendrás en Él</span>
+<span class="g"><span class="chord">Em</span>Si</span> escoges su <span class="g"><span class="chord">A</span>amor.</span>
 
 [Final]
-    <span class="chord">G</span>
-El es Rey,
-    <span class="chord">D</span>
-El es Rey.`
+El es <span class="g"><span class="chord">G</span>Rey,</span>
+El es <span class="g"><span class="chord">D</span>Rey.</span>`
     },
 
     {
@@ -143,31 +96,21 @@ El es Rey.`
         artist: "José Luis Reyes",
         key: "G",
         content: `
-<span class="chord">G</span>                  <span class="chord">Am</span>
-Algo está cayendo aquí
-<span class="chord">D</span>                    <span class="chord">G</span>
-Es tan fuerte sobre mí
-<span class="chord">Em</span>                <span class="chord">Am</span>
-Mis manos levantaré
-<span class="chord">D</span>                <span class="chord">G</span>  <span class="chord">C</span>  <span class="chord">G</span>
-Y su gloria tocaré
+<span class="g"><span class="chord">G</span>Algo</span> está cayendo <span class="g"><span class="chord">Am</span>aquí</span>
+<span class="g"><span class="chord">D</span>Es</span> tan fuerte sobre <span class="g"><span class="chord">G</span>mí</span>
+<span class="g"><span class="chord">Em</span>Mis</span> manos levanta<span class="g"><span class="chord">Am</span>ré</span>
+<span class="g"><span class="chord">D</span>Y</span> su gloria toca<span class="g"><span class="chord">G</span>ré</span> <span class="g"><span class="chord">C</span>...</span> <span class="g"><span class="chord">G</span>...</span>
 
-        <span class="chord">G</span>  <span class="chord">C</span>  <span class="chord">G</span>
-Está cayendo
-                <span class="chord">D</span>
-Su gloria sobre mí
-            <span class="chord">Am</span>
-Sanando heridas
-                <span class="chord">C</span>
-Levantando al caído
-                <span class="chord">D</span>
-Su gloria está aquí
-                <span class="chord">G</span>
-Su gloria está aquí.
+[Coro]
+<span class="g"><span class="chord">G</span>Está</span> cayendo <span class="g"><span class="chord">C</span>...</span> <span class="g"><span class="chord">G</span>...</span>
+Su gloria sobre <span class="g"><span class="chord">D</span>mí</span>
+Sanando <span class="g"><span class="chord">Am</span>heridas</span>
+Levantando al <span class="g"><span class="chord">C</span>caído</span>
+Su gloria está <span class="g"><span class="chord">D</span>aquí</span>
+Su gloria está <span class="g"><span class="chord">G</span>aquí.</span>
 
 [Adoración]
-                <span class="chord">Em</span>  <span class="chord">D</span>
-Su gloria está aquí.`
+Su gloria está <span class="g"><span class="chord">Em</span>aquí.</span> <span class="g"><span class="chord">D</span>...</span>`
     },
 
     {
@@ -175,40 +118,26 @@ Su gloria está aquí.`
         artist: "Marco Barrientos",
         key: "D",
         content: `
-<span class="chord">D</span>
-Llenas nuestro hogar de danza
-<span class="chord">Bm</span>  <span class="chord">G</span>        <span class="chord">A</span>
-De tu gozo la Ciudad
-<span class="chord">D</span>
-La injusticia Tú quebrantas
-<span class="chord">Bm</span>      <span class="chord">G</span>           <span class="chord">A</span>
-Si se humilla Tu Heredad.
+<span class="g"><span class="chord">D</span>Llenas</span> nuestro hogar de danza
+<span class="g"><span class="chord">Bm</span>De</span> tu <span class="g"><span class="chord">G</span>gozo</span> la <span class="g"><span class="chord">A</span>Ciudad</span>
+<span class="g"><span class="chord">D</span>La</span> injusticia Tú quebrantas
+<span class="g"><span class="chord">Bm</span>Si</span> se <span class="g"><span class="chord">G</span>humilla</span> Tu <span class="g"><span class="chord">A</span>Heredad.</span>
 
 [Coro]
-        <span class="chord">D</span>     <span class="chord">A</span>       <span class="chord">G</span>
-De los montes    A los valles
-        <span class="chord">Bm</span>      <span class="chord">F#m</span>      <span class="chord">G</span>   <span class="chord">A</span>
-Ya se escucha     el clamor
-        <span class="chord">D</span>     <span class="chord">A</span>       <span class="chord">G</span>
-De los Cielos    A los Pueblos
-        <span class="chord">Bm</span>     <span class="chord">F#m</span>       <span class="chord">G</span>   <span class="chord">A</span>    <span class="chord">D</span>
-Ya te cantan      Con Amor.
+De los <span class="g"><span class="chord">D</span>montes</span> <span class="g"><span class="chord">A</span>,</span> A los <span class="g"><span class="chord">G</span>valles</span>
+ya se <span class="g"><span class="chord">Bm</span>escucha</span> <span class="g"><span class="chord">F#m</span>...</span> el <span class="g"><span class="chord">G</span>clamor</span> <span class="g"><span class="chord">A</span>...</span>
+<span class="g"><span class="chord">D</span>De</span> los Cielos <span class="g"><span class="chord">A</span>,</span> A los <span class="g"><span class="chord">G</span>Pueblos</span>
+ya te <span class="g"><span class="chord">Bm</span>cantan</span> <span class="g"><span class="chord">F#m</span>...</span> con <span class="g"><span class="chord">G</span>amor</span> <span class="g"><span class="chord">A</span>...</span>
 
 [Verso 2]
-<span class="chord">D</span>
-Tu Luz Vence las tinieblas
-<span class="chord">Bm</span>    <span class="chord">G</span>           <span class="chord">A</span>
-Al andar ante la Cruz
-<span class="chord">D</span>
-Llena Tu Gloria la Tierra
-<span class="chord">Bm</span>      <span class="chord">G</span>           <span class="chord">A</span>
-Como el mar en plenitud.
+<span class="g"><span class="chord">D</span>Tu</span> Luz Vence las tinieblas
+<span class="g"><span class="chord">Bm</span>Al</span> an<span class="g"><span class="chord">G</span>dar</span> ante la <span class="g"><span class="chord">A</span>Cruz</span>
+<span class="g"><span class="chord">D</span>Llena</span> Tu Gloria la Tierra
+<span class="g"><span class="chord">Bm</span>Como</span> el <span class="g"><span class="chord">G</span>mar</span> en pleni<span class="g"><span class="chord">A</span>tud.</span>
 
 [Puente]
-    <span class="chord">G</span>    <span class="chord">Em</span>       <span class="chord">Bm</span>   <span class="chord">F#m</span>
-//Aleluya,      Aleluya
-    <span class="chord">G</span>    <span class="chord">Em</span>        <span class="chord">A</span>
-Aleluya,      Aleluya//`
+//Ale</span><span class="g"><span class="chord">G</span>luya</span> <span class="g"><span class="chord">Em</span>...</span> Ale<span class="g"><span class="chord">Bm</span>luya</span><span class="g"><span class="chord">F#m</span>...</span>
+Ale</span><span class="g"><span class="chord">G</span>luya</span> <span class="g"><span class="chord">Em</span>...</span> Ale<span class="g"><span class="chord">A</span>luya.</span>`
     },
 
     {
@@ -216,21 +145,15 @@ Aleluya,      Aleluya//`
         artist: "Marcos Witt",
         key: "C",
         content: `
-<span class="chord">C</span>                 <span class="chord">F</span>         <span class="chord">G</span>
-Al que es digno de recibir la gloria
-        <span class="chord">C</span>        <span class="chord">F</span>        <span class="chord">G</span>
-Al que es digno de recibir honor
+<span class="g"><span class="chord">C</span>Al</span> que es digno de <span class="g"><span class="chord">F</span>recibir</span> la <span class="g"><span class="chord">G</span>gloria</span>
+<span class="g"><span class="chord">C</span>Al</span> que es digno de <span class="g"><span class="chord">F</span>recibir</span> <span class="g"><span class="chord">G</span>honor</span>
 
-<span class="chord">F</span>                 <span class="chord">G</span>           <span class="chord">Em</span> <span class="chord">Am</span>
-Levantemos nuestras manos y adoremos
-    <span class="chord">F</span>      <span class="chord">G</span>       <span class="chord">Em</span> <span class="chord">Am</span>
-A Jesús cordero de gloria
-        <span class="chord">F</span>      <span class="chord">G</span>             <span class="chord">Em</span>   <span class="chord">A</span>
-Y exaltemos su incomparable majestad
-        <span class="chord">F</span>            <span class="chord">G</span>
-Al que vive por siempre
-<span class="chord">F</span>           <span class="chord">G</span>       <span class="chord">C</span>
-Al gran yo soy, a Jesús.`
+[Coro]
+<span class="g"><span class="chord">F</span>Levantemos nuestras </span><span class="g"><span class="chord">G</span>manos y ado</span><span class="g"><span class="chord">Em</span>re</span><span class="g"><span class="chord">Am</span>mos</span>
+A <span class="g"><span class="chord">F</span>Jesús</span> cor<span class="g"><span class="chord">G</span>dero</span>de <span class="g"><span class="chord">Em</span>glo</span><span class="g"><span class="chord">Am</span>ria</span>
+Y exal<span class="g"><span class="chord">F</span>temos su </span><span class="g"><span class="chord">G</span>incomparable </span><span class="g"><span class="chord">Em</span>majes</span><span class="g"><span class="chord">Am</span>tad</span>
+Al que <span class="g"><span class="chord">F</span>vive</span> vive por <span class="g"><span class="chord">G</span>siempre</span>
+<span class="g"><span class="chord">F</span>Al</span> gran yo <span class="g"><span class="chord">G</span>soy,</span> a <span class="g"><span class="chord">C</span>Jesús.</span>`
     },
 
     {
@@ -238,39 +161,28 @@ Al gran yo soy, a Jesús.`
         artist: "Marcos Brunet",
         key: "C",
         content: `
-<span class="chord">C</span>                    <span class="chord">F</span>
-Es a Ti a quien a anhelo
-                    <span class="chord">Dm</span>
-Es por Ti que yo suspiro
-            <span class="chord">F</span>        <span class="chord">G</span>
-Más allá del velo yo voy
-                <span class="chord">Am</span>     <span class="chord">G</span>  <span class="chord">C</span>
-A decirte que te quiero, Jesús.
+<span class="g"><span class="chord">C</span>Es</span> a Ti a quien a <span class="g"><span class="chord">F</span>anhelo</span>
+Es por Ti que yo <span class="g"><span class="chord">Dm</span>suspiro</span>
+Más allá del <span class="g"><span class="chord">F</span>velo</span> yo <span class="g"><span class="chord">G</span>voy</span>
+A decirte que te <span class="g"><span class="chord">Am</span>quiero,</span> <span class="g"><span class="chord">G</span>Je</span><span class="g"><span class="chord">C</span>sús.</span>
 
 [Coro]
-            <span class="chord">F</span>
-Atrae mi corazón
-            <span class="chord">Dm</span>
-Atrae mi corazón
-            <span class="chord">F</span>        <span class="chord">G</span>
-Atrae mi corazón, Jesús
-                        <span class="chord">Am</span>  <span class="chord">G</span>  <span class="chord">C</span>
-Me muero de amor por Ti.
+Atrae mi <span class="g"><span class="chord">F</span>corazón</span>
+Atrae mi <span class="g"><span class="chord">Dm</span>corazón</span>
+Atrae mi <span class="g"><span class="chord">F</span>corazón,</span> Je<span class="g"><span class="chord">G</span>sús</span>
+Me muero de amor por <span class="g"><span class="chord">Am</span>ti,</span>
+<span class="g"><span class="chord">G</span>Me</span> muero de amor por <span class="g"><span class="chord">C</span>Ti.</span>
 
 [Verso 2]
-                    <span class="chord">F</span>
-Quiero que el mundo sepa
-                    <span class="chord">Dm</span>
-Quiero que el mundo vea
-                <span class="chord">F</span>     <span class="chord">G</span>
-Que Tú eres mi amado
-            <span class="chord">Am</span>    <span class="chord">G</span>   <span class="chord">C</span>
-Y yo soy tuyo.
+Quiero que el mundo <span class="g"><span class="chord">F</span>sepa</span>
+Quiero que el mundo <span class="g"><span class="chord">Dm</span>vea</span>
+Que Tú eres mi <span class="g"><span class="chord">F</span>amado</span> <span class="g"><span class="chord">G</span>...</span>
+Y yo soy <span class="g"><span class="chord">Am</span>tuyo.</span> <span class="g"><span class="chord">G</span>...</span> <span class="g"><span class="chord">C</span>...</span>
 
 [Puente]
-<span class="chord">F</span>         <span class="chord">Dm</span>         <span class="chord">Am</span>
-Yo en Ti y Tu en mí Jesús,
-            <span class="chord">G</span>
-este es el pacto.`
-    }
+<span class="g"><span class="chord">F</span>Yo</span> en ti y <span class="g"><span class="chord">Dm</span>Tu</span>en mí Je<span class="g"><span class="chord">Am</span>sús,</span>
+este es el <span class="g"><span class="chord">G</span>pacto.</span>`
+    },
+
+    
 ];

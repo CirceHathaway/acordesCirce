@@ -217,22 +217,6 @@ tr:hover { background-color: #252525; }
     color: var(--text-white);
 }
 
-/* AJUSTE DE ACORDES (Menos altura) */
-.chord {
-    color: #121212;
-    background: var(--chord-color);
-    font-weight: 800;
-    padding: 0px 10px;
-    border-radius: 4px;
-    display: inline-block;
-    
-    /* Esto ayuda a que el acorde no empuje demasiado la línea */
-    line-height: 1.1; 
-    
-    position: relative;
-    bottom: 0px; /* Quitamos la elevación extra si la tenías */
-}
-
 /* --- MODAL (Ventana emergente) --- */
 .modal {
     display: none; /* Oculto por defecto */
@@ -431,6 +415,26 @@ tr:hover { background-color: #252525; }
     .nav-links { justify-self: center; }
 }
 
+/* --- SISTEMA DE ACORDES PEGADOS (Responsive) --- */
+.g {
+    display: inline-flex;       /* Hace que sea una cajita flexible */
+    flex-direction: column;     /* Pone los elementos uno arriba del otro */
+    vertical-align: bottom;     /* Alinea la base con el texto de al lado */
+    margin-right: 4px;          /* Un pequeño espacio a la derecha */
+}
+
+/* Ajuste del acorde cuando está dentro de un grupo */
+.g .chord {
+    align-self: flex-start;     /* Alinea el acorde a la izquierda de la palabra */
+    margin-bottom: 0px;         /* Pegadito a la letra */
+    font-size: 18px;            /* Tamaño legible */
+    background: var(--chord-color);
+    padding: 0px 6px;
+    line-height: 1;
+    color: #121212; 
+    font-weight: bold;          /* Negrita para que resalte más */
+}
+
 /* =========================================
    RESPONSIVIDAD MÓVIL (Celulares y Tablets)
    ========================================= */
@@ -511,7 +515,7 @@ tr:hover { background-color: #252525; }
         
         /* 2. Achicamos la letra bastante para que entren las frases */
         /* En PC es 17px, en celular probamos con 12px o 11px */
-        font-size: 12px !important; 
+        font-size: 12px; 
         
         /* 3. Eliminamos la barra de scroll horizontal */
         overflow-x: hidden !important;
