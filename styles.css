@@ -638,3 +638,32 @@ tr:hover { background-color: #252525; }
         padding-bottom: 80px; /* Espacio extra abajo para scroll */
     }
 }
+
+/* --- ESTILO ESPECÍFICO PARA MODAL DE INSTALACIÓN --- */
+#installAppModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    z-index: 4000; /* Encima de todo */
+    background-color: #1e1e1e;
+    border: 2px solid #4cd137; /* Borde verde */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.9); /* Sombra fuerte para destacar */
+    color: white;
+    flex-direction: column;
+    gap: 15px;
+    width: 85%;
+    max-width: 350px;
+    opacity: 0; /* Para animación de entrada */
+    transition: opacity 0.3s ease;
+}
+
+/* Clase para mostrarlo */
+#installAppModal.show-install {
+    display: flex;
+    opacity: 1;
+}

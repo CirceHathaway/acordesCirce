@@ -448,63 +448,58 @@ function showNotification(message) {
 
 /* --- PWA: LÓGICA DE INSTALACIÓN Y OFFLINE --- */
 
-// 1. Registrar el Service Worker (Para que funcione Offline)
+// 1. Registrar el Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('Service Worker registrado', reg))
-            .catch(err => console.log('Error SW:', err));
+            .then(reg => console.log('SW listo'))
+            .catch(err => console.log('SW falló', err));
     });
 }
 
-// 2. Lógica del Botón de Instalación
+// 2. Variables
 let deferredPrompt;
 const installModal = document.getElementById('installAppModal');
 const btnInstall = document.getElementById('btnInstall');
 const btnCloseInstall = document.getElementById('btnCloseInstall');
 
-// El navegador dispara este evento si la app NO está instalada y cumple requisitos
+// 3. Detectar si se puede instalar
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Evitamos que Chrome muestre su barrita automática fea
+    // Prevenir que Chrome muestre su barra automática
     e.preventDefault();
-    // Guardamos el evento para dispararlo cuando queramos
     deferredPrompt = e;
     
-    // Mostramos TU modal personalizado
+    // Mostrar NUESTRO modal
     if(installModal) {
-        installModal.classList.add('show');
-        installModal.style.visibility = 'visible'; // Forzamos visibilidad
-        installModal.style.display = 'flex';       // Aseguramos display
+        // Usamos la nueva clase que definimos en CSS
+        installModal.classList.add('show-install');
+        console.log("Modal de instalación activado");
     }
 });
 
+// 4. Click en Instalar
 if(btnInstall) {
     btnInstall.addEventListener('click', async () => {
         if (deferredPrompt) {
-            // Mostramos el prompt nativo del sistema
             deferredPrompt.prompt();
-            // Esperamos a ver qué decidió el usuario
             const { outcome } = await deferredPrompt.userChoice;
             console.log(`Usuario decidió: ${outcome}`);
-            // Ya no sirve el evento, lo limpiamos
             deferredPrompt = null;
         }
-        // Cerramos tu modal
         closeInstallModal();
     });
 }
 
+// 5. Click en Cerrar
 if(btnCloseInstall) {
     btnCloseInstall.addEventListener('click', () => {
         closeInstallModal();
     });
 }
 
+// Función para cerrar
 function closeInstallModal() {
     if(installModal) {
-        installModal.classList.remove('show');
-        setTimeout(() => {
-            installModal.style.display = 'none';
-        }, 500); // Esperar la transición
+        installModal.classList.remove('show-install');
     }
 }
