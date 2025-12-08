@@ -446,92 +446,62 @@ function showNotification(message) {
     }, 3000);
 }
 
-/* --- PWA: LÓGICA DE INSTALACIÓN AGRESIVA --- */
+/* --- PWA: LÓGICA DE BOTÓN INTELIGENTE (COMPARTIR vs INSTALAR) --- */
 
-// 1. Registro del Service Worker
+// 1. Registrar Service Worker (Obligatorio para instalar)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('SW registrado'))
+            .then(reg => console.log('SW ok'))
             .catch(err => console.log('SW error', err));
     });
 }
 
 // 2. Variables
 let deferredPrompt;
-const installBtnLink = document.getElementById('installBtnLink'); 
-const installModal = document.getElementById('installAppModal');
+const shareBtn = document.getElementById('shareBtn');
+const installBtn = document.getElementById('installBtn');
 
-// 3. EVENTO PRINCIPAL: El navegador dice "Se puede instalar"
+// 3. Escuchar evento: "El navegador dice que se puede instalar"
 window.addEventListener('beforeinstallprompt', (e) => {
-    // a) Evitar que Chrome maneje esto (lo haremos nosotros)
+    // a) Evitar barra nativa automática
     e.preventDefault();
-    // b) Guardar el evento para usarlo cuando el usuario haga clic
+    // b) Guardar el evento
     deferredPrompt = e;
-    console.log("Evento de instalación capturado.");
-
-    // c) MOSTRAR TU MODAL AUTOMÁTICAMENTE (Aquí está el cambio)
-    // Verificamos si ya está instalada para no molestar
-    if (!window.matchMedia('(display-mode: standalone)').matches) {
-        setTimeout(() => {
-            showInstallModal(); // ¡Aparece solo!
-        }, 1000); // Esperamos 1 segundito para que cargue la página primero
-    }
-
-    // d) También mostramos el botón del menú por si cierra el modal
-    if (installBtnLink) installBtnLink.style.display = 'inline-block';
+    
+    // c) LOGICA DEL SWITCH: Ocultar Compartir -> Mostrar Instalar
+    if (shareBtn) shareBtn.style.display = 'none';
+    if (installBtn) installBtn.style.display = 'inline-block';
+    console.log("Modo Instalación Activado");
 });
 
-// 4. Función para mostrar el modal (Visual)
-function showInstallModal() {
-    if(installModal) {
-        installModal.classList.add('show-install');
-        installModal.style.display = 'flex'; // Forzamos que se vea
-        installModal.style.opacity = '1';
-    }
-}
-
-function closeInstallModal() {
-    if(installModal) {
-        installModal.classList.remove('show-install');
-        setTimeout(() => { installModal.style.display = 'none'; }, 300);
-    }
-}
-
-// 5. Conectar los botones del Modal
-const btnInstallModal = document.getElementById('btnInstall');
-const btnCloseModal = document.getElementById('btnCloseInstall');
-
-// BOTÓN "INSTALAR" (El usuario hace clic aquí -> Lanzamos el prompt real)
-if (btnInstallModal) {
-    btnInstallModal.addEventListener('click', async () => {
+// 4. Acción al tocar "Instalar"
+if (installBtn) {
+    installBtn.addEventListener('click', async () => {
         if (deferredPrompt) {
-            deferredPrompt.prompt(); // <-- AQUÍ SALE EL MENÚ NATIVO DEL CELULAR
+            // Lanzar el prompt nativo
+            deferredPrompt.prompt();
+            // Esperar elección
             const { outcome } = await deferredPrompt.userChoice;
-            console.log(`Usuario decidió: ${outcome}`);
+            console.log(`Usuario eligió: ${outcome}`);
             deferredPrompt = null;
+            
+            // Si aceptó instalar, volvemos a mostrar "Compartir"
+            if (outcome === 'accepted') {
+                resetToShareMode();
+            }
         }
-        closeInstallModal();
     });
 }
 
-// BOTÓN "AHORA NO"
-if (btnCloseModal) {
-    btnCloseModal.addEventListener('click', () => {
-        closeInstallModal();
-    });
-}
-
-// BOTÓN DEL MENÚ (Header)
-if (installBtnLink) {
-    installBtnLink.addEventListener('click', () => {
-        showInstallModal(); // Vuelve a abrir el modal
-    });
-}
-
-// 6. Si ya se instaló, ocultamos todo
+// 5. Detectar si ya se instaló exitosamente
 window.addEventListener('appinstalled', () => {
-    console.log('App instalada');
-    if(installBtnLink) installBtnLink.style.display = 'none';
-    closeInstallModal();
+    console.log('Aplicación instalada');
+    resetToShareMode();
 });
+
+// Función auxiliar para volver al estado normal
+function resetToShareMode() {
+    if (installBtn) installBtn.style.display = 'none';
+    if (shareBtn) shareBtn.style.display = 'inline-block';
+}
