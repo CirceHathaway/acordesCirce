@@ -48,7 +48,9 @@ function addToPlaylist(index, btnElement) {
         // Feedback visual
         btnElement.innerText = "✓";
         btnElement.classList.add('added');
-        // Opcional: alert("Canción agregada a tu lista");
+        
+        // Notificación elegante
+        showNotification("Canción agregada a tu lista");
     }
 }
 
@@ -68,14 +70,23 @@ function loadPlaylistMode() {
     if (sharedIds) {
         // Si viene de un link compartido, usamos esos IDs
         playlistIds = sharedIds.split(',').map(Number);
-        // Ocultar botón de compartir normal para evitar confusión, o cambiar texto
-        document.getElementById('shareListBtn').innerText = "Guardar esta lista compartida";
-        document.getElementById('shareListBtn').onclick = function() {
-            myPlaylist = playlistIds;
-            localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-            alert("Lista guardada en tu dispositivo!");
-            window.location.href = 'lista.html'; // Limpiar URL
-        };
+        
+        const shareBtn = document.getElementById('shareListBtn');
+        if(shareBtn) {
+            shareBtn.innerText = "Guardar esta lista compartida";
+            shareBtn.onclick = function() {
+                myPlaylist = playlistIds;
+                localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+                
+                // AQUÍ ESTÁ EL CAMBIO: Usamos la notificación personalizada
+                showNotification("¡Lista guardada en tu dispositivo!");
+                
+                // Esperamos 2 segundos antes de limpiar la URL para que se vea el mensaje
+                setTimeout(() => {
+                    window.location.href = 'lista.html'; 
+                }, 2000);
+            };
+        }
     } else {
         // Si no, usamos la local
         playlistIds = myPlaylist;
@@ -120,7 +131,7 @@ function renderPlaylistTable(songsData, originalIds) {
 
 function sharePlaylistUrl() {
     if (myPlaylist.length === 0) {
-        alert("Tu lista está vacía, agrega canciones primero.");
+        showNotification("Tu lista está vacía, agrega canciones primero.");
         return;
     }
     // Crear link con IDs: misitio.com/lista.html?ids=1,5,8
@@ -131,7 +142,7 @@ function sharePlaylistUrl() {
         navigator.share({ title: 'Mi Lista de Adoración', url: shareUrl });
     } else {
         navigator.clipboard.writeText(shareUrl);
-        alert("Enlace de lista copiado al portapapeles!");
+        showNotification("¡Enlace de lista copiado al portapapeles!");
     }
 }
 
@@ -410,7 +421,27 @@ window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
     if (event.target == keyModal) keyModal.style.display = "none";
 }
+
 function shareApp() {
-    if (navigator.share) navigator.share({ title: 'Acordes Hathaway', url: window.location.href });
-    else { navigator.clipboard.writeText(window.location.href); alert("Enlace copiado!"); }
+    if (navigator.share) {
+        navigator.share({ title: 'Acordes Hathaway', url: window.location.href });
+    } else {
+        navigator.clipboard.writeText(window.location.href);
+        // Alerta personalizada
+        showNotification("¡Enlace de la app copiado!");
+    }
+}
+
+/* --- Modal de notificación --- */
+function showNotification(message) {
+    const toast = document.getElementById("toastNotification");
+    if (!toast) return; // Seguridad por si no pusiste el HTML
+
+    toast.innerText = message;
+    toast.className = "custom-notification show"; // Mostrar
+
+    // Ocultar después de 3 segundos
+    setTimeout(function(){ 
+        toast.className = toast.className.replace("show", ""); 
+    }, 3000);
 }
