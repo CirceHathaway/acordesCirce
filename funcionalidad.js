@@ -375,33 +375,38 @@ function showNotification(message) {
    PWA: LÓGICA DE BOTÓN INTELIGENTE (UNIFICADO)
    ========================================================= */
 
-// 1. Registrar Service Worker (Obligatorio para que funcione offline/instalación)
+// 1. Registrar Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('SW registrado correctamente'))
-            .catch(err => console.log('SW error al registrar', err));
+            .then(reg => console.log('SW registrado'))
+            .catch(err => console.log('SW error', err));
     });
 }
 
 // 2. Variables y Referencias
-let deferredPrompt; // Variable para guardar el evento de instalación
-const actionBtn = document.getElementById('actionBtn'); // El botón único del header
+let deferredPrompt; 
+const actionBtn = document.getElementById('actionBtn'); 
 
-// 3. Verificar estado inicial: ¿La app ya está instalada (Standalone)?
-// Esto sirve para que si abren la app desde el icono, el botón sea "Compartir" directo
+// 3. VERIFICACIONES DE ESTADO
+// A. ¿Ya está instalada?
 const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+// B. ¿Es escritorio/PC? (Pantalla mayor a 1024px)
+const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 
-if (isStandalone) {
+// LÓGICA INICIAL:
+// Si ya está instalada O si es una PC de escritorio -> Muestra "Compartir"
+if (isStandalone || isDesktop) {
     setShareMode();
 }
 
-// 4. Escuchar evento: Navegador detecta que se puede instalar
+// 4. Escuchar evento de instalación (Chrome/Android)
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Evitar que Chrome muestre su barra nativa automática
-    deferredPrompt = e; // Guardar el evento para usarlo al hacer clic
-    // Nota: No cambiamos nada visualmente, el botón ya dice "Instalar" por defecto
-    console.log("Evento de instalación capturado y listo.");
+    e.preventDefault(); 
+    deferredPrompt = e; 
+    console.log("Evento de instalación capturado.");
+    // NOTA: Si es Desktop, aunque capturemos el evento, el botón seguirá diciendo "Compartir"
+    // gracias al chequeo "if (isDesktop) setShareMode()" de arriba.
 });
 
 // 5. Manejar el clic del botón único
@@ -409,47 +414,44 @@ if (actionBtn) {
     actionBtn.addEventListener('click', async (e) => {
         e.preventDefault();
 
-        // CASO A: Modo Compartir (Ya instalada o modo compartir activo)
+        // CASO A: Modo Compartir
+        // Entra aquí si: Ya está instalada, O es Desktop, O el usuario aceptó instalar antes
         if (actionBtn.classList.contains('mode-share')) {
             shareApp(); 
             return;
         }
 
-        // CASO B: Modo Instalar (Automático - Android/Chrome)
+        // CASO B: Modo Instalar (Móvil Android)
         if (deferredPrompt) {
-            deferredPrompt.prompt(); // Lanza el popup nativo
+            deferredPrompt.prompt(); 
             const { outcome } = await deferredPrompt.userChoice;
             console.log(`Usuario eligió: ${outcome}`);
-            deferredPrompt = null; // Reseteamos variable
+            deferredPrompt = null; 
             
-            // Si el usuario aceptó, cambiamos el botón a compartir
             if (outcome === 'accepted') {
                 setShareMode();
             }
         } else {
-            // CASO C: Modo Instalar (Manual - iPhone/iPad o Evento no listo)
+            // CASO C: Modo Instalar (iPhone / Manual)
             showManualInstallInstructions();
         }
     });
 }
 
-// 6. Detectar si la instalación ocurrió exitosamente (por otros medios)
+// 6. Detectar instalación exitosa
 window.addEventListener('appinstalled', () => {
-    console.log('Aplicación instalada con éxito');
     setShareMode();
 });
 
-// --- Funciones Auxiliares del Botón ---
+// --- Funciones Auxiliares ---
 
-// Cambia la apariencia del botón a "Compartir"
 function setShareMode() {
     if (!actionBtn) return;
     actionBtn.innerHTML = "Compartir"; 
-    actionBtn.style.color = "#ffffff"; // Blanco para diferenciar del verde de instalar
-    actionBtn.classList.add('mode-share'); // Marca lógica
+    actionBtn.style.color = "#ffffff"; 
+    actionBtn.classList.add('mode-share'); 
 }
 
-// Función general para compartir
 function shareApp() {
     if (navigator.share) {
         navigator.share({
@@ -463,19 +465,13 @@ function shareApp() {
     }
 }
 
-// Muestra el modal de instrucciones manuales (para iOS)
 function showManualInstallInstructions() {
     const modal = document.getElementById('installAppModal');
     if(modal) {
         modal.style.display = 'flex';
-        
-        // Configurar botón "Ahora no"
         const btnClose = document.getElementById('btnCloseInstall');
-        if(btnClose) {
-            btnClose.onclick = () => { modal.style.display = 'none'; };
-        }
+        if(btnClose) btnClose.onclick = () => { modal.style.display = 'none'; };
         
-        // Configurar botón "Instalar" dentro del modal (intento secundario)
         const btnInside = document.getElementById('btnInstall');
         if(btnInside) {
             btnInside.onclick = async () => {
@@ -484,12 +480,11 @@ function showManualInstallInstructions() {
                     deferredPrompt = null;
                     modal.style.display = 'none';
                 } else {
-                    // Si no hay evento (típico de iPhone), mostramos alerta
-                    alert("En iPhone/iPad: \n1. Toca el botón Compartir ⬆️ \n2. Busca 'Agregar a Inicio' ➕");
+                    alert("En iPhone/iPad: \n1. Toca Compartir ⬆️ \n2. Busca 'Agregar a Inicio' ➕");
                 }
             };
         }
     } else {
-        alert("Para instalar: Busca la opción 'Agregar a pantalla de inicio' en el menú de tu navegador.");
+        alert("Para instalar: Busca la opción 'Agregar a pantalla de inicio' en el menú.");
     }
 }
