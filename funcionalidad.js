@@ -445,3 +445,66 @@ function showNotification(message) {
         toast.className = toast.className.replace("show", ""); 
     }, 3000);
 }
+
+/* --- PWA: LÓGICA DE INSTALACIÓN Y OFFLINE --- */
+
+// 1. Registrar el Service Worker (Para que funcione Offline)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registrado', reg))
+            .catch(err => console.log('Error SW:', err));
+    });
+}
+
+// 2. Lógica del Botón de Instalación
+let deferredPrompt;
+const installModal = document.getElementById('installAppModal');
+const btnInstall = document.getElementById('btnInstall');
+const btnCloseInstall = document.getElementById('btnCloseInstall');
+
+// El navegador dispara este evento si la app NO está instalada y cumple requisitos
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Evitamos que Chrome muestre su barrita automática fea
+    e.preventDefault();
+    // Guardamos el evento para dispararlo cuando queramos
+    deferredPrompt = e;
+    
+    // Mostramos TU modal personalizado
+    if(installModal) {
+        installModal.classList.add('show');
+        installModal.style.visibility = 'visible'; // Forzamos visibilidad
+        installModal.style.display = 'flex';       // Aseguramos display
+    }
+});
+
+if(btnInstall) {
+    btnInstall.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            // Mostramos el prompt nativo del sistema
+            deferredPrompt.prompt();
+            // Esperamos a ver qué decidió el usuario
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`Usuario decidió: ${outcome}`);
+            // Ya no sirve el evento, lo limpiamos
+            deferredPrompt = null;
+        }
+        // Cerramos tu modal
+        closeInstallModal();
+    });
+}
+
+if(btnCloseInstall) {
+    btnCloseInstall.addEventListener('click', () => {
+        closeInstallModal();
+    });
+}
+
+function closeInstallModal() {
+    if(installModal) {
+        installModal.classList.remove('show');
+        setTimeout(() => {
+            installModal.style.display = 'none';
+        }, 500); // Esperar la transición
+    }
+}
