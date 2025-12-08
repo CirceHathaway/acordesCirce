@@ -17,17 +17,125 @@ let currentSemitones = 0;
 let isSpanish = false; 
 let currentFontSize = 17;
 
+// Playlist en memoria (Array de índices)
+let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
+
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
     if (typeof songs !== 'undefined') {
-        applyGlobalFilters(); // Carga inicial con orden A-Z
+        
+        // Detectar si estamos en lista.html
+        if (window.location.pathname.includes('lista.html')) {
+            loadPlaylistMode();
+        } else {
+            // Estamos en index.html
+            applyGlobalFilters(); //carga con orden A-Z
+        }
+        
         generateKeyButtons();
     } else {
         alert("Error: No se cargó canciones.js");
     }
 };
 
-/* --- NUEVA LÓGICA DE FILTROS COMBINADOS --- */
+/* --- LÓGICA DE PLAYLIST (LISTA.HTML) --- */
+
+function addToPlaylist(index, btnElement) {
+    if (!myPlaylist.includes(index)) {
+        myPlaylist.push(index);
+        localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+        
+        // Feedback visual
+        btnElement.innerText = "✓";
+        btnElement.classList.add('added');
+        // Opcional: alert("Canción agregada a tu lista");
+    }
+}
+
+function removeFromPlaylist(index) {
+    myPlaylist = myPlaylist.filter(id => id !== index);
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+    loadPlaylistMode(); // Recargar la tabla
+}
+
+function loadPlaylistMode() {
+    // 1. Verificar si hay una lista compartida en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedIds = urlParams.get('ids');
+
+    let playlistIds = [];
+
+    if (sharedIds) {
+        // Si viene de un link compartido, usamos esos IDs
+        playlistIds = sharedIds.split(',').map(Number);
+        // Ocultar botón de compartir normal para evitar confusión, o cambiar texto
+        document.getElementById('shareListBtn').innerText = "Guardar esta lista compartida";
+        document.getElementById('shareListBtn').onclick = function() {
+            myPlaylist = playlistIds;
+            localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+            alert("Lista guardada en tu dispositivo!");
+            window.location.href = 'lista.html'; // Limpiar URL
+        };
+    } else {
+        // Si no, usamos la local
+        playlistIds = myPlaylist;
+    }
+
+    // 2. Filtrar las canciones reales
+    displaySongs = playlistIds.map(id => songs[id]).filter(s => s !== undefined);
+
+    // 3. Renderizar tabla especial
+    renderPlaylistTable(displaySongs, playlistIds);
+}
+
+function renderPlaylistTable(songsData, originalIds) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+
+    if (songsData.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Tu lista está vacía. Ve al inicio para agregar canciones.</td></tr>';
+        return;
+    }
+
+    songsData.forEach((song, i) => {
+        // Necesitamos el índice original para abrir la canción correcta
+        const globalIndex = originalIds[i]; 
+
+        let row = `
+            <tr>
+                <td class="index-col">${i + 1}</td>
+                <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
+                <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
+                
+                <td style="color: var(--text-white);">${song.artist}</td>
+                
+                <td class="action-col">
+                    <button class="btn-remove" onclick="removeFromPlaylist(${globalIndex})">×</button>
+                </td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
+}
+
+function sharePlaylistUrl() {
+    if (myPlaylist.length === 0) {
+        alert("Tu lista está vacía, agrega canciones primero.");
+        return;
+    }
+    // Crear link con IDs: misitio.com/lista.html?ids=1,5,8
+    const idsString = myPlaylist.join(',');
+    const shareUrl = window.location.origin + window.location.pathname + '?ids=' + idsString;
+
+    if (navigator.share) {
+        navigator.share({ title: 'Mi Lista de Adoración', url: shareUrl });
+    } else {
+        navigator.clipboard.writeText(shareUrl);
+        alert("Enlace de lista copiado al portapapeles!");
+    }
+}
+
+/* --- LÓGICA DE FILTROS COMBINADOS --- */
 
 // 1. Motor Central de Filtros
 function applyGlobalFilters() {
@@ -146,8 +254,13 @@ function sortSongs(criteria) {
 /* --- (RESTO DE FUNCIONES VISUALES IGUAL QUE ANTES) --- */
 
 function goHome() {
-    document.getElementById('songListView').style.display = 'block';
+    // Si estamos en lista.html y tocamos el logo o "volver", la vista detalle se oculta
     document.getElementById('songDetailView').style.display = 'none';
+    
+    // Si hay una tabla (ya sea lista o index), la mostramos
+    const listView = document.getElementById('songListView');
+    if(listView) listView.style.display = 'block';
+    
     closeAllModals();
     window.scrollTo(0,0);
 }
@@ -243,23 +356,34 @@ function filterByArtist(artistName) {
     event.stopPropagation();
 }
 
+/* --- LÓGICA PRINCIPAL (INDEX.HTML) --- */
 function renderTable(data) {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
     
     if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:20px;">No se encontraron canciones con estos filtros.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>';
         return;
     }
 
     data.forEach((song, index) => {
         const originalIndex = songs.indexOf(song);
+        
+        // Verificar si ya está en la lista para cambiar el botón
+        const isAdded = myPlaylist.includes(originalIndex);
+        const btnClass = isAdded ? "btn-add added" : "btn-add";
+        const btnText = isAdded ? "✓" : "+";
+        const btnAction = isAdded ? "" : `onclick="addToPlaylist(${originalIndex}, this)"`;
+
         let row = `
             <tr>
                 <td class="index-col">${index + 1}</td>
                 <td class="song-title" onclick="openSong(${originalIndex})">${song.title}</td>
                 <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
                 <td><span class="artist-link" onclick="filterByArtist('${song.artist}')">${song.artist}</span></td>
+                <td class="action-col">
+                    <button class="${btnClass}" ${btnAction}>${btnText}</button>
+                </td>
             </tr>
         `;
         tbody.innerHTML += row;

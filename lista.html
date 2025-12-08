@@ -3,75 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acordes Hathaway</title>
+    <title>Mi Lista - Acordes Hathaway</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <div class="brand" onclick="goHome()">🎸AcordesHathaway</div>
+        <div class="brand" onclick="window.location.href='index.html'">🎸AcordesHathaway</div>
         
-        <div class="search-container">
-            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar canción o artista..." onkeyup="filterSongs()">
+        <div class="search-container" style="opacity: 0; pointer-events: none;">
+            <input type="text" class="search-input">
         </div>
 
         <div class="nav-links">
-            <a href="lista.html">Lista</a>
-            <a href="https://circehathaway.github.io/acordesCirce/" onclick="shareApp()">Compartir</a>
+            <a href="index.html">Inicio</a> <a href="#" onclick="shareApp()">Compartir App</a>
         </div>
     </header>
 
     <div class="container">
         
         <div id="songListView">
-            <div class="filters">
-                <button class="filter-btn" onclick="filterByType('Alabanza')">Alabanza</button>
-                <button class="filter-btn" onclick="filterByType('Adoración')">Adoración</button>
-                <button class="filter-btn" onclick="sortSongs('artist')">Artista</button>
-                <button class="filter-btn" onclick="openKeyModal()">Nota</button>
-                <button class="filter-btn" style="background:#e55039;" onclick="resetFilters()">Reset</button>
-            </div>
+            <h2 style="text-align: center; color: var(--text-primary); margin: 30px 0;">🎵 Mi Lista para Hoy</h2>
 
             <table>
                 <thead>
                     <tr>
-                        <th width="10%">#</th>
+                        <th width="5%">#</th>
                         <th width="40%">Título</th>
                         <th width="10%">Nota</th>
-                        <th width="40%">Artista</th>
-                        <th width="10%">+</th> </tr>
-                    </tr>
+                        <th width="35%">Artista</th>
+                        <th width="10%">x</th> </tr>
                 </thead>
                 <tbody id="tableBody">
                     </tbody>
             </table>
+
+            <button id="shareListBtn" class="btn-share-list" onclick="sharePlaylistUrl()">
+                Compartir esta Lista 📤
+            </button>
         </div>
 
         <div id="songDetailView">
-            <button class="control-btn btn-back" onclick="goHome()">← Volver</button>
+            <button class="control-btn btn-back" style="margin-bottom: 10px;" onclick="goHome()">← Volver a Lista</button>
             
-            <h2 id="detailTitle" style="text-align:center; color: var(--text-primary); font-size: 2rem;"></h2>
+            <h2 id="detailTitle" style="text-align:center; color: var(--text-primary); font-size: 2rem; margin-top: 0; margin-bottom: 5px;"></h2>
             <h4 id="detailArtist" style="text-align:center; color: var(--text-secondary); margin-top:0;"></h4>
 
             <div class="controls-bar">
-                <button class="circle-btn" onclick="toggleModal('toneModal')" title="Cambiar Tono">
+                <button class="circle-btn" onclick="toggleModal('toneModal')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
                 </button>
-
-                <button class="circle-btn" onclick="toggleNotation()" title="Inglés/Español">
+                <button class="circle-btn" onclick="toggleNotation()">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 </button>
-
-                <button class="circle-btn" onclick="toggleModal('formatModal')" title="Tamaño Texto">
+                <button class="circle-btn" onclick="toggleModal('formatModal')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"></path></svg>
                 </button>
             </div>
 
-            <div id="toneModal" class="mini-modal">
+            <div id="toneModal" class="mini-modal" style="width: auto; min-width: 350px; flex-wrap: nowrap;">
                 <button class="modal-btn" onclick="applyTranspose(-2)">-1</button>
                 <button class="modal-btn" onclick="applyTranspose(-1)">-½</button>
-                <button class="modal-btn" style="background: var(--accent); color:black;" onclick="resetTranspose()">Orig</button>
+                <button class="modal-btn" style="background: var(--accent); color:black; width: 50px;" onclick="resetTranspose()">Orig</button>
                 <button class="modal-btn" onclick="applyTranspose(1)">+½</button>
                 <button class="modal-btn" onclick="applyTranspose(2)">+1</button>
             </div>
@@ -86,15 +79,6 @@
             <div id="songContent" class="song-content"></div>
         </div>
 
-    </div>
-
-    <div id="keyModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeKeyModal()">&times;</span>
-            <h2 style="color: var(--text-primary);">Selecciona una Nota</h2>
-            <div class="key-grid" id="keyGrid">
-                </div>
-        </div>
     </div>
 
     <footer class="custom-footer">

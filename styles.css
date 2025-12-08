@@ -435,6 +435,66 @@ tr:hover { background-color: #252525; }
     font-weight: bold;          /* Negrita para que resalte más */
 }
 
+/* --- BOTONES DE LISTA (ACCIÓN) --- */
+.action-col {
+    text-align: center;
+    width: 50px;
+}
+
+.btn-add, .btn-remove {
+    background: none;
+    border: 2px solid;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+/* Botón + (Agregar) */
+.btn-add {
+    border-color: #4cd137;
+    color: #4cd137;
+}
+.btn-add:hover {
+    background: #4cd137;
+    color: white;
+}
+.btn-add.added { /* Estado cuando ya fue agregada */
+    border-color: #7f8c8d;
+    color: #7f8c8d;
+    cursor: default;
+    background: transparent;
+}
+
+/* Botón x (Quitar) */
+.btn-remove {
+    border-color: #e55039;
+    color: #e55039;
+}
+.btn-remove:hover {
+    background: #e55039;
+    color: white;
+}
+
+/* Botón especial para compartir lista */
+.btn-share-list {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block; /* Centrado */
+}
+
 /* =========================================
    RESPONSIVIDAD MÓVIL (Celulares y Tablets)
    ========================================= */
