@@ -446,42 +446,67 @@ function showNotification(message) {
     }, 3000);
 }
 
-/* --- PWA: LÓGICA DE INSTALACIÓN Y OFFLINE --- */
+/* --- PWA: LÓGICA DE INSTALACIÓN AGRESIVA --- */
 
-// 1. Registrar el Service Worker
+// 1. Registro del Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('SW listo'))
-            .catch(err => console.log('SW falló', err));
+            .then(reg => console.log('SW registrado'))
+            .catch(err => console.log('SW error', err));
     });
 }
 
 // 2. Variables
 let deferredPrompt;
+const installBtnLink = document.getElementById('installBtnLink'); 
 const installModal = document.getElementById('installAppModal');
-const btnInstall = document.getElementById('btnInstall');
-const btnCloseInstall = document.getElementById('btnCloseInstall');
 
-// 3. Detectar si se puede instalar
+// 3. EVENTO PRINCIPAL: El navegador dice "Se puede instalar"
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevenir que Chrome muestre su barra automática
+    // a) Evitar que Chrome maneje esto (lo haremos nosotros)
     e.preventDefault();
+    // b) Guardar el evento para usarlo cuando el usuario haga clic
     deferredPrompt = e;
-    
-    // Mostrar NUESTRO modal
-    if(installModal) {
-        // Usamos la nueva clase que definimos en CSS
-        installModal.classList.add('show-install');
-        console.log("Modal de instalación activado");
+    console.log("Evento de instalación capturado.");
+
+    // c) MOSTRAR TU MODAL AUTOMÁTICAMENTE (Aquí está el cambio)
+    // Verificamos si ya está instalada para no molestar
+    if (!window.matchMedia('(display-mode: standalone)').matches) {
+        setTimeout(() => {
+            showInstallModal(); // ¡Aparece solo!
+        }, 1000); // Esperamos 1 segundito para que cargue la página primero
     }
+
+    // d) También mostramos el botón del menú por si cierra el modal
+    if (installBtnLink) installBtnLink.style.display = 'inline-block';
 });
 
-// 4. Click en Instalar
-if(btnInstall) {
-    btnInstall.addEventListener('click', async () => {
+// 4. Función para mostrar el modal (Visual)
+function showInstallModal() {
+    if(installModal) {
+        installModal.classList.add('show-install');
+        installModal.style.display = 'flex'; // Forzamos que se vea
+        installModal.style.opacity = '1';
+    }
+}
+
+function closeInstallModal() {
+    if(installModal) {
+        installModal.classList.remove('show-install');
+        setTimeout(() => { installModal.style.display = 'none'; }, 300);
+    }
+}
+
+// 5. Conectar los botones del Modal
+const btnInstallModal = document.getElementById('btnInstall');
+const btnCloseModal = document.getElementById('btnCloseInstall');
+
+// BOTÓN "INSTALAR" (El usuario hace clic aquí -> Lanzamos el prompt real)
+if (btnInstallModal) {
+    btnInstallModal.addEventListener('click', async () => {
         if (deferredPrompt) {
-            deferredPrompt.prompt();
+            deferredPrompt.prompt(); // <-- AQUÍ SALE EL MENÚ NATIVO DEL CELULAR
             const { outcome } = await deferredPrompt.userChoice;
             console.log(`Usuario decidió: ${outcome}`);
             deferredPrompt = null;
@@ -490,16 +515,23 @@ if(btnInstall) {
     });
 }
 
-// 5. Click en Cerrar
-if(btnCloseInstall) {
-    btnCloseInstall.addEventListener('click', () => {
+// BOTÓN "AHORA NO"
+if (btnCloseModal) {
+    btnCloseModal.addEventListener('click', () => {
         closeInstallModal();
     });
 }
 
-// Función para cerrar
-function closeInstallModal() {
-    if(installModal) {
-        installModal.classList.remove('show-install');
-    }
+// BOTÓN DEL MENÚ (Header)
+if (installBtnLink) {
+    installBtnLink.addEventListener('click', () => {
+        showInstallModal(); // Vuelve a abrir el modal
+    });
 }
+
+// 6. Si ya se instaló, ocultamos todo
+window.addEventListener('appinstalled', () => {
+    console.log('App instalada');
+    if(installBtnLink) installBtnLink.style.display = 'none';
+    closeInstallModal();
+});
