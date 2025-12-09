@@ -237,5 +237,202 @@ Porque el Señor es mi gran a<span class="g"><span class="chord">C</span>mor,</s
 
 [Instrumental]
 <span class="chord">G</span>   <span class="chord">D</span>   <span class="chord">Em</span>   <span class="chord">C</span>`
-    }
+    },
+
+    {
+        title: "10000 Razones",
+        artist: "Su Presencia",
+        key: "C",
+        type: "Adoración",
+        content: `
+[Coro]
+<span class="g"><span class="chord">F</span>Que</span> todo lo que <span class="g"><span class="chord">C</span>soy,</span> ben<span class="g"><span class="chord">G</span>diga</span> al Se<span class="g"><span class="chord">Am</span>ñor.</span>
+<span class="g"><span class="chord">F</span>Su</span> nombre <span class="g"><span class="chord">C</span>Santo</span> <span class="g"><span class="chord">G</span>es,</span>
+Con <span class="g"><span class="chord">F</span>todo</span> mi <span class="g"><span class="chord">C</span>ser,</span> <span class="g"><span class="chord">F</span>can</span><span class="g"><span class="chord">G</span>ta</span><span class="g"><span class="chord">Am</span>ré,</span>
+<span class="g"><span class="chord">F</span>Su</span> nombre <span class="g"><span class="chord">G</span>alaba</span><span class="g"><span class="chord">C</span>ré.</span>
+
+[Verso 1]
+<span class="g"><span class="chord">F</span>Sale</span> el <span class="g"><span class="chord">C</span>sol,</span> es un <span class="g"><span class="chord">G</span>nuevo</span>amane<span class="g"><span class="chord">Am</span>cer,</span>
+<span class="g"><span class="chord">F</span>Es</span> tiempo <span class="g"><span class="chord">C</span>de</span> ado<span class="g"><span class="chord">G</span>rar</span> otra <span class="g"><span class="chord">Am</span>vez,</span>
+No <span class="g"><span class="chord">F</span>importa</span>lo que <span class="g"><span class="chord">C</span>venga,</span> mi an<span class="g"><span class="chord">G</span>helo</span> es que me <span class="g"><span class="chord">Am</span>encuentres,</span>
+<span class="g"><span class="chord">F</span>Cantando</span><span class="g"><span class="chord">C</span>hasta</span>que se <span class="g"><span class="chord">G</span>ponga</span> el <span class="g"><span class="chord">C</span>sol.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F</span>Tu</span> amor es <span class="g"><span class="chord">C</span>grande,</span><span class="g"><span class="chord">G</span>eres</span> pa<span class="g"><span class="chord">C</span>ciente,</span>
+<span class="g"><span class="chord">F</span>y</span> bonda<span class="g"><span class="chord">C</span>doso</span> es tu <span class="g"><span class="chord">G</span>cora</span><span class="g"><span class="chord">Am</span>zón,</span>
+por <span class="g"><span class="chord">F</span>todo</span> lo que has <span class="g"><span class="chord">C</span>hecho</span> yo <span class="g"><span class="chord">G</span>seguiré</span> can<span class="g"><span class="chord">Am</span>tando,</span>
+<span class="g"><span class="chord">F</span>diez</span> mil razo<span class="g"><span class="chord">C</span>nes</span> para <span class="g"><span class="chord">G</span>ala</span><span class="g"><span class="chord">Am</span>bar.</span>
+
+[Verso 3]
+Y <span class="g"><span class="chord">F</span>en</span> ese <span class="g"><span class="chord">C</span>día,</span> cuando <span class="g"><span class="chord">G</span>ya</span>no tenga <span class="g"><span class="chord">Am</span>fuerzas</span>
+<span class="g"><span class="chord">F</span>y</span>se acer<span class="g"><span class="chord">C</span>que</span> ya <span class="g"><span class="chord">G</span>el</span>fi<span class="g"><span class="chord">Am</span>nal,</span>
+<span class="g"><span class="chord">F</span>Aun</span><span class="g"><span class="chord">C</span>así</span> te segui<span class="g"><span class="chord">G</span>ré</span> can<span class="g"><span class="chord">Am</span>tando,</span>
+<span class="g"><span class="chord">F</span>Por</span> diez mil a<span class="g"><span class="chord">C</span>ños</span> y la <span class="g"><span class="chord">G</span>eter</span>ni<span class="g"><span class="chord">C</span>dad.</span>`
+    },
+
+    {
+        title: "A Ti atribuimos la Gloria",
+        artist: "Miel San Marcos",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Coro]
+<span class="g"><span class="chord">G</span>A</span>Ti atribuimos la <span class="g"><span class="chord">C</span>gloria,</span>
+A <span class="g"><span class="chord">Am</span>ti</span>atribuimos la <span class="g"><span class="chord">D</span>honra,</span>
+A <span class="g"><span class="chord">G</span>ti</span>atribuimos <span class="g"><span class="chord">C</span>poder</span> y <span class="g"><span class="chord">Cm</span>majestad,</span>
+<span class="g"><span class="chord">G</span>Santo</span> es <span class="g"><span class="chord">D</span>el</span> Se<span class="g"><span class="chord">G</span>ñor.</span>`
+    },
+
+    {
+        title: "Abre mis Ojos",
+        artist: "Danilo Montero",
+        key: "D",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">D</span>Abre</span> mis ojos oh Cristo,
+<span class="g"><span class="chord">Bm</span>Abre</span> mis ojos te pido,
+Yo quiero <span class="g"><span class="chord">G</span>verte,</span>
+Yo quiero <span class="g"><span class="chord">D</span>verte.</span>
+
+[Coro]
+Y contem<span class="g"><span class="chord">A</span>plar</span> tu Majes<span class="g"><span class="chord">Bm</span>tad,</span>
+<span class="g"><span class="chord">G</span>Y</span>el resplandor de tu <span class="g"><span class="chord">A</span>Gloria,</span>
+De<span class="g"><span class="chord">A</span>rrama</span> tu amor y po<span class="g"><span class="chord">Bm</span>der,</span>
+Cuando can<span class="g"><span class="chord">G</span>tamos,</span>
+Santo, <span class="g"><span class="chord">A</span>Santo.</span>
+
+Y contem<span class="g"><span class="chord">A</span>plar</span> tu Majes<span class="g"><span class="chord">Bm</span>tad,</span>
+<span class="g"><span class="chord">G</span>Y</span>el resplandor de tu <span class="g"><span class="chord">A</span>Gloria,</span>
+De<span class="g"><span class="chord">A</span>rrama</span> tu amor y po<span class="g"><span class="chord">Bm</span>der,</span>
+Cuando can<span class="g"><span class="chord">Em</span>tamos,</span>
+Santo, <span class="g"><span class="chord">A</span>Santo.</span>
+<span class="g"><span class="chord">G</span>Santo,</span>Santo, <span class="g"><span class="chord">A</span>Santo,</span>
+Yo quiero <span class="g"><span class="chord">D</span>verte.</span>
+
+[Puente]
+<span class="g"><span class="chord">D</span>Santo,</span> Santo, Santo,
+<span class="g"><span class="chord">A</span>Santo,</span> Santo, Santo,
+<span class="g"><span class="chord">G</span>Santo,</span> Santo, <span class="g"><span class="chord">A</span>Santo,</span>
+Yo quiero <span class="g"><span class="chord">D</span>verte.</span>`
+    },
+
+    {
+        title: "A donde iré",
+        artist: "Neway Music",
+        key: "F",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">F</span>Siento</span> que sin ti,
+Mi vida <span class="g"><span class="chord">Bb</span>es nada,</span>
+<span class="g"><span class="chord">C</span>Y</span> que sin tu amor no vivi<span class="g"><span class="chord">Am</span>ré,</span>
+<span class="g"><span class="chord">Dm</span>Estoy</span> confundida a tal ma<span class="g"><span class="chord">Gm</span>nera,</span>
+Qui<span class="g"><span class="chord">Bb</span>siera</span> ahora <span class="g"><span class="chord">Gm</span>mismo te</span> pudiera <span class="g"><span class="chord">C</span>ver.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F</span>Pienso</span> que sin ti la vida <span class="g"><span class="chord">Bb</span>es vana,</span>
+<span class="g"><span class="chord">C</span>Y</span> que sin tu amor no vivi<span class="g"><span class="chord">Am</span>ré,</span>
+<span class="g"><span class="chord">Dm</span>Estoy</span> confundida a tal ma<span class="g"><span class="chord">Gm</span>nera,</span>
+<span class="g"><span class="chord">Bb</span>Por</span> favor se<span class="g"><span class="chord">Gm</span>ñor</span> ayú<span class="g"><span class="chord">C</span>dame.</span>
+
+[Coro]
+<span class="g"><span class="chord">F</span>A</span>donde iré Jehová sin <span class="g"><span class="chord">C</span>ti,</span>
+A donde iré Jehová sin <span class="g"><span class="chord">Dm</span>ti,</span>
+A donde i<span class="g"><span class="chord">Bb</span>ré,</span>
+A donde i<span class="g"><span class="chord">C</span>ré</span> Jehová sin <span class="g"><span class="chord">F</span>ti.</span>
+
+[Coro 2]
+<span class="g"><span class="chord">F</span>Si</span>tu eres el fuego que me <span class="g"><span class="chord">C</span>quema,</span>
+Quiero sentirte de mil ma<span class="g"><span class="chord">Dm</span>neras,</span>
+A donde i<span class="g"><span class="chord">Bb</span>ré,</span>
+A donde i<span class="g"><span class="chord">C</span>ré</span> Jehová sin <span class="g"><span class="chord">F</span>ti.</span>`
+    },
+
+    {
+        title: "Al estar ante Ti",
+        artist: "Jesús Adrián Romero",
+        key: "D",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">D</span>Al</span> estar ante <span class="g"><span class="chord">A</span>ti,</span>
+Ado<span class="g"><span class="chord">Em</span>rando</span> frente al mar de cris<span class="g"><span class="chord">Bm</span>tal,</span>
+Entre <span class="g"><span class="chord">D</span>la</span>multi<span class="g"><span class="chord">A</span>tud,</span>
+En a<span class="g"><span class="chord">Em</span>sombro</span> allí me habré de pos<span class="g"><span class="chord">Bm</span>trar.</span>
+
+[Verso 2]
+Y mi <span class="g"><span class="chord">D</span>canto</span> uni<span class="g"><span class="chord">A</span>ré,</span>
+A mi<span class="g"><span class="chord">Em</span>llones</span> proclamándote <span class="g"><span class="chord">Bm</span>Rey,</span>
+Y mi <span class="g"><span class="chord">D</span>voz</span> oi<span class="g"><span class="chord">A</span>rás,</span>
+Entre <span class="g"><span class="chord">Em</span>las multitudes</span> can<span class="g"><span class="chord">Bm</span>tar,</span>oooh <span class="g"><span class="chord">A</span>ohh.</span>
+
+[Coro]
+Digno es el cor<span class="g"><span class="chord">G</span>dero</span> de <span class="g"><span class="chord">D</span>Dios,</span>
+El que fue inmo<span class="g"><span class="chord">G</span>lado</span> en <span class="g"><span class="chord">F#m</span>la</span><span class="g"><span class="chord">Bm</span>cruz,</span>
+Digno <span class="g"><span class="chord">A</span>de</span>la <span class="g"><span class="chord">G</span>honra</span>y el po<span class="g"><span class="chord">D</span>der,</span>
+La sabidu<span class="g"><span class="chord">Em</span>ría</span>suya <span class="g"><span class="chord">A</span>es.</span>
+
+[Coro 2]
+Y al que esta en el <span class="g"><span class="chord">G</span>trono</span> sea el ho<span class="g"><span class="chord">D</span>nor,</span>
+Santo, Santo, <span class="g"><span class="chord">G</span>Santo</span> es <span class="g"><span class="chord">F#m</span>el</span>se<span class="g"><span class="chord">Bm</span>ñor,</span>
+Reina <span class="g"><span class="chord">A</span>por</span> los <span class="g"><span class="chord">G</span>siglos</span> con po<span class="g"><span class="chord">D</span>der,</span>
+Todo lo que e<span class="g"><span class="chord">Em</span>xiste</span> es por <span class="g"><span class="chord">A</span>él.</span>`
+    },
+
+    {
+        title: "Agnus Dei",
+        artist: "Marco Barrientos",
+        key: "A",
+        type: "Adoración",
+        content: `
+[Verso]
+<span class="g"><span class="chord">A</span>Aleluya,</span> Alelu<span class="g"><span class="chord">D</span>ya,</span>
+Reinas tu poderoso <span class="g"><span class="chord">A</span>Dios.</span>
+Aleluya, Alelu<span class="g"><span class="chord">D</span>ya,</span>
+<span class="g"><span class="chord">E</span>San</span><span class="g"><span class="chord">A</span>to.</span>
+
+[Coro]
+<span class="g"><span class="chord">E</span>San</span><span class="g"><span class="chord">A</span>to,</span>
+El Señor Dios po<span class="g"><span class="chord">D</span>dero</span><span class="g"><span class="chord">E</span>so,</span>
+Digno eres <span class="g"><span class="chord">D</span>Tú,</span> Digno eres Tú...
+Tú eres <span class="g"><span class="chord">E</span>San</span><span class="g"><span class="chord">A</span>to,</span> <span class="g"><span class="chord">E</span>San</span><span class="g"><span class="chord">A</span>to,</span>
+El Señor Dios po<span class="g"><span class="chord">D</span>dero</span><span class="g"><span class="chord">E</span>so,</span>
+Digno eres <span class="g"><span class="chord">D</span>Tú,</span> Digno eres Tú,
+<span class="g"><span class="chord">E</span>A</span><span class="g"><span class="chord">A</span>mén.</span>`
+    },
+
+    {
+        title: "Al que esta sentado en el Trono",
+        artist: "Marcos Brunet",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Quiero</span> conocerte <span class="g"><span class="chord">Em7</span>cada día más a ti,</span>
+en<span class="g"><span class="chord">C</span>trar</span> en tu pre<span class="g"><span class="chord">Am</span>sencia</span> y ado<span class="g"><span class="chord">D</span>rar.</span>
+
+[Pre-Coro]
+Re<span class="g"><span class="chord">Em7</span>vélanos</span>tu gloria, de<span class="g"><span class="chord">D</span>seamos</span> ir mucho más a ti,
+que<span class="g"><span class="chord">C</span>remos</span> Tu pre<span class="g"><span class="chord">Am</span>sencia,</span> Je<span class="g"><span class="chord">D</span>sús.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Al</span> que esta sentado en el trono,
+<span class="g"><span class="chord">Em7</span>al</span>que vive para siempre y siempre,
+sea la <span class="g"><span class="chord">Am</span>gloria,</span> sea la <span class="g"><span class="chord">Bm</span>honra</span> y el poder
+sea la <span class="g"><span class="chord">C</span>gloria,</span> sea la <span class="g"><span class="chord">D</span>honra</span> y el poder...`
+    },
+
+    {
+        title: "Al que me ciñe de poder",
+        artist: "Marcos Witt",
+        key: "E",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">E</span>Al</span> que me ciñe de poder,
+Aquél que mi victoria <span class="g"><span class="chord">C#m</span>es,</span>
+sólo a él alaba<span class="g"><span class="chord">A</span>ré</span>solo a <span class="g"><span class="chord">B7</span>él,</span>exalta<span class="g"><span class="chord">E</span>ré.</span>
+
+[Coro]
+<span class="g"><span class="chord">A</span>De</span> ti se<span class="g"><span class="chord">B7</span>rá</span> mi ala<span class="g"><span class="chord">E</span>banza,</span>
+en <span class="g"><span class="chord">A</span>la</span> con<span class="g"><span class="chord">B7</span>grega</span><span class="g"><span class="chord">E</span>ción.</span>
+<span class="g"><span class="chord">A</span>Canta</span><span class="g"><span class="chord">B7</span>ré</span> y a<span class="g"><span class="chord">G#m</span>laba</span><span class="g"><span class="chord">C#m</span>ré,</span>
+Tu <span class="g"><span class="chord">A</span>nom</span><span class="g"><span class="chord">B</span>bre</span> Se<span class="g"><span class="chord">E</span>ñor.</span>`
+    },
 ];

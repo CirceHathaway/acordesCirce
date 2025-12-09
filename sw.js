@@ -1,5 +1,4 @@
-// IMPORTANTE: Cambia este número (v5 -> v6, v7...) cada vez que hagas cambios en el código.
-const CACHE_NAME = 'hathaway-cache-v6'; 
+const CACHE_NAME = 'hathaway-cache-v7'; 
 
 const ASSETS_TO_CACHE = [
   './',
