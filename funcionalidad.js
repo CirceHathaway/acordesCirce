@@ -372,119 +372,86 @@ function showNotification(message) {
 }
 
 /* =========================================================
-   PWA: LÓGICA DE BOTÓN INTELIGENTE (UNIFICADO)
+   PWA: LÓGICA INVERTIDA (Default: Compartir -> Detectar: Instalar)
    ========================================================= */
 
 // 1. Registrar Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('SW registrado'))
-            .catch(err => console.log('SW error', err));
+            .catch(err => console.log('SW fallo', err));
     });
 }
 
-// 2. Variables y Referencias
+// 2. Referencias
 let deferredPrompt; 
 const actionBtn = document.getElementById('actionBtn'); 
 
-// 3. VERIFICACIONES DE ESTADO
-// A. ¿Ya está instalada?
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-// B. ¿Es escritorio/PC? (Pantalla mayor a 1024px)
-const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-
-// LÓGICA INICIAL:
-// Si ya está instalada O si es una PC de escritorio -> Muestra "Compartir"
-if (isStandalone || isDesktop) {
-    setShareMode();
-}
-
-// 4. Escuchar evento de instalación (Chrome/Android)
+// 3. EVENTO CLAVE: El navegador nos avisa que se puede instalar
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); 
-    deferredPrompt = e; 
-    console.log("Evento de instalación capturado.");
-    // NOTA: Si es Desktop, aunque capturemos el evento, el botón seguirá diciendo "Compartir"
-    // gracias al chequeo "if (isDesktop) setShareMode()" de arriba.
+    // a) Prevenir comportamiento nativo
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // b) DETECTAMOS QUE NO ESTÁ INSTALADA
+    // Como el evento se disparó, sabemos que el usuario NO tiene la app.
+    // CAMBIAMOS EL BOTÓN A MODO "INSTALAR"
+    if (actionBtn) {
+        actionBtn.innerHTML = "📲 Instalar";
+        actionBtn.style.color = "#4cd137"; // Ponerlo verde llamativo
+        actionBtn.classList.remove('mode-share');
+    }
+    console.log("App no instalada: Botón cambiado a Instalar.");
 });
 
-// 5. Manejar el clic del botón único
+// 4. Manejar el clic (Lógica Unificada)
 if (actionBtn) {
     actionBtn.addEventListener('click', async (e) => {
         e.preventDefault();
 
-        // CASO A: Modo Compartir
-        // Entra aquí si: Ya está instalada, O es Desktop, O el usuario aceptó instalar antes
-        if (actionBtn.classList.contains('mode-share')) {
-            shareApp(); 
-            return;
-        }
-
-        // CASO B: Modo Instalar (Móvil Android)
+        // Si el botón está en modo INSTALAR (porque recibimos el evento)
         if (deferredPrompt) {
-            deferredPrompt.prompt(); 
+            deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
-            console.log(`Usuario eligió: ${outcome}`);
-            deferredPrompt = null; 
+            deferredPrompt = null; // Usado, lo limpiamos
             
+            // Si el usuario aceptó instalar, volvemos a poner "Compartir"
             if (outcome === 'accepted') {
-                setShareMode();
+                resetToShare();
             }
-        } else {
-            // CASO C: Modo Instalar (iPhone / Manual)
-            showManualInstallInstructions();
+        } 
+        // Si no hay evento pendiente, actuamos como COMPARTIR
+        // (Esto cubre: App ya instalada, iPhone, Desktop)
+        else {
+            shareApp();
         }
     });
 }
 
-// 6. Detectar instalación exitosa
+// 5. Detectar instalación exitosa
 window.addEventListener('appinstalled', () => {
-    setShareMode();
+    resetToShare();
 });
 
 // --- Funciones Auxiliares ---
 
-function setShareMode() {
+function resetToShare() {
     if (!actionBtn) return;
-    actionBtn.innerHTML = "Compartir"; 
-    actionBtn.style.color = "#ffffff"; 
-    actionBtn.classList.add('mode-share'); 
+    actionBtn.innerHTML = "Compartir";
+    actionBtn.style.color = "#ffffff"; // Volver a blanco
+    actionBtn.classList.add('mode-share');
 }
 
 function shareApp() {
+    // Si estamos en iPhone, mostramos una ayudita extra porque "Compartir" es confuso
+    // para instalar, pero útil para viralizar.
     if (navigator.share) {
         navigator.share({
-            title: 'Acordes Hathaway',
-            text: '¡Mira este cancionero digital!',
+            title: 'Acordify',
             url: window.location.href
         }).catch(console.error);
     } else {
         navigator.clipboard.writeText(window.location.href);
-        showNotification("¡Enlace copiado al portapapeles!");
-    }
-}
-
-function showManualInstallInstructions() {
-    const modal = document.getElementById('installAppModal');
-    if(modal) {
-        modal.style.display = 'flex';
-        const btnClose = document.getElementById('btnCloseInstall');
-        if(btnClose) btnClose.onclick = () => { modal.style.display = 'none'; };
-        
-        const btnInside = document.getElementById('btnInstall');
-        if(btnInside) {
-            btnInside.onclick = async () => {
-                if(deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt = null;
-                    modal.style.display = 'none';
-                } else {
-                    alert("En iPhone/iPad: \n1. Toca Compartir ⬆️ \n2. Busca 'Agregar a Inicio' ➕");
-                }
-            };
-        }
-    } else {
-        alert("Para instalar: Busca la opción 'Agregar a pantalla de inicio' en el menú.");
+        showNotification("Enlace copiado. ¡Pégalo para compartir!");
     }
 }

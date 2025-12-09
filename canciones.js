@@ -192,5 +192,21 @@ Y yo soy <span class="g"><span class="chord">Am</span>tuyo.</span> <span class="
 este es el <span class="g"><span class="chord">G</span>pacto.</span>`
     },
 
-    
+    {
+        title: "Anhelo conocerte Espíritu Santo",
+        artist: "Rey de Reyes",
+        key: "A",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">A</span>Anhelo</span> Conocerte Espíritu <span class="g"><span class="chord">D</span>Santo</span>
+<span class="g"><span class="chord">E</span>Anhelo</span> siempre estar cerca de <span class="g"><span class="chord">A</span>Ti</span>
+<span class="g"><span class="chord">F#m</span>Mas</span>yo sé que he fallado tu <span class="g"><span class="chord">Bm</span>presencia</span>
+He descuidado ven y <span class="g"><span class="chord">D</span>limpia todo </span><span class="g"><span class="chord">Bm</span>lo que hay en</span> <span class="g"><span class="chord">E</span>mí.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">A</span>Como</span> Paloma con tu gracia hoy des<span class="g"><span class="chord">D</span>ciende</span>
+<span class="g"><span class="chord">E</span>Como</span> aceite derramado ún<span class="g"><span class="chord">A</span>geme</span>
+Como <span class="g"><span class="chord">F#m</span>fuente</span>de agua de viva
+<span class="g"><span class="chord">Bm</span>Sacia</span> mi ser, llama de <span class="g"><span class="chord">D</span>fuego</span> ven y <span class="g"><span class="chord">E</span>purifíca</span><span class="g"><span class="chord">A</span>me.</span>`
+    },
 ];

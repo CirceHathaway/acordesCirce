@@ -131,6 +131,7 @@ header {
 table {
     width: 100%;
     border-collapse: collapse;
+    border-spacing: 0;
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
@@ -589,7 +590,6 @@ tr:hover { background-color: #252525; }
     /* Título más grande para facilitar el toque */
     .song-title {
         font-size: 1rem; 
-        display: block; /* Asegura que ocupe espacio */
     }
 
     /* --- 4. VISTA DE CANCIÓN --- */
@@ -639,31 +639,30 @@ tr:hover { background-color: #252525; }
     }
 }
 
-/* --- ESTILO ESPECÍFICO PARA MODAL DE INSTALACIÓN --- */
-#installAppModal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrado perfecto */
-    z-index: 4000; /* Encima de todo */
-    background-color: #1e1e1e;
-    border: 2px solid #4cd137; /* Borde verde */
+/* ESTILOS PARA EL BOTÓN DE ACCIÓN (INSTALAR/COMPARTIR) */
+#actionBtn {
+    padding: 8px 15px;
     border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 0 50px rgba(0,0,0,0.9); /* Sombra fuerte para destacar */
-    color: white;
-    flex-direction: column;
-    gap: 15px;
-    width: 85%;
-    max-width: 350px;
-    opacity: 0; /* Para animación de entrada */
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* Para que no salte al agregar borde */
 }
 
-/* Clase para mostrarlo */
-#installAppModal.show-install {
-    display: flex;
-    opacity: 1;
+/* Estado Compartir (Por defecto) */
+#actionBtn.mode-share {
+    color: var(--text-white) !important;
+    background-color: rgba(255,255,255,0.1); /* Un fondo sutil queda elegante */
+}
+
+/* Estado Instalar (Cuando detecta que se puede instalar) */
+#actionBtn.mode-install {
+    color: #4cd137 !important;
+    background-color: rgba(76, 209, 55, 0.1); /* Verde muy suave de fondo */
+    border: 1px solid #4cd137;
+    animation: pulse 2s infinite; /* Un latido para llamar la atención */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }

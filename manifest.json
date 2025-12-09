@@ -1,6 +1,6 @@
 {
-  "name": "Acordes Hathaway",
-  "short_name": "Hathaway",
+  "name": "Acordify",
+  "short_name": "Acordify",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#121212",
