@@ -77,16 +77,43 @@ header {
     color: var(--text-primary);
 }
 
+/* --- ENLACES DE NAVEGACIÓN --- */
 .nav-links {
     justify-self: end;
+    display: flex;
+    gap: 10px; /* Espacio uniforme entre botones */
+    align-items: center;
 }
 
+/* Estilo común para: Inicio, Lista y Compartir */
 .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 600;
-    margin-left: 20px;
-    cursor: pointer;
+    color: #ffffff;      /* Texto blanco */
+    font-weight: bold;
+    font-size: 14px;
+    
+    /* Forma de botón "Pastilla" */
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo vidrio sutil */
+    border: 1px solid transparent;
+    
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Efecto Hover para todos */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Más brillo al pasar el mouse */
+    transform: translateY(-2px); /* Pequeña elevación */
+}
+
+/* Estado activo (Opcional) */
+.nav-links a:active {
+    transform: scale(0.95);
 }
 
 /* --- FILTROS --- */
