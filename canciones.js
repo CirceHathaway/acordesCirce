@@ -217,17 +217,17 @@ Como <span class="g"><span class="chord">F#m</span>fuente</span>de agua de viva
         type: "Adoración",
         content: `
 <span class="g"><span class="chord">G</span>Como</span> Zaque<span class="g"><span class="chord">D</span>o, yo quiero</span> su<span class="g"><span class="chord">Em7</span>bir</span>
-<span class="g"><span class="chord">C</span>A</span> lo más alto, que yo <span class="g"><span class="chord">G</span>pueda</span>
+A lo <span class="g"><span class="chord">C</span>más</span>alto, que yo <span class="g"><span class="chord">G</span>pueda</span>
 Solo para <span class="g"><span class="chord">D</span>verte,</span> mirar hacia <span class="g"><span class="chord">Em7</span>mí,</span>
 Y lla<span class="g"><span class="chord">C</span>mar</span> tu atención hacia <span class="g"><span class="chord">G</span>mí.</span>
 
 [Pre-Coro]
-<span class="g"><span class="chord">C</span>Necesito</span> de ti, <span class="g"><span class="chord">G</span>Señor,</span> Necesito de <span class="g"><span class="chord">C</span>ti,</span> oh Padre
+Necesito de ti, <span class="g"><span class="chord">C</span>Señor,</span><span class="g"><span class="chord">G</span>necesito</span>de <span class="g"><span class="chord">C</span>ti,</span> oh Padre
 <span class="g"><span class="chord">G</span>Soy</span> pequeño y nada <span class="g"><span class="chord">Am</span>más,</span> dame de tu <span class="g"><span class="chord">F</span>paz</span>
 Lo dejo todo para se<span class="g"><span class="chord">D</span>guirte.</span>
 
 [Coro]
-<span class="g"><span class="chord">G</span>Entra</span> en mi casa, <span class="g"><span class="chord">D</span>entra</span> en mi <span class="g"><span class="chord">Em7</span>vida,</span>
+<span class="g"><span class="chord">G</span>Entra</span> en mi <span class="g"><span class="chord">D</span>casa,</span>entra en mi <span class="g"><span class="chord">Em7</span>vida,</span>
 Estremece mi estruc<span class="g"><span class="chord">C</span>tura,</span>
 Sana todas las he<span class="g"><span class="chord">G</span>ridas.</span>
 Dame de tu santi<span class="g"><span class="chord">D</span>dad,</span>
@@ -236,6 +236,6 @@ Porque el Señor es mi gran a<span class="g"><span class="chord">C</span>mor,</s
 <span class="g"><span class="chord">D</span>Haz</span> un milagro en <span class="g"><span class="chord">G</span>mí.</span>
 
 [Instrumental]
-<span class="chord">G</span>   <span class="chord">D/F#</span>   <span class="chord">Em</span>   <span class="chord">C</span>`
+<span class="chord">G</span>   <span class="chord">D</span>   <span class="chord">Em</span>   <span class="chord">C</span>`
     }
 ];
