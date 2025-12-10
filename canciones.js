@@ -245,7 +245,6 @@ Porque el Señor es mi gran a<span class="g"><span class="chord">C</span>mor,</s
         key: "C",
         type: "Adoración",
         content: `
-[Coro]
 <span class="g"><span class="chord">F</span>Que</span> todo lo que <span class="g"><span class="chord">C</span>soy,</span> ben<span class="g"><span class="chord">G</span>diga</span> al Se<span class="g"><span class="chord">Am</span>ñor.</span>
 <span class="g"><span class="chord">F</span>Su</span> nombre <span class="g"><span class="chord">C</span>Santo</span> <span class="g"><span class="chord">G</span>es,</span>
 Con <span class="g"><span class="chord">F</span>todo</span> mi <span class="g"><span class="chord">C</span>ser,</span> <span class="g"><span class="chord">F</span>can</span><span class="g"><span class="chord">G</span>ta</span><span class="g"><span class="chord">Am</span>ré,</span>
@@ -276,7 +275,6 @@ Y <span class="g"><span class="chord">F</span>en</span> ese <span class="g"><spa
         key: "G",
         type: "Adoración",
         content: `
-[Coro]
 <span class="g"><span class="chord">G</span>A</span>Ti atribuimos la <span class="g"><span class="chord">C</span>gloria,</span>
 A <span class="g"><span class="chord">Am</span>ti</span>atribuimos la <span class="g"><span class="chord">D</span>honra,</span>
 A <span class="g"><span class="chord">G</span>ti</span>atribuimos <span class="g"><span class="chord">C</span>poder</span> y <span class="g"><span class="chord">Cm</span>majestad,</span>
@@ -383,7 +381,6 @@ Todo lo que e<span class="g"><span class="chord">Em</span>xiste</span> es por <s
         key: "A",
         type: "Alabanza",
         content: `
-[Verso]
 <span class="g"><span class="chord">A</span>Aleluya,</span> Alelu<span class="g"><span class="chord">D</span>ya,</span>
 Reinas tu poderoso <span class="g"><span class="chord">A</span>Dios.</span>
 Aleluya, Alelu<span class="g"><span class="chord">D</span>ya,</span>
@@ -471,5 +468,27 @@ Je<span class="g"><span class="chord">E</span>sús.</span>
 Si yo a ti no te <span class="g"><span class="chord">C#m</span>tuviera,</span>
 Si no hubiera cono<span class="g"><span class="chord">A</span>cido,</span><span class="g"><span class="chord">B</span>..</span>
 Al Dios que me <span class="g"><span class="chord">E</span>ama.</span>`
+    },
+
+    {
+        title: "Cuando Cristo Vino",
+        artist: "Himno",
+        key: "D",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">D</span>Cuan</span>do Cristo <span class="g"><span class="chord">G</span>vino</span>a mi cora<span class="g"><span class="chord">D</span>zón,</span>
+mi vida en<span class="g"><span class="chord">G</span>tera</span> cam<span class="g"><span class="chord">A</span>bió.</span>
+Su <span class="g"><span class="chord">D</span>paz</span> y su a<span class="g"><span class="chord">G</span>mor</span> ale<span class="g"><span class="chord">F#m</span>jaron</span> de <span class="g"><span class="chord">Bm</span>mí,</span>
+las <span class="g"><span class="chord">Em</span>dudas,</span> las <span class="g"><span class="chord">A</span>sombras</span> y el te<span class="g"><span class="chord">D</span>mor.</span><span class="g"><span class="chord">D7</span>..</span>
+
+[Coro]
+Mi <span class="g"><span class="chord">G</span>vida</span> comen<span class="g"><span class="chord">A</span>zó,</span>cuan<span class="g"><span class="chord">F#m</span>do</span>el Señor lle<span class="g"><span class="chord">Bm</span>gó,</span>
+Y <span class="g"><span class="chord">Em</span>hoy</span>puedo can<span class="g"><span class="chord">G</span>tar</span> de su a<span class="g"><span class="chord">A</span>mor.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">D</span>Hoy</span> quiero que <span class="g"><span class="chord">G</span>Cristo</span> te trans<span class="g"><span class="chord">D</span>forme</span> a ti,
+que <span class="g"><span class="chord">D</span>cambie</span> tu <span class="g"><span class="chord">G</span>vida</span> tam<span class="g"><span class="chord">A</span>bién.</span>
+<span class="g"><span class="chord">D</span>Piensa</span> en la <span class="g"><span class="chord">G</span>cruz</span> donde <span class="g"><span class="chord">F#m</span>murió</span> por <span class="g"><span class="chord">Bm</span>ti,</span>
+y <span class="g"><span class="chord">Em</span>ábre</span><span class="g"><span class="chord">A</span>le</span>tu cora<span class="g"><span class="chord">D</span>zón.</span>`
     },
 ];
