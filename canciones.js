@@ -381,7 +381,7 @@ Todo lo que e<span class="g"><span class="chord">Em</span>xiste</span> es por <s
         title: "Agnus Dei",
         artist: "Marco Barrientos",
         key: "A",
-        type: "Adoración",
+        type: "Alabanza",
         content: `
 [Verso]
 <span class="g"><span class="chord">A</span>Aleluya,</span> Alelu<span class="g"><span class="chord">D</span>ya,</span>
@@ -434,5 +434,42 @@ sólo a él alaba<span class="g"><span class="chord">A</span>ré</span>solo a <s
 en <span class="g"><span class="chord">A</span>la</span> con<span class="g"><span class="chord">B7</span>grega</span><span class="g"><span class="chord">E</span>ción.</span>
 <span class="g"><span class="chord">A</span>Canta</span><span class="g"><span class="chord">B7</span>ré</span> y a<span class="g"><span class="chord">G#m</span>laba</span><span class="g"><span class="chord">C#m</span>ré,</span>
 Tu <span class="g"><span class="chord">A</span>nom</span><span class="g"><span class="chord">B</span>bre</span> Se<span class="g"><span class="chord">E</span>ñor.</span>`
+    },
+
+    {
+        title: "Bueno es alabar",
+        artist: "Danilo Montero",
+        key: "G",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">G</span>Bueno</span> es ala<span class="g"><span class="chord">C</span>bar,</span> oh Se<span class="g"><span class="chord">D</span>ñor,</span>tu <span class="g"><span class="chord">C</span>nom</span><span class="g"><span class="chord">D</span>bre,</span>
+<span class="g"><span class="chord">G</span>Darte</span> gloria, <span class="g"><span class="chord">C</span>honra</span> y ho<span class="g"><span class="chord">D</span>nor,</span> por <span class="g"><span class="chord">C</span>siem</span><span class="g"><span class="chord">D</span>pre,</span>
+<span class="g"><span class="chord">G</span>Bueno</span> es ala<span class="g"><span class="chord">C</span>barte</span> Je<span class="g"><span class="chord">D</span>sús,</span>
+Y go<span class="g"><span class="chord">Em</span>zarme</span> en tu po<span class="g"><span class="chord">D</span>der.</span>
+
+[Coro]
+Porque <span class="g"><span class="chord">G</span>grande</span><span class="g"><span class="chord">C</span>eres</span><span class="g"><span class="chord">D</span>tú,</span>
+<span class="g"><span class="chord">G</span>Grandes</span><span class="g"><span class="chord">C</span>son</span>tus <span class="g"><span class="chord">D</span>obras,</span>
+Porque <span class="g"><span class="chord">G</span>grande</span><span class="g"><span class="chord">C</span>eres</span><span class="g"><span class="chord">D</span>tú,</span>
+Grande es tu <span class="g"><span class="chord">Em7</span>amor,</span>
+Grande es tu <span class="g"><span class="chord">D</span>gloria.</span>`
+    },
+
+    {
+        title: "Cristo yo te Amo",
+        artist: "Vino Nuevo",
+        key: "E",
+        type: "Adoración",
+        content: `
+Cristo yo te <span class="g"><span class="chord">E</span>amo,</span>
+Cristo yo te <span class="g"><span class="chord">C#m</span>amo,</span>
+No hay nadie como <span class="g"><span class="chord">A</span>tú,</span><span class="g"><span class="chord">B</span>..</span>
+Je<span class="g"><span class="chord">E</span>sús.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">E</span>Y</span>no<span class="g"><span class="chord">A</span>sé</span>dón<span class="g"><span class="chord">B</span>de</span> estu<span class="g"><span class="chord">E</span>viera,</span>
+Si yo a ti no te <span class="g"><span class="chord">C#m</span>tuviera,</span>
+Si no hubiera cono<span class="g"><span class="chord">A</span>cido,</span><span class="g"><span class="chord">B</span>..</span>
+Al Dios que me <span class="g"><span class="chord">E</span>ama.</span>`
     },
 ];

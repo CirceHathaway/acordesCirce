@@ -212,21 +212,31 @@ function sortSongs(criteria) {
 /* --- VISUALIZACIÓN Y MODALES --- */
 
 function goHome() {
-    document.getElementById('songDetailView').style.display = 'none';
-    const listView = document.getElementById('songListView');
-    if(listView) listView.style.display = 'block';
-    closeAllModals();
-    window.scrollTo(0,0);
+    // Si estamos viendo una canción (hay historial), retrocedemos.
+    // Esto disparará el evento 'popstate' que definimos abajo.
+    if (window.location.hash === '#song') {
+        history.back();
+    } else {
+        // Fallback por seguridad (si no hay hash, forzamos cierre visual)
+        closeSongUI(); 
+    }
 }
 
 function openSong(indexInGlobalArray) {
+    // 1. NUEVO: Agregar estado al historial del navegador
+    // Esto cambia la URL a .../index.html#song y crea un punto de retorno
+    history.pushState({ view: 'song' }, null, '#song');
+
     currentSongIndex = indexInGlobalArray;
     const song = songs[currentSongIndex];
     currentSemitones = 0;
+    
     document.getElementById('songListView').style.display = 'none';
     document.getElementById('songDetailView').style.display = 'block';
+    
     document.getElementById('detailTitle').innerText = song.title;
     document.getElementById('detailArtist').innerText = song.artist;
+    
     updateSongView();
     window.scrollTo(0,0);
 }
@@ -305,6 +315,26 @@ function filterByArtist(artistName) {
     activeFilters.search = artistName;
     applyGlobalFilters();
     event.stopPropagation();
+}
+
+/* --- MANEJO DEL BOTÓN ATRÁS (HISTORIAL) --- */
+window.addEventListener('popstate', (event) => {
+    // Si el usuario da "Atrás" y el hash #song desaparece...
+    if (!window.location.hash) {
+        // ...cerramos la vista de la canción visualmente
+        closeSongUI();
+    }
+});
+
+// Función auxiliar para ocultar la interfaz (sin tocar historial)
+function closeSongUI() {
+    document.getElementById('songDetailView').style.display = 'none';
+    
+    const listView = document.getElementById('songListView');
+    if(listView) listView.style.display = 'block';
+    
+    closeAllModals();
+    window.scrollTo(0,0);
 }
 
 /* --- RENDERIZADO PRINCIPAL (INDEX.HTML) --- */
