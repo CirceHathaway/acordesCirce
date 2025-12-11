@@ -491,4 +491,186 @@ que <span class="g"><span class="chord">D</span>cambie</span> tu <span class="g"
 <span class="g"><span class="chord">D</span>Piensa</span> en la <span class="g"><span class="chord">G</span>cruz</span> donde <span class="g"><span class="chord">F#m</span>murió</span> por <span class="g"><span class="chord">Bm</span>ti,</span>
 y <span class="g"><span class="chord">Em</span>ábre</span><span class="g"><span class="chord">A</span>le</span>tu cora<span class="g"><span class="chord">D</span>zón.</span>`
     },
+
+    {
+        title: "Cuan Grande es Dios",
+        artist: "En Espíritu y en Verdad",
+        key: "A",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">A</span>El</span> esplendor de un Rey,
+Ves<span class="g"><span class="chord">F#m</span>tido</span>en majestad,
+La Tierra alegre <span class="g"><span class="chord">D</span>está,</span>
+La Tierra alegre <span class="g"><span class="chord">E</span>está.</span>
+
+[Verso 2]
+Cubi<span class="g"><span class="chord">A</span>erto</span>está de luz,
+Ven<span class="g"><span class="chord">F#m</span>ció</span>a la oscuridad,
+Y tiembla a su <span class="g"><span class="chord">D</span>voz,</span>
+Y tiembla a su <span class="g"><span class="chord">E</span>voz.</span>
+
+[Coro]
+Cuán <span class="g"><span class="chord">A</span>grande</span>es Dios,
+Cántale, cuán <span class="g"><span class="chord">F#m</span>grande</span>es Dios,
+Y todos lo ve<span class="g"><span class="chord">D</span>rán,</span>
+Cuán <span class="g"><span class="chord">E</span>grande</span>es Di<span class="g"><span class="chord">A</span>os.</span>
+
+[Verso 3]
+<span class="g"><span class="chord">A</span>Día</span> a día Él está,
+Y el <span class="g"><span class="chord">F#m</span>tiempo</span> está en Él,
+Principio y el <span class="g"><span class="chord">D</span>fin,</span>
+Principio y el <span class="g"><span class="chord">E</span>fin.</span>
+
+[Verso 4]
+La <span class="g"><span class="chord">A</span>tri</span>nidad en Dios,
+El <span class="g"><span class="chord">F#m</span>Padre,</span> Hijo, Espíritu,
+Cordero y el le<span class="g"><span class="chord">D</span>ón,</span>
+Cordero y el le<span class="g"><span class="chord">E</span>ón,</span>
+
+[Puente]
+Tu nombre <span class="g"><span class="chord">A</span>sobre</span>todo es,
+Eres <span class="g"><span class="chord">F#m</span>digno</span>de alabar,
+Y mi <span class="g"><span class="chord">D</span>ser</span>dirá,
+Cuán <span class="g"><span class="chord">E</span>grande</span>es <span class="g"><span class="chord">A</span>Dios.</span>
+
+[Final]
+<span class="g"><span class="chord">E</span>Mi</span> <span class="g"><span class="chord">D</span>co</span><span class="g"><span class="chord">E</span>ra</span><span class="g"><span class="chord">A</span>zón,</span> en<span class="g"><span class="chord">D</span>tona</span> la can<span class="g"><span class="chord">A</span>ción,</span> <span class="g"><span class="chord">F#m</span>..</span>
+Cuán grande es <span class="g"><span class="chord">D</span>ÉL,</span><span class="g"><span class="chord">E</span>..</span>
+Cuán grande es <span class="g"><span class="chord">A</span>ÉL.</span>`
+    },
+
+    {
+        title: "Dame de Beber",
+        artist: "Marco Barrientos",
+        key: "D",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">D</span>Quiero</span> estar en tu pre<span class="g"><span class="chord">Em</span>sencia,</span><span class="g"><span class="chord">A</span>..</span>
+Y poderte contem<span class="g"><span class="chord">D</span>plar,</span><span class="g"><span class="chord">Bm</span>..</span>
+Necesito estar con<span class="g"><span class="chord">Em</span>tigo,</span><span class="g"><span class="chord">A</span>..</span>
+Necesito ado<span class="g"><span class="chord">D</span>rar.</span>
+
+[Coro]
+Dame <span class="g"><span class="chord">D7</span>de</span>be<span class="g"><span class="chord">G</span>ber</span><span class="g"><span class="chord">A</span>..</span>
+de tu manan<span class="g"><span class="chord">F#m</span>tial,</span><span class="g"><span class="chord">Bm</span>..</span>
+Dame de be<span class="g"><span class="chord">G</span>ber,</span><span class="g"><span class="chord">A</span>..</span>
+necesito <span class="g"><span class="chord">D</span>más.</span><span class="g"><span class="chord">D7</span>..</span>
+
+Dame de be<span class="g"><span class="chord">G</span>ber,</span><span class="g"><span class="chord">A</span>..</span>
+de tu manan<span class="g"><span class="chord">F#m</span>tial,</span><span class="g"><span class="chord">Bm</span>..</span>
+Dame de be<span class="g"><span class="chord">Em</span>ber,</span><span class="g"><span class="chord">A</span>..</span>
+necesito <span class="g"><span class="chord">D</span>más.</span>
+
+[Puente]
+<span class="g"><span class="chord">G</span>Quie</span>_<span class="g"><span class="chord">A</span>ro</span><span class="g"><span class="chord">D</span>más, </span><span class="g"><span class="chord">Em</span>quie</span><span class="g"><span class="chord">F#m</span>ro</span><span class="g"><span class="chord">Bm</span>más,</span>
+<span class="g"><span class="chord">G</span>Más</span> de tu es<span class="g"><span class="chord">D</span>píritu,</span>
+<span class="g"><span class="chord">G</span>Más</span> de tu pre<span class="g"><span class="chord">D</span>sencia,</span>
+<span class="g"><span class="chord">Em</span>Quie</span>_<span class="g"><span class="chord">F#m</span>ro</span> <span class="g"><span class="chord">Bm</span>más,</span><span class="g"><span class="chord">G</span>..</span>
+<span class="g"><span class="chord">A</span>de</span> <span class="g"><span class="chord">D</span>ti.</span>
+
+[Final]
+Yo quiero <span class="g"><span class="chord">D</span>más,</span>
+Yo quiero <span class="g"><span class="chord">G</span>más,</span>
+Yo quiero <span class="g"><span class="chord">Bm</span>más,</span>y más y <span class="g"><span class="chord">A</span>más</span>de ti Se<span class="g"><span class="chord">G</span>ñor.</span>`
+    },
+
+    {
+        title: "De Gloria en Gloria te veo",
+        artist: "Marcos Witt",
+        key: "D",
+        type: "Adoración",
+        content: `
+De <span class="g"><span class="chord">D</span>gloria</span> en <span class="g"><span class="chord">A</span>gloria</span> te <span class="g"><span class="chord">Bm</span>veo,</span>
+<span class="g"><span class="chord">G</span>Cuanto</span> más te co<span class="g"><span class="chord">D</span>nozco,</span>
+<span class="g"><span class="chord">Em</span>Quiero</span> saber más de <span class="g"><span class="chord">A</span>ti.</span>
+
+[Verso 2]
+Mi <span class="g"><span class="chord">D</span>Dios</span> cuan <span class="g"><span class="chord">A</span>buen</span> alfa<span class="g"><span class="chord">Bm</span>rero,</span>
+<span class="g"><span class="chord">G</span>Que</span>brántame, trans<span class="g"><span class="chord">D</span>fórmame,</span>
+<span class="g"><span class="chord">Em7</span>Moldéame</span> a tu i<span class="g"><span class="chord">A</span>magen</span> Se<span class="g"><span class="chord">D</span>ñor.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Quiero</span><span class="g"><span class="chord">A</span>ser</span>más <span class="g"><span class="chord">F#m</span>como</span><span class="g"><span class="chord">Bm</span>tu,</span>
+<span class="g"><span class="chord">G</span>Ver</span> la <span class="g"><span class="chord">A</span>vida</span><span class="g"><span class="chord">F#m</span>como</span><span class="g"><span class="chord">Bm</span>tu,</span>
+<span class="g"><span class="chord">G</span>Satu</span><span class="g"><span class="chord">A</span>rarme</span>de tu es<span class="g"><span class="chord">F#m</span>píri</span><span class="g"><span class="chord">Bm</span>tu,</span>
+Y <span class="g"><span class="chord">Em7</span>reflejar</span>al <span class="g"><span class="chord">G</span>mundo</span>tu a<span class="g"><span class="chord">A</span>mor.</span>
+
+<span class="g"><span class="chord">G</span>Quiero</span><span class="g"><span class="chord">A</span>ser</span>más <span class="g"><span class="chord">F#m</span>como</span><span class="g"><span class="chord">Bm</span>tu,</span>
+<span class="g"><span class="chord">G</span>Ver</span> la <span class="g"><span class="chord">A</span>vida</span><span class="g"><span class="chord">F#m</span>como</span><span class="g"><span class="chord">Bm</span>tu,</span>
+<span class="g"><span class="chord">G</span>Satu</span><span class="g"><span class="chord">A</span>rarme</span>de tu es<span class="g"><span class="chord">F#m</span>píri</span><span class="g"><span class="chord">Bm</span>tu,</span>
+Y <span class="g"><span class="chord">Em7</span>reflejar</span>al <span class="g"><span class="chord">A</span>mundo</span>tu a<span class="g"><span class="chord">D</span>mor.`
+    },
+
+    {
+        title: "Digno eres de gloria",
+        artist: "Rey de Reyes",
+        key: "C",
+        type: "Adoración",
+        content: `
+Digno eres de <span class="g"><span class="chord">C</span>gloria</span> y ala<span class="g"><span class="chord">Am</span>banza,</span>
+<span class="g"><span class="chord">F</span>Le</span>vantamos nuestras <span class="g"><span class="chord">Dm</span>manos</span> ado<span class="g"><span class="chord">F</span>rándote</span> Se<span class="g"><span class="chord">G</span>ñor.</span>
+
+[Coro]
+Grande eres <span class="g"><span class="chord">C</span>tú,</span>
+Grandes tus milagros <span class="g"><span class="chord">Am</span>son,</span>
+No hay otro como <span class="g"><span class="chord">F</span>tú,</span>
+No hay <span class="g"><span class="chord">F</span>otro</span>como <span class="g"><span class="chord">G</span>tú.`
+    },
+
+    {
+        title: "Digno",
+        artist: "Marcos Brunet",
+        key: "G",
+        type: "Adoración",
+        content: `
+No <span class="g"><span class="chord">G</span>tengo</span>nada para ofrecer,
+<span class="g"><span class="chord">Em</span>Nada</span> que te pueda sorprender,
+Solo el cora<span class="g"><span class="chord">C</span>zón</span> quebran<span class="g"><span class="chord">Em</span>tado,</span>
+Una y otra <span class="g"><span class="chord">D</span>vez.</span>
+
+[Verso 2]
+No hay <span class="g"><span class="chord">G</span>Nada</span>que me enamore más
+<span class="g"><span class="chord">Em</span>Nada</span> que me apasione más
+Solo tu pre<span class="g"><span class="chord">C</span>sencia,</span> solo tu
+Mi<span class="g"><span class="chord">Em</span>rada</span>me hacen suspi<span class="g"><span class="chord">D</span>rar.</span>
+
+[Pre-Coro]
+Me incl<span class="g"><span class="chord">C</span>ino</span>ante <span class="g"><span class="chord">Cm</span>tí</span>Rey que,
+Per<span class="g"><span class="chord">G</span>dona</span>multitud de e<span class="g"><span class="chord">D</span>rrores,</span>
+Me incl<span class="g"><span class="chord">C</span>ino</span>ante <span class="g"><span class="chord">Cm</span>ti.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Digno,</span> eternamente, <span class="g"><span class="chord">Em</span>digno,</span>
+Impresionante y <span class="g"><span class="chord">D</span>digno,</span>
+Solo ante ti yo me incl<span class="g"><span class="chord">C</span>ino.</span>`
+    },
+
+    {
+        title: "Dios Incomparable",
+        artist: "Generación 12",
+        key: "B",
+        type: "Adoración",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">B</span></span><span class="g"><span class="chord">F#</span></span><span class="g"><span class="chord">G#</span></span><span class="g"><span class="chord">E</span></span>
+
+<span class="g"><span class="chord">B</span>Dios</span>de mi c<span class="g"><span class="chord">F#</span>orazón,</span> <span class="g"><span class="chord">G#m</span>..</span>
+En ti encontré mi <span class="g"><span class="chord">E</span>salvación,</span>
+<span class="g"><span class="chord">B</span>Tu</span>gloria y <span class="g"><span class="chord">F#</span>majestad</span> <span class="g"><span class="chord">G#m</span>..</span>
+Quiero siempre <span class="g"><span class="chord">E</span>contemplar.</span>
+
+<span class="g"><span class="chord">B</span>Tu</span>eres mi <span class="g"><span class="chord">F#</span>adoración</span> <span class="g"><span class="chord">G#m</span>..</span>
+Y mi e<span class="g"><span class="chord">E</span>terna</span>canción,
+<span class="g"><span class="chord">B</span>Todo</span>mi <span class="g"><span class="chord">F#</span>interior</span> <span class="g"><span class="chord">G#m</span>..</span>
+es cautivado <span class="g"><span class="chord">E</span>por</span>tu amor.</span>
+
+<span class="g"><span class="chord">B</span>Eres</span>Dios <span class="g"><span class="chord">F#</span>eterno,</span>solo tu eres <span class="g"><span class="chord">G#m</span>bueno,</span>
+Dios incompa<span class="g"><span class="chord">E</span>rable</span>eres <span class="g"><span class="chord">B</span>tú.</span>
+Nunca me sepa<span class="g"><span class="chord">F#</span>raré</span> de tu gran a<span class="g"><span class="chord">G#m</span>mor,</span>
+Eres mi Se<span class="g"><span class="chord">E</span>ñor,</span>mi salva<span class="g"><span class="chord">B</span>dor.</span>
+
+<span class="g"><span class="chord">B</span>Alelu</span><span class="g"><span class="chord">F#</span>ya,</span><span class="g"><span class="chord">G#m</span>..</span>
+Alelu<span class="g"><span class="chord">E</span>ya.</span>
+    `
+    }
 ];
