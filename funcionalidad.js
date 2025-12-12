@@ -41,18 +41,27 @@ function openSong(indexInGlobalArray) {
     currentSongIndex = indexInGlobalArray;
     const song = songs[currentSongIndex];
     currentSemitones = 0;
-    // Reseteamos visualmente al abrir
-    // (Opcional: Si quieres que recuerde si ocultaste acordes, quita la línea de abajo)
-    // showChords = true; 
     
     document.getElementById('songListView').style.display = 'none';
     document.getElementById('songDetailView').style.display = 'block';
     
     document.getElementById('detailTitle').innerText = song.title;
     document.getElementById('detailArtist').innerText = song.artist;
+
+    // --- NUEVO: LÓGICA DEL COMENTARIO ---
+    const commentEl = document.getElementById('detailComment');
+    
+    if (song.comentario) {
+        commentEl.innerText = song.comentario; // Ponemos el texto
+        commentEl.style.display = 'block';     // Lo mostramos
+    } else {
+        commentEl.innerText = '';              // Limpiamos texto anterior
+        commentEl.style.display = 'none';      // Ocultamos el elemento para que no ocupe espacio
+    }
+    // -------------------------------------
     
     updateSongView();
-    updateChordIcon(); // Asegurar que el icono esté correcto
+    updateChordIcon(); 
     window.scrollTo(0,0);
 }
 
@@ -292,11 +301,13 @@ function addToPlaylist(index, btnElement) {
         showNotification("Canción agregada a tu lista");
     }
 }
+
 function removeFromPlaylist(index) {
     myPlaylist = myPlaylist.filter(id => id !== index);
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
     loadPlaylistMode();
 }
+
 function loadPlaylistMode() {
     const urlParams = new URLSearchParams(window.location.search);
     const sharedIds = urlParams.get('ids');
@@ -317,6 +328,7 @@ function loadPlaylistMode() {
     displaySongs = playlistIds.map(id => songs[id]).filter(s => s !== undefined);
     renderPlaylistTable(displaySongs, playlistIds);
 }
+
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
@@ -337,6 +349,7 @@ function renderPlaylistTable(songsData, originalIds) {
         tbody.innerHTML += row;
     });
 }
+
 function sharePlaylistUrl() {
     if (myPlaylist.length === 0) { showNotification("Lista vacía."); return; }
     const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(',');
@@ -363,6 +376,7 @@ window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
     if (event.target == keyModal) keyModal.style.display = "none";
 }
+
 function showNotification(message) {
     const toast = document.getElementById("toastNotification");
     if (!toast) return; 
@@ -398,6 +412,7 @@ if (actionBtn) {
         } else shareApp();
     });
 }
+
 window.addEventListener('appinstalled', () => resetToShare());
 function resetToShare() {
     if (!actionBtn) return;
@@ -406,6 +421,7 @@ function resetToShare() {
     actionBtn.classList.remove('mode-install');
     actionBtn.classList.add('mode-share');
 }
+
 function shareApp() {
     if (navigator.share) navigator.share({ title: 'Acordify', url: window.location.href });
     else { navigator.clipboard.writeText(window.location.href); showNotification("Enlace copiado!"); }

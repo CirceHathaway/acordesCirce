@@ -693,3 +693,15 @@ tr:hover { background-color: #252525; }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
+
+/* Estilo para el comentario dentro de la canción */
+.song-comment {
+    text-align: center;
+    color: var(--accent); /* Color naranja/dorado */
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: -15px; /* Lo pegamos un poco al artista */
+    margin-bottom: 25px; /* Espacio antes de los botones */
+    min-height: 10px; /* Para que no colapse feo si está vacío */
+}

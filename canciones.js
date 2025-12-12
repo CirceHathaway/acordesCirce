@@ -1,6 +1,6 @@
 const songs = [
     {
-        title: "Al Alto y Sublime",
+        title: "Al el Alto y Sublime",
         artist: "Gadiel Espinosa",
         key: "A",
         type: "Adoración",
@@ -671,6 +671,92 @@ Eres mi Se<span class="g"><span class="chord">E</span>ñor,</span>mi salva<span 
 
 <span class="g"><span class="chord">B</span>Alelu</span><span class="g"><span class="chord">F#</span>ya,</span><span class="g"><span class="chord">G#m</span>..</span>
 Alelu<span class="g"><span class="chord">E</span>ya.</span>
+    `
+    },
+
+    {
+        title: "En Ti",
+        artist: "Marco Barrientos",
+        key: "D",
+        type: "Adoración",
+        content: ` 
+En <span class="g"><span class="chord">D</span>ti</span> confía mi <span class="g"><span class="chord">G</span>corazón,</span>
+En <span class="g"><span class="chord">A</span>ti</span> reposa mi <span class="g"><span class="chord">F#m</span>alma</span> mi <span class="g"><span class="chord">Bm</span>ser</span>
+Descansa en <span class="g"><span class="chord">Em</span>ti,</span> <span class="g"><span class="chord">G</span>puedo</span> ser fe<span class="g"><span class="chord">A</span>liz.</span>
+
+<span class="g"><span class="chord">A#</span>Por</span>que <span class="g"><span class="chord">C</span>se</span> que estas o<span class="g"><span class="chord">Dm</span>brando,</span>
+<span class="g"><span class="chord">A#m</span>Tu</span>per<span class="g"><span class="chord">C</span>fecta</span> volun<span class="g"><span class="chord">Dm</span>tad,</span>
+<span class="g"><span class="chord">A#m</span>En</span>mi vi<span class="g"><span class="chord">C</span>da</span>estas o<span class="g"><span class="chord">Dm</span>brando,</span>
+<span class="g"><span class="chord">A#m</span>Tu</span>per<span class="g"><span class="chord">F#m</span>fecta</span> volun<span class="g"><span class="chord">Dm</span>tad,</span>
+    `
+    },
+
+    {
+        title: "Escucharte Hablar",
+        artist: "Marcos Witt",
+        key: "G",
+        type: "Adoración",
+        content: ` 
+<span class="g"><span class="chord">G</span>Quiero</span> escuchar tu <span class="g"><span class="chord">D</span>dulce voz,</span>
+Rom<span class="g"><span class="chord">C</span>piendo</span> el silencio en mi <span class="g"><span class="chord">D</span>ser.</span>
+<span class="g"><span class="chord">G</span>Se</span> que me haría es<span class="g"><span class="chord">D</span>tremecer,</span>
+Me ha<span class="g"><span class="chord">C</span>ría</span> llorar o re<span class="g"><span class="chord">D</span>ír,</span>
+Y cae<span class="g"><span class="chord">C</span>ría</span> rendi<span class="g"><span class="chord">Am</span>do</span> ante <span class="g"><span class="chord">D</span>ti.</span>
+
+Y <span class="g"><span class="chord">G</span>no</span> podría es<span class="g"><span class="chord">D</span>tar</span> ante ti,</span>
+Escu<span class="g"><span class="chord">Am</span>chandote</span> hablar sin llo<span class="g"><span class="chord">C</span>rar</span> como un <span class="g"><span class="chord">D</span>niño.</span>
+
+Y <span class="g"><span class="chord">G</span>pasaría</span>el <span class="g"><span class="chord">D</span>tiempo</span>así, sin que<span class="g"><span class="chord">C</span>rer nada más,</span>
+Nada <span class="g"><span class="chord">Am</span>más</span> que escu<span class="g"><span class="chord">D</span>charte</span> ha<span class="g"><span class="chord">G</span>blar.</span>
+    `
+    },
+
+    {
+        title: "Eres todo Poderoso",
+        artist: "Danilo Montero",
+        key: "Am",
+        type: "Alabanza",
+        comentario: "Nota para Ángel en Bm.",
+        content: ` 
+La <span class="g"><span class="chord">Am</span>única</span> razón de mi a<span class="g"><span class="chord">F</span>doración</span>
+Eres<span class="g"><span class="chord">C</span>tú,</span> mi Je<span class="g"><span class="chord">G</span>sús,</span>
+El <span class="g"><span class="chord">Am</span>único</span> motivo pa<span class="g"><span class="chord">F</span>ra vivir</span>
+<span class="g"><span class="chord">C</span>Eres</span> tú, mi Se<span class="g"><span class="chord">G</span>ñor.</span>
+
+Mi úni<span class="g"><span class="chord">Am</span>ca</span> verdad es<span class="g"><span class="chord">F</span>tá en ti</span>
+Eres mi <span class="g"><span class="chord">C</span>luz</span> y mi salvaci<span class="g"><span class="chord">G</span>ón,</span>
+Mi úni<span class="g"><span class="chord">Am</span>co</span> amor eres <span class="g"><span class="chord">F</span>tú, Señor</span>
+Y por <span class="g"><span class="chord">C</span>siempre</span> te alaba<span class="g"><span class="chord">Em</span>ré.</span>
+
+Tu eres <span class="g"><span class="chord">Am</span>todo</span> pode<span class="g"><span class="chord">F</span>roso,</span>
+Eres <span class="g"><span class="chord">C</span>grande</span> y majestu<span class="g"><span class="chord">G</span>oso,</span>
+
+Eres <span class="g"><span class="chord">Am</span>fuerte,</span> inven<span class="g"><span class="chord">F</span>cible</span>
+Y no hay <span class="g"><span class="chord">C</span>nadie</span> como <span class="g"><span class="chord">Em</span>tú.</span>
+    `
+    },
+
+    {
+        title: "Exáltate",
+        artist: "Marcos Witt",
+        key: "G",
+        type: "Adoración",
+        content: ` 
+<span class="g"><span class="chord">G</span>Al</span> borde de tu gran <span class="g"><span class="chord">Em</span>trono</span>
+me <span class="g"><span class="chord">C</span>postrare</span><span class="g"><span class="chord">Am</span>hoy</span> a <span class="g"><span class="chord">D</span>ti.</span>
+Tu <span class="g"><span class="chord">G</span>reinas</span> sobre princi<span class="g"><span class="chord">Em</span>pados</span>
+Sen<span class="g"><span class="chord">C</span>tado </span><span class="g"><span class="chord">Am</span>a la</span> diestra de <span class="g"><span class="chord">D</span>Dios.</span>
+
+Mi úni<span class="g"><span class="chord">Am</span>ca</span> verdad es<span class="g"><span class="chord">F</span>tá en ti</span>
+Eres mi <span class="g"><span class="chord">C</span>luz</span> y mi salvaci<span class="g"><span class="chord">G</span>ón,</span>
+Mi úni<span class="g"><span class="chord">Am</span>co</span> amor eres <span class="g"><span class="chord">F</span>tú, Señor</span>
+Y por <span class="g"><span class="chord">C</span>siempre</span> te alaba<span class="g"><span class="chord">Em</span>ré.</span>
+
+<span class="g"><span class="chord">G</span>Exáltate</span> ¡oh! gran <span class="g"><span class="chord">Em</span>cordero,</span>
+Tu <span class="g"><span class="chord">C</span>vives</span> hoy <span class="g"><span class="chord">Am</span>y</span><span class="g"><span class="chord">D</span>vivirás</span>
+
+<span class="g"><span class="chord">G</span>Corónate</span> con mi ala<span class="g"><span class="chord">Em</span>banza,</span>
+Tu <span class="g"><span class="chord">C</span>nombre</span> es <span class="g"><span class="chord">D</span>el</span> vence<span class="g"><span class="chord">G</span>dor.</span>
     `
     }
 ];
