@@ -1041,4 +1041,163 @@ quiero ado<span class="g"><span class="chord">Am</span>rarte</span> bende<span c
 <span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">C</span></span><span class="g"><span class="chord">D</span></span>
     `
     },
+
+    {
+        title: "Yo quiero más de Ti",
+        artist: "Jaime Murrell",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Yo</span> quiero más de <span class="g"><span class="chord">C</span>ti,</span> más de <span class="g"><span class="chord">D</span>ti,</span>
+Y habitar en Tú pre<span class="g"><span class="chord">G</span>sencia,</span>
+<span class="g"><span class="chord">Em</span>Menguar</span> para que crezcas <span class="g"><span class="chord">Am</span>Tú,</span>
+Y cada día se<span class="g"><span class="chord">C</span>ré</span><span class="g"><span class="chord">Am</span>  más</span>como <span class="g"><span class="chord">D</span>Tú.</span>
+
+
+Quebranta mi <span class="g"><span class="chord">C</span>cora</span><span class="g"><span class="chord">D</span>zón,</span>
+Quebranta mi <span class="g"><span class="chord">Bm</span>vi</span><span class="g"><span class="chord">Em</span>da,</span>
+Te entrego mi <span class="g"><span class="chord">C</span>volun</span><span class="g"><span class="chord">D</span>tad</span> a <span class="g"><span class="chord">G</span>ti,</span>
+Todo lo que <span class="g"><span class="chord">C</span>soy</span> Se<span class="g"><span class="chord">D</span>ñor,</span>
+Todo cuanto <span class="g"><span class="chord">Bm</span>tengo</span> es <span class="g"><span class="chord">Em</span>Tuyo,</span>
+Yo quiero men<span class="g"><span class="chord">Am</span>guar</span><span class="g"><span class="chord">D</span>para</span> que crezcas <span class="g"><span class="chord">G</span>Tú.`
+    },
+
+    {
+        title: "Yo se que estas aquí",
+        artist: "Rene Gonzáles",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Yo</span> sé que <span class="g"><span class="chord">C</span>estás</span> a<span class="g"><span class="chord">G</span>quí,</span>
+siento Tu cami<span class="g"><span class="chord">Em</span>nar,</span>
+te mueves entre el <span class="g"><span class="chord">Am</span>pueblo,</span>
+<span class="g"><span class="chord">D</span>  Trayendo</span> sani<span class="g"><span class="chord">G</span>dad.</span> <span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">G</span>..</span>
+
+[Coro]
+<span class="g"><span class="chord">D</span>Con</span> mi <span class="g"><span class="chord">G</span>fe,</span> te alcanza<span class="g"><span class="chord">C</span>ré,</span>
+con mi <span class="g"><span class="chord">Am</span>fe</span><span class="g"><span class="chord">D</span>  te</span>toca<span class="g"><span class="chord">G</span>ré,</span>
+mil <span class="g"><span class="chord">G</span>milagros</span>recibi<span class="g"><span class="chord">C</span>ré</span><span class="g"><span class="chord">Cm</span>..</span>
+y <span class="g"><span class="chord">Am</span>sé</span>que transfor<span class="g"><span class="chord">D</span>mado</span> yo se<span class="g"><span class="chord">G</span>ré.`
+    },
+
+    {
+        title: "Ven Espíritu ven",
+        artist: "Marco Barrientos",
+        key: "D",
+        type: "Adoración",
+        content: `
+Ven, Espíritu, ven
+Y lléname, Señor
+Con Tu preciosa unción
+
+Purifícame y lávame
+Renuévame, restáurame, Señor
+Con Tu poder
+
+Purifícame y lávame
+Renuévame, restáurame
+Señor, te quiero conocer`
+    },
+
+    {
+        title: "Tu Mirada",
+        artist: "Marcos Witt",
+        key: "G",
+        type: "Adoración",
+        content: `
+Tus ojos revelan que yo
+Nada puedo esconder
+Que no soy nada sin Ti
+Oh fiel Señor.
+
+Todo lo sabes de mí
+Cuando miras el corazón
+Todo lo puedes ver
+Muy dentro de mí.
+
+Lleva mi vida a una sola verdad
+Que cuando me miras
+Nada puedo ocultar.
+
+Sé que es tu fidelidad
+Que lleva mi vida más allá
+De lo que pueda imaginar.
+
+Sé que no puedo negar
+Que tu mirada puesta en mí
+Me llena de tu paz
+    `
+    },
+
+    {
+        title: "Yo quiero más de cristo",
+        artist: "Himno",
+        key: "C",
+        type: "Adoración",
+        comentario:"Nota para Sam",
+        content: `
+Yo quiero más y más de cristo
+yo quiero más de su poder
+yo quiero más de su presencia
+yo quiero más y más de él
+    `
+    },
+
+    {
+        title: "Tu Fidelidad",
+        artist: "Marcos Witt",
+        key: "C",
+        type: "Adoración",
+        content: `
+Tu fidelidad es grande
+Tu fidelidad, incomparable es
+Nadie como Tú, bendito Dios
+Grande es Tu fidelidad
+    `
+    },
+
+    {
+        title: "Todo lo puedo en Cristo que me Fortalece",
+        artist: "Eduardo Santoro",
+        key: "G",
+        type: "Alabanza",
+        content: `
+Cuando todo parece oscuro, cuando difícil es decidir
+Y la vida parece absurda, sin una luz para alumbrar (I)
+Es posible que los amigos, a nuestro lado podrán estar
+Pero en nada cambiará la vida, pues a su alcance no está
+
+Es entonces que yo medito, en aquellas promesas que
+Me hablan del Señor Jesucristo, de su amor y su gran poder (II)
+Entre aquellas promesas dichas, una siempre late en mi ser
+Y la grito desde mi alma
+
+Todo lo puedo en Cristo que me fortalece, sí
+Todo lo puedo en Cristo que me fortalece, OH gloria.(BIS)
+
+Hay circunstancias en ésta vida, difíciles de atravesar
+Y el diablo trata de engañarnos, diciendo no podréis vencer (III)
+Está vencido y él lo sabe, por eso no hemos de aceptar
+La mentira que él nos dice y digamos
+
+Ha puesto para la naturaleza, al mundo y su fugaz placer
+Al diablo y a la enfermedad, resistiremos en el nombre de Él (IV)
+Mantengamos nuestra alabanza, nosotros somos hijos del Rey
+Pues nuestra fe y victoria crece diciendo
+    `
+    },
+
+    {
+        title: "Todo es de mi Cristo",
+        artist: "Marcos Witt",
+        key: "Em",
+        type: "Adoración",
+        content: `
+//Todo es de mi Cristo por él y para El//
+A él sea la gloria, a él sea la gloria
+A él sea la gloria, por siempre amen
+Con profunda riqueza de la sabiduría de Dios
+Son grandes sus juicios y sus caminos son.
+    `
+    },
 ];
