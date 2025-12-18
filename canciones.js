@@ -1281,4 +1281,125 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te alaba<span class="g"><span class="chord">E</span>ré,</span>
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te adora<span class="g"><span class="chord">B</span>ré.</span> `
     },
+
+    {
+        title: "Sendas Dios hará",
+        artist: "Don Moen",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Sendas</span> Dios ha<span class="g"><span class="chord">D</span>rá,</span> donde <span class="g"><span class="chord">C</span>piensas</span> que no <span class="g"><span class="chord">G</span>hay,</span>
+<span class="g"><span class="chord">C</span>Él</span> obra en ma<span class="g"><span class="chord">G</span>neras</span> que <span class="g"><span class="chord">Am</span>no</span>po<span class="g"><span class="chord">Bm</span>demos</span> <span class="g"><span class="chord">C</span>enten</span><span class="g"><span class="chord">D</span>der.</span>
+<span class="g"><span class="chord">G</span>Él</span> me guia<span class="g"><span class="chord">D</span>rá</span>a su <span class="g"><span class="chord">C</span>lado</span> esta<span class="g"><span class="chord">G</span>ré,</span>
+<span class="g"><span class="chord">C</span>Amor</span> y fuerza <span class="g"><span class="chord">G</span>me</span>dará,
+<span class="g"><span class="chord">Am</span>Un</span> ca<span class="g"><span class="chord">Bm</span>mino</span> ha<span class="g"><span class="chord">C</span>rá</span> donde <span class="g"><span class="chord">D</span>no</span> lo <span class="g"><span class="chord">G</span>hay.</span>
+
+Por ca<span class="g"><span class="chord">Eb</span>minos</span> en la <span class="g"><span class="chord">F</span>soledad</span> me <span class="g"><span class="chord">Bb</span>guiará,</span>
+Y <span class="g"><span class="chord">Eb</span>agua</span> en el desi<span class="g"><span class="chord">F</span>erto</span> encontra<span class="g"><span class="chord">G</span>ré,</span>
+<span class="g"><span class="chord">C</span>La</span> tierra pasa<span class="g"><span class="chord">D</span>rá</span> su pa<span class="g"><span class="chord">Bm</span>labra</span> perma<span class="g"><span class="chord">Em</span>necerá,</span>
+<span class="g"><span class="chord">C</span>Él</span> hará <span class="g"><span class="chord">D</span>algo</span> nuevo <span class="g"><span class="chord">E</span>hoy,</span>
+<span class="g"><span class="chord">C</span>Él</span> hará <span class="g"><span class="chord">D</span>algo</span> nuevo <span class="g"><span class="chord">G</span>hoy.`
+    },
+
+    {
+        title: "Solo tu eres mi Dios",
+        artist: "Marco Barrientos",
+        key: "G",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">G</span>Mi</span> corazón late por <span class="g"><span class="chord">D/F#</span>ti,</span>
+Ahora tengo vida en <span class="g"><span class="chord">Em</span>mí,</span>
+<span class="g"><span class="chord">C</span>Oh</span> oh precioso Je<span class="g"><span class="chord">G</span>sús.</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>
+
+<span class="g"><span class="chord">G</span>Toda</span> mi vida está en <span class="g"><span class="chord">D/F#</span>ti,</span>
+Y tú eres todo mi exis<span class="g"><span class="chord">Em</span>tir,</span>
+Oh <span class="g"><span class="chord">C</span>oh,</span> precioso Je<span class="g"><span class="chord">G</span>sús.</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>
+
+Eres <span class="g"><span class="chord">D</span>el</span> au<span class="g"><span class="chord">Em</span>tor</span> de vida y de <span class="g"><span class="chord">C</span>salva</span><span class="g"><span class="chord">G</span>ción,</span>
+Y mi <span class="g"><span class="chord">D</span>devo</span><span class="g"><span class="chord">Em</span>ción</span> será cono<span class="g"><span class="chord">C</span>cer</span> tu a<span class="g"><span class="chord">G</span>mor,</span>
+Por que <span class="g"><span class="chord">D</span>tú,</span> solo <span class="g"><span class="chord">C</span>tú,</span> eres mi <span class="g"><span class="chord">G</span>Dios,</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>
+Por que <span class="g"><span class="chord">D</span>tú,</span> solo <span class="g"><span class="chord">C</span>tú,</span> eres mi <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">C</span></span><span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">D</span></span>
+    `
+    },
+
+    {
+        title: "Sentado en su Trono",
+        artist: "Danilo Montero",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Sentado</span> en su trono, rodeado de <span class="g"><span class="chord">Em</span>luz,</span>
+<span class="g"><span class="chord">C</span>A</span>la diestra del <span class="g"><span class="chord">Am</span>Padre,</span> gobier<span class="g"><span class="chord">D</span>na</span> Jesús,
+<span class="g"><span class="chord">G</span>Con</span> ojos de fuego, con rostro de <span class="g"><span class="chord">Em</span>sol,</span>
+<span class="g"><span class="chord">C</span>Cuando</span> abre su <span class="g"><span class="chord">Am</span>boca,</span> es true<span class="g"><span class="chord">D</span>no su voz.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Pode</span><span class="g"><span class="chord">D</span>roso</span><span class="g"><span class="chord">Am</span>  en</span> majestad y <span class="g"><span class="chord">Em</span>reino,</span> Pode<span class="g"><span class="chord">D</span>roso,</span>
+<span class="g"><span class="chord">G</span>Pode</span><span class="g"><span class="chord">D</span>roso</span><span class="g"><span class="chord">Am</span>  en</span> potestad e <span class="g"><span class="chord">Em</span>imperio,</span> Pode<span class="g"><span class="chord">D</span>roso,</span>
+
+[Verso 2]
+<span class="g"><span class="chord">G</span>Un</span> gran arcoiris corona su <span class="g"><span class="chord">Em</span>ser,</span>
+<span class="g"><span class="chord">C</span>Él</span> es el cor<span class="g"><span class="chord">Am</span>dero</span> que pu<span class="g"><span class="chord">D</span>do</span>vencer,
+<span class="g"><span class="chord">G</span>Él</span> es el primero, Él es el pos<span class="g"><span class="chord">Em</span>trer,</span>
+<span class="g"><span class="chord">C</span>Y</span>arrojan co<span class="g"><span class="chord">Am</span>ronas</span> delante de <span class="g"><span class="chord">D</span>Él.</span>
+
+[Final]
+<span class="g"><span class="chord">C</span>Pode</span><span class="g"><span class="chord">D</span>ro</span><span class="g"><span class="chord">Em</span>so,</span> <span class="g"><span class="chord">Bm</span>..</span>
+<span class="g"><span class="chord">C</span>Pode</span><span class="g"><span class="chord">D</span>ro</span><span class="g"><span class="chord">Em</span>so,</span> <span class="g"><span class="chord">Bm</span>..</span>
+<span class="g"><span class="chord">C</span>Pode</span><span class="g"><span class="chord">D</span>ro</span><span class="g"><span class="chord">C</span>so.</span><span class="g"><span class="chord">D</span>..</span><span class="g"><span class="chord">G</span>..</span>`
+    },
+
+    {
+        title: "Si tu presencia conmigo no va",
+        artist: "Oasis Ministry",
+        key: "D",
+        type: "Adoración",
+        content: `
+[Instrumental]
+<span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span>
+<span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span>
+
+Quiero habi<span class="g"><span class="chord">Em</span>tar</span> en tu intimi<span class="g"><span class="chord">A</span>dad,</span>
+Donde <span class="g"><span class="chord">D</span>sé</span> que te <span class="g"><span class="chord">A</span>voy</span> a encon<span class="g"><span class="chord">Bm</span>trar.</span>
+
+[Coro]
+Si tu <span class="g"><span class="chord">Em7</span>presencia</span> conmigo no va,
+Yo no <span class="g"><span class="chord">G</span>voy</span> a ningún lugar,
+No quiero lle<span class="g"><span class="chord">D</span>gar,</span> no <span class="g"><span class="chord">A</span>voy</span> a lle<span class="g"><span class="chord">Bm</span>gar.</span>
+
+[Puente 1]
+Oh <span class="g"><span class="chord">Em7</span>oh,</span>Oh <span class="g"><span class="chord">G</span>oh,</span> Oh <span class="g"><span class="chord">D</span>oh,</span> Oh <span class="g"><span class="chord">A</span>oh.</span>
+
+[Puente 2]
+Y no me <span class="g"><span class="chord">Em</span>voy</span> hasta que suce<span class="g"><span class="chord">G</span>da,</span>
+Hasta que tu <span class="g"><span class="chord">D</span>gloria</span> i<span class="g"><span class="chord">A</span>nunde</span> todo mi inte<span class="g"><span class="chord">Bm7</span>rior.`
+    },
+
+    {
+        title: "Recibe toda la Gloria",
+        artist: "Julio Melgar",
+        key: "C",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">Am</span>Quiero</span> levantar a ti mis <span class="g"><span class="chord">F</span>manos</span>
+Maravi<span class="g"><span class="chord">C</span>lloso</span> Jesús,
+Mila<span class="g"><span class="chord">G</span>groso</span> Señor.
+
+<span class="g"><span class="chord">Am</span>Llena</span> este lugar de tu pre<span class="g"><span class="chord">F</span>sencia</span>
+Has descen<span class="g"><span class="chord">C</span>der</span> tu poder a los que <span class="g"><span class="chord">G</span>estamos</span> aquí.
+
+[Pre-Coro]
+Creo en <span class="g"><span class="chord">Am</span>ti</span><span class="g"><span class="chord">G</span>Je</span><span class="g"><span class="chord">F</span>sús</span> 
+y lo que ha<span class="g"><span class="chord">Am</span>rás</span><span class="g"><span class="chord">G</span>en</span><span class="g"><span class="chord">F</span>mi.</span>
+En <span class="g"><span class="chord">C</span>mí,</span> en <span class="g"><span class="chord">G</span>mí.</span>
+
+[Coro]
+Recibe <span class="g"><span class="chord">Am</span>toda</span> la gloria,
+Recibe <span class="g"><span class="chord">F</span>toda</span> la honra,
+Pre<span class="g"><span class="chord">C</span>cioso</span> hijo de <span class="g"><span class="chord">G</span>Dios.</span>
+    `
+    },
 ];
