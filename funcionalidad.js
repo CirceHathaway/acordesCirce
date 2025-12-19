@@ -10,8 +10,9 @@ let currentSongIndex = -1;
 let currentSemitones = 0; 
 let isSpanish = false; 
 let currentFontSize = 17;
-let showChords = true; // NUEVO: Estado de visibilidad de acordes
+let showChords = true; // Estado de visibilidad de acordes
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
+let currentContextList = []; // <--- Guarda el orden de IDs actual de la lista
 
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
@@ -312,6 +313,7 @@ function loadPlaylistMode() {
     const urlParams = new URLSearchParams(window.location.search);
     const sharedIds = urlParams.get('ids');
     let playlistIds = sharedIds ? sharedIds.split(',').map(Number) : myPlaylist;
+    currentContextList = playlistIds;
 
     if (sharedIds) {
         const shareBtn = document.getElementById('shareListBtn');
@@ -356,6 +358,38 @@ function sharePlaylistUrl() {
     if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl });
     else { navigator.clipboard.writeText(shareUrl); showNotification("Link copiado!"); }
 }
+
+/* --- SISTEMA DE BORRADO CON MODAL --- */
+
+// 1. Abre el modal
+function askClearPlaylist() {
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'flex'; // Usamos flex para centrarlo con tu CSS existente
+}
+
+// 2. Cierra el modal (Botón Cancelar)
+function closeConfirmModal() {
+    document.getElementById('confirmModal').style.display = 'none';
+}
+
+// 3. Ejecuta el borrado (Botón Sí, vaciar)
+function executeClearList() {
+    myPlaylist = []; // Vacía el array
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); // Guarda vacío
+    
+    closeConfirmModal(); // Cierra el modal
+    showNotification("Lista vaciada correctamente"); // Muestra el aviso
+    
+    loadPlaylistMode(); // Recarga la tabla para que se vea vacía
+}
+
+// Cierra el modal si tocan afuera (en lo oscuro)
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('confirmModal');
+    if (event.target == modal) {
+        closeConfirmModal();
+    }
+});
 
 /* --- UTILIDADES --- */
 const filterKeys = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
@@ -425,4 +459,76 @@ function resetToShare() {
 function shareApp() {
     if (navigator.share) navigator.share({ title: 'Acordify', url: window.location.href });
     else { navigator.clipboard.writeText(window.location.href); showNotification("Enlace copiado!"); }
+}
+
+/* --- NAVEGACIÓN SWIPE (DESLIZAR la lista) --- */
+
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+
+// Escuchar el inicio del toque
+document.addEventListener('touchstart', function(e) {
+    // Solo registramos si estamos viendo una canción (songDetailView visible)
+    if(document.getElementById('songDetailView').style.display === 'block') {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }
+}, false);
+
+// Escuchar el final del toque
+document.addEventListener('touchend', function(e) {
+    if(document.getElementById('songDetailView').style.display === 'block') {
+        touchEndY = e.changedTouches[0].screenY;
+        let touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture(touchStartX, touchEndX, touchStartY, touchEndY);
+    }
+}, false);
+
+function handleSwipeGesture(startX, endX, startY, endY) {
+    const minSwipeDistance = 50; // Mínima distancia para considerar swipe
+    const maxVerticalVariance = 100; // Máxima desviación vertical permitida (para no afectar el scroll)
+
+    const diffX = startX - endX;
+    const diffY = startY - endY;
+
+    // Verificamos que sea un movimiento horizontal predominante
+    if (Math.abs(diffX) > minSwipeDistance && Math.abs(diffY) < maxVerticalVariance) {
+        if (diffX > 0) {
+            // Deslizar a la IZQUIERDA -> Siguiente Canción
+            changeSongInPlaylist(1);
+        } else {
+            // Deslizar a la DERECHA -> Canción Anterior
+            changeSongInPlaylist(-1);
+        }
+    }
+}
+
+function changeSongInPlaylist(direction) {
+    // Si no hay lista de contexto (por ejemplo, filtro global), usamos el array global o fallamos suavemente
+    // Para lista.html, currentContextList ya tiene los IDs de la playlist.
+    
+    if (!currentContextList || currentContextList.length === 0) return;
+
+    // 1. Encontrar la posición de la canción actual dentro de la lista que estamos viendo
+    let currentPos = currentContextList.indexOf(currentSongIndex);
+
+    if (currentPos === -1) return; // La canción actual no está en la lista activa
+
+    // 2. Calcular la nueva posición (Circular)
+    let newPos = currentPos + direction;
+
+    if (newPos >= currentContextList.length) {
+        newPos = 0; // Si es la última, volver a la primera
+    } else if (newPos < 0) {
+        newPos = currentContextList.length - 1; // Si es la primera, ir a la última
+    }
+
+    // 3. Obtener el ID global de la nueva canción
+    let nextSongID = currentContextList[newPos];
+
+    // 4. Abrir la canción
+    // Nota: Usamos un pequeño timeout para dar sensación de cambio si quisieras, 
+    // pero directo es más rápido.
+    openSong(nextSongID);
 }

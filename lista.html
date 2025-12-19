@@ -39,6 +39,10 @@
             <button id="shareListBtn" class="btn-share-list" onclick="sharePlaylistUrl()">
                 Compartir esta Lista 📤
             </button>
+
+            <button id="clearListBtn" class="btn-clear-list" onclick="askClearPlaylist()">
+                Vaciar Lista 🗑️
+            </button>
         </div>
 
         <div id="songDetailView">
@@ -95,6 +99,20 @@
     </footer>
 
     <div id="toastNotification" class="custom-notification"></div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3 style="color: var(--text-primary); margin-top: 0;">¿Vaciar Lista? 🗑️</h3>
+            <p style="color: var(--text-white); margin-bottom: 25px;">
+                Se borrarán todas las canciones de tu lista actual.
+            </p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button class="btn-modal-action cancel" onclick="closeConfirmModal()">Cancelar</button>
+                <button class="btn-modal-action delete" onclick="executeClearList()">Sí, vaciar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="canciones.js"></script>
     <script src="funcionalidad.js"></script>

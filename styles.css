@@ -523,6 +523,54 @@ tr:hover { background-color: #252525; }
     display: block; /* Centrado */
 }
 
+.btn-share-list:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Botón para vaciar lista --- */
+.btn-clear-list {
+    background-color: #e55039; /* Rojo consistente con borrar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto 30px auto; /* Centrado y con espacio abajo */
+    display: block; 
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-clear-list:hover {
+    background-color: #c0392b; /* Un rojo un poco más oscuro */
+    transform: translateY(-2px);
+}
+
+/* --- BOTONES DEL MODAL DE CONFIRMACIÓN --- */
+.btn-modal-action {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1; /* Para que ocupen el mismo ancho */
+}
+
+.btn-modal-action.cancel {
+    background-color: #444;
+    color: white;
+}
+
+.btn-modal-action.delete {
+    background-color: #e55039;
+    color: white;
+}
+
+.btn-modal-action:active {
+    transform: scale(0.95);
+}
+
 /* --- NOTIFICACIÓN FLOTANTE (TOAST) --- */
 .custom-notification {
     visibility: hidden; /* Oculto por defecto */
