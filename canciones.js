@@ -1381,7 +1381,7 @@ Hasta que tu <span class="g"><span class="chord">D</span>gloria</span> i<span cl
     {
         title: "Recibe toda la Gloria",
         artist: "Julio Melgar",
-        key: "C",
+        key: "Am",
         type: "Adoración",
         content: `
 <span class="g"><span class="chord">Am</span>Quiero</span> levantar a ti mis <span class="g"><span class="chord">F</span>manos</span>
@@ -1401,5 +1401,57 @@ Recibe <span class="g"><span class="chord">Am</span>toda</span> la gloria,
 Recibe <span class="g"><span class="chord">F</span>toda</span> la honra,
 Pre<span class="g"><span class="chord">C</span>cioso</span> hijo de <span class="g"><span class="chord">G</span>Dios.</span>
     `
+    },
+
+    {
+        title: "Paz en la Tormenta",
+        artist: "Renan Carías",
+        key: "G",
+        type: "Adoración",
+        content: `
+Cuando <span class="g"><span class="chord">G</span>lloras</span> por las <span class="g"><span class="chord">C</span>veces</span> que in<span class="g"><span class="chord">G</span>tentaste</span>
+y tratas de olvidar las <span class="g"><span class="chord">C</span>lagrimas</span> que llo<span class="g"><span class="chord">D</span>raste,</span>
+solo <span class="g"><span class="chord">C</span>tienes</span> pena y tris<span class="g"><span class="chord">Bm</span>teza</span>
+y el fu<span class="g"><span class="chord">Em</span>turo</span> inci<span class="g"><span class="chord">D</span>erto</span> es<span class="g"><span class="chord">C</span>peras</span>
+en <span class="g"><span class="chord">G</span>paz</span> en <span class="g"><span class="chord">C</span>medio</span> de <span class="g"><span class="chord">D</span>la</span> tor<span class="g"><span class="chord">G</span>menta.</span>
+
+Muchas <span class="g"><span class="chord">G</span>veces</span> yo me <span class="g"><span class="chord">C</span>siento</span> igual que <span class="g"><span class="chord">G</span>tu</span>
+y mi corazón an<span class="g"><span class="chord">C</span>hela</span> algo re<span class="g"><span class="chord">D</span>al,</span>
+El Se<span class="g"><span class="chord">C</span>ñor</span> viene a <span class="g"><span class="chord">Bm</span>mi</span>
+y me a<span class="g"><span class="chord">Em</span>yuda</span> <span class="g"><span class="chord">D</span> a</span> <span class="g"><span class="chord">C</span>seguir,</span>
+en <span class="g"><span class="chord">G</span>paz</span> en <span class="g"><span class="chord">C</span>medio</span> de <span class="g"><span class="chord">D</span>la</span> tor<span class="g"><span class="chord">G</span>menta.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Puedes</span> tener <span class="g"><span class="chord">C</span>paz</span> en la tor<span class="g"><span class="chord">G</span>menta,</span>
+<span class="g"><span class="chord">G</span>fe</span> y esperanza cuando <span class="g"><span class="chord">C</span>no</span> puedas <span class="g"><span class="chord">D</span>seguir,</span>
+aún con tu <span class="g"><span class="chord">C</span>mundo</span> hecho pe<span class="g"><span class="chord">Bm</span>dazos,</span>
+el Se<span class="g"><span class="chord">Em</span>ñor</span> guia<span class="g"><span class="chord">D</span>rá</span> tus <span class="g"><span class="chord">C</span>pasos,</span>
+en <span class="g"><span class="chord">G</span>paz</span> en <span class="g"><span class="chord">C</span>medio</span> de <span class="g"><span class="chord">D</span>la</span> tor<span class="g"><span class="chord">G</span>menta.</span>`
+    },
+
+    {
+        title: "No hay nadie como Tu",
+        artist: "Marco Barrientos",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>No</span>hay nadie como tú,
+<span class="g"><span class="chord">Em</span>No</span>hay nadie como tú,
+Pre<span class="g"><span class="chord">C</span>cioso</span> y glo<span class="g"><span class="chord">Am</span>rioso,</span>
+Tan <span class="g"><span class="chord">C</span>bello</span> y tan her<span class="g"><span class="chord">D</span>moso...</span>
+
+Je<span class="g"><span class="chord">G</span>sús,</span> Je<span class="g"><span class="chord">Em</span>sús,</span>
+Precioso <span class="g"><span class="chord">C</span>Jesús,</span> <span class="g"><span class="chord">Am7</span>..</span>
+Oh, <span class="g"><span class="chord">D</span>oh.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">G</span> Yo</span> anhelo mirarte a los <span class="g"><span class="chord">Em</span>ojos,</span>
+decirte te <span class="g"><span class="chord">C</span>amo,</span> <span class="g"><span class="chord">Am7</span>..</span>
+Que <span class="g"><span class="chord">C</span>tú</span> eres mi pre<span class="g"><span class="chord">D</span>cioso</span> Dios.
+
+[Verso 3]
+<span class="g"><span class="chord">G</span>Quiero</span> amarte Se<span class="g"><span class="chord">Em</span>ñor,</span>
+decirte que <span class="g"><span class="chord">C</span>tú</span> eres poderoso, <span class="g"><span class="chord">Am7</span>..</span>
+para <span class="g"><span class="chord">D</span>mí.`
     },
 ];
