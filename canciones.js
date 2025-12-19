@@ -1454,4 +1454,170 @@ Que <span class="g"><span class="chord">C</span>tú</span> eres mi pre<span clas
 decirte que <span class="g"><span class="chord">C</span>tú</span> eres poderoso, <span class="g"><span class="chord">Am7</span>..</span>
 para <span class="g"><span class="chord">D</span>mí.`
     },
+
+    {
+        title: "No hay lugar más Alto",
+        artist: "Miel San Marcos",
+        key: "C",
+        type: "Adoración",
+        comentario: "Nota para Sam. El G/B puede ser un Bm. Nota para el pastor es en A",
+        content: `
+<span class="g"><span class="chord">C</span> A</span> tus pies arde mi cora<span class="g"><span class="chord">G</span>zón,</span>
+A tus <span class="g"><span class="chord">Am7</span>pies</span> entrego lo que <span class="g"><span class="chord">F</span>soy,</span>
+Es el lu<span class="g"><span class="chord">C</span>gar</span> de mi seguri<span class="g"><span class="chord">G</span>dad</span>
+Donde <span class="g"><span class="chord">Am7</span>nadie</span> me puede seña<span class="g"><span class="chord">F</span>lar.</span>
+
+[Pre-Coro]
+Me perdo<span class="g"><span class="chord">F</span>naste,</span> me acercaste a tu pre<span class="g"><span class="chord">G</span>sencia,</span>
+Me levan<span class="g"><span class="chord">Am7</span>taste,</span> hoy me postro a ado<span class="g"><span class="chord">G</span>rarte.</span>
+
+[Coro]
+No hay lugar <span class="g"><span class="chord">Em</span>más</span> <span class="g"><span class="chord">F</span>alto,</span> más <span class="g"><span class="chord">G</span>grande,</span>
+Que estar a tus <span class="g"><span class="chord">Am7</span>pies,</span> que estar a tus <span class="g"><span class="chord">Em</span>pies,</span>
+No hay lugar más <span class="g"><span class="chord">F</span>alto,</span> más <span class="g"><span class="chord">G</span>grande,</span>
+Que estar a tus <span class="g"><span class="chord">Am7</span>pies,</span> que estar a tus <span class="g"><span class="chord">Em</span>pies.</span>
+
+[Puente]
+Y a<span class="g"><span class="chord">F</span>quí</span> permanece<span class="g"><span class="chord">G</span>ré,</span> pos<span class="g"><span class="chord">C</span>trado</span> <span class="g"><span class="chord">G/B</span> a</span>tus <span class="g"><span class="chord">Am7</span>pies,</span>
+Y a<span class="g"><span class="chord">F</span>quí</span> permanece<span class="g"><span class="chord">G</span>ré</span> a los pies de <span class="g"><span class="chord">Am7</span>Cristo.`
+    },
+
+    {
+        title: "Mas el Dios de toda Gracia",
+        artist: "Marcos Witt",
+        key: "G",
+        type: "Adoración",
+        content: `
+Mas el <span class="g"><span class="chord">G</span>Dios</span> de toda <span class="g"><span class="chord">Bm</span>gra</span><span class="g"><span class="chord">Em7</span>cia,</span>
+Que nos lla<span class="g"><span class="chord">C</span>mó</span> a su <span class="g"><span class="chord">Am7</span>gloria</span> e<span class="g"><span class="chord">C</span>ter</span><span class="g"><span class="chord">D</span>na.</span>
+Os perfec<span class="g"><span class="chord">Em7</span>cione</span> y a<span class="g"><span class="chord">Bm7</span>firme,</span>
+Forta<span class="g"><span class="chord">C</span>lezca</span> <span class="g"><span class="chord">Am</span> y</span>esta<span class="g"><span class="chord">C</span>blez</span><span class="g"><span class="chord">D</span>ca.</span>
+
+[Coro]
+A <span class="g"><span class="chord">C</span>Él</span> sea la <span class="g"><span class="chord">Bm7</span>glo</span><span class="g"><span class="chord">Em</span>ria,</span>
+A <span class="g"><span class="chord">C</span>Él</span> sea el Im<span class="g"><span class="chord">Bm</span>pe</span><span class="g"><span class="chord">Em</span>rio,</span>
+Por los <span class="g"><span class="chord">C</span>siglos</span> <span class="g"><span class="chord">Am</span>  de</span> los <span class="g"><span class="chord">C</span>sig</span><span class="g"><span class="chord">D</span>los...</span>
+
+[Final]
+A<span class="g"><span class="chord">C</span>mén,</span> A<span class="g"><span class="chord">Bm</span>mén,</span> <span class="g"><span class="chord">Em</span>..</span>
+<span class="g"><span class="chord">D</span>A</span><span class="g"><span class="chord">C</span>mén</span> <span class="g"><span class="chord">D</span>y</span> A<span class="g"><span class="chord">G</span>mén.`
+    },
+
+    {
+        title: "Levanto mis Manos",
+        artist: "Samuel Hernández",
+        key: "D",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">D</span>Levanto</span> mis <span class="g"><span class="chord">G</span>manos,</span> <span class="g"><span class="chord">A</span>..</span>
+Aunque no tenga <span class="g"><span class="chord">F#m</span>fuerzas,</span> <span class="g"><span class="chord">Bm</span>..</span>
+Levanto mis <span class="g"><span class="chord">Em</span>manos,</span> <span class="g"><span class="chord">A</span>..</span>
+Aunque tenga mil pro<span class="g"><span class="chord">D</span>blemas.</span>
+
+[Coro]
+Cuando le<span class="g"><span class="chord">D9</span>vanto</span> mis <span class="g"><span class="chord">G</span>manos,</span>
+Comienzo a sen<span class="g"><span class="chord">A</span>tir,</span>
+Una un<span class="g"><span class="chord">F#m</span>ción</span> que me hace can<span class="g"><span class="chord">Bm</span>tar,</span>
+Cuando levanto mis <span class="g"><span class="chord">G</span>manos,</span>
+Comienzo a sen<span class="g"><span class="chord">A</span>tir</span> el <span class="g"><span class="chord">D</span>fuego.</span>
+
+Cuando le<span class="g"><span class="chord">D7</span>vanto</span> mis ma<span class="g"><span class="chord">G</span>nos,</span>
+Mis cargas se <span class="g"><span class="chord">A</span>van,</span>
+Nuevas <span class="g"><span class="chord">F#m</span>fuerzas</span> tú me <span class="g"><span class="chord">Bm</span>das,</span>
+Todo eso es po<span class="g"><span class="chord">Em</span>sible,</span>
+Todo eso es po<span class="g"><span class="chord">A</span>sible,</span>
+Cuando le<span class="g"><span class="chord">A9</span>vanto</span> mis <span class="g"><span class="chord">D</span>manos.`
+    },
+
+    {
+        title: "Eres rey de los cielos",
+        artist: "Marco Barrientos",
+        key: "A",
+        type: "Adoración",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">E</span></span><span class="g"><span class="chord">D</span></span>
+<span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">E</span></span><span class="g"><span class="chord">D</span></span>
+
+<span class="g"><span class="chord">A</span>Glorioso</span> Salvador,
+<span class="g"><span class="chord">F#m</span>Divino</span> redentor,
+Me <span class="g"><span class="chord">D</span>postraré,</span> ante <span class="g"><span class="chord">A</span>ti.</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D</span>..</span>
+
+[Verso 2]
+<span class="g"><span class="chord">A</span>Bendito</span> hijo de Dios,
+<span class="g"><span class="chord">F#m</span>Hermoso</span> rey de Sion,
+Te a<span class="g"><span class="chord">D</span>doraré,</span> y a<span class="g"><span class="chord">A</span>sí</span> declara<span class="g"><span class="chord">E</span>ré.</span>
+
+[Coro]
+<span class="g"><span class="chord">A</span>Eres</span> Rey de los cielos, eterno <span class="g"><span class="chord">E</span>Dios,</span>
+Exaltado por siempre, Jesús Se<span class="g"><span class="chord">F#m</span>ñor,</span>
+<span class="g"><span class="chord">F#m</span> Tu</span>gobiernas en toda la crea<span class="g"><span class="chord">D</span>ción,</span>
+Oh cordero inmolado, eres Se<span class="g"><span class="chord">A</span>ñor.</span>
+
+<span class="g"><span class="chord">A</span>Las</span> naciones enteras se postra<span class="g"><span class="chord">E</span>rán,</span>
+<span class="g"><span class="chord">E</span>Y</span>tu nombre por siempre bendeci<span class="g"><span class="chord">F#m</span>rán,</span>
+Por los siglos tu gloria, nos llena<span class="g"><span class="chord">D</span>rá,</span>
+Y veremos tu fuerza, y majes<span class="g"><span class="chord">A</span>tad.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">F#m</span></span><span class="g"><span class="chord">Bm</span></span><span class="g"><span class="chord">F#m</span></span><span class="g"><span class="chord">Bm</span></span>
+    `
+    },
+
+    {
+        title: "El Señor está en este lugar",
+        artist: "Marco Barrientos",
+        key: "Em",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">Em</span>El</span>Señor es<span class="g"><span class="chord">C</span>tá</span> en este lu<span class="g"><span class="chord">D</span>gar...</span>
+
+<span class="g"><span class="chord">C</span>Para</span> sanar, <span class="g"><span class="chord">D</span>para</span> librar <span class="g"><span class="chord">Em</span>para</span> romper toda obra de maldad,
+<span class="g"><span class="chord">C</span>Para</span> sanar, <span class="g"><span class="chord">D</span>para</span> librar mi <span class="g"><span class="chord">Em</span>alma.</span>
+
+<span class="g"><span class="chord">C</span>Para</span> sanar, <span class="g"><span class="chord">D</span>para</span> librar <span class="g"><span class="chord">Em</span>para</span> romper toda obra de maldad,
+<span class="g"><span class="chord">C</span>Para</span> sanar, <span class="g"><span class="chord">B7</span>para</span> librar mi <span class="g"><span class="chord">Em</span>alma.</span>
+
+Porque <span class="g"><span class="chord">Em</span>grande</span> es el Señor y para <span class="g"><span class="chord">C</span>siempre</span> es
+<span class="g"><span class="chord">D</span> Su</span> miseri<span class="g"><span class="chord">Em</span>cordia...</span>
+
+El e<span class="g"><span class="chord">C</span>jército</span> de Dios mar<span class="g"><span class="chord">D</span>chando</span> está,
+contra <span class="g"><span class="chord">C</span>todo</span> principado y <span class="g"><span class="chord">D</span>potestad,</span>
+el e<span class="g"><span class="chord">C</span>jército</span> de Dios <span class="g"><span class="chord">B7</span>marchando</span> <span class="g"><span class="chord">Em</span>está.`
+    },
+
+    {
+        title: "De tal manera",
+        artist: "Jesús Adrián Romero",
+        key: "C",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">C</span>De</span>tal manera él me a<span class="g"><span class="chord">G</span>mó,</span>
+que su <span class="g"><span class="chord">F</span>vida</span> no es<span class="g"><span class="chord">Am</span>cati</span><span class="g"><span class="chord">G</span>mó,</span>
+Has<span class="g"><span class="chord">C</span>ta</span>el final él se entre<span class="g"><span class="chord">G</span>gó,</span>
+Y a la <span class="g"><span class="chord">F</span>muerte</span> fue por <span class="g"><span class="chord">G</span>que</span> me a<span class="g"><span class="chord">C</span>mo.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">C</span>De</span>tal manera él me a<span class="g"><span class="chord">G</span>mó,</span>
+Y no hay <span class="g"><span class="chord">F</span>forma</span> en que po<span class="g"><span class="chord">Am</span>dré</span> pa<span class="g"><span class="chord">G</span>gar,</span>
+El <span class="g"><span class="chord">C</span>precio</span> de su grande a<span class="g"><span class="chord">G</span>mor,</span>
+Pero <span class="g"><span class="chord">F</span>toda</span> mi alma <span class="g"><span class="chord">G</span>quiero</span> <span class="g"><span class="chord">C</span>dar.</span>
+
+[Coro]
+Por su a<span class="g"><span class="chord">Am</span>mor</span> yo <span class="g"><span class="chord">G</span>vivi</span><span class="g"><span class="chord">C</span>ré</span>
+de su a<span class="g"><span class="chord">Am</span>mor</span> yo <span class="g"><span class="chord">G</span>canta</span><span class="g"><span class="chord">C</span>ré</span>
+con mi Je<span class="g"><span class="chord">Am</span>sús</span> ca<span class="g"><span class="chord">G</span>mina</span><span class="g"><span class="chord">F</span>ré,</span>
+por que él me <span class="g"><span class="chord">G</span>amó</span> a mí. <span class="g"><span class="chord">F</span>..</span><span class="g"><span class="chord">G</span>..</span>
+
+Por su a<span class="g"><span class="chord">Am</span>mor</span> yo <span class="g"><span class="chord">G</span>vivi</span><span class="g"><span class="chord">C</span>ré</span>
+de su a<span class="g"><span class="chord">Am</span>mor</span> yo <span class="g"><span class="chord">G</span>canta</span><span class="g"><span class="chord">C</span>ré</span>
+con mi Je<span class="g"><span class="chord">Am</span>sús</span> ca<span class="g"><span class="chord">G</span>mina</span><span class="g"><span class="chord">F</span>ré,</span>
+por que él mu<span class="g"><span class="chord">G</span>rió</span> por mí, <span class="g"><span class="chord">F</span>..</span>
+<span class="g"><span class="chord">G</span>Le</span> segui<span class="g"><span class="chord">C</span>ré.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">G</span>le</span> segui<span class="g"><span class="chord">Am</span>ré.</span> <span class="g"><span class="chord">G</span>..</span><span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">Am</span>..</span><span class="g"><span class="chord">G</span>..</span><span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">G</span>..</span>`
+    },
+
+    
 ];
