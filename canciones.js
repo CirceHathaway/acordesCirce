@@ -1619,5 +1619,88 @@ por que él mu<span class="g"><span class="chord">G</span>rió</span> por mí, <
 <span class="g"><span class="chord">G</span>le</span> segui<span class="g"><span class="chord">Am</span>ré.</span> <span class="g"><span class="chord">G</span>..</span><span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">Am</span>..</span><span class="g"><span class="chord">G</span>..</span><span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">G</span>..</span>`
     },
 
-    
+    {
+        title: "Tu eres Dios",
+        artist: "Marcos Witt",
+        key: "Em",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">Em</span>Tu</span> eres Dios, <span class="g"><span class="chord">C</span>eres</span> Rey, <span class="g"><span class="chord">D</span>eres</span> grande y te<span class="g"><span class="chord">Em</span>mible,</span>
+<span class="g"><span class="chord">Em</span>Eres</span> Luz, <span class="g"><span class="chord">C</span>el</span> amor <span class="g"><span class="chord">D</span>eres</span> Cristo el Se<span class="g"><span class="chord">Em</span>ñor.</span>
+
+Tu ha<span class="g"><span class="chord">C</span>bitas</span> en las ala<span class="g"><span class="chord">D</span>banzas</span> de Tu <span class="g"><span class="chord">Em</span>pueblo,</span>
+Y en la <span class="g"><span class="chord">C</span>hermosura</span> <span class="g"><span class="chord">D</span>de</span> tu Santi<span class="g"><span class="chord">Em</span>dad.</span>
+
+Tu eres <span class="g"><span class="chord">G</span>Santo,</span> <span class="g"><span class="chord">D/F#</span>Santo,</span> <span class="g"><span class="chord">Em</span>Santo,</span>
+<span class="g"><span class="chord">C</span>Hi</span><span class="g"><span class="chord">D</span>jo</span> de <span class="g"><span class="chord">Em</span>Dios.</span>
+Tu eres <span class="g"><span class="chord">G</span>Digno,</span> <span class="g"><span class="chord">D/F#</span>Digno,</span> <span class="g"><span class="chord">Em</span>Digno,</span>
+Al<span class="g"><span class="chord">C</span>tísi</span><span class="g"><span class="chord">D</span>mo</span> Se<span class="g"><span class="chord">Em</span>ñor.`
+    },
+
+    {
+        title: "Con mi Dios",
+        artist: "Jesús Adrián Romero",
+        key: "Em",
+        type: "Alabanza",
+        content: `
+Con mi <span class="g"><span class="chord">Em</span>Dios</span> yo <span class="g"><span class="chord">D</span>saltaré</span> los <span class="g"><span class="chord">Em</span>muros,</span> <span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">D</span>..</span>
+Con mi <span class="g"><span class="chord">Em</span>Dios</span> e<span class="g"><span class="chord">D</span>jércitos</span> derriba<span class="g"><span class="chord">Em</span>ré.</span>
+
+<span class="g"><span class="chord">G</span>El</span> adiestra mis <span class="g"><span class="chord">D</span>manos</span> para la ba<span class="g"><span class="chord">Em</span>talla,</span>
+<span class="g"><span class="chord">D</span>Puedo</span> tomar con mis manos el arco de <span class="g"><span class="chord">Em</span>bronce,</span>
+<span class="g"><span class="chord">D</span>El</span> es escudo, la <span class="g"><span class="chord">G</span>roca</span> mía,
+<span class="g"><span class="chord">D</span>El</span> es la fuerza de mi <span class="g"><span class="chord">G</span>salvación,</span>
+Mi <span class="g"><span class="chord">B7</span>alto</span> refugio, mi <span class="g"><span class="chord">Em</span>fortaleza,</span>
+<span class="g"><span class="chord">Am</span>El</span> <span class="g"><span class="chord">B7</span>es</span> mi liberta<span class="g"><span class="chord">Em</span>dor.`
+    },
+
+    {
+        title: "Porque grande es Jehová",
+        artist: "Jaime Murrell",
+        key: "F",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">F</span>Porque</span> grande es Jehová,
+Y digno de su<span class="g"><span class="chord">C</span>prema</span> alabanza,
+Ado<span class="g"><span class="chord">Bb</span>rad</span> a Jeho<span class="g"><span class="chord">C</span>vá</span> en la hermo<span class="g"><span class="chord">Bb</span>sura</span> de <span class="g"><span class="chord">C</span>su</span> santi<span class="g"><span class="chord">F</span>dad.</span>
+
+[Coro]
+Y te<span class="g"><span class="chord">Bb</span>med</span> delante de <span class="g"><span class="chord">C</span>Él</span> toda la <span class="g"><span class="chord">Am</span>tie</span><span class="g"><span class="chord">Dm</span>rra,</span>
+Y te<span class="g"><span class="chord">Bb</span>med</span> delante de <span class="g"><span class="chord">C</span>Él</span> toda la <span class="g"><span class="chord">Am</span>tie</span><span class="g"><span class="chord">Dm</span>rra,</span>
+Y te<span class="g"><span class="chord">Bb</span>med</span> delante de <span class="g"><span class="chord">C</span>Él</span> toda la <span class="g"><span class="chord">Am</span>tie</span><span class="g"><span class="chord">Dm</span>rra,</span>
+
+[Final]
+Por que <span class="g"><span class="chord">Bb</span>grande</span> es Jeho<span class="g"><span class="chord">C</span>vá,</span>
+<span class="g"><span class="chord">Am</span>Grande</span> es Jeho<span class="g"><span class="chord">Dm</span>vá,</span>
+Por que <span class="g"><span class="chord">Bb</span>grande</span> es Jeho<span class="g"><span class="chord">C</span>vá,</span>
+Nuestro <span class="g"><span class="chord">F</span>Dios.`
+    },
+
+    {
+        title: "Hay Momentos",
+        artist: "Danilo Montero",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Hay</span> momentos que
+No debe<span class="g"><span class="chord">F</span>rían</span> termi<span class="g"><span class="chord">E7</span>nar,</span>
+<span class="g"><span class="chord">Am7</span>Hay</span>segundos que
+Tendrían que <span class="g"><span class="chord">C</span>ser</span> eterni<span class="g"><span class="chord">D4</span>dad.</span>
+
+[Pre-Coro]
+Cuando tu es<span class="g"><span class="chord">Bm</span>píritu</span>do Se<span class="g"><span class="chord">Em</span>ñor,</span>
+Se <span class="g"><span class="chord">C</span>to</span>ca con el mío,
+<span class="g"><span class="chord">Am</span>Y</span> mi cora<span class="g"><span class="chord">Am</span>zón</span> estalla <span class="g"><span class="chord">D</span>en adoración.</span>
+
+[Coro]
+Te <span class="g"><span class="chord">G</span>amo</span> mi Señor,
+Se a<span class="g"><span class="chord">F</span>caban</span> las pala<span class="g"><span class="chord">E7</span>bras,</span>
+So<span class="g"><span class="chord">Am</span>lo</span> me queda mi alma,
+Para can<span class="g"><span class="chord">C</span>tar</span><span class="g"><span class="chord">D</span>te.</span>
+
+Te a<span class="g"><span class="chord">G</span>doro mi Señor,</span>
+No hay na<span class="g"><span class="chord">F</span>da</span> alrede<span class="g"><span class="chord">E</span>dor,</span>
+<span class="g"><span class="chord">Am7</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">E</span>yo,</span>
+<span class="g"><span class="chord">C</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">G</span>yo.`
+    },
 ];
