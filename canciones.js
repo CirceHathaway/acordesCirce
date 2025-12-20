@@ -748,11 +748,6 @@ me <span class="g"><span class="chord">C</span>postrare</span><span class="g"><s
 Tu <span class="g"><span class="chord">G</span>reinas</span> sobre princi<span class="g"><span class="chord">Em</span>pados</span>
 Sen<span class="g"><span class="chord">C</span>tado </span><span class="g"><span class="chord">Am</span>a la</span> diestra de <span class="g"><span class="chord">D</span>Dios.</span>
 
-Mi úni<span class="g"><span class="chord">Am</span>ca</span> verdad es<span class="g"><span class="chord">F</span>tá en ti</span>
-Eres mi <span class="g"><span class="chord">C</span>luz</span> y mi salvaci<span class="g"><span class="chord">G</span>ón,</span>
-Mi úni<span class="g"><span class="chord">Am</span>co</span> amor eres <span class="g"><span class="chord">F</span>tú, Señor</span>
-Y por <span class="g"><span class="chord">C</span>siempre</span> te alaba<span class="g"><span class="chord">Em</span>ré.</span>
-
 <span class="g"><span class="chord">G</span>Exáltate</span> ¡oh! gran <span class="g"><span class="chord">Em</span>cordero,</span>
 Tu <span class="g"><span class="chord">C</span>vives</span> hoy <span class="g"><span class="chord">Am</span>y</span><span class="g"><span class="chord">D</span>vivirás</span>
 
@@ -1690,7 +1685,7 @@ Tendrían que <span class="g"><span class="chord">C</span>ser</span> eterni<span
 [Pre-Coro]
 Cuando tu es<span class="g"><span class="chord">Bm</span>píritu</span>do Se<span class="g"><span class="chord">Em</span>ñor,</span>
 Se <span class="g"><span class="chord">C</span>to</span>ca con el mío,
-<span class="g"><span class="chord">Am</span>Y</span> mi cora<span class="g"><span class="chord">Am</span>zón</span> estalla <span class="g"><span class="chord">D</span>en adoración.</span>
+<span class="g"><span class="chord">Am</span>Y</span> mi cora<span class="g"><span class="chord">C</span>zón</span> estalla <span class="g"><span class="chord">D</span>en adoración.</span>
 
 [Coro]
 Te <span class="g"><span class="chord">G</span>amo</span> mi Señor,
