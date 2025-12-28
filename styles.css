@@ -753,3 +753,28 @@ tr:hover { background-color: #252525; }
     margin-bottom: 25px; /* Espacio antes de los botones */
     min-height: 10px; /* Para que no colapse feo si está vacío */
 }
+
+/* --- DRAG & DROP (REORDENAR LISTA) --- */
+
+/* La columna de la manija */
+.drag-handle {
+    cursor: grab;
+    color: var(--text-secondary);
+    font-size: 1.5rem; /* Grande para el dedo */
+    touch-action: none; /* Evita que el navegador quiera hacer scroll */
+    user-select: none;
+    text-align: center;
+    width: 40px;
+}
+
+/* Cuando estás arrastrando una fila */
+.dragging {
+    opacity: 0.5;
+    background-color: #444;
+    border: 2px dashed var(--accent);
+}
+
+/* Ajuste para que la tabla no se rompa al mover */
+tr {
+    transition: background-color 0.2s;
+}

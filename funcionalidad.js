@@ -333,23 +333,45 @@ function loadPlaylistMode() {
 
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
+    // Buscamos el header para agregar la columna extra si no existe
+    const theadRow = document.querySelector('thead tr');
+    
+    // Pequeño truco: Si el header tiene 5 columnas, le agregamos la del reordenar al inicio
+    if (theadRow && theadRow.children.length === 5) {
+        const th = document.createElement('th');
+        th.innerText = "≡";
+        th.style.width = "10%";
+        theadRow.insertBefore(th, theadRow.firstChild); // Lo ponemos al principio
+    }
+
     tbody.innerHTML = '';
+    
     if (songsData.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
         return;
     }
+
     songsData.forEach((song, i) => {
         const globalIndex = originalIds[i]; 
-        let row = `
-            <tr>
-                <td class="index-col">${i + 1}</td>
-                <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
-                <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
-                <td style="color: var(--text-white);">${song.artist}</td>
-                <td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex})">×</button></td>
-            </tr>`;
-        tbody.innerHTML += row;
+        
+        let row = document.createElement('tr');
+        row.setAttribute('data-index', globalIndex); // Guardamos el ID real aquí
+        row.classList.add('draggable-row');
+
+        row.innerHTML = `
+            <td class="drag-handle">≡</td>
+            <td class="index-col">${i + 1}</td>
+            <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
+            <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
+            <td style="color: var(--text-white);">${song.artist}</td>
+            <td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex})">×</button></td>
+        `;
+        
+        tbody.appendChild(row);
     });
+
+    // Activamos la lógica de arrastre después de dibujar
+    enableDragAndDrop();
 }
 
 function sharePlaylistUrl() {
@@ -357,6 +379,92 @@ function sharePlaylistUrl() {
     const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(',');
     if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl });
     else { navigator.clipboard.writeText(shareUrl); showNotification("Link copiado!"); }
+}
+
+/* --- SISTEMA DE REORDENAMIENTO TÁCTIL (DRAG & DROP) --- */
+
+function enableDragAndDrop() {
+    const tbody = document.getElementById('tableBody');
+    let draggingRow = null;
+    let touchStartY = 0;
+    let currRow = null;
+
+    // Detectar cuando tocamos una manija "≡"
+    tbody.querySelectorAll('.drag-handle').forEach(handle => {
+        
+        handle.addEventListener('touchstart', (e) => {
+            // Evitar scroll de pantalla
+            e.preventDefault(); 
+            
+            currRow = handle.closest('tr');
+            draggingRow = currRow;
+            
+            // Añadir clase visual
+            currRow.classList.add('dragging');
+            touchStartY = e.touches[0].clientY;
+        }, { passive: false });
+
+        handle.addEventListener('touchmove', (e) => {
+            if (!draggingRow) return;
+            e.preventDefault(); // Importante: evita que se mueva la pantalla
+
+            const touchY = e.touches[0].clientY;
+            
+            // Detectar sobre qué fila estamos pasando el dedo
+            const elementBelow = document.elementFromPoint(e.touches[0].clientX, touchY);
+            const rowBelow = elementBelow ? elementBelow.closest('tr') : null;
+
+            if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) {
+                // Lógica de intercambio visual (Swap)
+                const bounding = rowBelow.getBoundingClientRect();
+                const offset = bounding.y + (bounding.height / 2);
+                
+                if (touchY - offset > 0) {
+                    rowBelow.after(draggingRow);
+                } else {
+                    rowBelow.before(draggingRow);
+                }
+            }
+        }, { passive: false });
+
+        handle.addEventListener('touchend', () => {
+            if (draggingRow) {
+                draggingRow.classList.remove('dragging');
+                draggingRow = null;
+                
+                // Guardar el nuevo orden
+                saveNewOrder();
+            }
+        });
+    });
+}
+
+function saveNewOrder() {
+    const rows = document.querySelectorAll('#tableBody tr');
+    const newPlaylist = [];
+
+    rows.forEach(row => {
+        // Leemos el ID original que guardamos en el atributo data-index
+        const id = row.getAttribute('data-index');
+        if (id !== null) {
+            newPlaylist.push(parseInt(id));
+        }
+    });
+
+    // Actualizamos la variable global y el localStorage
+    myPlaylist = newPlaylist;
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+    
+    // IMPORTANTE: Actualizamos también la lista de contexto para el Swipe
+    currentContextList = newPlaylist;
+
+    // Renumeramos visualmente los índices (1, 2, 3...)
+    rows.forEach((row, index) => {
+        const indexCell = row.querySelector('.index-col');
+        if(indexCell) indexCell.innerText = index + 1;
+    });
+
+    showNotification("Orden actualizado");
 }
 
 /* --- SISTEMA DE BORRADO CON MODAL --- */
