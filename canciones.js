@@ -1878,12 +1878,12 @@ Yo quiero es<span class="g"><span class="chord">F</span>tar</span> donde tú es<
         type: "Adoración",
         content: `
 <span class="g"><span class="chord">Em</span>No</span>sé por qué, Señor tú me tocaste
-<span class="g"><span class="chord">Am</span>No</span>sé por qué, en <span class="g"><span class="chord">D7</span>mí</span> tu te fijaste
-<span class="g"><span class="chord">Em</span>Pero</span>sí sé,
-Que <span class="g"><span class="chord">Am</span>grande</span> es tu a<span class="g"><span class="chord">B</span>mor</span> por <span class="g"><span class="chord">C</span>mí.</span><span class="g"><span class="chord">D</span>..</span>
+<span class="g"><span class="chord">Am</span>No</span>sé por qué, en <span class="g"><span class="chord">D7</span>mí</span>tu te fijaste
+<span class="g"><span class="chord">Em</span>Pero</span>sí sé, que <span class="g"><span class="chord">Am</span>grande</span> es tu a<span class="g"><span class="chord">B</span>mor</span>
+Por <span class="g"><span class="chord">C</span>mí.</span><span class="g"><span class="chord">D</span>..</span>
 
 <span class="g"><span class="chord">Em</span>Mi</span> corazón, está agradecido
-<span class="g"><span class="chord">Am</span>Mi</span> corazón, es<span class="g"><span class="chord">D</span>tá</span> a ti rendido,
+<span class="g"><span class="chord">Am</span>Mi</span> corazón, es<span class="g"><span class="chord">D</span>tá</span>a ti rendido,
 <span class="g"><span class="chord">Em</span>Contigo</span> siempre,
 <span class="g"><span class="chord">Am</span>Quiero</span> Se<span class="g"><span class="chord">B</span>ñor</span> es<span class="g"><span class="chord">C</span>tar.</span><span class="g"><span class="chord">D</span>..</span>
 
@@ -1891,7 +1891,7 @@ Que <span class="g"><span class="chord">Am</span>grande</span> es tu a<span clas
 Porque <span class="g"><span class="chord">Am</span>fuera</span> de <span class="g"><span class="chord">D</span>ti</span>
 Nada de<span class="g"><span class="chord">G</span>seo</span> en la <span class="g"><span class="chord">Em</span>tierra</span>
 Tu pre<span class="g"><span class="chord">Am</span>sencia</span> es más her<span class="g"><span class="chord">B</span>mosa</span>
-Que cualquier <span class="g"><span class="chord">C</span>co</span><span class="g"><span class="chord">D</span>__</span><span class="g"><span class="chord">Em</span>sa.</span>
+Que cualquier <span class="g"><span class="chord">C</span>co</span><span class="g"><span class="chord">D</span>_</span><span class="g"><span class="chord">Em</span>sa.</span>
 
 [Verso 3]
 <span class="g"><span class="chord">Em</span>Eres</span> Señor, mi gozo y mi alegría,
@@ -1909,12 +1909,12 @@ Con<span class="g"><span class="chord">Em</span>tigo siempre,</span>
 Por tanto <span class="g"><span class="chord">Am</span>nunca</span> calla<span class="g"><span class="chord">D</span>ré,</span>
 <span class="g"><span class="chord">G</span>A</span>ti canta<span class="g"><span class="chord">Em</span>ré,</span>
 <span class="g"><span class="chord">Am</span>Te</span>alaba<span class="g"><span class="chord">B</span>ré,</span>
-Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><span class="chord">D</span>__</span><span class="g"><span class="chord">Em</span>a.</span>
+Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><span class="chord">D</span>_</span><span class="g"><span class="chord">Em</span>a.</span>
 
 <span class="g"><span class="chord">Am</span>Cristo</span> mi s<span class="g"><span class="chord">D</span>eñor,</span>
 <span class="g"><span class="chord">G</span>A</span>ti canta<span class="g"><span class="chord">Em</span>ré,</span>
 <span class="g"><span class="chord">Am</span>Te</span>proclama<span class="g"><span class="chord">B</span>ré,</span>
-Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><span class="chord">D</span>__</span><span class="g"><span class="chord">C</span>a.</span>
+Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><span class="chord">D</span>_</span><span class="g"><span class="chord">C</span>a.</span>
 
 [Instrumental]
 <span class="g"><span class="chord">C</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">D</span>`
