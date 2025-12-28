@@ -1195,7 +1195,7 @@ Pues nuestra <span class="g"><span class="chord">D</span>fe</span> y victoria cr
     },
 
     {
-        title: "A el sea la Gloria",
+        title: "Todo es de mi Cristo",
         artist: "Marco Barrientos",
         key: "Em",
         type: "Adoración",
@@ -1697,5 +1697,227 @@ Te a<span class="g"><span class="chord">G</span>doro mi Señor,</span>
 No hay na<span class="g"><span class="chord">F</span>da</span> alrede<span class="g"><span class="chord">E</span>dor,</span>
 <span class="g"><span class="chord">Am7</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">E</span>yo,</span>
 <span class="g"><span class="chord">C</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">G</span>yo.`
+    },
+
+    {
+        title: "Señor llévame a tus Atrios",
+        artist: "Danilo Montero",
+        key: "Em",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">Em</span>Señor</span> llévame a tus Atrios
+<span class="g"><span class="chord">G</span>Al</span> lugar santo, <span class="g"><span class="chord">Am</span>al</span>altar de bronce
+Señor tu <span class="g"><span class="chord">C</span>rostro</span> quiero <span class="g"><span class="chord">B</span>ver.</span>
+
+[Verso 2]
+Pasa<span class="g"><span class="chord">Em</span>ré</span>a la muchedumbre,
+Por donde el <span class="g"><span class="chord">G</span>sacerdote</span> canta,
+Tengo <span class="g"><span class="chord">Am</span>hambre</span> y sed de justicia,
+Y solo en<span class="g"><span class="chord">C</span>cuentro</span> un lu<span class="g"><span class="chord">B</span>gar.</span>
+
+[Coro]
+Lleva<span class="g"><span class="chord">Em</span>me</span>al lu<span class="g"><span class="chord">G</span>gar</span> san<span class="g"><span class="chord">D</span>tísimo,</span>
+Por la <span class="g"><span class="chord">Am</span>sangre</span> del Cor<span class="g"><span class="chord">B</span>dero</span> reden<span class="g"><span class="chord">Em</span>tor,</span> <span class="g"><span class="chord">C</span>..</span>
+<span class="g"><span class="chord">D</span>Lle</span>va<span class="g"><span class="chord">Em</span>me</span>al lu<span class="g"><span class="chord">G</span>gar</span> san<span class="g"><span class="chord">D</span>tísimo,</span>
+Tóca<span class="g"><span class="chord">Am</span>me,</span> limpia<span class="g"><span class="chord">B</span>me,</span> Heme A<span class="g"><span class="chord">Em</span>quí.`
+    },
+
+    {
+        title: "Conozco que todo lo puede",
+        artist: "Juan Carlos Alvarado",
+        key: "G",
+        type: "Adoración",
+        content: `
+Co<span class="g"><span class="chord">G</span>nozco</span> que todo lo <span class="g"><span class="chord">C</span>puedes,</span>
+<span class="g"><span class="chord">D</span>   Que</span> en mi pensa<span class="g"><span class="chord">G</span>miento,</span>
+Nada <span class="g"><span class="chord">C</span>pue</span><span class="g"><span class="chord">D</span>do</span> es<span class="g"><span class="chord">G</span>conder.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">G</span>Hablaba</span> lo que no enten<span class="g"><span class="chord">C</span>día,</span>
+Y de a o<span class="g"><span class="chord">Am</span>ídas,</span> te había <span class="g"><span class="chord">C</span>oí</span><span class="g"><span class="chord">D</span>do.</span>
+
+[Coro]
+Mas a<span class="g"><span class="chord">G</span>hora</span> mis <span class="g"><span class="chord">Bm</span>ojos</span> te <span class="g"><span class="chord">Em</span>ven,</span>
+Yo te <span class="g"><span class="chord">D</span>pregun</span><span class="g"><span class="chord">C</span>taré,</span> <span class="g"><span class="chord">Am</span>..</span>
+Y tú me en<span class="g"><span class="chord">C</span>seña</span><span class="g"><span class="chord">D</span>rás.</span>
+
+Mas a<span class="g"><span class="chord">G</span>hora</span> mis <span class="g"><span class="chord">Bm</span>ojos</span> te <span class="g"><span class="chord">Em</span>ven,</span>
+Hoy me <span class="g"><span class="chord">D</span>rindo</span> a tus <span class="g"><span class="chord">C</span>pies,</span> <span class="g"><span class="chord">Am</span>..</span>
+Y me arre<span class="g"><span class="chord">C</span>pien</span><span class="g"><span class="chord">D</span>to</span> Se<span class="g"><span class="chord">G</span>ñor.`
+    },
+
+    {
+        title: "La bondad de Dios",
+        artist: "Essential Worship",
+        key: "G",
+        type: "Adoración",
+        content: `
+Te amo <span class="g"><span class="chord">G</span>Dios,</span>
+Tu a<span class="g"><span class="chord">C</span>mor</span> nunca me fa<span class="g"><span class="chord">G</span>lla,</span>
+Mi <span class="g"><span class="chord">D/F#</span>exis</span><span class="g"><span class="chord">Em</span>tir</span> en tus <span class="g"><span class="chord">C</span>manos</span> es<span class="g"><span class="chord">D</span>tá.</span>
+
+Desde el momento en que <span class="g"><span class="chord">Em</span>despierto,</span> <span class="g"><span class="chord">C</span>..</span>
+Hasta el a<span class="g"><span class="chord">G</span>nochecer,</span> <span class="g"><span class="chord">D/F#</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Yo <span class="g"><span class="chord">D</span>can</span>ta<span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Coro]
+<span class="g"><span class="chord">C</span>En</span> mi <span class="g"><span class="chord">D</span>vida</span> a sido <span class="g"><span class="chord">G</span>bueno,</span>
+<span class="g"><span class="chord">C</span>En</span> mi <span class="g"><span class="chord">D</span>vida</span> has sido <span class="g"><span class="chord">G</span>tan</span> <span class="g"><span class="chord">D</span>fiel,</span>
+<span class="g"><span class="chord">C</span>Con</span> mi ser, con cada <span class="g"><span class="chord">G</span>aliento,</span> <span class="g"><span class="chord">D/F#</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Verso 2]
+Yo amo tu <span class="g"><span class="chord">G</span>voz,</span>
+Me has <span class="g"><span class="chord">C</span>guiado</span> por el <span class="g"><span class="chord">G</span>fuego,</span>
+<span class="g"><span class="chord">D/F#</span>  Tu</span>cerca <span class="g"><span class="chord">Em</span>estás</span> en <span class="g"><span class="chord">C</span>la</span> la oscuri<span class="g"><span class="chord">D</span>dad.</span>
+
+Te conozco como <span class="g"><span class="chord">Em</span>Padre,</span> <span class="g"><span class="chord">C</span>..</span>
+Y como a<span class="g"><span class="chord">G</span>migo fiel,</span> <span class="g"><span class="chord">D/F#</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Mi <span class="g"><span class="chord">D</span>vida</span> es<span class="g"><span class="chord">C</span>tá</span> en <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Coro]
+<span class="g"><span class="chord">C</span>En</span> mi <span class="g"><span class="chord">D</span>vida</span> a sido <span class="g"><span class="chord">G</span>bueno,</span>
+<span class="g"><span class="chord">C</span>En</span> mi <span class="g"><span class="chord">D</span>vida</span> has sido <span class="g"><span class="chord">G</span>tan</span> <span class="g"><span class="chord">D</span>fiel,</span>
+<span class="g"><span class="chord">C</span>Con</span> mi ser, con cada <span class="g"><span class="chord">G</span>aliento,</span> <span class="g"><span class="chord">D/F#</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Puente]
+<span class="g"><span class="chord">G</span>Tu</span> fidelidad <span class="g"><span class="chord">C</span>sigue</span>
+<span class="g"><span class="chord">D</span>persi</span>guiéndo<span class="g"><span class="chord">G</span>me,</span> <span class="g"><span class="chord">D/F#</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Tu fidelidad <span class="g"><span class="chord">C</span>sigue,</span>
+<span class="g"><span class="chord">D</span>per</span>siguiéndo<span class="g"><span class="chord">G</span>me,</span>
+Todo <span class="g"><span class="chord">Bm</span>lo</span>que soy te lo en<span class="g"><span class="chord">C</span>trego</span> hoy,
+A <span class="g"><span class="chord">D</span>Ti</span> me rendi<span class="g"><span class="chord">Em</span>ré,</span>
+<span class="g"><span class="chord">Bm</span>Tu</span> fidelidad <span class="g"><span class="chord">C</span>sigue,</span>
+<span class="g"><span class="chord">D</span>per</span>siguiéndo<span class="g"><span class="chord">G</span>me.</span>
+
+[Final]
+Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">Em</span>Dios.</span> <span class="g"><span class="chord">Bm</span>..</span>
+Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">Em</span>Dios.</span> <span class="g"><span class="chord">Bm</span>..</span>
+Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span class="chord">C</span>ré</span> de <span class="g"><span class="chord">D</span>la</span> bondad de <span class="g"><span class="chord">G</span>Dios.</span>`
+    },
+
+    {
+        title: "La Sunamita",
+        artist: "Montesanto",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Viniste</span> a mi ca<span class="g"><span class="chord">C</span>sa,</span>
+Me visi<span class="g"><span class="chord">Bm</span>taste,</span>
+Disfruté tu pre<span class="g"><span class="chord">C</span>sencia.</span>
+
+Me cauti<span class="g"><span class="chord">Em</span>vaste,</span>
+No quiero que te <span class="g"><span class="chord">C</span>vayas,</span>
+Yo quiero que te <span class="g"><span class="chord">Am7</span>quedes,</span>
+He prepa<span class="g"><span class="chord">C</span>rado</span> un aposento para <span class="g"><span class="chord">D</span>Ti.</span>
+
+[Coro]
+Mi a<span class="g"><span class="chord">C</span>mado,</span>
+Mi a<span class="g"><span class="chord">Am7</span>mado,</span>
+Yo soy La Suna<span class="g"><span class="chord">G</span>mita,</span>
+Que te dice vive <span class="g"><span class="chord">D</span>aquí.</span>
+
+Mi a<span class="g"><span class="chord">C</span>mado,</span>
+Mi a<span class="g"><span class="chord">Am7</span>mado,</span>
+Todo lo que <span class="g"><span class="chord">G</span>ves</span> lo he preparado
+Para <span class="g"><span class="chord">D</span>Ti.</span>
+
+[Puente]
+No <span class="g"><span class="chord">C</span>importa</span> todo lo que cueste<span class="g"><span class="chord">D</span>,</span>
+Tu presencia vale mucho <span class="g"><span class="chord">Em</span>más,</span>
+Solo quiero estar contigo,
+<span class="g"><span class="chord">Bm</span>Una</span> y otra, y otra, y otra <span class="g"><span class="chord">C</span>vez.`
+    },
+
+    {
+        title: "Tengo un Perfume",
+        artist: "Fresca Unción",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Tengo</span> un perfume <span class="g"><span class="chord">C</span>que,</span>
+<span class="g"><span class="chord">D</span>Solo</span> es para <span class="g"><span class="chord">G</span>ti,</span>
+<span class="g"><span class="chord">Em</span>Es</span> mi alabanza,
+<span class="g"><span class="chord">Am</span>Es</span> mi adora<span class="g"><span class="chord">D</span>ción.</span>
+
+No puedo <span class="g"><span class="chord">G</span>más,</span> resis<span class="g"><span class="chord">C</span>tir,</span> este a<span class="g"><span class="chord">Cm</span>mor,</span>
+Que esta <span class="g"><span class="chord">G</span>dentro</span> de mi cora<span class="g"><span class="chord">Em</span>zón,</span>
+Re<span class="g"><span class="chord">C</span>cibe</span> mi a<span class="g"><span class="chord">D</span>do</span>ra<span class="g"><span class="chord">G</span>ción.`
+    },
+
+    {
+        title: "Aquí Estoy",
+        artist: "Jaime Murrell",
+        key: "G",
+        type: "Adoración",
+        content: `
+A<span class="g"><span class="chord">G</span>quí</span> es<span class="g"><span class="chord">D</span>toy,</span> <span class="g"><span class="chord">Em7</span>  te</span> ofrezco todo <span class="g"><span class="chord">C</span>lo</span> que <span class="g"><span class="chord">D</span>soy,</span>
+A<span class="g"><span class="chord">G</span>quí</span> es<span class="g"><span class="chord">D</span>toy,</span> <span class="g"><span class="chord">Em7</span>  un</span> sacrificio <span class="g"><span class="chord">C</span>quiero</span> <span class="g"><span class="chord">D</span>ser.</span>
+
+[Pre-Coro]
+<span class="g"><span class="chord">C</span>Toma</span> mi <span class="g"><span class="chord">D</span>ser,</span> <span class="g"><span class="chord">C</span>  mi</span> <span class="g"><span class="chord">Am</span>vida</span> en<span class="g"><span class="chord">C</span>trego</span> a <span class="g"><span class="chord">D</span>Ti.</span>
+
+[Coro]
+Porque <span class="g"><span class="chord">G</span>Tu</span> e<span class="g"><span class="chord">C</span>res</span> mi <span class="g"><span class="chord">D</span>Dios,</span>
+Eres <span class="g"><span class="chord">G</span>digno</span> de <span class="g"><span class="chord">C</span>adora</span><span class="g"><span class="chord">D</span>ción,</span>
+Una o<span class="g"><span class="chord">G</span>frenda</span> de a<span class="g"><span class="chord">C</span>mor</span> se<span class="g"><span class="chord">D</span>ré,</span>
+para <span class="g"><span class="chord">C</span>Ti,</span> <span class="g"><span class="chord">Am</span>..</span>
+para <span class="g"><span class="chord">D</span>Ti.`
+    },
+
+    {
+        title: "Pertenezco a Ti",
+        artist: "Perfume de Alabanza",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Pertenezco</span> a ti, Señor Je<span class="g"><span class="chord">D/F#</span>sús,</span>
+<span class="g"><span class="chord">Em</span>Y</span>no hay nada que pueda bo<span class="g"><span class="chord">Bm</span>rrar,</span>
+<span class="g"><span class="chord">C</span>Ese</span> amor que un día tú <span class="g"><span class="chord">Bm</span>pusiste</span> dentro de mí,
+<span class="g"><span class="chord">C</span>Y</span>que ahora <span class="g"><span class="chord">Am</span>quiero</span> recor<span class="g"><span class="chord">D</span>dar.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">G</span>Hoy</span> mi vaso cae ante <span class="g"><span class="chord">D/F#</span>ti,</span>
+<span class="g"><span class="chord">Em</span>Derramado</span> a tus pies Se<span class="g"><span class="chord">Bm</span>ñor,</span>
+<span class="g"><span class="chord">C</span>A</span>rogarte tu perdón, <span class="g"><span class="chord">Bm</span>por</span> tanta rebelión,
+<span class="g"><span class="chord">C</span>Que</span> impide <span class="g"><span class="chord">Am</span>que</span> pueda <span class="g"><span class="chord">C</span>darte</span> mi a<span class="g"><span class="chord">D</span>mor.</span>
+
+[Coro]
+Al<span class="g"><span class="chord">G</span>canza,</span> oh Dios, mi cora<span class="g"><span class="chord">D</span>zón,</span>
+<span class="g"><span class="chord">G</span>Rómpelo</span> y <span class="g"><span class="chord">C</span>límpialo,</span>
+<span class="g"><span class="chord">Am</span>Que</span> tu puedas a través de <span class="g"><span class="chord">Em</span>mí,</span> <span class="g"><span class="chord">D</span>..</span>
+<span class="g"><span class="chord">Am</span>Reflejar</span> tu gloria y tu a<span class="g"><span class="chord">C</span>mor.</span> <span class="g"><span class="chord">D</span>..</span>`
+    },
+
+    {
+        title: "Yo solo quiero estar donde tu estas",
+        artist: "Don Moen",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Yo</span> solo quiero es<span class="g"><span class="chord">Am</span>tar</span> donde tú estás,
+<span class="g"><span class="chord">C</span>  Viviendo</span> a <span class="g"><span class="chord">D</span>diario</span> en tu pre<span class="g"><span class="chord">G</span>sencia,</span>
+No quiero darte <span class="g"><span class="chord">Am</span>solo</span> adoración,
+<span class="g"><span class="chord">C</span>  Yo</span> quiero <span class="g"><span class="chord">D</span>ser</span> adora<span class="g"><span class="chord">G</span>dor.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">G</span>Yo</span> solo quiero es<span class="g"><span class="chord">Am</span>tar</span> donde tú estás,
+<span class="g"><span class="chord">C</span>  En</span> tu ha<span class="g"><span class="chord">D</span>bitación</span> por <span class="g"><span class="chord">G</span>siempre,</span>
+Llévame al lu<span class="g"><span class="chord">Am</span>gar</span> donde tú estás,
+<span class="g"><span class="chord">C</span>  Yo</span> quiero es<span class="g"><span class="chord">D</span>tar</span> donde tú es<span class="g"><span class="chord">G</span>tás.</span>
+
+[Coro]
+Yo quiero estar <span class="g"><span class="chord">C</span>contigo,</span> <span class="g"><span class="chord">D</span>..</span>
+Morando en tu <span class="g"><span class="chord">Bm</span>presencia,</span> <span class="g"><span class="chord">Em</span>..</span>
+Comiendo en tu <span class="g"><span class="chord">C</span>mesa,</span> <span class="g"><span class="chord">D</span>..</span>
+Y rodeado de tu <span class="g"><span class="chord">G</span>gloria...</span>
+
+[Puente]
+En tu pre<span class="g"><span class="chord">C</span>sencia</span> quiero es<span class="g"><span class="chord">D</span>tar,</span>
+En tu pre<span class="g"><span class="chord">Bm</span>sencia</span> he de habi<span class="g"><span class="chord">Em</span>tar,</span>
+<span class="g"><span class="chord">C</span>Yo</span> solo <span class="g"><span class="chord">D</span>quiero</span> estar,
+<span class="g"><span class="chord">C</span>Yo</span> solo <span class="g"><span class="chord">D</span>quiero</span> estar, <span class="g"><span class="chord">Eb</span>..</span>
+Yo quiero es<span class="g"><span class="chord">F</span>tar</span> donde tú es<span class="g"><span class="chord">G</span>tás.`
     },
 ];
