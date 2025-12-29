@@ -333,21 +333,20 @@ function loadPlaylistMode() {
 
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
-    // Buscamos el header para agregar la columna extra si no existe
-    const theadRow = document.querySelector('thead tr');
     
-    // Pequeño truco: Si el header tiene 5 columnas, le agregamos la del reordenar al inicio
-    if (theadRow && theadRow.children.length === 5) {
-        const th = document.createElement('th');
-        th.innerText = "≡";
-        th.style.width = "10%";
-        theadRow.insertBefore(th, theadRow.firstChild); // Lo ponemos al principio
+    // IMPORTANTE: Asegurarnos de que el Header NO tenga la columna extra si la agregamos antes
+    const theadRow = document.querySelector('thead tr');
+    // Si por error quedó la columna de la manija (5 columnas), la borramos
+    if (theadRow && theadRow.children.length > 5) { 
+       // Ajusta esto según cuantas columnas tengas. 
+       // Simplemente recargando la página debería limpiarse si el HTML está bien, 
+       // pero aquí asumimos el HTML original de 5 columnas.
     }
 
     tbody.innerHTML = '';
     
     if (songsData.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
         return;
     }
 
@@ -355,11 +354,13 @@ function renderPlaylistTable(songsData, originalIds) {
         const globalIndex = originalIds[i]; 
         
         let row = document.createElement('tr');
-        row.setAttribute('data-index', globalIndex); // Guardamos el ID real aquí
-        row.classList.add('draggable-row');
+        row.setAttribute('data-index', globalIndex); // Guardamos el ID real
+        row.classList.add('draggable-row'); // Clase para el CSS
+
+        // Nota: Agregamos oncontextmenu="return false" para evitar el menú de click derecho en Android
+        row.oncontextmenu = function(event) { event.preventDefault(); event.stopPropagation(); return false; };
 
         row.innerHTML = `
-            <td class="drag-handle">≡</td>
             <td class="index-col">${i + 1}</td>
             <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
             <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
@@ -370,8 +371,8 @@ function renderPlaylistTable(songsData, originalIds) {
         tbody.appendChild(row);
     });
 
-    // Activamos la lógica de arrastre después de dibujar
-    enableDragAndDrop();
+    // Activamos la lógica de "Mantener presionado"
+    enableLongPressDrag();
 }
 
 function sharePlaylistUrl() {
@@ -381,90 +382,124 @@ function sharePlaylistUrl() {
     else { navigator.clipboard.writeText(shareUrl); showNotification("Link copiado!"); }
 }
 
-/* --- SISTEMA DE REORDENAMIENTO TÁCTIL (DRAG & DROP) --- */
+/* --- SISTEMA DE REORDENAMIENTO: LONG PRESS (MANTENER) --- */
 
-function enableDragAndDrop() {
+function enableLongPressDrag() {
+    const rows = document.querySelectorAll('.draggable-row');
     const tbody = document.getElementById('tableBody');
+    
+    let pressTimer;
+    let isDragging = false;
     let draggingRow = null;
-    let touchStartY = 0;
-    let currRow = null;
+    let startY = 0;
 
-    // Detectar cuando tocamos una manija "≡"
-    tbody.querySelectorAll('.drag-handle').forEach(handle => {
+    rows.forEach(row => {
         
-        handle.addEventListener('touchstart', (e) => {
-            // Evitar scroll de pantalla
-            e.preventDefault(); 
+        // 1. Al tocar la pantalla
+        row.addEventListener('touchstart', (e) => {
+            // Si tocan el botón de borrar (X), no iniciamos nada
+            if (e.target.classList.contains('btn-remove')) return;
+
+            isDragging = false;
+            startY = e.touches[0].clientY;
             
-            currRow = handle.closest('tr');
-            draggingRow = currRow;
+            // Iniciamos el temporizador: Si en 600ms no mueve el dedo, activamos el modo arrastrar
+            pressTimer = setTimeout(() => {
+                isDragging = true;
+                draggingRow = row;
+                
+                // Efecto visual y háptico (vibración)
+                row.classList.add('dragging');
+                if (navigator.vibrate) navigator.vibrate(50); 
+                
+            }, 600); // 600ms para considerar "Mantener presionado"
             
-            // Añadir clase visual
-            currRow.classList.add('dragging');
-            touchStartY = e.touches[0].clientY;
         }, { passive: false });
 
-        handle.addEventListener('touchmove', (e) => {
-            if (!draggingRow) return;
-            e.preventDefault(); // Importante: evita que se mueva la pantalla
+        // 2. Al mover el dedo
+        row.addEventListener('touchmove', (e) => {
+            const currentY = e.touches[0].clientY;
 
-            const touchY = e.touches[0].clientY;
-            
-            // Detectar sobre qué fila estamos pasando el dedo
-            const elementBelow = document.elementFromPoint(e.touches[0].clientX, touchY);
-            const rowBelow = elementBelow ? elementBelow.closest('tr') : null;
-
-            if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) {
-                // Lógica de intercambio visual (Swap)
-                const bounding = rowBelow.getBoundingClientRect();
-                const offset = bounding.y + (bounding.height / 2);
+            if (!isDragging) {
+                // Si movemos el dedo ANTES de que se cumpla el tiempo, es un SCROLL normal.
+                // Cancelamos el temporizador de arrastre.
+                if (Math.abs(currentY - startY) > 10) {
+                    clearTimeout(pressTimer);
+                }
+            } else {
+                // Si YA estamos arrastrando (pasaron los 600ms)
+                e.preventDefault(); // Bloqueamos el scroll de la pantalla
                 
-                if (touchY - offset > 0) {
-                    rowBelow.after(draggingRow);
-                } else {
-                    rowBelow.before(draggingRow);
+                // Lógica de intercambio (Swap)
+                const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY);
+                const rowBelow = elementBelow ? elementBelow.closest('tr') : null;
+
+                if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) {
+                    const bounding = rowBelow.getBoundingClientRect();
+                    const offset = bounding.y + (bounding.height / 2);
+                    
+                    if (currentY - offset > 0) {
+                        rowBelow.after(draggingRow);
+                    } else {
+                        rowBelow.before(draggingRow);
+                    }
                 }
             }
         }, { passive: false });
 
-        handle.addEventListener('touchend', () => {
-            if (draggingRow) {
+        // 3. Al soltar el dedo
+        row.addEventListener('touchend', (e) => {
+            // Limpiamos el timer (por si soltó rápido, fue un click normal)
+            clearTimeout(pressTimer);
+            
+            if (isDragging) {
+                // Si estaba arrastrando, finalizamos y guardamos
+                isDragging = false;
                 draggingRow.classList.remove('dragging');
                 draggingRow = null;
-                
-                // Guardar el nuevo orden
                 saveNewOrder();
+                
+                // Evitamos que se dispare el click de "abrir canción" al soltar
+                e.preventDefault(); 
             }
+        });
+        
+        // Cancelar si pasa algo raro (salir de la pantalla, alerta, etc)
+        row.addEventListener('touchcancel', () => {
+            clearTimeout(pressTimer);
+            if (draggingRow) draggingRow.classList.remove('dragging');
+            isDragging = false;
         });
     });
 }
 
+// Reutilizamos la misma función de guardar orden del paso anterior
 function saveNewOrder() {
     const rows = document.querySelectorAll('#tableBody tr');
     const newPlaylist = [];
 
     rows.forEach(row => {
-        // Leemos el ID original que guardamos en el atributo data-index
         const id = row.getAttribute('data-index');
         if (id !== null) {
             newPlaylist.push(parseInt(id));
         }
     });
 
-    // Actualizamos la variable global y el localStorage
     myPlaylist = newPlaylist;
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
     
-    // IMPORTANTE: Actualizamos también la lista de contexto para el Swipe
-    currentContextList = newPlaylist;
+    // Actualizamos contexto para Swipe
+    if (typeof currentContextList !== 'undefined') {
+        currentContextList = newPlaylist;
+    }
 
-    // Renumeramos visualmente los índices (1, 2, 3...)
+    // Renumeramos visualmente
     rows.forEach((row, index) => {
         const indexCell = row.querySelector('.index-col');
         if(indexCell) indexCell.innerText = index + 1;
     });
 
-    showNotification("Orden actualizado");
+    showNotification("Orden guardado");
 }
 
 /* --- SISTEMA DE BORRADO CON MODAL --- */
@@ -505,6 +540,9 @@ function openKeyModal() { document.getElementById('keyModal').style.display = 'f
 function closeKeyModal() { document.getElementById('keyModal').style.display = 'none'; }
 function generateKeyButtons() {
     const grid = document.getElementById('keyGrid');
+    
+    if (!grid) return; // Si no existe el elemento (estamos en lista.html), salimos.
+
     grid.innerHTML = '';
     filterKeys.forEach(key => {
         let btn = document.createElement('button');

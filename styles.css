@@ -754,27 +754,22 @@ tr:hover { background-color: #252525; }
     min-height: 10px; /* Para que no colapse feo si está vacío */
 }
 
-/* --- DRAG & DROP (REORDENAR LISTA) --- */
+/* --- DRAG & DROP (LONG PRESS) --- */
 
-/* La columna de la manija */
-.drag-handle {
-    cursor: grab;
-    color: var(--text-secondary);
-    font-size: 1.5rem; /* Grande para el dedo */
-    touch-action: none; /* Evita que el navegador quiera hacer scroll */
-    user-select: none;
-    text-align: center;
-    width: 40px;
+/* La fila completa será el área táctil */
+.draggable-row {
+    transition: transform 0.1s, background-color 0.2s;
+    user-select: none; /* Evita que se seleccione el texto al mantener presionado */
+    -webkit-user-select: none;
+    position: relative;
 }
 
-/* Cuando estás arrastrando una fila */
+/* Estado cuando se activa el arrastre */
 .dragging {
-    opacity: 0.5;
-    background-color: #444;
-    border: 2px dashed var(--accent);
-}
-
-/* Ajuste para que la tabla no se rompa al mover */
-tr {
-    transition: background-color 0.2s;
+    background-color: #333 !important; /* Fondo más oscuro */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra para dar efecto de elevación */
+    z-index: 100;
+    opacity: 0.9;
+    transform: scale(1.02); /* Se agranda un poquito */
+    border: 1px solid var(--accent);
 }
