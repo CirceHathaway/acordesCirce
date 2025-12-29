@@ -1,3 +1,22 @@
+/* --- IMPORTACIONES DE FIREBASE (CDN) --- */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, set, onValue, off, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+/* --- CONFIGURACIÓN DE FIREBASE --- */
+const firebaseConfig = {
+  apiKey: "AIzaSyCbvS4syteiVz4g7fWdDF-jvm1kv8QFtaU",
+  authDomain: "acordify-live.firebaseapp.com",
+  databaseURL: "https://acordify-live-default-rtdb.firebaseio.com",
+  projectId: "acordify-live",
+  storageBucket: "acordify-live.firebasestorage.app",
+  messagingSenderId: "553273090812",
+  appId: "1:553273090812:web:cc45175e08f90d6eb72d79"
+};
+
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
 /* --- CONFIGURACIÓN MUSICAL --- */
 const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const flatMap = { "Db": "C#", "Eb": "D#", "Gb": "F#", "Ab": "G#", "Bb": "A#" };
@@ -10,29 +29,43 @@ let currentSongIndex = -1;
 let currentSemitones = 0; 
 let isSpanish = false; 
 let currentFontSize = 17;
-let showChords = true; // Estado de visibilidad de acordes
+let showChords = true; 
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
-let currentContextList = []; // <--- Guarda el orden de IDs actual de la lista
+let currentContextList = []; 
+
+/* --- VARIABLES LIVE (SESIÓN ÚNICA) --- */
+const FIXED_ROOM_ID = "SESSION_1"; 
+const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU'];
+
+let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
+let isConnected = !!currentUserKey; 
 
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
     }
+    
     if (typeof songs !== 'undefined') {
         if (window.location.pathname.includes('lista.html')) {
-            loadPlaylistMode();
+            window.loadPlaylistMode();
+            window.generateKeyButtons();
         } else {
-            applyGlobalFilters(); 
+            window.applyGlobalFilters(); 
+            window.generateKeyButtons();
         }
-        generateKeyButtons();
+
+        if (isConnected) {
+            reconnectSession();
+        }
+
     } else {
-        alert("Error: No se cargó canciones.js");
+        console.error("Error: No se cargó canciones.js");
     }
 };
 
 /* --- NAVEGACIÓN Y HISTORIAL --- */
-function openSong(indexInGlobalArray) {
+window.openSong = function(indexInGlobalArray) {
     if (window.location.hash === '#song') {
         history.replaceState({ view: 'song' }, null, '#song');
     } else {
@@ -49,24 +82,21 @@ function openSong(indexInGlobalArray) {
     document.getElementById('detailTitle').innerText = song.title;
     document.getElementById('detailArtist').innerText = song.artist;
 
-    // --- NUEVO: LÓGICA DEL COMENTARIO ---
     const commentEl = document.getElementById('detailComment');
-    
     if (song.comentario) {
-        commentEl.innerText = song.comentario; // Ponemos el texto
-        commentEl.style.display = 'block';     // Lo mostramos
+        commentEl.innerText = song.comentario; 
+        commentEl.style.display = 'block';     
     } else {
-        commentEl.innerText = '';              // Limpiamos texto anterior
-        commentEl.style.display = 'none';      // Ocultamos el elemento para que no ocupe espacio
+        commentEl.innerText = '';              
+        commentEl.style.display = 'none';      
     }
-    // -------------------------------------
     
     updateSongView();
     updateChordIcon(); 
     window.scrollTo(0,0);
 }
 
-function goHome() {
+window.goHome = function() {
     if (window.location.hash === '#song') {
         history.back();
     } else {
@@ -84,11 +114,11 @@ function closeSongUI() {
     document.getElementById('songDetailView').style.display = 'none';
     const listView = document.getElementById('songListView');
     if(listView) listView.style.display = 'block';
-    closeAllModals();
+    window.closeAllModals();
     window.scrollTo(0,0);
 }
 
-/* --- LÓGICA MUSICAL Y VISUALIZACIÓN --- */
+/* --- LÓGICA MUSICAL --- */
 function updateSongView() {
     if (currentSongIndex === -1) return;
     const songOriginal = songs[currentSongIndex].content;
@@ -97,7 +127,6 @@ function updateSongView() {
     const chords = tempDiv.querySelectorAll('.chord');
     
     chords.forEach(element => {
-        // 1. Transformar Nota
         let parts = element.innerText.split('/');
         let newChord = transformNote(parts[0]);
         if (parts.length > 1) {
@@ -107,11 +136,10 @@ function updateSongView() {
             element.innerText = newChord;
         }
 
-        // 2. NUEVO: Ocultar o Mostrar según el estado
         if (!showChords) {
-            element.style.display = 'none'; // Desaparece el acorde
+            element.style.display = 'none'; 
         } else {
-            element.style.display = ''; // Vuelve al valor por defecto (CSS)
+            element.style.display = ''; 
         }
     });
 
@@ -120,26 +148,22 @@ function updateSongView() {
     contentDiv.style.fontSize = currentFontSize + 'px';
 }
 
-// NUEVO: Función para alternar acordes
-function toggleChords() {
+window.toggleChords = function() {
     showChords = !showChords;
     updateSongView();
     updateChordIcon();
 }
 
-// NUEVO: Cambiar el icono del botón (Ojo abierto / Ojo tachado)
 function updateChordIcon() {
     const btn = document.getElementById('btnToggleChords');
     if (!btn) return;
 
     if (showChords) {
-        // Ojo Abierto
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
-        btn.style.color = "var(--text-primary)"; // Color normal
+        btn.style.color = "var(--text-primary)"; 
     } else {
-        // Ojo Tachado (Cerrado)
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
-        btn.style.color = "#e55039"; // Color rojo para indicar "apagado"
+        btn.style.color = "#e55039"; 
     }
 }
 
@@ -159,40 +183,41 @@ function transformNote(noteStr) {
     return noteStr;
 }
 
-function applyTranspose(amount) { currentSemitones += amount; updateSongView(); }
-function resetTranspose() { currentSemitones = 0; updateSongView(); closeAllModals(); }
-function toggleNotation() { isSpanish = !isSpanish; updateSongView(); }
+window.applyTranspose = function(amount) { currentSemitones += amount; updateSongView(); }
+window.resetTranspose = function() { currentSemitones = 0; updateSongView(); window.closeAllModals(); }
+window.toggleNotation = function() { isSpanish = !isSpanish; updateSongView(); }
 
-function changeFontSize(amount) {
+window.changeFontSize = function(amount) {
     currentFontSize += amount;
     if (currentFontSize < 8) currentFontSize = 8; 
     if (currentFontSize > 30) currentFontSize = 30; 
     updateSongView();
 }
 
-function toggleModal(modalId) {
+window.toggleModal = function(modalId) {
     const modal = document.getElementById(modalId);
     const overlay = document.getElementById('modalOverlay');
     if (modal.classList.contains('active')) {
-        closeAllModals();
+        window.closeAllModals();
     } else {
-        closeAllModals();
+        window.closeAllModals();
         modal.classList.add('active');
         modal.style.display = 'flex';
         overlay.style.display = 'block';
     }
 }
 
-function closeAllModals() {
+window.closeAllModals = function() {
     document.querySelectorAll('.mini-modal').forEach(m => {
         m.classList.remove('active');
         m.style.display = 'none';
     });
-    document.getElementById('modalOverlay').style.display = 'none';
+    const overlay = document.getElementById('modalOverlay');
+    if(overlay) overlay.style.display = 'none';
 }
 
 /* --- FILTROS Y BÚSQUEDA --- */
-function applyGlobalFilters() {
+window.applyGlobalFilters = function() {
     let filtered = songs.filter(song => {
         if (activeFilters.type && song.type !== activeFilters.type) return false;
         if (activeFilters.key && song.key !== activeFilters.key) return false;
@@ -210,33 +235,36 @@ function applyGlobalFilters() {
     updateFilterVisuals(); 
 }
 
-function filterByType(type) {
+window.filterByType = function(type) {
     if (activeFilters.type === type) activeFilters.type = null; 
     else activeFilters.type = type;
-    applyGlobalFilters();
+    window.applyGlobalFilters();
 }
 
-function filterByKey(selectedKey) {
+window.filterByKey = function(selectedKey) {
     if (activeFilters.key === selectedKey) activeFilters.key = null;
     else activeFilters.key = selectedKey;
-    closeKeyModal();
-    applyGlobalFilters();
+    window.closeKeyModal();
+    window.applyGlobalFilters();
 }
 
-function filterByArtist(artistName) {
-    document.getElementById('searchInput').value = artistName;
-    activeFilters.search = artistName;
-    applyGlobalFilters();
-    event.stopPropagation();
+window.filterByArtist = function(artistName) {
+    const searchInput = document.getElementById('searchInput');
+    if(searchInput) {
+        searchInput.value = artistName;
+        activeFilters.search = artistName;
+        window.applyGlobalFilters();
+    }
+    if(event) event.stopPropagation();
 }
 
-function filterSongs() {
+window.filterSongs = function() {
     const query = document.getElementById('searchInput').value;
     activeFilters.search = query;
-    applyGlobalFilters();
+    window.applyGlobalFilters();
 }
 
-function sortSongs(criteria) {
+window.sortSongs = function(criteria) {
     let sorted = [...displaySongs];
     if (criteria === 'artist') {
         sorted.sort((a, b) => a.artist.localeCompare(b.artist));
@@ -246,10 +274,11 @@ function sortSongs(criteria) {
     renderTable(sorted);
 }
 
-function resetFilters() {
+window.resetFilters = function() {
     activeFilters = { type: null, key: null, search: '' };
-    document.getElementById('searchInput').value = '';
-    applyGlobalFilters();
+    const searchInput = document.getElementById('searchInput');
+    if(searchInput) searchInput.value = '';
+    window.applyGlobalFilters();
 }
 
 function updateFilterVisuals() {
@@ -268,6 +297,7 @@ function updateFilterVisuals() {
 
 function renderTable(data) {
     const tbody = document.getElementById('tableBody');
+    if (!tbody) return;
     tbody.innerHTML = '';
     if (data.length === 0) {
         tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>';
@@ -293,23 +323,29 @@ function renderTable(data) {
 }
 
 /* --- PLAYLIST --- */
-function addToPlaylist(index, btnElement) {
+window.addToPlaylist = function(index, btnElement) {
     if (!myPlaylist.includes(index)) {
         myPlaylist.push(index);
         localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
         btnElement.innerText = "✓";
         btnElement.classList.add('added');
-        showNotification("Canción agregada a tu lista");
+        window.showNotification("Canción agregada a tu lista");
+        
+        // SYNC: Avisar a Firebase
+        broadcastChange();
     }
 }
 
-function removeFromPlaylist(index) {
+window.removeFromPlaylist = function(index) {
     myPlaylist = myPlaylist.filter(id => id !== index);
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-    loadPlaylistMode();
+    window.loadPlaylistMode();
+    
+    // SYNC: Avisar a Firebase
+    broadcastChange();
 }
 
-function loadPlaylistMode() {
+window.loadPlaylistMode = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const sharedIds = urlParams.get('ids');
     let playlistIds = sharedIds ? sharedIds.split(',').map(Number) : myPlaylist;
@@ -322,7 +358,7 @@ function loadPlaylistMode() {
             shareBtn.onclick = function() {
                 myPlaylist = playlistIds;
                 localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-                showNotification("¡Lista guardada!");
+                window.showNotification("¡Lista guardada!");
                 setTimeout(() => window.location.href = 'lista.html', 2000);
             };
         }
@@ -333,14 +369,11 @@ function loadPlaylistMode() {
 
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
+    if(!tbody) return;
     
-    // IMPORTANTE: Asegurarnos de que el Header NO tenga la columna extra si la agregamos antes
     const theadRow = document.querySelector('thead tr');
-    // Si por error quedó la columna de la manija (5 columnas), la borramos
     if (theadRow && theadRow.children.length > 5) { 
-       // Ajusta esto según cuantas columnas tengas. 
-       // Simplemente recargando la página debería limpiarse si el HTML está bien, 
-       // pero aquí asumimos el HTML original de 5 columnas.
+       // Limpieza header si hace falta
     }
 
     tbody.innerHTML = '';
@@ -354,10 +387,9 @@ function renderPlaylistTable(songsData, originalIds) {
         const globalIndex = originalIds[i]; 
         
         let row = document.createElement('tr');
-        row.setAttribute('data-index', globalIndex); // Guardamos el ID real
-        row.classList.add('draggable-row'); // Clase para el CSS
+        row.setAttribute('data-index', globalIndex); 
+        row.classList.add('draggable-row'); 
 
-        // Nota: Agregamos oncontextmenu="return false" para evitar el menú de click derecho en Android
         row.oncontextmenu = function(event) { event.preventDefault(); event.stopPropagation(); return false; };
 
         row.innerHTML = `
@@ -371,19 +403,17 @@ function renderPlaylistTable(songsData, originalIds) {
         tbody.appendChild(row);
     });
 
-    // Activamos la lógica de "Mantener presionado"
     enableLongPressDrag();
 }
 
-function sharePlaylistUrl() {
-    if (myPlaylist.length === 0) { showNotification("Lista vacía."); return; }
+window.sharePlaylistUrl = function() {
+    if (myPlaylist.length === 0) { window.showNotification("Lista vacía."); return; }
     const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(',');
     if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl });
-    else { navigator.clipboard.writeText(shareUrl); showNotification("Link copiado!"); }
+    else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); }
 }
 
-/* --- SISTEMA DE REORDENAMIENTO: LONG PRESS (MANTENER) --- */
-
+/* --- DRAG & DROP: LONG PRESS --- */
 function enableLongPressDrag() {
     const rows = document.querySelectorAll('.draggable-row');
     const tbody = document.getElementById('tableBody');
@@ -394,77 +424,47 @@ function enableLongPressDrag() {
     let startY = 0;
 
     rows.forEach(row => {
-        
-        // 1. Al tocar la pantalla
         row.addEventListener('touchstart', (e) => {
-            // Si tocan el botón de borrar (X), no iniciamos nada
             if (e.target.classList.contains('btn-remove')) return;
-
             isDragging = false;
             startY = e.touches[0].clientY;
             
-            // Iniciamos el temporizador: Si en 600ms no mueve el dedo, activamos el modo arrastrar
             pressTimer = setTimeout(() => {
                 isDragging = true;
                 draggingRow = row;
-                
-                // Efecto visual y háptico (vibración)
                 row.classList.add('dragging');
                 if (navigator.vibrate) navigator.vibrate(50); 
-                
-            }, 600); // 600ms para considerar "Mantener presionado"
-            
+            }, 600); 
         }, { passive: false });
 
-        // 2. Al mover el dedo
         row.addEventListener('touchmove', (e) => {
             const currentY = e.touches[0].clientY;
-
             if (!isDragging) {
-                // Si movemos el dedo ANTES de que se cumpla el tiempo, es un SCROLL normal.
-                // Cancelamos el temporizador de arrastre.
-                if (Math.abs(currentY - startY) > 10) {
-                    clearTimeout(pressTimer);
-                }
+                if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer);
             } else {
-                // Si YA estamos arrastrando (pasaron los 600ms)
-                e.preventDefault(); // Bloqueamos el scroll de la pantalla
-                
-                // Lógica de intercambio (Swap)
+                e.preventDefault(); 
                 const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY);
                 const rowBelow = elementBelow ? elementBelow.closest('tr') : null;
-
                 if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) {
                     const bounding = rowBelow.getBoundingClientRect();
                     const offset = bounding.y + (bounding.height / 2);
-                    
-                    if (currentY - offset > 0) {
-                        rowBelow.after(draggingRow);
-                    } else {
-                        rowBelow.before(draggingRow);
-                    }
+                    if (currentY - offset > 0) rowBelow.after(draggingRow);
+                    else rowBelow.before(draggingRow);
                 }
             }
         }, { passive: false });
 
-        // 3. Al soltar el dedo
         row.addEventListener('touchend', (e) => {
-            // Limpiamos el timer (por si soltó rápido, fue un click normal)
             clearTimeout(pressTimer);
-            
             if (isDragging) {
-                // Si estaba arrastrando, finalizamos y guardamos
                 isDragging = false;
                 draggingRow.classList.remove('dragging');
                 draggingRow = null;
                 saveNewOrder();
-                
-                // Evitamos que se dispare el click de "abrir canción" al soltar
                 e.preventDefault(); 
             }
         });
         
-        // Cancelar si pasa algo raro (salir de la pantalla, alerta, etc)
         row.addEventListener('touchcancel', () => {
             clearTimeout(pressTimer);
             if (draggingRow) draggingRow.classList.remove('dragging');
@@ -473,91 +473,198 @@ function enableLongPressDrag() {
     });
 }
 
-// Reutilizamos la misma función de guardar orden del paso anterior
 function saveNewOrder() {
     const rows = document.querySelectorAll('#tableBody tr');
     const newPlaylist = [];
-
     rows.forEach(row => {
         const id = row.getAttribute('data-index');
-        if (id !== null) {
-            newPlaylist.push(parseInt(id));
-        }
+        if (id !== null) newPlaylist.push(parseInt(id));
     });
-
     myPlaylist = newPlaylist;
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
     
-    // Actualizamos contexto para Swipe
-    if (typeof currentContextList !== 'undefined') {
-        currentContextList = newPlaylist;
-    }
-
-    // Renumeramos visualmente
+    if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist;
     rows.forEach((row, index) => {
         const indexCell = row.querySelector('.index-col');
         if(indexCell) indexCell.innerText = index + 1;
     });
-
-    showNotification("Orden guardado");
-}
-
-/* --- SISTEMA DE BORRADO CON MODAL --- */
-
-// 1. Abre el modal
-function askClearPlaylist() {
-    const modal = document.getElementById('confirmModal');
-    modal.style.display = 'flex'; // Usamos flex para centrarlo con tu CSS existente
-}
-
-// 2. Cierra el modal (Botón Cancelar)
-function closeConfirmModal() {
-    document.getElementById('confirmModal').style.display = 'none';
-}
-
-// 3. Ejecuta el borrado (Botón Sí, vaciar)
-function executeClearList() {
-    myPlaylist = []; // Vacía el array
-    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); // Guarda vacío
+    window.showNotification("Orden guardado");
     
-    closeConfirmModal(); // Cierra el modal
-    showNotification("Lista vaciada correctamente"); // Muestra el aviso
-    
-    loadPlaylistMode(); // Recarga la tabla para que se vea vacía
+    // SYNC: Avisar a Firebase
+    broadcastChange();
 }
 
-// Cierra el modal si tocan afuera (en lo oscuro)
-window.addEventListener('click', function(event) {
+/* --- VACIAR LISTA --- */
+window.askClearPlaylist = function() {
     const modal = document.getElementById('confirmModal');
-    if (event.target == modal) {
-        closeConfirmModal();
+    if(modal) modal.style.display = 'flex';
+}
+window.closeConfirmModal = function() {
+    const modal = document.getElementById('confirmModal');
+    if(modal) modal.style.display = 'none';
+}
+window.executeClearList = function() {
+    myPlaylist = []; 
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
+    window.closeConfirmModal(); 
+    window.showNotification("Lista vaciada correctamente"); 
+    window.loadPlaylistMode(); 
+    
+    // SYNC: Avisar a Firebase
+    broadcastChange();
+}
+
+/* --- LIVE SESSION (SALA ÚNICA: SESIÓN 1) --- */
+
+window.openLiveModal = function() {
+    document.getElementById('liveModal').style.display = 'flex';
+    // Si ya hay sesión activa
+    if (isConnected) {
+        showConnectedScreen();
+    } else {
+        window.resetLiveModal();
     }
-});
+}
+window.closeLiveModal = function() {
+    document.getElementById('liveModal').style.display = 'none';
+}
+window.resetLiveModal = function() {
+    document.getElementById('liveConnectionScreen').style.display = 'block';
+    document.getElementById('liveConnected').style.display = 'none';
+    document.getElementById('sessionCodeInput').value = '';
+}
+
+function showConnectedScreen() {
+    document.getElementById('liveConnectionScreen').style.display = 'none';
+    document.getElementById('liveConnected').style.display = 'block';
+    const keyDisplay = document.getElementById('connectedKeyDisplay');
+    if(keyDisplay) keyDisplay.innerText = currentUserKey;
+}
+
+window.connectToSession = function() {
+    const codeInput = document.getElementById('sessionCodeInput').value.trim().toUpperCase();
+    
+    if (!codeInput) { alert("Ingresa la clave."); return; }
+    
+    // VERIFICAR CLAVES
+    if (!VALID_KEYS.includes(codeInput)) {
+        alert("Clave incorrecta. Intenta con: SOL, SAM, PASTOR o SAMU");
+        return;
+    }
+
+    // 1. Guardar clave
+    currentUserKey = codeInput; 
+    sessionStorage.setItem('acordify_user_key', currentUserKey);
+    isConnected = true;
+    
+    const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+
+    // 2. LOGICA INTELIGENTE: ¿Descargo o Subo?
+    get(roomRef).then((snapshot) => {
+        if (snapshot.exists() && snapshot.val()) {
+            window.showNotification("Sincronizando con la banda... 📡");
+        } else {
+            set(roomRef, myPlaylist)
+                .then(() => window.showNotification("Sala iniciada. Lista subida ☁️"));
+        }
+        
+        // 3. Activar escucha permanente
+        startListening(roomRef);
+        updateUIConnected();
+        
+        // --- CAMBIO: CERRAR MODAL AUTOMÁTICAMENTE AL CONECTAR ---
+        window.closeLiveModal(); 
+        // --------------------------------------------------------
+
+    }).catch((error) => {
+        console.error(error);
+        alert("Error de conexión");
+    });
+}
+
+function reconnectSession() {
+    const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    startListening(roomRef);
+    updateUIConnected();
+}
+
+function startListening(roomRef) {
+    onValue(roomRef, (snapshot) => {
+        const cloudPlaylist = snapshot.val();
+        // Si hay cambios en la nube, actualizamos local
+        if (JSON.stringify(cloudPlaylist) !== JSON.stringify(myPlaylist)) {
+            myPlaylist = cloudPlaylist || [];
+            localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+            
+            if (window.location.pathname.includes('lista.html')) {
+                window.loadPlaylistMode();
+            } else {
+                window.applyGlobalFilters();
+            }
+        }
+    });
+}
+
+function updateUIConnected() {
+    const btnLive = document.getElementById('btnLiveHeader');
+    if(btnLive) {
+        btnLive.classList.add('active');
+        btnLive.innerText = "📡 " + currentUserKey;
+    }
+}
+
+// Desconectar y cerrar
+window.disconnectSession = function() {
+    if (!isConnected) return;
+
+    const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    off(roomRef); // Dejar de escuchar
+
+    isConnected = false;
+    currentUserKey = null;
+    sessionStorage.removeItem('acordify_user_key');
+
+    const btnLive = document.getElementById('btnLiveHeader');
+    if(btnLive) {
+        btnLive.classList.remove('active');
+        btnLive.innerText = "📡 LIVE";
+    }
+
+    window.resetLiveModal();
+    window.showNotification("Desconectado 🔌");
+    window.closeLiveModal();
+}
+
+function broadcastChange() {
+    if (!isConnected) return; 
+    const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    set(roomRef, myPlaylist).catch((e) => console.error(e));
+}
 
 /* --- UTILIDADES --- */
 const filterKeys = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
-function openKeyModal() { document.getElementById('keyModal').style.display = 'flex'; }
-function closeKeyModal() { document.getElementById('keyModal').style.display = 'none'; }
-function generateKeyButtons() {
+window.openKeyModal = function() { document.getElementById('keyModal').style.display = 'flex'; }
+window.closeKeyModal = function() { document.getElementById('keyModal').style.display = 'none'; }
+window.generateKeyButtons = function() {
     const grid = document.getElementById('keyGrid');
-    
-    if (!grid) return; // Si no existe el elemento (estamos en lista.html), salimos.
-
+    if (!grid) return; 
     grid.innerHTML = '';
     filterKeys.forEach(key => {
         let btn = document.createElement('button');
         btn.className = 'key-btn';
         btn.innerText = key;
-        btn.onclick = function() { filterByKey(key); };
+        btn.onclick = function() { window.filterByKey(key); };
         grid.appendChild(btn);
     });
 }
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
+    let confirmModal = document.getElementById('confirmModal');
     if (event.target == keyModal) keyModal.style.display = "none";
+    if (event.target == confirmModal) window.closeConfirmModal();
 }
 
-function showNotification(message) {
+window.showNotification = function(message) {
     const toast = document.getElementById("toastNotification");
     if (!toast) return; 
     toast.innerText = message;
@@ -565,13 +672,12 @@ function showNotification(message) {
     setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
 }
 
-/* --- PWA: LÓGICA INVERTIDA --- */
+/* --- PWA --- */
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
 }
 let deferredPrompt; 
 const actionBtn = document.getElementById('actionBtn'); 
-
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault(); deferredPrompt = e;
     if (actionBtn) {
@@ -589,10 +695,9 @@ if (actionBtn) {
             const { outcome } = await deferredPrompt.userChoice;
             deferredPrompt = null; 
             if (outcome === 'accepted') resetToShare();
-        } else shareApp();
+        } else window.shareApp();
     });
 }
-
 window.addEventListener('appinstalled', () => resetToShare());
 function resetToShare() {
     if (!actionBtn) return;
@@ -601,28 +706,23 @@ function resetToShare() {
     actionBtn.classList.remove('mode-install');
     actionBtn.classList.add('mode-share');
 }
-
-function shareApp() {
+window.shareApp = function() {
     if (navigator.share) navigator.share({ title: 'Acordify', url: window.location.href });
-    else { navigator.clipboard.writeText(window.location.href); showNotification("Enlace copiado!"); }
+    else { navigator.clipboard.writeText(window.location.href); window.showNotification("Enlace copiado!"); }
 }
 
-/* --- NAVEGACIÓN SWIPE (DESLIZAR la lista) --- */
-
+/* --- SWIPE --- */
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndY = 0;
 
-// Escuchar el inicio del toque
 document.addEventListener('touchstart', function(e) {
-    // Solo registramos si estamos viendo una canción (songDetailView visible)
     if(document.getElementById('songDetailView').style.display === 'block') {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
     }
 }, false);
 
-// Escuchar el final del toque
 document.addEventListener('touchend', function(e) {
     if(document.getElementById('songDetailView').style.display === 'block') {
         touchEndY = e.changedTouches[0].screenY;
@@ -632,49 +732,27 @@ document.addEventListener('touchend', function(e) {
 }, false);
 
 function handleSwipeGesture(startX, endX, startY, endY) {
-    const minSwipeDistance = 50; // Mínima distancia para considerar swipe
-    const maxVerticalVariance = 100; // Máxima desviación vertical permitida (para no afectar el scroll)
+    const minSwipeDistance = 50; 
+    const maxVerticalVariance = 100; 
 
     const diffX = startX - endX;
     const diffY = startY - endY;
 
-    // Verificamos que sea un movimiento horizontal predominante
     if (Math.abs(diffX) > minSwipeDistance && Math.abs(diffY) < maxVerticalVariance) {
-        if (diffX > 0) {
-            // Deslizar a la IZQUIERDA -> Siguiente Canción
-            changeSongInPlaylist(1);
-        } else {
-            // Deslizar a la DERECHA -> Canción Anterior
-            changeSongInPlaylist(-1);
-        }
+        if (diffX > 0) changeSongInPlaylist(1);
+        else changeSongInPlaylist(-1);
     }
 }
 
 function changeSongInPlaylist(direction) {
-    // Si no hay lista de contexto (por ejemplo, filtro global), usamos el array global o fallamos suavemente
-    // Para lista.html, currentContextList ya tiene los IDs de la playlist.
-    
     if (!currentContextList || currentContextList.length === 0) return;
-
-    // 1. Encontrar la posición de la canción actual dentro de la lista que estamos viendo
     let currentPos = currentContextList.indexOf(currentSongIndex);
+    if (currentPos === -1) return; 
 
-    if (currentPos === -1) return; // La canción actual no está en la lista activa
-
-    // 2. Calcular la nueva posición (Circular)
     let newPos = currentPos + direction;
+    if (newPos >= currentContextList.length) newPos = 0; 
+    else if (newPos < 0) newPos = currentContextList.length - 1; 
 
-    if (newPos >= currentContextList.length) {
-        newPos = 0; // Si es la última, volver a la primera
-    } else if (newPos < 0) {
-        newPos = currentContextList.length - 1; // Si es la primera, ir a la última
-    }
-
-    // 3. Obtener el ID global de la nueva canción
     let nextSongID = currentContextList[newPos];
-
-    // 4. Abrir la canción
-    // Nota: Usamos un pequeño timeout para dar sensación de cambio si quisieras, 
-    // pero directo es más rápido.
-    openSong(nextSongID);
+    window.openSong(nextSongID);
 }

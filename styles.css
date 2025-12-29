@@ -773,3 +773,74 @@ tr:hover { background-color: #252525; }
     transform: scale(1.02); /* Se agranda un poquito */
     border: 1px solid var(--accent);
 }
+
+/* BOTÓN LIVE EN EL HEADER */
+.btn-live-nav {
+    background-color: #333;
+    color: #ff5252; /* Rojo apagado */
+    border: 1px solid #ff5252;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Cuando está conectado parpadea */
+.btn-live-nav.active {
+    background-color: #ff5252;
+    color: white;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+/* GRILLA DE SALAS */
+.room-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-room {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-room:active {
+    background-color: var(--accent);
+    transform: scale(0.95);
+}
+
+/* Botón de texto simple (Cerrar / Volver) */
+.btn-text {
+    background: transparent;
+    border: none;
+    color: #888; /* Color gris apagado por defecto */
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.2s ease; /* Suaviza el cambio de color */
+}
+
+/* Efecto al pasar el mouse o tocar */
+.btn-text:hover,
+.btn-text:active {
+    color: #ffffff !important; /* Se pone blanco brillante */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para feedback visual */
+}
