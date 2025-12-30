@@ -55,9 +55,25 @@ window.onload = function() {
             window.generateKeyButtons();
         }
 
+        // RECONEXIÓN AUTOMÁTICA
         if (isConnected) {
             reconnectSession();
         }
+
+        // --- SOLUCIÓN TECLADO MÓVIL ---
+        // Detectamos el input de la clave para subir el modal
+        const sessionInput = document.getElementById('sessionCodeInput');
+        const modalContent = document.querySelector('#liveModal .modal-content');
+        
+        if (sessionInput && modalContent) {
+            sessionInput.addEventListener('focus', () => {
+                modalContent.classList.add('keyboard-up');
+            });
+            sessionInput.addEventListener('blur', () => {
+                modalContent.classList.remove('keyboard-up');
+            });
+        }
+        // ------------------------------
 
     } else {
         console.error("Error: No se cargó canciones.js");

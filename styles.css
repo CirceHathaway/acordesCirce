@@ -844,3 +844,10 @@ tr:hover { background-color: #252525; }
     color: #ffffff !important; /* Se pone blanco brillante */
     background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para feedback visual */
 }
+
+/* --- ARREGLO PARA EL TECLADO DEL CELULAR --- */
+.keyboard-up {
+    top: 10% !important; /* Lo pega arriba */
+    transform: translateX(-50%) !important; /* Mantiene el centro horizontal pero quita el vertical */
+    transition: top 0.3s ease; /* Que suba suavemente */
+}
