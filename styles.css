@@ -845,9 +845,9 @@ tr:hover { background-color: #252525; }
     background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para feedback visual */
 }
 
-/* --- ARREGLO PARA EL TECLADO DEL CELULAR --- */
-.keyboard-up {
-    top: 10% !important; /* Lo pega arriba */
-    transform: translateX(-50%) !important; /* Mantiene el centro horizontal pero quita el vertical */
-    transition: top 0.3s ease; /* Que suba suavemente */
+/* --- CORRECCIÓN TECLADO MÓVIL --- */
+.modal.keyboard-active {
+    align-items: flex-start !important; /* Deja de centrar al medio y alinea arriba */
+    padding-top: 40px !important; /* Un margen para que no se pegue al borde superior */
+    transition: all 0.3s ease; /* Animación suave */
 }

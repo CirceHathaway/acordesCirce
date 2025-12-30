@@ -60,17 +60,19 @@ window.onload = function() {
             reconnectSession();
         }
 
-        // --- SOLUCIÓN TECLADO MÓVIL ---
-        // Detectamos el input de la clave para subir el modal
+        // --- SOLUCIÓN TECLADO MÓVIL (CORREGIDO) ---
         const sessionInput = document.getElementById('sessionCodeInput');
-        const modalContent = document.querySelector('#liveModal .modal-content');
+        const liveModal = document.getElementById('liveModal'); // El contenedor padre
         
-        if (sessionInput && modalContent) {
+        if (sessionInput && liveModal) {
+            // Al tocar el input (FOCUS), subimos el modal
             sessionInput.addEventListener('focus', () => {
-                modalContent.classList.add('keyboard-up');
+                liveModal.classList.add('keyboard-active');
             });
+
+            // Al salir del input (BLUR), lo volvemos a centrar
             sessionInput.addEventListener('blur', () => {
-                modalContent.classList.remove('keyboard-up');
+                liveModal.classList.remove('keyboard-active');
             });
         }
         // ------------------------------
