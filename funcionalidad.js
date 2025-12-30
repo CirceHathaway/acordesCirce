@@ -55,14 +55,13 @@ window.onload = function() {
             window.generateKeyButtons();
         }
 
-        // RECONEXIÓN AUTOMÁTICA
         if (isConnected) {
             reconnectSession();
         }
 
-        // --- SOLUCIÓN TECLADO MÓVIL (CORREGIDO) ---
+        // --- SOLUCIÓN TECLADO MÓVIL (CON DELAY) ---
         const sessionInput = document.getElementById('sessionCodeInput');
-        const liveModal = document.getElementById('liveModal'); // El contenedor padre
+        const liveModal = document.getElementById('liveModal'); 
         
         if (sessionInput && liveModal) {
             // Al tocar el input (FOCUS), subimos el modal
@@ -70,12 +69,25 @@ window.onload = function() {
                 liveModal.classList.add('keyboard-active');
             });
 
-            // Al salir del input (BLUR), lo volvemos a centrar
+            // Al salir del input (BLUR)
             sessionInput.addEventListener('blur', () => {
-                liveModal.classList.remove('keyboard-active');
+                // IMPORTANTE: Esperamos 200ms antes de bajar el modal.
+                // Esto permite que el evento CLICK del botón ocurra primero.
+                setTimeout(() => {
+                    liveModal.classList.remove('keyboard-active');
+                }, 200);
+            });
+
+            // BONUS: Permitir entrar tocando "Enter" en el teclado del celular
+            sessionInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Evitar comportamientos raros
+                    window.connectToSession();
+                    sessionInput.blur(); // Bajar el teclado
+                }
             });
         }
-        // ------------------------------
+        // ------------------------------------------
 
     } else {
         console.error("Error: No se cargó canciones.js");
@@ -590,9 +602,8 @@ window.connectToSession = function() {
         startListening(roomRef);
         updateUIConnected();
         
-        // --- CAMBIO: CERRAR MODAL AUTOMÁTICAMENTE AL CONECTAR ---
+        // Cerrar modal automáticamente
         window.closeLiveModal(); 
-        // --------------------------------------------------------
 
     }).catch((error) => {
         console.error(error);
@@ -654,7 +665,7 @@ window.disconnectSession = function() {
 }
 
 function broadcastChange() {
-    if (!isConnected) return; 
+    if (!isConnected) return; // Si no estamos conectados, no enviamos nada
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     set(roomRef, myPlaylist).catch((e) => console.error(e));
 }
