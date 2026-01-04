@@ -63,7 +63,7 @@ Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humil
 <span class="g"><span class="chord">G</span>Desde</span> el trono viene, <span class="g"><span class="chord">D</span>adoración</span>
 Se oye un <span class="g"><span class="chord">C</span>grito</span> <span class="g"><span class="chord">D</span>de</span> <span class="g"><span class="chord">Em</span>alabanza</span>
 <span class="g"><span class="chord">C</span>Desde</span> <span class="g"><span class="chord">D</span>las</span> <span class="g"><span class="chord">Em</span>naciones</span>
-<span class="g"><span class="chord">C</span>y</span> su gloria <span class="g"><span class="chord">Am</span>dan</span> a <span class="g"><span class="chord">D</span>conocer,</span> <span class="g"><span class="chord">D7</span>Cantando.</span>
+<span class="g"><span class="chord">Am</span>Y</span>su gloria <span class="g"><span class="chord">C</span>dan</span> a cono<span class="g"><span class="chord">D</span>cer,</span> <span class="g"><span class="chord">D7</span>Cantando.</span>
 
 [Coro]
 <span class="g"><span class="chord">G</span>Santo, Santo</span> <span class="g"><span class="chord">Bm</span>Santo</span> es el <span class="g"><span class="chord">C</span>Señor.</span>
@@ -655,20 +655,20 @@ Solo ante ti yo me incl<span class="g"><span class="chord">C</span>ino.</span>`
 [Intro] 
 <span class="g"><span class="chord">B</span></span><span class="g"><span class="chord">F#</span></span><span class="g"><span class="chord">G#</span></span><span class="g"><span class="chord">E</span></span>
 
-<span class="g"><span class="chord">B</span>Dios</span>de mi c<span class="g"><span class="chord">F#</span>orazón,</span> <span class="g"><span class="chord">G#m</span>..</span>
+<span class="g"><span class="chord">B</span>Dios</span> de mi c<span class="g"><span class="chord">F#</span>orazón,</span> <span class="g"><span class="chord">G#m</span>..</span>
 En ti encontré mi <span class="g"><span class="chord">E</span>salvación,</span>
-<span class="g"><span class="chord">B</span>Tu</span>gloria y <span class="g"><span class="chord">F#</span>majestad</span> <span class="g"><span class="chord">G#m</span>..</span>
+<span class="g"><span class="chord">B</span>Tu</span> gloria y <span class="g"><span class="chord">F#</span>majestad</span> <span class="g"><span class="chord">G#m</span>..</span>
 Quiero siempre <span class="g"><span class="chord">E</span>contemplar.</span>
 
-<span class="g"><span class="chord">B</span>Tu</span>eres mi <span class="g"><span class="chord">F#</span>adoración</span> <span class="g"><span class="chord">G#m</span>..</span>
-Y mi e<span class="g"><span class="chord">E</span>terna</span>canción,
-<span class="g"><span class="chord">B</span>Todo</span>mi <span class="g"><span class="chord">F#</span>interior</span> <span class="g"><span class="chord">G#m</span>..</span>
-es cautivado <span class="g"><span class="chord">E</span>por</span>tu amor.</span>
+<span class="g"><span class="chord">B</span>Tu</span> eres mi <span class="g"><span class="chord">F#</span>adoración</span> <span class="g"><span class="chord">G#m</span>..</span>
+Y mi e<span class="g"><span class="chord">E</span>terna</span> canción,
+<span class="g"><span class="chord">B</span>Todo</span> mi <span class="g"><span class="chord">F#</span>interior</span> <span class="g"><span class="chord">G#m</span>..</span>
+es cautivado <span class="g"><span class="chord">E</span>por</span> tu amor.</span>
 
-<span class="g"><span class="chord">B</span>Eres</span>Dios <span class="g"><span class="chord">F#</span>eterno,</span>solo tu eres <span class="g"><span class="chord">G#m</span>bueno,</span>
-Dios incompa<span class="g"><span class="chord">E</span>rable</span>eres <span class="g"><span class="chord">B</span>tú.</span>
+<span class="g"><span class="chord">B</span>Eres</span> Dios <span class="g"><span class="chord">F#</span>eterno,</span> solo tu eres <span class="g"><span class="chord">G#m</span>bueno,</span>
+Dios incompa<span class="g"><span class="chord">E</span>rable</span> eres <span class="g"><span class="chord">B</span>tú.</span>
 Nunca me sepa<span class="g"><span class="chord">F#</span>raré</span> de tu gran a<span class="g"><span class="chord">G#m</span>mor,</span>
-Eres mi Se<span class="g"><span class="chord">E</span>ñor,</span>mi salva<span class="g"><span class="chord">B</span>dor.</span>
+Eres mi Se<span class="g"><span class="chord">E</span>ñor,</span> mi salva<span class="g"><span class="chord">B</span>dor.</span>
 
 <span class="g"><span class="chord">B</span>Alelu</span><span class="g"><span class="chord">F#</span>ya,</span><span class="g"><span class="chord">G#m</span>..</span>
 Alelu<span class="g"><span class="chord">E</span>ya.</span>
@@ -1645,7 +1645,7 @@ Para can<span class="g"><span class="chord">C</span>tar</span><span class="g"><s
 
 Te a<span class="g"><span class="chord">G</span>doro mi Señor,</span>
 No hay na<span class="g"><span class="chord">F</span>da</span> alrede<span class="g"><span class="chord">E</span>dor,</span>
-<span class="g"><span class="chord">Am7</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">E</span>yo,</span>
+<span class="g"><span class="chord">Am7</span>Solo</span> estamos tú y <span class="g"><span class="chord">E</span>yo,</span>
 <span class="g"><span class="chord">C</span>Solo</span> estamos <span class="g"><span class="chord">D</span>tú</span> y <span class="g"><span class="chord">G</span>yo.`
     },
 
@@ -1918,5 +1918,185 @@ Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><sp
 
 [Instrumental]
 <span class="g"><span class="chord">C</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">D</span>`
+    },
+
+    {
+        title: "Alaba a Dios",
+        artist: "Danny Berríos",
+        key: "F",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">F</span>Dios</span> no rechaza oración,
+Oración es ali<span class="g"><span class="chord">A#</span>mento,</span>
+<span class="g"><span class="chord">Gm</span>Nunca</span> vi un justo sin res<span class="g"><span class="chord">C</span>puesta,</span>
+O quedar en sufri<span class="g"><span class="chord">F</span>miento.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F</span>Basta</span> solamente esperar,
+Lo que Dios ira a ha<span class="g"><span class="chord">A#</span>cer.</span>
+<span class="g"><span class="chord">Gm</span>Cuando</span> el levanta tus <span class="g"><span class="chord">C</span>manos,</span>
+Es hora de ven<span class="g"><span class="chord">F</span>cer.</span>
+
+[Coro]
+Oh A<span class="g"><span class="chord">A#</span>la</span><span class="g"><span class="chord">F</span>ba,</span>
+Simplemente alaba,
+Estas llorando a<span class="g"><span class="chord">A#</span>laba,</span>
+En la prueba alaba,
+Estas sufriendo a<span class="g"><span class="chord">C</span>laba,</span>
+No importa alaba,
+Tu alabanza el es<span class="g"><span class="chord">A#</span>cucha</span><span class="g"><span class="chord">C</span>ra.</span>
+
+[Puente]
+<span class="g"><span class="chord">F</span>Dios</span> va al frente abriendo caminos,
+Que<span class="g"><span class="chord">Dm7</span>brando</span> cadenas sacando espinas,
+<span class="g"><span class="chord">A#</span>Manda</span> a sus angeles contigo a luchar,
+<span class="g"><span class="chord">C</span>El</span> abre puertas nadie puede cerrar.
+
+[Verso 3]
+<span class="g"><span class="chord">F</span>El</span> trabaja para los que confian,
+Ca<span class="g"><span class="chord">Dm7</span>mina</span> contigo de noche y de dia,
+Le<span class="g"><span class="chord">A#</span>vanta</span> tus manos tu victoria llego,
+Co<span class="g"><span class="chord">C</span>mienza</span> a cantar y...
+
+[Coda]
+Alaba a Di<span class="g"><span class="chord">F</span>os,</span>
+Alaba a Di<span class="g"><span class="chord">Dm7</span>os,</span>
+Alaba a Di<span class="g"><span class="chord">A#</span>os,</span>
+A<span class="g"><span class="chord">Gm</span>laba</span> a <span class="g"><span class="chord">C</span>Dios.</span>
+
+[Verso 4]
+La <span class="g"><span class="chord">F</span>gente</span> necesita entender
+Lo que Dios esta ha<span class="g"><span class="chord">A#</span>blando,</span>
+Cu<span class="g"><span class="chord">Gm</span>ando</span> el queda en si<span class="g"><span class="chord">C</span>lencio,</span>
+Es porque esta traba<span class="g"><span class="chord">F</span>jando.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F</span>Basta</span> solamente esperar,
+Lo que Dios ira a ha<span class="g"><span class="chord">A#</span>cer.</span>
+<span class="g"><span class="chord">Gm</span>Cuando</span> el levanta tus <span class="g"><span class="chord">C</span>manos,</span>
+Es hora de ven<span class="g"><span class="chord">F</span>cer.</span>
+
+[Coro]
+Oh A<span class="g"><span class="chord">A#</span>la</span><span class="g"><span class="chord">F</span>ba,</span>
+Simplemente alaba,
+Estas llorando a<span class="g"><span class="chord">A#</span>laba,</span>
+En la prueba alaba,
+Estas sufriendo a<span class="g"><span class="chord">C</span>laba,</span>
+No importa alaba,
+Tu alabanza el es<span class="g"><span class="chord">A#</span>cucha</span><span class="g"><span class="chord">C</span>ra.</span>
+
+[Puente]
+<span class="g"><span class="chord">F</span>Dios</span> va al frente abriendo caminos,
+Que<span class="g"><span class="chord">Dm7</span>brando</span> cadenas sacando espinas,
+<span class="g"><span class="chord">A#</span>Manda</span> a sus angeles contigo a luchar,
+<span class="g"><span class="chord">C</span>El</span> abre puertas nadie puede cerrar.
+
+[Verso 3]
+<span class="g"><span class="chord">F</span>El</span> trabaja para los que confian,
+Ca<span class="g"><span class="chord">Dm7</span>mina</span> contigo de noche y de dia,
+Le<span class="g"><span class="chord">A#</span>vanta</span> tus manos tu victoria llego,
+Co<span class="g"><span class="chord">C</span>mienza</span> a cantar y...
+
+[Coda]
+Alaba a Di<span class="g"><span class="chord">F</span>os,</span>
+Alaba a Di<span class="g"><span class="chord">Dm7</span>os,</span>
+Alaba a Di<span class="g"><span class="chord">A#</span>os,</span>
+A<span class="g"><span class="chord">Gm</span>laba</span> a <span class="g"><span class="chord">C</span>Dios.</span>`
+    },
+
+    {
+        title: "Mi Dios es grande y fuerte",
+        artist: "Marcos Witt",
+        key: "Am",
+        type: "Alabanza",
+        content: `
+[Intro]
+<span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">F</span></span><span class="g"><span class="chord">G</span></span>
+
+Mi <span class="g"><span class="chord">Am</span>Dios</span> es grande y fu<span class="g"><span class="chord">Em</span>erte</span>
+Y <span class="g"><span class="chord">F</span>su</span> palabra <span class="g"><span class="chord">G</span>vence,</span>
+Sus <span class="g"><span class="chord">Am</span>enemigos</span> ti<span class="g"><span class="chord">Em</span>emblan</span>
+Y <span class="g"><span class="chord">F</span>huyen</span> ante <span class="g"><span class="chord">G</span>Él.</span>
+
+[Coro]
+Jesu<span class="g"><span class="chord">F</span>cristo</span> <span class="g"><span class="chord">G</span>es</span> el Se<span class="g"><span class="chord">Em</span>ñor</span> mi <span class="g"><span class="chord">Am</span>Rey,</span>
+En su <span class="g"><span class="chord">F</span>nombre</span> <span class="g"><span class="chord">G</span>hay,</span>
+Hay po<span class="g"><span class="chord">Em</span>der</span> para ven<span class="g"><span class="chord">Am</span>cer.`
+    },
+
+    {
+        title: "Alza tus ojos y mira",
+        artist: "Marco Barrientos",
+        key: "Am",
+        type: "Alabanza",
+        content: `
+<span class="g"><span class="chord">Am</span>Alza</span> tus ojos y <span class="g"><span class="chord">F</span>mira,</span>
+<span class="g"><span class="chord">C</span>La</span> cosecha esta <span class="g"><span class="chord">E</span>lista,</span>
+El <span class="g"><span class="chord">Am</span>tiempo</span> ha lle<span class="g"><span class="chord">G</span>gado,</span>
+La <span class="g"><span class="chord">F</span>mies</span> esta ma<span class="g"><span class="chord">E</span>dura.</span>
+
+[Verso 2]
+Es<span class="g"><span class="chord">Am</span>fuerzate</span> y se va<span class="g"><span class="chord">F</span>liente,</span>
+Le<span class="g"><span class="chord">C</span>vantate</span> y pre<span class="g"><span class="chord">E</span>dica,</span>
+A <span class="g"><span class="chord">Am</span>todas</span> las na<span class="g"><span class="chord">G</span>ciones,</span>
+Que <span class="g"><span class="chord">F</span>Cristo</span> es la <span class="g"><span class="chord">E</span>vida.</span>
+
+[Coro]
+Y Se<span class="g"><span class="chord">F</span>ra,</span> <span class="g"><span class="chord">G</span>..</span>
+llena la <span class="g"><span class="chord">Em</span>tierra</span> de su <span class="g"><span class="chord">Am</span>gloria...</span>
+Se cubri<span class="g"><span class="chord">F</span>ra,</span> <span class="g"><span class="chord">G</span>..</span>
+como las <span class="g"><span class="chord">Em</span>aguas</span> cubren al <span class="g"><span class="chord">Am</span>mar.</span>
+
+[Puente]
+<span class="g"><span class="chord">Em</span>No,</span> no hay otro <span class="g"><span class="chord">Am</span>nombre,</span>
+<span class="g"><span class="chord">Em</span>Da</span>do a los <span class="g"><span class="chord">Am</span>hombres,</span>
+<span class="g"><span class="chord">Dm</span>Jesu</span><span class="g"><span class="chord">Am</span>cristo</span> <span class="g"><span class="chord">F</span>es</span> el Se<span class="g"><span class="chord">E</span>ñor.`
+    },
+
+    {
+        title: "Que se abra el Cielo",
+        artist: "Christine D' Clario",
+        key: "A",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">A</span>Dios</span> bienvenido a este lugar,
+Y en nuestro cora<span class="g"><span class="chord">F#m</span>zón,</span>
+Ven y <span class="g"><span class="chord">D</span>haz</span> tu volun<span class="g"><span class="chord">A</span>tad.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">A</span>Dios</span> te queremos conocer,
+Con tu fuego abraza<span class="g"><span class="chord">F#m</span>dor,</span>
+Ven y <span class="g"><span class="chord">D</span>muévete</span> otra <span class="g"><span class="chord">A</span>vez.</span>
+
+[Pre-Coro]
+Es<span class="g"><span class="chord">D</span>pí</span><span class="g"><span class="chord">E</span>ri</span><span class="g"><span class="chord">F#m</span>tu,</span> a<span class="g"><span class="chord">D</span>ví</span><span class="g"><span class="chord">E</span>va</span><span class="g"><span class="chord">F#m</span>nos,</span>
+Te <span class="g"><span class="chord">D</span>an</span> <span class="g"><span class="chord">E</span>he</span><span class="g"><span class="chord">F#m</span>lamos</span> <span class="g"><span class="chord">E</span>Dios.</span>
+
+[Verso 3]
+<span class="g"><span class="chord">A</span>Ante</span> tu gloria y majestad,
+Sabemos que es<span class="g"><span class="chord">F#m</span>tás,</span>
+Para <span class="g"><span class="chord">D</span>darnos</span> liber<span class="g"><span class="chord">A</span>tad.</span>
+
+[Verso 4]
+<span class="g"><span class="chord">A</span>En</span>trónate en nuestra adoración,
+Asombroso eres Se<span class="g"><span class="chord">F#m</span>ñor,</span>
+Con tu pre<span class="g"><span class="chord">D</span>sencia</span> lléna<span class="g"><span class="chord">A</span>nos.</span>
+
+[Pre-Coro]
+Es<span class="g"><span class="chord">D</span>pí</span><span class="g"><span class="chord">E</span>ri</span><span class="g"><span class="chord">F#m</span>tu,</span> a<span class="g"><span class="chord">D</span>ví</span><span class="g"><span class="chord">E</span>va</span><span class="g"><span class="chord">F#m</span>nos,</span>
+Te <span class="g"><span class="chord">D</span>an</span> <span class="g"><span class="chord">E</span>he</span><span class="g"><span class="chord">F#m</span>lamos</span> <span class="g"><span class="chord">E</span>Dios.</span>
+
+[Coro]
+Que se abra el <span class="g"><span class="chord">F#m</span>cielo</span>
+Muévete Se<span class="g"><span class="chord">D</span>ñor,</span>
+Venga auí tu <span class="g"><span class="chord">F#m</span>reino,</span>
+Ohh!! Gran <span class="g"><span class="chord">E</span>Dios.</span>
+
+[Puente]
+No hay <span class="g"><span class="chord">F#m</span>cielo</span> cielo cerrado se abre,
+Tu <span class="g"><span class="chord">D</span>reino</span> se mueve aquí,
+En <span class="g"><span class="chord">F#m</span>ti</span>esta nuestra esperanza,
+Ohh!! Gran Di<span class="g"><span class="chord">E</span>os,</span>
+Ohh!! Gran Dios.`
     },
 ];
