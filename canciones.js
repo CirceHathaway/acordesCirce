@@ -2099,4 +2099,59 @@ En <span class="g"><span class="chord">F#m</span>ti</span>esta nuestra esperanza
 Ohh!! Gran Di<span class="g"><span class="chord">E</span>os,</span>
 Ohh!! Gran Dios.`
     },
+
+    {
+        title: "En el Monte Calvario",
+        artist: "Himno",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>En</span> el monte calvario
+Es<span class="g"><span class="chord">C</span>taba</span> una cruz,
+Em<span class="g"><span class="chord">D</span>blema</span> de a<span class="g"><span class="chord">C</span>fren</span><span class="g"><span class="chord">D</span>ta</span> y do<span class="g"><span class="chord">G</span>lor.</span>
+
+[Verso 2]
+Más yo <span class="g"><span class="chord">G</span>amo</span> a esa Jesús,
+que mu<span class="g"><span class="chord">C</span>rió</span> en esa cruz,
+Por sal<span class="g"><span class="chord">D</span>var</span> al más <span class="g"><span class="chord">C</span>vil</span> <span class="g"><span class="chord">D</span>peca</span><span class="g"><span class="chord">G</span>dor.</span>
+
+[Coro]
+Oh, yo <span class="g"><span class="chord">D</span>siempre</span> amaré a Je<span class="g"><span class="chord">Em</span>sús,</span>
+En sus <span class="g"><span class="chord">C</span>triunfos</span> mi gloria se<span class="g"><span class="chord">G</span>rá,</span>
+Y algún <span class="g"><span class="chord">G</span>día</span> cuando esté con <span class="g"><span class="chord">C</span>Él,</span> <span class="g"><span class="chord">Cm</span>..</span>
+Mi co<span class="g"><span class="chord">G</span>rona,</span> Je<span class="g"><span class="chord">D</span>sús,</span> me da<span class="g"><span class="chord">G</span>rá.</span>
+
+[Verso 3]
+Y aunque el <span class="g"><span class="chord">G</span>mundo,</span>
+Desprecie el a<span class="g"><span class="chord">C</span>mor</span> de Jesús,
+Para <span class="g"><span class="chord">D</span>mí,</span> tiene <span class="g"><span class="chord">C</span>su</span><span class="g"><span class="chord">D</span>ma</span> atrac<span class="g"><span class="chord">G</span>ción.</span>
+
+[Verso 4]
+Pues en <span class="g"><span class="chord">G</span>el,</span> él llevo,
+El cor<span class="g"><span class="chord">C</span>dero</span> de Dios,
+De mi <span class="g"><span class="chord">D</span>alma</span> la <span class="g"><span class="chord">C</span>con</span><span class="g"><span class="chord">D</span>dena</span><span class="g"><span class="chord">G</span>ción.</span>
+
+[Verso 5]
+En mi a<span class="g"><span class="chord">G</span>mado</span> Jesús,
+Que su <span class="g"><span class="chord">C</span>sangre</span> vertió,
+Hermo<span class="g"><span class="chord">D</span>sura</span> con<span class="g"><span class="chord">C</span>tem</span><span class="g"><span class="chord">D</span>plo</span> sin <span class="g"><span class="chord">G</span>par.</span>
+
+[Verso 6]
+Pues por <span class="g"><span class="chord">G</span>mi</span> el triunfante, 
+A la <span class="g"><span class="chord">C</span>muerte</span> venció,
+Y mi <span class="g"><span class="chord">D</span>ser</span> puede <span class="g"><span class="chord">C</span>san</span><span class="g"><span class="chord">D</span>tifi</span><span class="g"><span class="chord">G</span>car.`
+    },
+
+    {
+        title: "Dios está aquí",
+        artist: "Himno",
+        key: "C",
+        type: "Adoración",
+        comentario: "Si canta 'Digo si...' usa la misma secuencia de notas",
+        content: `
+<span class="g"><span class="chord">C</span>Dios</span> es<span class="g"><span class="chord">G</span>tá</span> a<span class="g"><span class="chord">Am</span>quí,</span>
+Tan <span class="g"><span class="chord">F</span>cierto</span> como el aire <span class="g"><span class="chord">G</span>que</span> res<span class="g"><span class="chord">C</span>piro,</span> <span class="g"><span class="chord">C7</span>..</span>
+Tan <span class="g"><span class="chord">F</span>cierto</span> como en la ma<span class="g"><span class="chord">G</span>ñana</span> se le<span class="g"><span class="chord">Em</span>vanta</span> el <span class="g"><span class="chord">Am</span>sol,</span>
+Tan <span class="g"><span class="chord">F</span>cierto</span> como yo le <span class="g"><span class="chord">G</span>hablo</span> y él me puede o<span class="g"><span class="chord">C</span>ír.`
+    },
 ];
