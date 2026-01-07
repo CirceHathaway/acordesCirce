@@ -1,6 +1,6 @@
 /* --- IMPORTACIONES DE FIREBASE (CDN) --- */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set, onValue, off, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getDatabase, ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 /* --- CONFIGURACIÓN DE FIREBASE --- */
 const firebaseConfig = {
@@ -33,12 +33,17 @@ let showChords = true;
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
 let currentContextList = []; 
 
-/* --- VARIABLES LIVE (SESIÓN ÚNICA) --- */
+/* --- VARIABLES LIVE & CHAT --- */
 const FIXED_ROOM_ID = "SESSION_1"; 
 const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU'];
 
 let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
 let isConnected = !!currentUserKey; 
+
+// Chat & Presence
+let isChatOpen = false;
+let unreadMessages = 0;
+let myConnectionRef = null; // Referencia para saber que "yo" estoy conectado
 
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
@@ -59,42 +64,53 @@ window.onload = function() {
             reconnectSession();
         }
 
-        // --- SOLUCIÓN TECLADO MÓVIL (CON DELAY) ---
+        // --- SOLUCIÓN TECLADO MÓVIL ---
         const sessionInput = document.getElementById('sessionCodeInput');
         const liveModal = document.getElementById('liveModal'); 
         
         if (sessionInput && liveModal) {
-            // Al tocar el input (FOCUS), subimos el modal
             sessionInput.addEventListener('focus', () => {
                 liveModal.classList.add('keyboard-active');
             });
-
-            // Al salir del input (BLUR)
             sessionInput.addEventListener('blur', () => {
-                // IMPORTANTE: Esperamos 200ms antes de bajar el modal.
-                // Esto permite que el evento CLICK del botón ocurra primero.
-                setTimeout(() => {
-                    liveModal.classList.remove('keyboard-active');
-                }, 200);
+                setTimeout(() => { liveModal.classList.remove('keyboard-active'); }, 200);
             });
-
-            // BONUS: Permitir entrar tocando "Enter" en el teclado del celular
             sessionInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
-                    e.preventDefault(); // Evitar comportamientos raros
+                    e.preventDefault(); 
                     window.connectToSession();
-                    sessionInput.blur(); // Bajar el teclado
+                    sessionInput.blur(); 
                 }
             });
         }
-        // ------------------------------------------
+
+        // --- CHAT: Enviar con Enter ---
+        const chatInput = document.getElementById('chatInput');
+        if (chatInput) {
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    window.sendMessage();
+                }
+            });
+        }
 
     } else {
         console.error("Error: No se cargó canciones.js");
     }
 };
 
-/* --- NAVEGACIÓN Y HISTORIAL --- */
+/* --- NAVEGACIÓN --- */
+window.addEventListener('popstate', (event) => {
+    if (isChatOpen) {
+        window.toggleChat();
+        return; 
+    }
+    if (window.location.hash !== '#song') {
+        closeSongUI();
+    }
+});
+
+/* --- LÓGICA MUSICAL --- */
 window.openSong = function(indexInGlobalArray) {
     if (window.location.hash === '#song') {
         history.replaceState({ view: 'song' }, null, '#song');
@@ -134,12 +150,6 @@ window.goHome = function() {
     }
 }
 
-window.addEventListener('popstate', (event) => {
-    if (window.location.hash !== '#song') {
-        closeSongUI();
-    }
-});
-
 function closeSongUI() {
     document.getElementById('songDetailView').style.display = 'none';
     const listView = document.getElementById('songListView');
@@ -148,7 +158,6 @@ function closeSongUI() {
     window.scrollTo(0,0);
 }
 
-/* --- LÓGICA MUSICAL --- */
 function updateSongView() {
     if (currentSongIndex === -1) return;
     const songOriginal = songs[currentSongIndex].content;
@@ -187,7 +196,6 @@ window.toggleChords = function() {
 function updateChordIcon() {
     const btn = document.getElementById('btnToggleChords');
     if (!btn) return;
-
     if (showChords) {
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
         btn.style.color = "var(--text-primary)"; 
@@ -246,7 +254,6 @@ window.closeAllModals = function() {
     if(overlay) overlay.style.display = 'none';
 }
 
-/* --- FILTROS Y BÚSQUEDA --- */
 window.applyGlobalFilters = function() {
     let filtered = songs.filter(song => {
         if (activeFilters.type && song.type !== activeFilters.type) return false;
@@ -352,7 +359,6 @@ function renderTable(data) {
     });
 }
 
-/* --- PLAYLIST --- */
 window.addToPlaylist = function(index, btnElement) {
     if (!myPlaylist.includes(index)) {
         myPlaylist.push(index);
@@ -360,8 +366,6 @@ window.addToPlaylist = function(index, btnElement) {
         btnElement.innerText = "✓";
         btnElement.classList.add('added');
         window.showNotification("Canción agregada a tu lista");
-        
-        // SYNC: Avisar a Firebase
         broadcastChange();
     }
 }
@@ -370,8 +374,6 @@ window.removeFromPlaylist = function(index) {
     myPlaylist = myPlaylist.filter(id => id !== index);
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
     window.loadPlaylistMode();
-    
-    // SYNC: Avisar a Firebase
     broadcastChange();
 }
 
@@ -400,28 +402,17 @@ window.loadPlaylistMode = function() {
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
     if(!tbody) return;
-    
-    const theadRow = document.querySelector('thead tr');
-    if (theadRow && theadRow.children.length > 5) { 
-       // Limpieza header si hace falta
-    }
-
     tbody.innerHTML = '';
-    
     if (songsData.length === 0) {
         tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
         return;
     }
-
     songsData.forEach((song, i) => {
         const globalIndex = originalIds[i]; 
-        
         let row = document.createElement('tr');
         row.setAttribute('data-index', globalIndex); 
         row.classList.add('draggable-row'); 
-
         row.oncontextmenu = function(event) { event.preventDefault(); event.stopPropagation(); return false; };
-
         row.innerHTML = `
             <td class="index-col">${i + 1}</td>
             <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
@@ -429,10 +420,8 @@ function renderPlaylistTable(songsData, originalIds) {
             <td style="color: var(--text-white);">${song.artist}</td>
             <td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex})">×</button></td>
         `;
-        
         tbody.appendChild(row);
     });
-
     enableLongPressDrag();
 }
 
@@ -443,11 +432,9 @@ window.sharePlaylistUrl = function() {
     else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); }
 }
 
-/* --- DRAG & DROP: LONG PRESS --- */
 function enableLongPressDrag() {
     const rows = document.querySelectorAll('.draggable-row');
     const tbody = document.getElementById('tableBody');
-    
     let pressTimer;
     let isDragging = false;
     let draggingRow = null;
@@ -512,19 +499,15 @@ function saveNewOrder() {
     });
     myPlaylist = newPlaylist;
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-    
     if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist;
     rows.forEach((row, index) => {
         const indexCell = row.querySelector('.index-col');
         if(indexCell) indexCell.innerText = index + 1;
     });
     window.showNotification("Orden guardado");
-    
-    // SYNC: Avisar a Firebase
     broadcastChange();
 }
 
-/* --- VACIAR LISTA --- */
 window.askClearPlaylist = function() {
     const modal = document.getElementById('confirmModal');
     if(modal) modal.style.display = 'flex';
@@ -539,21 +522,14 @@ window.executeClearList = function() {
     window.closeConfirmModal(); 
     window.showNotification("Lista vaciada correctamente"); 
     window.loadPlaylistMode(); 
-    
-    // SYNC: Avisar a Firebase
     broadcastChange();
 }
 
-/* --- LIVE SESSION (SALA ÚNICA: SESIÓN 1) --- */
+/* --- LOGICA LIVE + CHAT + PRESENCIA --- */
 
 window.openLiveModal = function() {
     document.getElementById('liveModal').style.display = 'flex';
-    // Si ya hay sesión activa
-    if (isConnected) {
-        showConnectedScreen();
-    } else {
-        window.resetLiveModal();
-    }
+    if (isConnected) showConnectedScreen(); else window.resetLiveModal();
 }
 window.closeLiveModal = function() {
     document.getElementById('liveModal').style.display = 'none';
@@ -573,23 +549,21 @@ function showConnectedScreen() {
 
 window.connectToSession = function() {
     const codeInput = document.getElementById('sessionCodeInput').value.trim().toUpperCase();
-    
     if (!codeInput) { alert("Ingresa la clave."); return; }
-    
-    // VERIFICAR CLAVES
-    if (!VALID_KEYS.includes(codeInput)) {
-        alert("Clave incorrecta. Intenta con: SOL, SAM, PASTOR o SAMU");
-        return;
-    }
+    if (!VALID_KEYS.includes(codeInput)) { alert("Clave incorrecta."); return; }
 
-    // 1. Guardar clave
     currentUserKey = codeInput; 
     sessionStorage.setItem('acordify_user_key', currentUserKey);
     isConnected = true;
     
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    
+    // REGISTRAR PRESENCIA (Conectado)
+    const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
+    myConnectionRef = push(connectionsRef); // Crea ID único
+    set(myConnectionRef, currentUserKey);   // Guarda nombre
+    onDisconnect(myConnectionRef).remove(); // Si se cierra navegador, se borra
 
-    // 2. LOGICA INTELIGENTE: ¿Descargo o Subo?
     get(roomRef).then((snapshot) => {
         if (snapshot.exists() && snapshot.val()) {
             window.showNotification("Sincronizando con la banda... 📡");
@@ -598,11 +572,9 @@ window.connectToSession = function() {
                 .then(() => window.showNotification("Sala iniciada. Lista subida ☁️"));
         }
         
-        // 3. Activar escucha permanente
         startListening(roomRef);
+        startChatListener(); 
         updateUIConnected();
-        
-        // Cerrar modal automáticamente
         window.closeLiveModal(); 
 
     }).catch((error) => {
@@ -613,61 +585,187 @@ window.connectToSession = function() {
 
 function reconnectSession() {
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    // Re-registrar presencia al recargar
+    const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
+    myConnectionRef = push(connectionsRef);
+    set(myConnectionRef, currentUserKey);
+    onDisconnect(myConnectionRef).remove();
+
     startListening(roomRef);
+    startChatListener(); 
     updateUIConnected();
 }
 
 function startListening(roomRef) {
     onValue(roomRef, (snapshot) => {
         const cloudPlaylist = snapshot.val();
-        // Si hay cambios en la nube, actualizamos local
         if (JSON.stringify(cloudPlaylist) !== JSON.stringify(myPlaylist)) {
             myPlaylist = cloudPlaylist || [];
             localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-            
-            if (window.location.pathname.includes('lista.html')) {
-                window.loadPlaylistMode();
-            } else {
-                window.applyGlobalFilters();
-            }
+            if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode();
+            else window.applyGlobalFilters();
         }
     });
 }
 
 function updateUIConnected() {
     const btnLive = document.getElementById('btnLiveHeader');
+    const btnChat = document.getElementById('btnChatHeader');
+    
     if(btnLive) {
         btnLive.classList.add('active');
         btnLive.innerText = "📡 " + currentUserKey;
     }
+    if(btnChat) btnChat.style.display = 'flex';
 }
 
-// Desconectar y cerrar
 window.disconnectSession = function() {
     if (!isConnected) return;
 
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
-    off(roomRef); // Dejar de escuchar
+    const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
+    const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
+    
+    // VERIFICAR SI SOY EL ÚLTIMO
+    get(connectionsRef).then((snapshot) => {
+        // Si hay 1 o menos conectados (osea yo), borro el chat
+        if (snapshot.size <= 1) {
+            set(chatRef, null);
+        }
+        
+        // Me borro de la lista de conectados
+        if(myConnectionRef) remove(myConnectionRef);
+        
+        off(roomRef); 
+        off(chatRef); 
 
-    isConnected = false;
-    currentUserKey = null;
-    sessionStorage.removeItem('acordify_user_key');
+        isConnected = false;
+        currentUserKey = null;
+        sessionStorage.removeItem('acordify_user_key');
 
-    const btnLive = document.getElementById('btnLiveHeader');
-    if(btnLive) {
-        btnLive.classList.remove('active');
-        btnLive.innerText = "📡 LIVE";
-    }
+        const btnLive = document.getElementById('btnLiveHeader');
+        const btnChat = document.getElementById('btnChatHeader');
+        
+        if(btnLive) {
+            btnLive.classList.remove('active');
+            btnLive.innerText = "📡 LIVE";
+        }
+        
+        if(btnChat) {
+            btnChat.style.display = 'none';
+            document.getElementById('chatOverlay').style.display = 'none';
+            isChatOpen = false;
+        }
 
-    window.resetLiveModal();
-    window.showNotification("Desconectado 🔌");
-    window.closeLiveModal();
+        window.resetLiveModal();
+        window.showNotification("Desconectado 🔌");
+        window.closeLiveModal();
+    });
 }
 
 function broadcastChange() {
-    if (!isConnected) return; // Si no estamos conectados, no enviamos nada
+    if (!isConnected) return; 
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     set(roomRef, myPlaylist).catch((e) => console.error(e));
+}
+
+/* --- LÓGICA DEL CHAT --- */
+
+window.toggleChat = function() {
+    const overlay = document.getElementById('chatOverlay');
+    const badge = document.getElementById('chatBadge');
+    
+    isChatOpen = !isChatOpen;
+    
+    if(isChatOpen) {
+        overlay.style.display = 'flex';
+        history.pushState({chat: true}, null, "#chat");
+        
+        unreadMessages = 0;
+        if(badge) {
+            badge.innerText = '0';
+            badge.style.display = 'none';
+        }
+        
+        setTimeout(() => {
+            const chatBox = document.getElementById('chatMessages');
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, 100);
+        
+    } else {
+        overlay.style.display = 'none';
+        if(window.location.hash === '#chat') history.back();
+    }
+}
+
+window.sendMessage = function() {
+    const input = document.getElementById('chatInput');
+    const msgText = input.value.trim();
+    
+    if(!msgText || !isConnected) return;
+    
+    const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
+    const newMessage = {
+        user: currentUserKey,
+        text: msgText,
+        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+    };
+    
+    push(chatRef, newMessage);
+    input.value = '';
+}
+
+function startChatListener() {
+    const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
+    const chatBox = document.getElementById('chatMessages');
+    const badge = document.getElementById('chatBadge');
+    
+    chatBox.innerHTML = '';
+    
+    onChildAdded(chatRef, (snapshot) => {
+        const msg = snapshot.val();
+        renderMessage(msg);
+        
+        if(!isChatOpen) {
+            unreadMessages++;
+            if(badge) {
+                badge.innerText = unreadMessages;
+                badge.style.display = 'flex';
+            }
+        } else {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    });
+}
+
+function renderMessage(msg) {
+    const chatBox = document.getElementById('chatMessages');
+    const isMe = msg.user === currentUserKey;
+    
+    const div = document.createElement('div');
+    
+    let bubbleClass = 'message-bubble';
+    
+    if (isMe) {
+        bubbleClass += ' msg-me'; 
+    } else {
+        bubbleClass += ' msg-other';
+        if (msg.user === 'SOL') bubbleClass += ' user-SOL';
+        else if (msg.user === 'SAM') bubbleClass += ' user-SAM';
+        else if (msg.user === 'PASTOR') bubbleClass += ' user-PASTOR';
+        else if (msg.user === 'SAMU') bubbleClass += ' user-SAMU';
+        else bubbleClass += ' user-UNKNOWN';
+    }
+    
+    div.className = bubbleClass;
+    
+    div.innerHTML = `
+        <span class="msg-sender">${isMe ? 'Tú' : msg.user}</span>
+        ${msg.text}
+        <span class="msg-time">${msg.time}</span>
+    `;
+    
+    chatBox.appendChild(div);
 }
 
 /* --- UTILIDADES --- */
