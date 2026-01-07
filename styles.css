@@ -1068,3 +1068,37 @@ tr:hover { background-color: #252525; }
 .btn-chat-nav svg {
     margin-right: 0; /* Centrado */
 }
+
+/* --- ESTILOS FASE 2: STICKERS --- */
+
+/* Botón Clip */
+.btn-clip {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    padding: 0 10px 0 5px; 
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+}
+.btn-clip:hover {
+    color: var(--text-primary);
+}
+
+/* CLASE ESPECIAL PARA STICKERS */
+.msg-sticker {
+    background-color: transparent !important; /* Sin fondo de color */
+    padding: 0 !important; /* Sin relleno */
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 50%; /* Tamaño controlado */
+}
+
+/* La imagen del sticker */
+.msg-sticker img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}

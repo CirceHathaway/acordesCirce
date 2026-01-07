@@ -35,7 +35,7 @@ let currentContextList = [];
 
 /* --- VARIABLES LIVE & CHAT --- */
 const FIXED_ROOM_ID = "SESSION_1"; 
-const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU'];
+const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU', 'ANGEL'];
 
 let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
 let isConnected = !!currentUserKey; 
@@ -43,7 +43,7 @@ let isConnected = !!currentUserKey;
 // Chat & Presence
 let isChatOpen = false;
 let unreadMessages = 0;
-let myConnectionRef = null; // Referencia para saber que "yo" estoy conectado
+let myConnectionRef = null; 
 
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
@@ -84,14 +84,21 @@ window.onload = function() {
             });
         }
 
-        // --- CHAT: Enviar con Enter ---
+        // --- CHAT: EVENTOS ---
         const chatInput = document.getElementById('chatInput');
+        const stickerInput = document.getElementById('stickerInput');
+
         if (chatInput) {
             chatInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     window.sendMessage();
                 }
             });
+        }
+
+        // Detectar cuando eligen una foto para sticker
+        if (stickerInput) {
+            stickerInput.addEventListener('change', handleStickerSelection);
         }
 
     } else {
@@ -110,7 +117,7 @@ window.addEventListener('popstate', (event) => {
     }
 });
 
-/* --- LÓGICA MUSICAL --- */
+/* --- LÓGICA MUSICAL (Sin cambios) --- */
 window.openSong = function(indexInGlobalArray) {
     if (window.location.hash === '#song') {
         history.replaceState({ view: 'song' }, null, '#song');
@@ -525,7 +532,7 @@ window.executeClearList = function() {
     broadcastChange();
 }
 
-/* --- LOGICA LIVE + CHAT + PRESENCIA --- */
+/* --- LOGICA LIVE + CHAT --- */
 
 window.openLiveModal = function() {
     document.getElementById('liveModal').style.display = 'flex';
@@ -557,12 +564,12 @@ window.connectToSession = function() {
     isConnected = true;
     
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     
-    // REGISTRAR PRESENCIA (Conectado)
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
-    myConnectionRef = push(connectionsRef); // Crea ID único
-    set(myConnectionRef, currentUserKey);   // Guarda nombre
-    onDisconnect(myConnectionRef).remove(); // Si se cierra navegador, se borra
+    myConnectionRef = push(connectionsRef);
+    set(myConnectionRef, currentUserKey);
+    onDisconnect(myConnectionRef).remove();
 
     get(roomRef).then((snapshot) => {
         if (snapshot.exists() && snapshot.val()) {
@@ -570,6 +577,9 @@ window.connectToSession = function() {
         } else {
             set(roomRef, myPlaylist)
                 .then(() => window.showNotification("Sala iniciada. Lista subida ☁️"));
+            
+            // EL LIDER LIMPIA EL CHAT AL INICIAR
+            set(chatRef, null);
         }
         
         startListening(roomRef);
@@ -585,7 +595,6 @@ window.connectToSession = function() {
 
 function reconnectSession() {
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
-    // Re-registrar presencia al recargar
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     myConnectionRef = push(connectionsRef);
     set(myConnectionRef, currentUserKey);
@@ -626,14 +635,12 @@ window.disconnectSession = function() {
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     
-    // VERIFICAR SI SOY EL ÚLTIMO
+    // VERIFICAR SI SOY EL ÚLTIMO Y BORRAR CHAT
     get(connectionsRef).then((snapshot) => {
-        // Si hay 1 o menos conectados (osea yo), borro el chat
         if (snapshot.size <= 1) {
-            set(chatRef, null);
+            set(chatRef, null); // BORRA EL CHAT
         }
         
-        // Me borro de la lista de conectados
         if(myConnectionRef) remove(myConnectionRef);
         
         off(roomRef); 
@@ -669,7 +676,7 @@ function broadcastChange() {
     set(roomRef, myPlaylist).catch((e) => console.error(e));
 }
 
-/* --- LÓGICA DEL CHAT --- */
+/* --- LÓGICA DEL CHAT + STICKERS (BASE64) --- */
 
 window.toggleChat = function() {
     const overlay = document.getElementById('chatOverlay');
@@ -704,15 +711,42 @@ window.sendMessage = function() {
     
     if(!msgText || !isConnected) return;
     
+    sendToFirebase(msgText, 'TEXT');
+    input.value = '';
+}
+
+// Convertir imagen a Base64 y enviarla
+function handleStickerSelection(event) {
+    const file = event.target.files[0];
+    if (!file || !isConnected) return;
+
+    // Límite de tamaño (2MB aprox)
+    if (file.size > 2 * 1024 * 1024) {
+        alert("La imagen es muy pesada. Usa una más pequeña.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const base64String = e.target.result;
+        sendToFirebase(base64String, 'STICKER');
+    };
+    reader.readAsDataURL(file);
+    
+    // Limpiar input
+    event.target.value = '';
+}
+
+// Función auxiliar para enviar
+function sendToFirebase(content, type) {
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const newMessage = {
         user: currentUserKey,
-        text: msgText,
+        text: content, // Texto o Base64
+        type: type, // 'TEXT' o 'STICKER'
         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
     };
-    
     push(chatRef, newMessage);
-    input.value = '';
 }
 
 function startChatListener() {
@@ -741,11 +775,14 @@ function startChatListener() {
 function renderMessage(msg) {
     const chatBox = document.getElementById('chatMessages');
     const isMe = msg.user === currentUserKey;
-    
     const div = document.createElement('div');
     
     let bubbleClass = 'message-bubble';
     
+    if (msg.type === 'STICKER') {
+        bubbleClass += ' msg-sticker';
+    }
+
     if (isMe) {
         bubbleClass += ' msg-me'; 
     } else {
@@ -759,9 +796,17 @@ function renderMessage(msg) {
     
     div.className = bubbleClass;
     
+    // Contenido: Texto o Imagen
+    let contentHtml = '';
+    if (msg.type === 'STICKER') {
+        contentHtml = `<img src="${msg.text}" alt="sticker" loading="lazy">`;
+    } else {
+        contentHtml = msg.text;
+    }
+
     div.innerHTML = `
         <span class="msg-sender">${isMe ? 'Tú' : msg.user}</span>
-        ${msg.text}
+        ${contentHtml}
         <span class="msg-time">${msg.time}</span>
     `;
     
