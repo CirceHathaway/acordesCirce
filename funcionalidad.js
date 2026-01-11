@@ -22,14 +22,22 @@ const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const flatMap = { "Db": "C#", "Eb": "D#", "Gb": "F#", "Ab": "G#", "Bb": "A#" };
 const scaleSpanish = ["DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI"];
 
-/* --- ESTADO GLOBAL --- */
+/* --- ESTADO GLOBAL (CON PERSISTENCIA) --- */
 let activeFilters = { type: null, key: null, search: '' };
 let displaySongs = []; 
 let currentSongIndex = -1; 
 let currentSemitones = 0; 
 let isSpanish = false; 
-let currentFontSize = 17;
-let showChords = true; 
+
+// 1. LEER MEMORIA (Tamaño de letra)
+// Si existe guardado, lo usa. Si no, usa 17.
+let savedSize = localStorage.getItem('acordify_fontSize');
+let currentFontSize = savedSize ? parseInt(savedSize) : 17;
+
+// 2. LEER MEMORIA (Acordes Ocultos)
+// Si es 'false', oculta. Si es cualquier otra cosa (o no existe), muestra.
+let showChords = localStorage.getItem('acordify_showChords') !== 'false'; 
+
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
 let currentContextList = []; 
 
@@ -96,7 +104,6 @@ window.onload = function() {
             });
         }
 
-        // Detectar cuando eligen una foto para sticker
         if (stickerInput) {
             stickerInput.addEventListener('change', handleStickerSelection);
         }
@@ -117,7 +124,7 @@ window.addEventListener('popstate', (event) => {
     }
 });
 
-/* --- LÓGICA MUSICAL (Sin cambios) --- */
+/* --- LÓGICA MUSICAL --- */
 window.openSong = function(indexInGlobalArray) {
     if (window.location.hash === '#song') {
         history.replaceState({ view: 'song' }, null, '#song');
@@ -145,7 +152,7 @@ window.openSong = function(indexInGlobalArray) {
     }
     
     updateSongView();
-    updateChordIcon(); 
+    updateChordIcon(); // Actualiza el icono según la preferencia guardada
     window.scrollTo(0,0);
 }
 
@@ -182,6 +189,7 @@ function updateSongView() {
             element.innerText = newChord;
         }
 
+        // 3. APLICAR PREFERENCIA GUARDADA
         if (!showChords) {
             element.style.display = 'none'; 
         } else {
@@ -191,11 +199,17 @@ function updateSongView() {
 
     const contentDiv = document.getElementById('songContent');
     contentDiv.innerHTML = tempDiv.innerHTML;
+    
+    // 4. APLICAR TAMAÑO GUARDADO
     contentDiv.style.fontSize = currentFontSize + 'px';
 }
 
 window.toggleChords = function() {
     showChords = !showChords;
+    
+    // GUARDAR EN MEMORIA
+    localStorage.setItem('acordify_showChords', showChords);
+    
     updateSongView();
     updateChordIcon();
 }
@@ -204,9 +218,11 @@ function updateChordIcon() {
     const btn = document.getElementById('btnToggleChords');
     if (!btn) return;
     if (showChords) {
+        // Ojo abierto
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
         btn.style.color = "var(--text-primary)"; 
     } else {
+        // Ojo tachado
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
         btn.style.color = "#e55039"; 
     }
@@ -232,11 +248,22 @@ window.applyTranspose = function(amount) { currentSemitones += amount; updateSon
 window.resetTranspose = function() { currentSemitones = 0; updateSongView(); window.closeAllModals(); }
 window.toggleNotation = function() { isSpanish = !isSpanish; updateSongView(); }
 
+// 5. GUARDAR TAMAÑO AL CAMBIAR
 window.changeFontSize = function(amount) {
     currentFontSize += amount;
     if (currentFontSize < 8) currentFontSize = 8; 
     if (currentFontSize > 30) currentFontSize = 30; 
+    
+    localStorage.setItem('acordify_fontSize', currentFontSize);
     updateSongView();
+}
+
+// 6. FUNCIÓN NUEVA: RESETEAR TAMAÑO (Botón Orig)
+window.resetFontSize = function() {
+    currentFontSize = 17; // Valor por defecto
+    localStorage.setItem('acordify_fontSize', currentFontSize);
+    updateSongView();
+    window.closeAllModals(); // Feedback visual (cierra el menú)
 }
 
 window.toggleModal = function(modalId) {
@@ -791,6 +818,7 @@ function renderMessage(msg) {
         else if (msg.user === 'SAM') bubbleClass += ' user-SAM';
         else if (msg.user === 'PASTOR') bubbleClass += ' user-PASTOR';
         else if (msg.user === 'SAMU') bubbleClass += ' user-SAMU';
+        else if (msg.user === 'ANGEL') bubbleClass += ' user-SAMU';
         else bubbleClass += ' user-UNKNOWN';
     }
     
@@ -815,8 +843,17 @@ function renderMessage(msg) {
 
 /* --- UTILIDADES --- */
 const filterKeys = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
-window.openKeyModal = function() { document.getElementById('keyModal').style.display = 'flex'; }
-window.closeKeyModal = function() { document.getElementById('keyModal').style.display = 'none'; }
+
+window.openKeyModal = function() { 
+    const modal = document.getElementById('keyModal');
+    if(modal) modal.style.display = 'flex'; 
+}
+
+window.closeKeyModal = function() { 
+    const modal = document.getElementById('keyModal');
+    if(modal) modal.style.display = 'none'; 
+}
+
 window.generateKeyButtons = function() {
     const grid = document.getElementById('keyGrid');
     if (!grid) return; 
@@ -829,6 +866,8 @@ window.generateKeyButtons = function() {
         grid.appendChild(btn);
     });
 }
+
+// Cierra modales al hacer click afuera
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
     let confirmModal = document.getElementById('confirmModal');
@@ -844,7 +883,7 @@ window.showNotification = function(message) {
     setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
 }
 
-/* --- PWA --- */
+/* --- PWA (Instalación) --- */
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
 }
@@ -883,7 +922,7 @@ window.shareApp = function() {
     else { navigator.clipboard.writeText(window.location.href); window.showNotification("Enlace copiado!"); }
 }
 
-/* --- SWIPE --- */
+/* --- SWIPE (Deslizar dedo) --- */
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndY = 0;
