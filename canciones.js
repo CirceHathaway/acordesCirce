@@ -2339,26 +2339,28 @@ Será i<span class="g"><span class="chord">F</span>gual.`
         title: "Amor sin condición",
         artist: "Marco Barrientos",
         key: "G",
-        type: "Adoración",
+        type: "Alabanza",
         content: `
-[Verso 1]
-De tal ma<span class="g"><span class="chord">G</span>ne</span>ra al mundo tú a <span class="g"><span class="chord">D</span>maste,</span>
-Que hasta tu <span class="g"><span class="chord">Em7</span>vida</span> entre <span class="g"><span class="chord">C</span>gas</span>te,
-Tu cos <span class="g"><span class="chord">C</span>ta</span>do abierto <span class="g"><span class="chord">D</span>fue.</span>
+[Intro] 
+<span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">Bm</span></span><span class="g"><span class="chord">C</span></span>
 
-Y fueron <span class="g"><span class="chord">G</span>e</span>sas gotas de tu <span class="g"><span class="chord">D</span>sangre,</span>
-Que mi cora<span class="g"><span class="chord">Em7</span>zón</span> lim <span class="g"><span class="chord">C</span>pia</span>ron,
-Me hi<span class="g"><span class="chord">C</span>cis</span>te un nuevo <span class="g"><span class="chord">D</span>ser.</span>
+De <span class="g"><span class="chord">G</span>tal</span> manera al mundo tú a<span class="g"><span class="chord">D</span>maste,</span>
+Que hasta tu vida entre<span class="g"><span class="chord">Em7</span>gaste,</span>
+Tu cos<span class="g"><span class="chord">C</span>tado</span> abierto <span class="g"><span class="chord">D</span>fue.</span>
+
+Y <span class="g"><span class="chord">G</span>fueron</span> esas gotas de tu <span class="g"><span class="chord">D</span>sangre,</span>
+Que mi corazón lim<span class="g"><span class="chord">Em7</span>piaron,</span>
+Me <span class="g"><span class="chord">C</span>hiciste</span> un nuevo <span class="g"><span class="chord">D</span>ser.</span>
 
 [Coro]
-<span class="g"><span class="chord">G</span>Gra</span>cias, te doy <span class="g"><span class="chord">D</span>gracias,</span>
+<span class="g"><span class="chord">G</span>Gracias,</span> te doy <span class="g"><span class="chord">D</span>gracias,</span>
 Por tu a<span class="g"><span class="chord">Em7</span>mor</span> sin condi<span class="g"><span class="chord">C</span>ción</span> en esa <span class="g"><span class="chord">D</span>cruz...</span>
-<span class="g"><span class="chord">G</span>Gra</span>cias, te doy <span class="g"><span class="chord">D</span>gracias,</span>
-Por tu per<span class="g"><span class="chord">Em7</span>dón</span>, la salva<span class="g"><span class="chord">C</span>ción</span> en esa <span class="g"><span class="chord">D</span>cruz.</span>
+<span class="g"><span class="chord">G</span>Gracias,</span> te doy <span class="g"><span class="chord">D</span>gracias,</span>
+Por tu per<span class="g"><span class="chord">Em7</span>dón,</span> la salva<span class="g"><span class="chord">C</span>ción</span> en esa <span class="g"><span class="chord">D</span>cruz.</span>
 
 [Puente]
-A <span class="g"><span class="chord">G</span>mor</span> sin condi<span class="g"><span class="chord">D</span>ción,</span>
-A <span class="g"><span class="chord">Bm</span>mor</span> sin condi<span class="g"><span class="chord">C</span>ción.`
+A<span class="g"><span class="chord">G</span>mor</span> sin <span class="g"><span class="chord">D</span>condición,</span>
+A<span class="g"><span class="chord">Bm</span>mor</span> sin <span class="g"><span class="chord">C</span>condición.`
     },
     {
         title: "Anhelo tu presencia",
@@ -2366,25 +2368,25 @@ A <span class="g"><span class="chord">Bm</span>mor</span> sin condi<span class="
         key: "G",
         type: "Adoración",
         content: `
-[Verso 1]
-<span class="g"><span class="chord">G</span>Cuan</span>do llames quiero res<span class="g"><span class="chord">Em</span>ponder,</span>
-<span class="g"><span class="chord">C</span>Cuan</span>do hables quiero es<span class="g"><span class="chord">D</span>cuchar,</span>
-<span class="g"><span class="chord">G</span>Cuan</span>do escuches te qui<span class="g"><span class="chord">Em</span>ero</span> ado <span class="g"><span class="chord">C</span>rar,</span>
-Mi ri <span class="g"><span class="chord">D</span>que</span>za eres tú.
+<span class="g"><span class="chord">G</span>Cuando</span> llames quiero <span class="g"><span class="chord">Em</span>responder,</span>
+<span class="g"><span class="chord">C</span>Cuando</span> hables quiero <span class="g"><span class="chord">D</span>escuchar,</span>
+<span class="g"><span class="chord">G</span>Cuando</span> escuches te qui<span class="g"><span class="chord">Em</span>ero</span> ado<span class="g"><span class="chord">C</span>rar,</span>
+Mi ri<span class="g"><span class="chord">D</span>queza</span> eres tú.
 
 [Verso 2]
 <span class="g"><span class="chord">G</span>En</span> tus brazos quiero des<span class="g"><span class="chord">Em</span>cansar,</span>
 <span class="g"><span class="chord">C</span>Tus</span> palabras quiero <span class="g"><span class="chord">D</span>yo</span> beber,
-<span class="g"><span class="chord">G</span>Mi</span> cuerpo tu ha <span class="g"><span class="chord">Em</span>bi</span>tación se <span class="g"><span class="chord">C</span>rá,</span>
-Mi porción es <span class="g"><span class="chord">B</span>tá</span> en ti.
+<span class="g"><span class="chord">G</span>Mi</span> cuerpo tu ha<span class="g"><span class="chord">Em</span>bitación</span> se<span class="g"><span class="chord">C</span>rá,</span>
+Mi porción es<span class="g"><span class="chord">B</span>tá en ti.</span>
 
 [Coro]
-Je <span class="g"><span class="chord">Em</span>sús</span> <span class="g"><span class="chord">D</span>quie</span>ro ver tu <span class="g"><span class="chord">G</span>glo</span>ria sobre <span class="g"><span class="chord">C</span>mí</span> caer,
-Je <span class="g"><span class="chord">Em</span>sús</span> te de <span class="g"><span class="chord">D</span>se</span>o.... Je <span class="g"><span class="chord">G</span>sus.</span> <span class="g"><span class="chord">C</span></span>
+Je<span class="g"><span class="chord">Em</span>sús</span> <span class="g"><span class="chord">D</span>quiero</span> ver tu <span class="g"><span class="chord">G</span>gloria</span> sobre <span class="g"><span class="chord">C</span>mí</span> caer,
+Je<span class="g"><span class="chord">Em</span>sús</span> te de<span class="g"><span class="chord">D</span>seo...</span> 
+Je<span class="g"><span class="chord">G</span>sus.</span> <span class="g"><span class="chord">C</span>..</span>
 
 [Puente]
-Mi <span class="g"><span class="chord">Bm</span>al</span>ma anhela tu pre<span class="g"><span class="chord">Em</span>sencia,</span>
-Es <span class="g"><span class="chord">F</span>pí</span>ritu de Dios Ven <span class="g"><span class="chord">D</span>so</span>bre mí.`
+Mi <span class="g"><span class="chord">Bm</span>alma</span> anhela <span class="g"><span class="chord">Em</span>tu presencia,</span>
+Es<span class="g"><span class="chord">F</span>píritu</span> de Dios ven sobre <span class="g"><span class="chord">D</span>mí.</span>`
     },
     {
         title: "Ante Ti",
@@ -2392,52 +2394,44 @@ Es <span class="g"><span class="chord">F</span>pí</span>ritu de Dios Ven <span 
         key: "A",
         type: "Adoración",
         content: `
-[Verso 1]
-Ante <span class="g"><span class="chord">A</span>ti</span> <span class="g"><span class="chord">E</span>do</span>blo mi ro <span class="g"><span class="chord">F#m</span>dilla,</span> rindiendo mi <span class="g"><span class="chord">D</span>ser</span>
-<span class="g"><span class="chord">Bm</span>A</span> tus pi <span class="g"><span class="chord">E</span>es.</span>
-Ante <span class="g"><span class="chord">A</span>ti</span> <span class="g"><span class="chord">E</span>trai</span>go mi <span class="g"><span class="chord">F#m</span>vida,</span> en <span class="g"><span class="chord">C#m</span>trego</span> mi <span class="g"><span class="chord">D</span>vi</span>da, <span class="g"><span class="chord">Bm</span></span>
-a tus pi <span class="g"><span class="chord">E</span>es.</span>
+Ante <span class="g"><span class="chord">A</span>ti</span> <span class="g"><span class="chord">E</span>doblo</span> mi ro<span class="g"><span class="chord">F#m</span>dilla,</span> 
+rindiendo mi <span class="g"><span class="chord">D</span>ser,</span> <span class="g"><span class="chord">Bm</span>..</span>
+A tus pi<span class="g"><span class="chord">E</span>es.</span>
 
-[Coro]
-<span class="g"><span class="chord">F#m</span>E</span>res señor de la crea<span class="g"><span class="chord">C#m</span>ción,</span> eres se <span class="g"><span class="chord">D</span>ñor</span> de mi <span class="g"><span class="chord">Bm</span>ser,</span> <span class="g"><span class="chord">E</span></span>
-<span class="g"><span class="chord">F#m</span>Com</span>praste mi vida con tu <span class="g"><span class="chord">C#m</span>san</span>gre bendita,
-Te hu<span class="g"><span class="chord">D</span>mi</span>llaste hasta la <span class="g"><span class="chord">Bm</span>muer</span>te en la <span class="g"><span class="chord">E</span>cruz.
-
-[Verso 2]
-Y es por <span class="g"><span class="chord">A</span>e</span>so que me <span class="g"><span class="chord">E</span>doy,</span> y me <span class="g"><span class="chord">F#m</span>nie</span>go en tu <span class="g"><span class="chord">C#m</span>cruz,</span>
-Me hu <span class="g"><span class="chord">D</span>mi</span>llo mi se <span class="g"><span class="chord">Bm</span>ñor</span> Je <span class="g"><span class="chord">E</span>sús...</span>
-Hoy me <span class="g"><span class="chord">A</span>rin</span>do a tus <span class="g"><span class="chord">E</span>pies,</span> me con <span class="g"><span class="chord">F#m</span>sa</span>gro ante tu al <span class="g"><span class="chord">C#m</span>tar,</span>
-Yo <span class="g"><span class="chord">D</span>quie</span>ro hacer se <span class="g"><span class="chord">E</span>ñor</span> tu volun <span class="g"><span class="chord">A</span>tad.</span> <span class="g"><span class="chord">A2</span></span>
+Ante <span class="g"><span class="chord">A</span>ti</span> <span class="g"><span class="chord">E</span>traigo</span> mi <span class="g"><span class="chord">F#m</span>vida,</span> 
+En<span class="g"><span class="chord">C#m</span>trego</span> mi <span class="g"><span class="chord">D</span>vida,</span> <span class="g"><span class="chord">Bm</span>..</span>
+A tus pi<span class="g"><span class="chord">E</span>es.</span>
 
 [Puente]
-Hoy me <span class="g"><span class="chord">A</span>a</span>bro ante <span class="g"><span class="chord">E</span>ti,</span> y me ex <span class="g"><span class="chord">F#m</span>pon</span>go ante tu <span class="g"><span class="chord">C#m</span>luz,</span>
-Y pre <span class="g"><span class="chord">D</span>sen</span>to todo <span class="g"><span class="chord">Bm</span>lo</span> que soy Je <span class="g"><span class="chord">E</span>sús,</span>
-Yo te o <span class="g"><span class="chord">A</span>frez</span>co hoy mi <span class="g"><span class="chord">E</span>ser,</span> te lo en <span class="g"><span class="chord">F#m</span>tre</span>go mi se <span class="g"><span class="chord">C#m</span>ñor,</span>
-Re <span class="g"><span class="chord">D</span>ci</span>be el re <span class="g"><span class="chord">E</span>ga</span>lo de mi a <span class="g"><span class="chord">A</span>mor.`
-    },
-    {
-        title: "Aquí Estoy",
-        artist: "Jaime Murrell",
-        key: "G",
-        type: "Adoración",
-        content: `
-[Verso]
-A<span class="g"><span class="chord">G</span>quí</span> es<span class="g"><span class="chord">D/F#</span>toy</span> <span class="g"><span class="chord">Em7</span></span> te ofrezco todo lo que <span class="g"><span class="chord">C</span>soy,</span> <span class="g"><span class="chord">D</span></span>
-A<span class="g"><span class="chord">G</span>quí</span> es<span class="g"><span class="chord">D/F#</span>toy,</span> <span class="g"><span class="chord">Em7</span></span> un sacrificio quiero <span class="g"><span class="chord">C</span>ser,</span> <span class="g"><span class="chord">D</span></span>
-<span class="g"><span class="chord">C</span>To</span>ma mi <span class="g"><span class="chord">D</span>ser,</span> <span class="g"><span class="chord">C</span></span> mi vida en <span class="g"><span class="chord">Am</span>tre</span>go a <span class="g"><span class="chord">C</span>Ti...</span> <span class="g"><span class="chord">D</span></span>
+<span class="g"><span class="chord">F#m</span>Eres</span> señor de <span class="g"><span class="chord">C#m</span>la creación,</span> 
+<span class="g"><span class="chord">D</span>Eres</span> se<span class="g"><span class="chord">Bm</span>ñor</span> de mi <span class="g"><span class="chord">E</span>ser,</span>
+
+<span class="g"><span class="chord">F#m</span>Compraste</span> mi vida con tu <span class="g"><span class="chord">C#m</span>sangre</span> bendita,</span>
+Te humi<span class="g"><span class="chord">D</span>llaste</span> hasta la <span class="g"><span class="chord">Bm</span>muerte</span> en la <span class="g"><span class="chord">E</span>cruz.</span>
 
 [Coro]
-Porque tu <span class="g"><span class="chord">G</span>e</span>res mi Di <span class="g"><span class="chord">C</span>os,</span> <span class="g"><span class="chord">D</span></span>
-Eres <span class="g"><span class="chord">G</span>dig</span>no de adora<span class="g"><span class="chord">C</span>ción,</span> <span class="g"><span class="chord">D</span></span>
-Una o <span class="g"><span class="chord">G</span>fren</span>da de a <span class="g"><span class="chord">C</span>mor</span> se <span class="g"><span class="chord">D</span>ré,</span>
-Para <span class="g"><span class="chord">C</span>ti,</span> <span class="g"><span class="chord">Am</span></span>
-Para <span class="g"><span class="chord">D</span>ti.`
+Y es por <span class="g"><span class="chord">A</span>eso</span> que me <span class="g"><span class="chord">E</span>doy,</span> 
+y me <span class="g"><span class="chord">F#m</span>niego</span> en tu <span class="g"><span class="chord">C#m</span>cruz,</span>
+Me hu<span class="g"><span class="chord">D</span>millo</span> mi se<span class="g"><span class="chord">Bm</span>ñor</span> Je<span class="g"><span class="chord">E</span>sús...</span>
+
+Hoy me <span class="g"><span class="chord">A</span>rindo</span> a tus <span class="g"><span class="chord">E</span>pies,</span> 
+me con<span class="g"><span class="chord">F#m</span>sagro</span> ante tu al<span class="g"><span class="chord">C#m</span>tar,</span>
+Yo <span class="g"><span class="chord">D</span>quiero</span> hacer se<span class="g"><span class="chord">E</span>ñor</span> tu volun<span class="g"><span class="chord">A</span>tad.</span>
+
+[Coro2]
+Hoy me <span class="g"><span class="chord">A</span>abro</span> ante <span class="g"><span class="chord">E</span>ti,</span> 
+y me ex<span class="g"><span class="chord">F#m</span>pongo</span> ante tu <span class="g"><span class="chord">C#m</span>luz,</span>
+Y pre<span class="g"><span class="chord">D</span>sento</span> todo <span class="g"><span class="chord">Bm</span>lo</span> que soy Je<span class="g"><span class="chord">E</span>sús,</span>
+
+Yo te o<span class="g"><span class="chord">A</span>frezco</span> hoy mi <span class="g"><span class="chord">E</span>ser,</span> 
+te lo en<span class="g"><span class="chord">F#m</span>trego</span> mi se<span class="g"><span class="chord">C#m</span>ñor,</span>
+Re<span class="g"><span class="chord">D</span>cibe</span> el re<span class="g"><span class="chord">E</span>galo</span> de mi a<span class="g"><span class="chord">A</span>mor.`
     },
     {
         title: "Cantaré de tu Amor",
         artist: "Danilo Montero",
         key: "C",
-        type: "Alabanza",
+        type: "Adoración",
         content: `
 [Verso]
 <span class="g"><span class="chord">F</span>Por</span> mucho tiempo bus <span class="g"><span class="chord">G</span>qué,</span> una ra <span class="g"><span class="chord">C</span>zón</span> de vi <span class="g"><span class="chord">Em</span>vir,</span>
@@ -2566,7 +2560,7 @@ Des <span class="g"><span class="chord">C</span>cien</span>de Tu pre <span class
         title: "Mi Anhelo",
         artist: "Jaime Murrell",
         key: "E",
-        type: "Alabanza",
+        type: "Adoración",
         content: `
 [Verso]
 Mi anhe<span class="g"><span class="chord">E</span>lo,</span>
@@ -2645,26 +2639,26 @@ Dios <span class="g"><span class="chord">C</span>haz</span> tu <span class="g"><
         artist: "Marco Barrientos",
         key: "A",
         type: "Adoración",
+        comentario:"Termina haciendo D y E en el final",
         content: `
-[Verso 1]
-<span class="g"><span class="chord">A</span>Gra</span>cias por la <span class="g"><span class="chord">D</span>cruz</span> <span class="g"><span class="chord">E</span>Dios,</span> <span class="g"><span class="chord">A</span></span>
-Por el precio <span class="g"><span class="chord">D</span>tú</span> pa <span class="g"><span class="chord">E</span>gar,</span> <span class="g"><span class="chord">A</span></span>
-Mi pe<span class="g"><span class="chord">F#m</span>cado</span> y  do<span class="g"><span class="chord">D</span>lor,</span> tu a mor quito,
-Dando <span class="g"><span class="chord">Bm</span>gra</span>cia eter <span class="g"><span class="chord">D</span>na.</span> <span class="g"><span class="chord">E</span></span>
+<span class="g"><span class="chord">A</span>Gracias</span> por la <span class="g"><span class="chord">D</span>cruz</span> <span class="g"><span class="chord">E</span>Dios,</span> <span class="g"><span class="chord">A</span>..</span>
+Por el precio <span class="g"><span class="chord">D</span>tú</span> <span class="g"><span class="chord">E</span>pa</span><span class="g"><span class="chord">A</span>gar,</span>
+Mi pecado <span class="g"><span class="chord">F#m</span>y dolor,</span> tu a<span class="g"><span class="chord">D</span>mor quito,</span>
+Dando <span class="g"><span class="chord">Bm</span>gracia</span> <span class="g"><span class="chord">D</span>eter</span><span class="g"><span class="chord">E</span>na.</span>
 
 [Verso 2]
-Gra<span class="g"><span class="chord">D</span>cias</span> por tu a <span class="g"><span class="chord">E</span>mor,</span> <span class="g"><span class="chord">A</span>Dios</span> 
-Por las manos <span class="g"><span class="chord">D</span>que</span> he <span class="g"><span class="chord">E</span>rí,</span> <span class="g"><span class="chord">A</span></span>
-Pues tu <span class="g"><span class="chord">F#m</span>rio</span> me limpió y siento al <span class="g"><span class="chord">D</span>fin </span>
-Tu per <span class="g"><span class="chord">Bm</span>dón</span> y salva <span class="g"><span class="chord">D</span>ción.</span> <span class="g"><span class="chord">E</span></span> 
+Gracias por tu a<span class="g"><span class="chord">D</span>mor,</span> <span class="g"><span class="chord">E</span>Dios</span> <span class="g"><span class="chord">A</span>..</span> 
+Por las manos <span class="g"><span class="chord">D</span>que</span> <span class="g"><span class="chord">E</span>he</span><span class="g"><span class="chord">A</span>rí,</span>
+Pues tu rio <span class="g"><span class="chord">F#m</span>me limpió</span> y <span class="g"><span class="chord">D</span>siento al fin,</span>
+Tu per<span class="g"><span class="chord">Bm</span>dón</span> y <span class="g"><span class="chord">D</span>salva</span><span class="g"><span class="chord">E</span>ción.</span> 
 
 [Coro]
-<span class="g"><span class="chord">A</span>Dig</span>no eres Se <span class="g"><span class="chord">E</span>ñor,</span> en tu <span class="g"><span class="chord">F#m</span>tro</span>no es <span class="g"><span class="chord">D</span>tas,</span> 
-<span class="g"><span class="chord">E</span>Co</span>ronado con po <span class="g"><span class="chord">A</span>der,</span> <span class="g"><span class="chord">D</span></span>
-<span class="g"><span class="chord">Bm7</span>Rei</span>nas en majes <span class="g"><span class="chord">D</span>tad.</span> <span class="g"><span class="chord">E</span></span>
+<span class="g"><span class="chord">A</span>Digno</span> eres Se<span class="g"><span class="chord">E</span>ñor,</span> <span class="g"><span class="chord">F#m</span>en tu trono</span> es<span class="g"><span class="chord">D</span>tas,</span> 
+<span class="g"><span class="chord">E</span>Coronado</span> <span class="g"><span class="chord">A</span>con</span> po<span class="g"><span class="chord">D</span>der,</span>
+<span class="g"><span class="chord">Bm7</span>Reinas</span> en <span class="g"><span class="chord">D</span>majes</span><span class="g"><span class="chord">E</span>tad.</span>
 
-<span class="g"><span class="chord">A</span>Cris</span>to, hijo de <span class="g"><span class="chord">E</span>Dios,</span> exal<span class="g"><span class="chord">F#m</span>tado</span> <span class="g"><span class="chord">D</span>rey,</span> 
-Mo<span class="g"><span class="chord">E</span>ris</span>te en la cruz en mi <span class="g"><span class="chord">A</span>lu</span> <span class="g"><span class="chord">E</span>gar,</span> 
-Digno <span class="g"><span class="chord">D</span>e</span>res se <span class="g"><span class="chord">E</span>ñor.`
+<span class="g"><span class="chord">A</span>Cristo,</span> hijo de <span class="g"><span class="chord">E</span>Dios,</span> <span class="g"><span class="chord">F#m</span>exaltado</span> <span class="g"><span class="chord">D</span>rey,</span> 
+Mo<span class="g"><span class="chord">E</span>riste</span> en la cruz en <span class="g"><span class="chord">A</span>mi</span> lu<span class="g"><span class="chord">E</span>gar,</span> 
+Digno eres se<span class="g"><span class="chord">D</span>ñor.</span> <span class="g"><span class="chord">E</span>..</span>`
     },
 ];
