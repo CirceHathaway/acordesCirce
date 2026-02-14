@@ -1,6 +1,8 @@
-/* --- IMPORTACIONES DE FIREBASE (CDN) --- */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+/* --- VARIABLES GLOBALES DE FIREBASE (Inicializadas en null) --- */
+let app, db, storage;
+let ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect; // Funciones DB
+let sRef, uploadBytes, getDownloadURL; // Funciones Storage
+let firebaseLoaded = false; // Bandera para saber si hay internet/firebase
 
 /* --- CONFIGURACIÓN DE FIREBASE --- */
 const firebaseConfig = {
@@ -12,10 +14,6 @@ const firebaseConfig = {
   messagingSenderId: "553273090812",
   appId: "1:553273090812:web:cc45175e08f90d6eb72d79"
 };
-
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
 
 /* --- CONFIGURACIÓN MUSICAL --- */
 const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
@@ -30,12 +28,10 @@ let currentSemitones = 0;
 let isSpanish = false; 
 
 // 1. LEER MEMORIA (Tamaño de letra)
-// Si existe guardado, lo usa. Si no, usa 17.
 let savedSize = localStorage.getItem('acordify_fontSize');
 let currentFontSize = savedSize ? parseInt(savedSize) : 17;
 
 // 2. LEER MEMORIA (Acordes Ocultos)
-// Si es 'false', oculta. Si es cualquier otra cosa (o no existe), muestra.
 let showChords = localStorage.getItem('acordify_showChords') !== 'false'; 
 
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
@@ -53,8 +49,49 @@ let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
 
+/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE (OFFLINE SAFE) --- */
+async function initFirebase() {
+    try {
+        // Intentamos importar los módulos solo si hay red
+        const appModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js");
+        const dbModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js");
+        // Storage es opcional, lo cargamos también
+        // Nota: Si usas storage, descomenta la siguiente linea cuando lo necesites o cargalo aqui
+        // const storageModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"); 
+
+        // Asignar funciones a variables globales
+        ref = dbModule.ref;
+        set = dbModule.set;
+        onValue = dbModule.onValue;
+        off = dbModule.off;
+        get = dbModule.get;
+        push = dbModule.push;
+        onChildAdded = dbModule.onChildAdded;
+        remove = dbModule.remove;
+        onDisconnect = dbModule.onDisconnect;
+
+        // Inicializar App
+        app = appModule.initializeApp(firebaseConfig);
+        db = dbModule.getDatabase(app);
+        
+        firebaseLoaded = true;
+        console.log("Firebase cargado correctamente (Online)");
+
+        // Si ya estábamos conectados (por refresh), reconectar
+        if (isConnected) {
+            reconnectSession();
+        }
+
+    } catch (error) {
+        console.warn("Modo Offline: No se pudo cargar Firebase.", error);
+        firebaseLoaded = false;
+        window.showNotification("Modo Offline activo 📴");
+    }
+}
+
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
+    // 1. Cargar lógica musical (funciona offline)
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
     }
@@ -66,10 +103,6 @@ window.onload = function() {
         } else {
             window.applyGlobalFilters(); 
             window.generateKeyButtons();
-        }
-
-        if (isConnected) {
-            reconnectSession();
         }
 
         // --- SOLUCIÓN TECLADO MÓVIL ---
@@ -111,7 +144,20 @@ window.onload = function() {
     } else {
         console.error("Error: No se cargó canciones.js");
     }
+
+    // 2. Intentar cargar Firebase (Asíncrono)
+    initFirebase();
 };
+
+/* --- DETECTOR DE CONEXIÓN --- */
+window.addEventListener('online', () => {
+    window.showNotification("Conexión detectada. Reconectando... 📡");
+    if (!firebaseLoaded) initFirebase();
+});
+window.addEventListener('offline', () => {
+    window.showNotification("Sin conexión. Modo Offline 📴");
+});
+
 
 /* --- NAVEGACIÓN --- */
 window.addEventListener('popstate', (event) => {
@@ -562,6 +608,7 @@ window.executeClearList = function() {
 /* --- LOGICA LIVE + CHAT --- */
 
 window.openLiveModal = function() {
+    if (!firebaseLoaded) { window.showNotification("Necesitas internet para esto 📡"); return; }
     document.getElementById('liveModal').style.display = 'flex';
     if (isConnected) showConnectedScreen(); else window.resetLiveModal();
 }
@@ -582,6 +629,7 @@ function showConnectedScreen() {
 }
 
 window.connectToSession = function() {
+    if (!firebaseLoaded) { window.showNotification("Sin conexión para Live"); return; }
     const codeInput = document.getElementById('sessionCodeInput').value.trim().toUpperCase();
     if (!codeInput) { alert("Ingresa la clave."); return; }
     if (!VALID_KEYS.includes(codeInput)) { alert("Clave incorrecta."); return; }
@@ -621,6 +669,7 @@ window.connectToSession = function() {
 }
 
 function reconnectSession() {
+    if (!firebaseLoaded) return;
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     myConnectionRef = push(connectionsRef);
@@ -657,6 +706,7 @@ function updateUIConnected() {
 
 window.disconnectSession = function() {
     if (!isConnected) return;
+    if (!firebaseLoaded) { isConnected = false; updateUIDisconnected(); return; }
 
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
@@ -677,19 +727,7 @@ window.disconnectSession = function() {
         currentUserKey = null;
         sessionStorage.removeItem('acordify_user_key');
 
-        const btnLive = document.getElementById('btnLiveHeader');
-        const btnChat = document.getElementById('btnChatHeader');
-        
-        if(btnLive) {
-            btnLive.classList.remove('active');
-            btnLive.innerText = "📡 LIVE";
-        }
-        
-        if(btnChat) {
-            btnChat.style.display = 'none';
-            document.getElementById('chatOverlay').style.display = 'none';
-            isChatOpen = false;
-        }
+        updateUIDisconnected();
 
         window.resetLiveModal();
         window.showNotification("Desconectado 🔌");
@@ -697,8 +735,24 @@ window.disconnectSession = function() {
     });
 }
 
+function updateUIDisconnected() {
+    const btnLive = document.getElementById('btnLiveHeader');
+    const btnChat = document.getElementById('btnChatHeader');
+    
+    if(btnLive) {
+        btnLive.classList.remove('active');
+        btnLive.innerText = "📡 LIVE";
+    }
+    
+    if(btnChat) {
+        btnChat.style.display = 'none';
+        document.getElementById('chatOverlay').style.display = 'none';
+        isChatOpen = false;
+    }
+}
+
 function broadcastChange() {
-    if (!isConnected) return; 
+    if (!isConnected || !firebaseLoaded) return; 
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     set(roomRef, myPlaylist).catch((e) => console.error(e));
 }
@@ -706,6 +760,7 @@ function broadcastChange() {
 /* --- LÓGICA DEL CHAT + STICKERS (BASE64) --- */
 
 window.toggleChat = function() {
+    if (!firebaseLoaded) { window.showNotification("Necesitas internet para chatear"); return; }
     const overlay = document.getElementById('chatOverlay');
     const badge = document.getElementById('chatBadge');
     
@@ -736,7 +791,7 @@ window.sendMessage = function() {
     const input = document.getElementById('chatInput');
     const msgText = input.value.trim();
     
-    if(!msgText || !isConnected) return;
+    if(!msgText || !isConnected || !firebaseLoaded) return;
     
     sendToFirebase(msgText, 'TEXT');
     input.value = '';
@@ -745,7 +800,10 @@ window.sendMessage = function() {
 // Convertir imagen a Base64 y enviarla
 function handleStickerSelection(event) {
     const file = event.target.files[0];
-    if (!file || !isConnected) return;
+    if (!file || !isConnected || !firebaseLoaded) {
+        if(!firebaseLoaded) window.showNotification("Necesitas internet para stickers");
+        return;
+    }
 
     // Límite de tamaño (2MB aprox)
     if (file.size > 2 * 1024 * 1024) {
@@ -766,6 +824,7 @@ function handleStickerSelection(event) {
 
 // Función auxiliar para enviar
 function sendToFirebase(content, type) {
+    if (!firebaseLoaded) return;
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const newMessage = {
         user: currentUserKey,
