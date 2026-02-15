@@ -2634,6 +2634,7 @@ En cada palpi<span class="g"><span class="chord">D/F#</span>tar</span>
 Mientras haya aliento en <span class="g"><span class="chord">Am</span>mi</span>
 Dios <span class="g"><span class="chord">C</span>haz</span> tu <span class="g"><span class="chord">D</span>o</span>bra en <span class="g"><span class="chord">G</span>mi`
     },
+
     {
         title: "Gracias por la Cruz",
         artist: "Marco Barrientos",
@@ -2660,5 +2661,88 @@ Tu per<span class="g"><span class="chord">Bm</span>dón</span> y <span class="g"
 <span class="g"><span class="chord">A</span>Cristo,</span> hijo de <span class="g"><span class="chord">E</span>Dios,</span> <span class="g"><span class="chord">F#m</span>exaltado</span> <span class="g"><span class="chord">D</span>rey,</span> 
 Mo<span class="g"><span class="chord">E</span>riste</span> en la cruz en <span class="g"><span class="chord">A</span>mi</span> lu<span class="g"><span class="chord">E</span>gar,</span> 
 Digno eres se<span class="g"><span class="chord">D</span>ñor.</span> <span class="g"><span class="chord">E</span>..</span>`
+    },
+
+    {
+        title: "Te Seguiré",
+        artist: "Yashira Guidini",
+        key: "G",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">G</span>Canto</span> una alabanza sin <span class="g"><span class="chord">D</span>igual,</span>
+pues el de<span class="g"><span class="chord">C</span>sierto</span> me ha enseñado tu fi<span class="g"><span class="chord">Am</span>delidad.</span> <span class="g"><span class="chord">D</span>..</span>
+
+He <span class="g"><span class="chord">G</span>visto</span> muy de cerca mi fra<span class="g"><span class="chord">D</span>gilidad,</span>
+Tomando <span class="g"><span class="chord">C</span>forma</span> en tu abrazo y en tu <span class="g"><span class="chord">Am</span>sanidad.</span> <span class="g"><span class="chord">D</span>..</span>
+
+Me llevas <span class="g"><span class="chord">G</span>lejos,</span>
+más <span class="g"><span class="chord">D</span>allá</span> de lo que nunca imagi<span class="g"><span class="chord">Am</span>né,</span> <span class="g"><span class="chord">C</span>..</span>
+<span class="g"><span class="chord">D</span>En mi</span> de<span class="g"><span class="chord">G</span>sierto</span>
+te encon<span class="g"><span class="chord">D</span>tré.</span>
+
+Si tu <span class="g"><span class="chord">G</span>diestra</span> me ha trído hasta a<span class="g"><span class="chord">D</span>quí,</span>
+No puedo ca<span class="g"><span class="chord">Am</span>llar</span>, no puedo ca<span class="g"><span class="chord">C</span>llar.</span> <span class="g"><span class="chord">D</span>..</span>
+
+Si tu <span class="g"><span class="chord">G</span>mano</span> hasta aquí me ayu<span class="g"><span class="chord">D</span>dó,</span>
+no vuelvo a<span class="g"><span class="chord">Am</span>trás,</span> no vuelvo a<span class="g"><span class="chord">C</span>trás.</span> <span class="g"><span class="chord">D</span>..</span>
+
+He deci<span class="g"><span class="chord">G</span>dido</span> se<span class="g"><span class="chord">C</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+He deci<span class="g"><span class="chord">C</span>dido</span> se<span class="g"><span class="chord">D</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+He deci<span class="g"><span class="chord">G</span>dido</span> se<span class="g"><span class="chord">C</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><span class="g"><span class="chord">D</span>vo</span> a<span class="g"><span class="chord">G</span>trás.</span>
+
+La cruz es<span class="g"><span class="chord">G</span>tá</span> ante mi, el <span class="g"><span class="chord">C</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+La cruz es<span class="g"><span class="chord">C</span>tá</span> ante mi, el <span class="g"><span class="chord">D</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+La cruz es<span class="g"><span class="chord">G</span>tá</span> ante mi, el <span class="g"><span class="chord">C</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><span class="g"><span class="chord">D</span>vo</span> a<span class="g"><span class="chord">G</span>trás.</span>
+`
+    },
+
+    {
+        title: "Todo obra para Bien",
+        artist: "Lenny Salcedo",
+        key: "Am",
+        type: "Adoración",
+        comentario:"La tonalidad es en Em",
+        content: `
+<span class="g"><span class="chord">Am</span>Nunca</span> pensé, el mo<span class="g"><span class="chord">D</span>mento más dificil</span>
+me acer<span class="g"><span class="chord">G</span>caron</span> más a ti,
+y al fi<span class="g"><span class="chord">Bm</span>nal,</span> obrara para <span class="g"><span class="chord">Em</span>bien.</span>
+
+<span class="g"><span class="chord">Am</span>No</span> imagine, que una <span class="g"><span class="chord">D</span>lagrima sirviera</span>
+para <span class="g"><span class="chord">G</span>quebrantar</span> el alma,
+y al fi<span class="g"><span class="chord">Bm</span>nal,</span> aumentara nuestra <span class="g"><span class="chord">Em</span>fe.</span>
+
+Pero <span class="g"><span class="chord">Am</span>luego</span> del desierto puedo <span class="g"><span class="chord">D</span>ver,</span>
+Clara<span class="g"><span class="chord">G</span>mente</span> que tú has <span class="g"><span class="chord">Bm</span>sido</span> siempre <span class="g"><span class="chord">Em</span>fiel.</span>
+Aunque en <span class="g"><span class="chord">Am</span>medio</span> de las pruebas no se <span class="g"><span class="chord">D</span>ve,</span>
+Tú tienes <span class="g"><span class="chord">C</span>todo</span> <span class="g"><span class="chord">Am</span>bajo</span> con<span class="g"><span class="chord">D</span>trol.</span>
+
+Porque <span class="g"><span class="chord">Am</span>todo</span> obra para <span class="g"><span class="chord">D</span>bien,</span>
+<span class="g"><span class="chord">G</span>Todo</span> <span class="g"><span class="chord">Bm</span>obra</span> para <span class="g"><span class="chord">Em</span>bien.</span>
+Aunque a <span class="g"><span class="chord">Am</span>veces</span> parece al <span class="g"><span class="chord">Am</span>revés,</span>
+Todo obra para <span class="g"><span class="chord">C</span>bien.</span> <span class="g"><span class="chord">D</span>..</span>
+
+<span class="g"><span class="chord">Am</span>Nunca</span> pensé, que en los <span class="g"><span class="chord">D</span>vientos de tormentas,</span>
+me impul<span class="g"><span class="chord">G</span>saran</span> hacia ti,
+y al fi<span class="g"><span class="chord">Bm</span>nal,</span> obrara para <span class="g"><span class="chord">Em</span>bien.</span>
+
+<span class="g"><span class="chord">Am</span>No</span> imagine, que una <span class="g"><span class="chord">D</span>lagrima sirviera</span>
+para <span class="g"><span class="chord">G</span>quebrantar</span> el alma,
+y al fi<span class="g"><span class="chord">Bm</span>nal,</span> aumentara nuestra <span class="g"><span class="chord">Em</span>fe.</span>
+
+Pero <span class="g"><span class="chord">Am</span>luego</span> del desierto puedo <span class="g"><span class="chord">D</span>ver,</span>
+Clara<span class="g"><span class="chord">G</span>mente</span> que tú has <span class="g"><span class="chord">Bm</span>sido</span> siempre <span class="g"><span class="chord">Em</span>fiel.</span>
+Aunque en <span class="g"><span class="chord">Am</span>medio</span> de las pruebas no se <span class="g"><span class="chord">D</span>ve,</span>
+Tú tienes <span class="g"><span class="chord">C</span>todo</span> <span class="g"><span class="chord">Am</span>bajo</span> con<span class="g"><span class="chord">D</span>trol.</span>
+
+Porque <span class="g"><span class="chord">Am</span>todo</span> obra para <span class="g"><span class="chord">D</span>bien,</span>
+<span class="g"><span class="chord">G</span>Todo</span> <span class="g"><span class="chord">Bm</span>obra</span> para <span class="g"><span class="chord">Em</span>bien.</span>
+Aunque a <span class="g"><span class="chord">Am</span>veces</span> parece al <span class="g"><span class="chord">Am</span>revés,</span>
+Todo obra para <span class="g"><span class="chord">C</span>bien.</span> <span class="g"><span class="chord">D</span>..</span>
+
+[Adoración]
+<span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">D</span>..</span>
+        `
     },
 ];
