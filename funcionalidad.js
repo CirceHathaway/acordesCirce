@@ -1,7 +1,6 @@
 /* --- VARIABLES GLOBALES DE FIREBASE (Inicializadas en null) --- */
 let app, db, storage;
 let ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect; // Funciones DB
-let sRef, uploadBytes, getDownloadURL; // Funciones Storage
 let firebaseLoaded = false; // Bandera para saber si hay internet/firebase
 
 /* --- CONFIGURACIÓN DE FIREBASE --- */
@@ -27,11 +26,9 @@ let currentSongIndex = -1;
 let currentSemitones = 0; 
 let isSpanish = false; 
 
-// 1. LEER MEMORIA (Tamaño de letra)
+// LEER MEMORIA
 let savedSize = localStorage.getItem('acordify_fontSize');
 let currentFontSize = savedSize ? parseInt(savedSize) : 17;
-
-// 2. LEER MEMORIA (Acordes Ocultos)
 let showChords = localStorage.getItem('acordify_showChords') !== 'false'; 
 
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
@@ -49,17 +46,12 @@ let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
 
-/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE (OFFLINE SAFE) --- */
+/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE --- */
 async function initFirebase() {
     try {
-        // Intentamos importar los módulos solo si hay red
         const appModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js");
         const dbModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js");
-        // Storage es opcional, lo cargamos también
-        // Nota: Si usas storage, descomenta la siguiente linea cuando lo necesites o cargalo aqui
-        // const storageModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"); 
 
-        // Asignar funciones a variables globales
         ref = dbModule.ref;
         set = dbModule.set;
         onValue = dbModule.onValue;
@@ -70,7 +62,6 @@ async function initFirebase() {
         remove = dbModule.remove;
         onDisconnect = dbModule.onDisconnect;
 
-        // Inicializar App
         app = appModule.initializeApp(firebaseConfig);
         db = dbModule.getDatabase(app);
         
@@ -85,13 +76,12 @@ async function initFirebase() {
     } catch (error) {
         console.warn("Modo Offline: No se pudo cargar Firebase.", error);
         firebaseLoaded = false;
-        window.showNotification("Modo Offline activo 📴");
+        // Solo mostramos notificación si realmente intentamos una acción live
     }
 }
 
 /* --- INICIALIZACIÓN --- */
 window.onload = function() {
-    // 1. Cargar lógica musical (funciona offline)
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
     }
@@ -105,35 +95,23 @@ window.onload = function() {
             window.generateKeyButtons();
         }
 
-        // --- SOLUCIÓN TECLADO MÓVIL ---
+        // --- Eventos UI ---
         const sessionInput = document.getElementById('sessionCodeInput');
         const liveModal = document.getElementById('liveModal'); 
-        
-        if (sessionInput && liveModal) {
-            sessionInput.addEventListener('focus', () => {
-                liveModal.classList.add('keyboard-active');
-            });
-            sessionInput.addEventListener('blur', () => {
-                setTimeout(() => { liveModal.classList.remove('keyboard-active'); }, 200);
-            });
-            sessionInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault(); 
-                    window.connectToSession();
-                    sessionInput.blur(); 
-                }
-            });
-        }
-
-        // --- CHAT: EVENTOS ---
         const chatInput = document.getElementById('chatInput');
         const stickerInput = document.getElementById('stickerInput');
 
+        if (sessionInput && liveModal) {
+            sessionInput.addEventListener('focus', () => liveModal.classList.add('keyboard-active'));
+            sessionInput.addEventListener('blur', () => setTimeout(() => liveModal.classList.remove('keyboard-active'), 200));
+            sessionInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') { e.preventDefault(); window.connectToSession(); sessionInput.blur(); }
+            });
+        }
+
         if (chatInput) {
             chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    window.sendMessage();
-                }
+                if (e.key === 'Enter') window.sendMessage();
             });
         }
 
@@ -145,19 +123,14 @@ window.onload = function() {
         console.error("Error: No se cargó canciones.js");
     }
 
-    // 2. Intentar cargar Firebase (Asíncrono)
+    // Cargar Firebase
     initFirebase();
 };
 
 /* --- DETECTOR DE CONEXIÓN --- */
 window.addEventListener('online', () => {
-    window.showNotification("Conexión detectada. Reconectando... 📡");
     if (!firebaseLoaded) initFirebase();
 });
-window.addEventListener('offline', () => {
-    window.showNotification("Sin conexión. Modo Offline 📴");
-});
-
 
 /* --- NAVEGACIÓN --- */
 window.addEventListener('popstate', (event) => {
@@ -193,12 +166,11 @@ window.openSong = function(indexInGlobalArray) {
         commentEl.innerText = song.comentario; 
         commentEl.style.display = 'block';     
     } else {
-        commentEl.innerText = '';              
         commentEl.style.display = 'none';      
     }
     
     updateSongView();
-    updateChordIcon(); // Actualiza el icono según la preferencia guardada
+    updateChordIcon();
     window.scrollTo(0,0);
 }
 
@@ -235,7 +207,6 @@ function updateSongView() {
             element.innerText = newChord;
         }
 
-        // 3. APLICAR PREFERENCIA GUARDADA
         if (!showChords) {
             element.style.display = 'none'; 
         } else {
@@ -245,17 +216,12 @@ function updateSongView() {
 
     const contentDiv = document.getElementById('songContent');
     contentDiv.innerHTML = tempDiv.innerHTML;
-    
-    // 4. APLICAR TAMAÑO GUARDADO
     contentDiv.style.fontSize = currentFontSize + 'px';
 }
 
 window.toggleChords = function() {
     showChords = !showChords;
-    
-    // GUARDAR EN MEMORIA
     localStorage.setItem('acordify_showChords', showChords);
-    
     updateSongView();
     updateChordIcon();
 }
@@ -264,11 +230,9 @@ function updateChordIcon() {
     const btn = document.getElementById('btnToggleChords');
     if (!btn) return;
     if (showChords) {
-        // Ojo abierto
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
         btn.style.color = "var(--text-primary)"; 
     } else {
-        // Ojo tachado
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
         btn.style.color = "#e55039"; 
     }
@@ -294,22 +258,19 @@ window.applyTranspose = function(amount) { currentSemitones += amount; updateSon
 window.resetTranspose = function() { currentSemitones = 0; updateSongView(); window.closeAllModals(); }
 window.toggleNotation = function() { isSpanish = !isSpanish; updateSongView(); }
 
-// 5. GUARDAR TAMAÑO AL CAMBIAR
 window.changeFontSize = function(amount) {
     currentFontSize += amount;
     if (currentFontSize < 8) currentFontSize = 8; 
     if (currentFontSize > 30) currentFontSize = 30; 
-    
     localStorage.setItem('acordify_fontSize', currentFontSize);
     updateSongView();
 }
 
-// 6. FUNCIÓN NUEVA: RESETEAR TAMAÑO (Botón Orig)
 window.resetFontSize = function() {
-    currentFontSize = 17; // Valor por defecto
+    currentFontSize = 17; 
     localStorage.setItem('acordify_fontSize', currentFontSize);
     updateSongView();
-    window.closeAllModals(); // Feedback visual (cierra el menú)
+    window.closeAllModals(); 
 }
 
 window.toggleModal = function(modalId) {
@@ -352,35 +313,14 @@ window.applyGlobalFilters = function() {
     updateFilterVisuals(); 
 }
 
-window.filterByType = function(type) {
-    if (activeFilters.type === type) activeFilters.type = null; 
-    else activeFilters.type = type;
-    window.applyGlobalFilters();
+window.filterByType = function(type) { activeFilters.type = activeFilters.type === type ? null : type; window.applyGlobalFilters(); }
+window.filterByKey = function(selectedKey) { activeFilters.key = activeFilters.key === selectedKey ? null : selectedKey; window.closeKeyModal(); window.applyGlobalFilters(); }
+window.filterByArtist = function(artistName) { 
+    const searchInput = document.getElementById('searchInput'); 
+    if(searchInput) { searchInput.value = artistName; activeFilters.search = artistName; window.applyGlobalFilters(); }
+    if(event) event.stopPropagation(); 
 }
-
-window.filterByKey = function(selectedKey) {
-    if (activeFilters.key === selectedKey) activeFilters.key = null;
-    else activeFilters.key = selectedKey;
-    window.closeKeyModal();
-    window.applyGlobalFilters();
-}
-
-window.filterByArtist = function(artistName) {
-    const searchInput = document.getElementById('searchInput');
-    if(searchInput) {
-        searchInput.value = artistName;
-        activeFilters.search = artistName;
-        window.applyGlobalFilters();
-    }
-    if(event) event.stopPropagation();
-}
-
-window.filterSongs = function() {
-    const query = document.getElementById('searchInput').value;
-    activeFilters.search = query;
-    window.applyGlobalFilters();
-}
-
+window.filterSongs = function() { const query = document.getElementById('searchInput').value; activeFilters.search = query; window.applyGlobalFilters(); }
 window.sortSongs = function(criteria) {
     let sorted = [...displaySongs];
     if (criteria === 'artist') {
@@ -391,24 +331,14 @@ window.sortSongs = function(criteria) {
     renderTable(sorted);
 }
 
-window.resetFilters = function() {
-    activeFilters = { type: null, key: null, search: '' };
-    const searchInput = document.getElementById('searchInput');
-    if(searchInput) searchInput.value = '';
-    window.applyGlobalFilters();
-}
+window.resetFilters = function() { activeFilters = { type: null, key: null, search: '' }; document.getElementById('searchInput').value = ''; window.applyGlobalFilters(); }
 
 function updateFilterVisuals() {
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    const typeButtons = document.querySelectorAll(".filter-btn");
-    typeButtons.forEach(btn => {
+    document.querySelectorAll(".filter-btn").forEach(btn => {
         if (btn.innerText === activeFilters.type) btn.classList.add('active');
-        if (btn.innerText === "Por Nota" && activeFilters.key) {
-            btn.classList.add('active');
-            btn.innerText = "Nota: " + activeFilters.key; 
-        } else if (btn.innerText.startsWith("Nota: ")) {
-             btn.innerText = "Por Nota"; 
-        }
+        if (btn.innerText === "Por Nota" && activeFilters.key) { btn.classList.add('active'); btn.innerText = "Nota: " + activeFilters.key; } 
+        else if (btn.innerText.startsWith("Nota: ")) { btn.innerText = "Por Nota"; }
     });
 }
 
@@ -416,10 +346,7 @@ function renderTable(data) {
     const tbody = document.getElementById('tableBody');
     if (!tbody) return;
     tbody.innerHTML = '';
-    if (data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>';
-        return;
-    }
+    if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; }
     data.forEach((song, index) => {
         const originalIndex = songs.indexOf(song);
         const isAdded = myPlaylist.includes(originalIndex);
@@ -427,14 +354,13 @@ function renderTable(data) {
         const btnText = isAdded ? "✓" : "+";
         const btnAction = isAdded ? "" : `onclick="addToPlaylist(${originalIndex}, this)"`;
 
-        let row = `
-            <tr>
-                <td class="index-col">${index + 1}</td>
-                <td class="song-title" onclick="openSong(${originalIndex})">${song.title}</td>
-                <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
-                <td><span class="artist-link" onclick="filterByArtist('${song.artist}')">${song.artist}</span></td>
-                <td class="action-col"><button class="${btnClass}" ${btnAction}>${btnText}</button></td>
-            </tr>`;
+        let row = `<tr>
+            <td class="index-col">${index + 1}</td>
+            <td class="song-title" onclick="openSong(${originalIndex})">${song.title}</td>
+            <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
+            <td><span class="artist-link" onclick="filterByArtist('${song.artist}')">${song.artist}</span></td>
+            <td class="action-col"><button class="${btnClass}" ${btnAction}>${btnText}</button></td>
+        </tr>`;
         tbody.innerHTML += row;
     });
 }
@@ -443,9 +369,13 @@ window.addToPlaylist = function(index, btnElement) {
     if (!myPlaylist.includes(index)) {
         myPlaylist.push(index);
         localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-        btnElement.innerText = "✓";
-        btnElement.classList.add('added');
+        if(btnElement) {
+            btnElement.innerText = "✓";
+            btnElement.classList.add('added');
+        }
         window.showNotification("Canción agregada a tu lista");
+        
+        // CORRECCIÓN CLAVE: Enviar a la nube inmediatamente si está conectado
         broadcastChange();
     }
 }
@@ -483,10 +413,7 @@ function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
     if(!tbody) return;
     tbody.innerHTML = '';
-    if (songsData.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
-        return;
-    }
+    if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; }
     songsData.forEach((song, i) => {
         const globalIndex = originalIds[i]; 
         let row = document.createElement('tr');
@@ -515,58 +442,28 @@ window.sharePlaylistUrl = function() {
 function enableLongPressDrag() {
     const rows = document.querySelectorAll('.draggable-row');
     const tbody = document.getElementById('tableBody');
-    let pressTimer;
-    let isDragging = false;
-    let draggingRow = null;
-    let startY = 0;
+    let pressTimer, isDragging = false, draggingRow = null, startY = 0;
 
     rows.forEach(row => {
         row.addEventListener('touchstart', (e) => {
             if (e.target.classList.contains('btn-remove')) return;
             isDragging = false;
             startY = e.touches[0].clientY;
-            
-            pressTimer = setTimeout(() => {
-                isDragging = true;
-                draggingRow = row;
-                row.classList.add('dragging');
-                if (navigator.vibrate) navigator.vibrate(50); 
-            }, 600); 
+            pressTimer = setTimeout(() => { isDragging = true; draggingRow = row; row.classList.add('dragging'); if (navigator.vibrate) navigator.vibrate(50); }, 600); 
         }, { passive: false });
 
         row.addEventListener('touchmove', (e) => {
             const currentY = e.touches[0].clientY;
-            if (!isDragging) {
-                if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer);
-            } else {
-                e.preventDefault(); 
-                const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY);
-                const rowBelow = elementBelow ? elementBelow.closest('tr') : null;
-                if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) {
-                    const bounding = rowBelow.getBoundingClientRect();
-                    const offset = bounding.y + (bounding.height / 2);
-                    if (currentY - offset > 0) rowBelow.after(draggingRow);
-                    else rowBelow.before(draggingRow);
-                }
-            }
+            if (!isDragging) { if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer); } 
+            else { e.preventDefault(); const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY); const rowBelow = elementBelow ? elementBelow.closest('tr') : null; if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) { const bounding = rowBelow.getBoundingClientRect(); const offset = bounding.y + (bounding.height / 2); if (currentY - offset > 0) rowBelow.after(draggingRow); else rowBelow.before(draggingRow); } }
         }, { passive: false });
 
         row.addEventListener('touchend', (e) => {
             clearTimeout(pressTimer);
-            if (isDragging) {
-                isDragging = false;
-                draggingRow.classList.remove('dragging');
-                draggingRow = null;
-                saveNewOrder();
-                e.preventDefault(); 
-            }
+            if (isDragging) { isDragging = false; draggingRow.classList.remove('dragging'); draggingRow = null; saveNewOrder(); e.preventDefault(); }
         });
         
-        row.addEventListener('touchcancel', () => {
-            clearTimeout(pressTimer);
-            if (draggingRow) draggingRow.classList.remove('dragging');
-            isDragging = false;
-        });
+        row.addEventListener('touchcancel', () => { clearTimeout(pressTimer); if (draggingRow) draggingRow.classList.remove('dragging'); isDragging = false; });
     });
 }
 
@@ -580,22 +477,13 @@ function saveNewOrder() {
     myPlaylist = newPlaylist;
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
     if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist;
-    rows.forEach((row, index) => {
-        const indexCell = row.querySelector('.index-col');
-        if(indexCell) indexCell.innerText = index + 1;
-    });
+    rows.forEach((row, index) => { const indexCell = row.querySelector('.index-col'); if(indexCell) indexCell.innerText = index + 1; });
     window.showNotification("Orden guardado");
     broadcastChange();
 }
 
-window.askClearPlaylist = function() {
-    const modal = document.getElementById('confirmModal');
-    if(modal) modal.style.display = 'flex';
-}
-window.closeConfirmModal = function() {
-    const modal = document.getElementById('confirmModal');
-    if(modal) modal.style.display = 'none';
-}
+window.askClearPlaylist = function() { const modal = document.getElementById('confirmModal'); if(modal) modal.style.display = 'flex'; }
+window.closeConfirmModal = function() { const modal = document.getElementById('confirmModal'); if(modal) modal.style.display = 'none'; }
 window.executeClearList = function() {
     myPlaylist = []; 
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
@@ -612,14 +500,8 @@ window.openLiveModal = function() {
     document.getElementById('liveModal').style.display = 'flex';
     if (isConnected) showConnectedScreen(); else window.resetLiveModal();
 }
-window.closeLiveModal = function() {
-    document.getElementById('liveModal').style.display = 'none';
-}
-window.resetLiveModal = function() {
-    document.getElementById('liveConnectionScreen').style.display = 'block';
-    document.getElementById('liveConnected').style.display = 'none';
-    document.getElementById('sessionCodeInput').value = '';
-}
+window.closeLiveModal = function() { document.getElementById('liveModal').style.display = 'none'; }
+window.resetLiveModal = function() { document.getElementById('liveConnectionScreen').style.display = 'block'; document.getElementById('liveConnected').style.display = 'none'; document.getElementById('sessionCodeInput').value = ''; }
 
 function showConnectedScreen() {
     document.getElementById('liveConnectionScreen').style.display = 'none';
@@ -638,22 +520,23 @@ window.connectToSession = function() {
     sessionStorage.setItem('acordify_user_key', currentUserKey);
     isConnected = true;
     
+    // Al conectar, forzamos que la lista local sea la "verdadera" inicialmente
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
-    
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     myConnectionRef = push(connectionsRef);
     set(myConnectionRef, currentUserKey);
     onDisconnect(myConnectionRef).remove();
 
     get(roomRef).then((snapshot) => {
+        // SI YA HAY DATOS EN LA NUBE, LOS RESPETAMOS.
+        // SI LA NUBE ESTÁ VACÍA O SOMOS LOS PRIMEROS, SUBIMOS LO NUESTRO.
         if (snapshot.exists() && snapshot.val()) {
             window.showNotification("Sincronizando con la banda... 📡");
+            // Aquí Firebase se encargará de actualizar myPlaylist a través de startListening
         } else {
             set(roomRef, myPlaylist)
                 .then(() => window.showNotification("Sala iniciada. Lista subida ☁️"));
-            
-            // EL LIDER LIMPIA EL CHAT AL INICIAR
             set(chatRef, null);
         }
         
@@ -669,26 +552,38 @@ window.connectToSession = function() {
 }
 
 function reconnectSession() {
-    if (!firebaseLoaded) return;
+    if (!firebaseLoaded || !currentUserKey) return;
+    
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     myConnectionRef = push(connectionsRef);
     set(myConnectionRef, currentUserKey);
     onDisconnect(myConnectionRef).remove();
 
+    // AQUÍ ESTÁ EL CAMBIO CLAVE:
+    // No sobrescribimos inmediatamente. Escuchamos cambios.
+    // Si acabamos de agregar algo en local, broadcastChange lo subirá.
+    
     startListening(roomRef);
     startChatListener(); 
     updateUIConnected();
+    
+    // Forzamos una subida de nuestra lista local actual para asegurar que lo que acabamos de agregar se guarde
+    broadcastChange();
 }
 
 function startListening(roomRef) {
     onValue(roomRef, (snapshot) => {
         const cloudPlaylist = snapshot.val();
-        if (JSON.stringify(cloudPlaylist) !== JSON.stringify(myPlaylist)) {
+        // Solo actualizamos si la nube tiene datos y son diferentes a los locales
+        if (cloudPlaylist && JSON.stringify(cloudPlaylist) !== JSON.stringify(myPlaylist)) {
             myPlaylist = cloudPlaylist || [];
             localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+            
+            // Actualizar vista si estamos en la lista
             if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode();
-            else window.applyGlobalFilters();
+            // Actualizar vista si estamos en inicio (para pintar los checkmarks)
+            else if (!window.location.hash) window.applyGlobalFilters();
         }
     });
 }
@@ -696,11 +591,7 @@ function startListening(roomRef) {
 function updateUIConnected() {
     const btnLive = document.getElementById('btnLiveHeader');
     const btnChat = document.getElementById('btnChatHeader');
-    
-    if(btnLive) {
-        btnLive.classList.add('active');
-        btnLive.innerText = "📡 " + currentUserKey;
-    }
+    if(btnLive) { btnLive.classList.add('active'); btnLive.innerText = "📡 " + currentUserKey; }
     if(btnChat) btnChat.style.display = 'flex';
 }
 
@@ -712,23 +603,15 @@ window.disconnectSession = function() {
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
     
-    // VERIFICAR SI SOY EL ÚLTIMO Y BORRAR CHAT
     get(connectionsRef).then((snapshot) => {
-        if (snapshot.size <= 1) {
-            set(chatRef, null); // BORRA EL CHAT
-        }
-        
+        if (snapshot.size <= 1) { set(chatRef, null); }
         if(myConnectionRef) remove(myConnectionRef);
-        
         off(roomRef); 
         off(chatRef); 
-
         isConnected = false;
         currentUserKey = null;
         sessionStorage.removeItem('acordify_user_key');
-
         updateUIDisconnected();
-
         window.resetLiveModal();
         window.showNotification("Desconectado 🔌");
         window.closeLiveModal();
@@ -738,17 +621,8 @@ window.disconnectSession = function() {
 function updateUIDisconnected() {
     const btnLive = document.getElementById('btnLiveHeader');
     const btnChat = document.getElementById('btnChatHeader');
-    
-    if(btnLive) {
-        btnLive.classList.remove('active');
-        btnLive.innerText = "📡 LIVE";
-    }
-    
-    if(btnChat) {
-        btnChat.style.display = 'none';
-        document.getElementById('chatOverlay').style.display = 'none';
-        isChatOpen = false;
-    }
+    if(btnLive) { btnLive.classList.remove('active'); btnLive.innerText = "📡 LIVE"; }
+    if(btnChat) { btnChat.style.display = 'none'; document.getElementById('chatOverlay').style.display = 'none'; isChatOpen = false; }
 }
 
 function broadcastChange() {
@@ -757,7 +631,7 @@ function broadcastChange() {
     set(roomRef, myPlaylist).catch((e) => console.error(e));
 }
 
-/* --- LÓGICA DEL CHAT + STICKERS (BASE64) --- */
+/* --- LÓGICA DEL CHAT + STICKERS --- */
 
 window.toggleChat = function() {
     if (!firebaseLoaded) { window.showNotification("Necesitas internet para chatear"); return; }
@@ -769,18 +643,12 @@ window.toggleChat = function() {
     if(isChatOpen) {
         overlay.style.display = 'flex';
         history.pushState({chat: true}, null, "#chat");
-        
         unreadMessages = 0;
-        if(badge) {
-            badge.innerText = '0';
-            badge.style.display = 'none';
-        }
-        
+        if(badge) { badge.innerText = '0'; badge.style.display = 'none'; }
         setTimeout(() => {
             const chatBox = document.getElementById('chatMessages');
-            chatBox.scrollTop = chatBox.scrollHeight;
+            if(chatBox) chatBox.scrollTop = chatBox.scrollHeight;
         }, 100);
-        
     } else {
         overlay.style.display = 'none';
         if(window.location.hash === '#chat') history.back();
@@ -790,46 +658,34 @@ window.toggleChat = function() {
 window.sendMessage = function() {
     const input = document.getElementById('chatInput');
     const msgText = input.value.trim();
-    
     if(!msgText || !isConnected || !firebaseLoaded) return;
-    
     sendToFirebase(msgText, 'TEXT');
     input.value = '';
 }
 
-// Convertir imagen a Base64 y enviarla
 function handleStickerSelection(event) {
     const file = event.target.files[0];
     if (!file || !isConnected || !firebaseLoaded) {
         if(!firebaseLoaded) window.showNotification("Necesitas internet para stickers");
         return;
     }
-
-    // Límite de tamaño (2MB aprox)
-    if (file.size > 2 * 1024 * 1024) {
-        alert("La imagen es muy pesada. Usa una más pequeña.");
-        return;
-    }
-
+    if (file.size > 2 * 1024 * 1024) { alert("La imagen es muy pesada. Usa una más pequeña."); return; }
     const reader = new FileReader();
     reader.onload = function(e) {
         const base64String = e.target.result;
         sendToFirebase(base64String, 'STICKER');
     };
     reader.readAsDataURL(file);
-    
-    // Limpiar input
     event.target.value = '';
 }
 
-// Función auxiliar para enviar
 function sendToFirebase(content, type) {
     if (!firebaseLoaded) return;
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const newMessage = {
         user: currentUserKey,
-        text: content, // Texto o Base64
-        type: type, // 'TEXT' o 'STICKER'
+        text: content, 
+        type: type, 
         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
     };
     push(chatRef, newMessage);
@@ -837,9 +693,13 @@ function sendToFirebase(content, type) {
 
 function startChatListener() {
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
+    // CORRECCIÓN: Verificar si chatBox existe antes de limpiar
     const chatBox = document.getElementById('chatMessages');
     const badge = document.getElementById('chatBadge');
     
+    // Si no estamos en una página con chat (ej: index.html), salimos
+    if (!chatBox) return;
+
     chatBox.innerHTML = '';
     
     onChildAdded(chatRef, (snapshot) => {
@@ -848,26 +708,22 @@ function startChatListener() {
         
         if(!isChatOpen) {
             unreadMessages++;
-            if(badge) {
-                badge.innerText = unreadMessages;
-                badge.style.display = 'flex';
-            }
+            if(badge) { badge.innerText = unreadMessages; badge.style.display = 'flex'; }
         } else {
-            chatBox.scrollTop = chatBox.scrollHeight;
+            if(chatBox) chatBox.scrollTop = chatBox.scrollHeight;
         }
     });
 }
 
 function renderMessage(msg) {
     const chatBox = document.getElementById('chatMessages');
+    if(!chatBox) return; // Protección extra
+
     const isMe = msg.user === currentUserKey;
     const div = document.createElement('div');
     
     let bubbleClass = 'message-bubble';
-    
-    if (msg.type === 'STICKER') {
-        bubbleClass += ' msg-sticker';
-    }
+    if (msg.type === 'STICKER') bubbleClass += ' msg-sticker';
 
     if (isMe) {
         bubbleClass += ' msg-me'; 
@@ -882,21 +738,11 @@ function renderMessage(msg) {
     }
     
     div.className = bubbleClass;
-    
-    // Contenido: Texto o Imagen
     let contentHtml = '';
-    if (msg.type === 'STICKER') {
-        contentHtml = `<img src="${msg.text}" alt="sticker" loading="lazy">`;
-    } else {
-        contentHtml = msg.text;
-    }
+    if (msg.type === 'STICKER') contentHtml = `<img src="${msg.text}" alt="sticker" loading="lazy">`;
+    else contentHtml = msg.text;
 
-    div.innerHTML = `
-        <span class="msg-sender">${isMe ? 'Tú' : msg.user}</span>
-        ${contentHtml}
-        <span class="msg-time">${msg.time}</span>
-    `;
-    
+    div.innerHTML = `<span class="msg-sender">${isMe ? 'Tú' : msg.user}</span>${contentHtml}<span class="msg-time">${msg.time}</span>`;
     chatBox.appendChild(div);
 }
 
@@ -926,7 +772,6 @@ window.generateKeyButtons = function() {
     });
 }
 
-// Cierra modales al hacer click afuera
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
     let confirmModal = document.getElementById('confirmModal');
