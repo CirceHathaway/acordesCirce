@@ -3000,4 +3000,24 @@ Tu eres por qu<span class="g"><span class="chord">G</span>ien,</span>
 Vivimos <span class="g"><span class="chord">D</span>hoy.</span>
         `
     },
+
+    {
+        title: "Yahweh Se Manifestara",
+        artist: "Oasis Ministry",
+        key: "Dm",
+        type: "Adoración",
+        content: `
+Se si<span class="g"><span class="chord">Dm7</span>ente</span> tu gloria en este lu<span class="g"><span class="chord">C</span>gar,</span>
+Algo grande va a pa<span class="g"><span class="chord">A#</span>sar,</span>
+Se activa lo sobrenatu<span class="g"><span class="chord">A</span>ral.</span>
+
+Yah<span class="g"><span class="chord">A#</span>weh,</span> Ra<span class="g"><span class="chord">C</span>fa,</span> Elo<span class="g"><span class="chord">Am</span>hin,</span>
+Shad<span class="g"><span class="chord">Dm7</span>dai,</span> Ji<span class="g"><span class="chord">A#</span>reh,</span> Ado<span class="g"><span class="chord">C</span>nai,</span>
+Se manifesta<span class="g"><span class="chord">Dm7</span>ra.</span>
+
+<span class="g"><span class="chord">Dm</span>Si le adoras</span> el se manifesta<span class="g"><span class="chord">C</span>rá,</span>
+Si le llamas, él se manifesta<span class="g"><span class="chord">A#</span>ra,</span>
+Si le buscas <span class="g"><span class="chord">G#m</span>él se</span> manifesta<span class="g"><span class="chord">Am7</span>ra.</span>
+        `
+    },
 ];

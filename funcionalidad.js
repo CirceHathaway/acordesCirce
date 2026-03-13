@@ -829,34 +829,52 @@ window.shareApp = function() {
 /* --- SWIPE (Deslizar dedo) --- */
 let touchStartX = 0;
 let touchStartY = 0;
-let touchEndY = 0;
 
 document.addEventListener('touchstart', function(e) {
-    if(document.getElementById('songDetailView').style.display === 'block') {
+    // Solo registrar el inicio si estamos viendo una canción
+    if (document.getElementById('songDetailView').style.display === 'block') {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
     }
-}, false);
+}, { passive: true }); // passive: true mejora el rendimiento del scroll
 
 document.addEventListener('touchend', function(e) {
-    if(document.getElementById('songDetailView').style.display === 'block') {
-        touchEndY = e.changedTouches[0].screenY;
+    if (document.getElementById('songDetailView').style.display === 'block') {
         let touchEndX = e.changedTouches[0].screenX;
+        let touchEndY = e.changedTouches[0].screenY;
         handleSwipeGesture(touchStartX, touchEndX, touchStartY, touchEndY);
     }
-}, false);
+}, { passive: true });
 
 function handleSwipeGesture(startX, endX, startY, endY) {
-    const minSwipeDistance = 50; 
-    const maxVerticalVariance = 100; 
-
+    // 1. Calcular distancias recorridas en ambos ejes
     const diffX = startX - endX;
     const diffY = startY - endY;
+    
+    // Usamos valores absolutos (positivos) para medir la "magnitud" del gesto
+    const absDiffX = Math.abs(diffX);
+    const absDiffY = Math.abs(diffY);
 
-    if (Math.abs(diffX) > minSwipeDistance && Math.abs(diffY) < maxVerticalVariance) {
-        if (diffX > 0) changeSongInPlaylist(1);
-        else changeSongInPlaylist(-1);
+    // 2. Parámetros de sensibilidad
+    const minSwipeDistance = 60; // Distancia mínima horizontal para considerar que es un swipe intencional
+    
+    // 3. LA REGLA DE ORO: 
+    // Para que sea un "Swipe Horizontal" válido, el movimiento horizontal debe ser
+    // significativamente mayor que el movimiento vertical. 
+    // Si absDiffY es mayor que absDiffX, el usuario estaba intentando hacer scroll hacia arriba/abajo.
+    
+    if (absDiffX > absDiffY && absDiffX > minSwipeDistance) {
+        
+        // 4. Si pasó la prueba de ser horizontal, decidimos la dirección
+        if (diffX > 0) {
+            // Deslizó hacia la izquierda (Swipe Left) -> Siguiente canción
+            changeSongInPlaylist(1);
+        } else {
+            // Deslizó hacia la derecha (Swipe Right) -> Canción anterior
+            changeSongInPlaylist(-1);
+        }
     }
+    // Si no cumple la condición, no hace nada (permite el scroll normal de la página)
 }
 
 function changeSongInPlaylist(direction) {
