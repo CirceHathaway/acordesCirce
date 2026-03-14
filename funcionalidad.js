@@ -693,11 +693,9 @@ function sendToFirebase(content, type) {
 
 function startChatListener() {
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
-    // CORRECCIÓN: Verificar si chatBox existe antes de limpiar
     const chatBox = document.getElementById('chatMessages');
     const badge = document.getElementById('chatBadge');
     
-    // Si no estamos en una página con chat (ej: index.html), salimos
     if (!chatBox) return;
 
     chatBox.innerHTML = '';
@@ -717,7 +715,7 @@ function startChatListener() {
 
 function renderMessage(msg) {
     const chatBox = document.getElementById('chatMessages');
-    if(!chatBox) return; // Protección extra
+    if(!chatBox) return;
 
     const isMe = msg.user === currentUserKey;
     const div = document.createElement('div');
@@ -747,7 +745,7 @@ function renderMessage(msg) {
 }
 
 /* --- UTILIDADES --- */
-const filterKeys = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B"];
+const filterKeys = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 window.openKeyModal = function() { 
     const modal = document.getElementById('keyModal');
@@ -759,6 +757,55 @@ window.closeKeyModal = function() {
     if(modal) modal.style.display = 'none'; 
 }
 
+// NUEVO: Sub-modal para seleccionar si es Mayor o Menor
+window.openSubKeyModal = function(baseKey) {
+    window.closeKeyModal(); // Ocultamos el panel inicial
+    
+    let subModal = document.getElementById('subKeyModal');
+    
+    // Si no existe en el HTML, lo creamos dinámicamente
+    if (!subModal) {
+        subModal = document.createElement('div');
+        subModal.id = 'subKeyModal';
+        subModal.className = 'modal';
+        subModal.innerHTML = `
+            <div class="modal-content" style="max-width: 300px;">
+                <h3 style="color: var(--text-primary); margin-top: 0;">¿Mayor o Menor?</h3>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+                    <button id="btnMajorKey" class="key-btn" style="flex: 1; padding: 20px; font-size: 1.5rem;"></button>
+                    <button id="btnMinorKey" class="key-btn" style="flex: 1; padding: 20px; font-size: 1.5rem;"></button>
+                </div>
+                <button class="btn-text" style="margin-top: 20px;" onclick="window.closeSubKeyModal(); window.openKeyModal();">← Volver</button>
+            </div>
+        `;
+        document.body.appendChild(subModal);
+    }
+
+    // Configurar botón MAYOR
+    const btnMajor = document.getElementById('btnMajorKey');
+    btnMajor.innerText = baseKey;
+    btnMajor.onclick = function() {
+        window.filterByKey(baseKey);
+        window.closeSubKeyModal();
+    };
+
+    // Configurar botón MENOR
+    const btnMinor = document.getElementById('btnMinorKey');
+    btnMinor.innerText = baseKey + 'm';
+    btnMinor.onclick = function() {
+        window.filterByKey(baseKey + 'm');
+        window.closeSubKeyModal();
+    };
+
+    // Mostramos el modal
+    subModal.style.display = 'flex';
+}
+
+window.closeSubKeyModal = function() {
+    const subModal = document.getElementById('subKeyModal');
+    if (subModal) subModal.style.display = 'none';
+}
+
 window.generateKeyButtons = function() {
     const grid = document.getElementById('keyGrid');
     if (!grid) return; 
@@ -767,15 +814,19 @@ window.generateKeyButtons = function() {
         let btn = document.createElement('button');
         btn.className = 'key-btn';
         btn.innerText = key;
-        btn.onclick = function() { window.filterByKey(key); };
+        // AQUÍ ES EL CAMBIO: Ahora abre el sub modal
+        btn.onclick = function() { window.openSubKeyModal(key); };
         grid.appendChild(btn);
     });
 }
 
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal');
+    let subKeyModal = document.getElementById('subKeyModal');
     let confirmModal = document.getElementById('confirmModal');
+    
     if (event.target == keyModal) keyModal.style.display = "none";
+    if (subKeyModal && event.target == subKeyModal) window.closeSubKeyModal();
     if (event.target == confirmModal) window.closeConfirmModal();
 }
 
@@ -831,12 +882,11 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 document.addEventListener('touchstart', function(e) {
-    // Solo registrar el inicio si estamos viendo una canción
     if (document.getElementById('songDetailView').style.display === 'block') {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
     }
-}, { passive: true }); // passive: true mejora el rendimiento del scroll
+}, { passive: true }); 
 
 document.addEventListener('touchend', function(e) {
     if (document.getElementById('songDetailView').style.display === 'block') {
@@ -847,34 +897,21 @@ document.addEventListener('touchend', function(e) {
 }, { passive: true });
 
 function handleSwipeGesture(startX, endX, startY, endY) {
-    // 1. Calcular distancias recorridas en ambos ejes
     const diffX = startX - endX;
     const diffY = startY - endY;
     
-    // Usamos valores absolutos (positivos) para medir la "magnitud" del gesto
     const absDiffX = Math.abs(diffX);
     const absDiffY = Math.abs(diffY);
 
-    // 2. Parámetros de sensibilidad
-    const minSwipeDistance = 60; // Distancia mínima horizontal para considerar que es un swipe intencional
-    
-    // 3. LA REGLA DE ORO: 
-    // Para que sea un "Swipe Horizontal" válido, el movimiento horizontal debe ser
-    // significativamente mayor que el movimiento vertical. 
-    // Si absDiffY es mayor que absDiffX, el usuario estaba intentando hacer scroll hacia arriba/abajo.
+    const minSwipeDistance = 60; 
     
     if (absDiffX > absDiffY && absDiffX > minSwipeDistance) {
-        
-        // 4. Si pasó la prueba de ser horizontal, decidimos la dirección
         if (diffX > 0) {
-            // Deslizó hacia la izquierda (Swipe Left) -> Siguiente canción
             changeSongInPlaylist(1);
         } else {
-            // Deslizó hacia la derecha (Swipe Right) -> Canción anterior
             changeSongInPlaylist(-1);
         }
     }
-    // Si no cumple la condición, no hace nada (permite el scroll normal de la página)
 }
 
 function changeSongInPlaylist(direction) {
