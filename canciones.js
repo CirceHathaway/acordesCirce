@@ -3020,4 +3020,81 @@ Si le llamas, él se manifesta<span class="g"><span class="chord">A#</span>ra,</
 Si le buscas <span class="g"><span class="chord">G#m</span>él se</span> manifesta<span class="g"><span class="chord">Am7</span>ra.</span>
         `
     },
+
+    {
+        title: "Quién nos separará?",
+        artist: "Juan Carlos Alvarado",
+        key: "G",
+        type: "Alabanza",
+        content: `
+¿<span class="g"><span class="chord">G</span>Quién</span> nos se<span class="g"><span class="chord">Bm</span>parará</span> <span class="g"><span class="chord">C</span>del amor</span> de <span class="g"><span class="chord">D</span>Cristo?</span>
+¿<span class="g"><span class="chord">G</span>Quién</span> nos a<span class="g"><span class="chord">Bm</span>lejará</span> <span class="g"><span class="chord">C</span>del amor</span> de <span class="g"><span class="chord">D</span>nuestro Dios?</span>
+<span class="g"><span class="chord">Em</span>Ni tribulación o angustia,</span>
+<span class="g"><span class="chord">D</span>Peligro, hambre o desnudés,</span>
+<span class="g"><span class="chord">C</span>Nos podrá</span> sepa<span class="g"><span class="chord">Am</span>rar de</span> su a<span class="g"><span class="chord">D</span>mor.</span>
+
+¿<span class="g"><span class="chord">G</span>Quién</span> nos se<span class="g"><span class="chord">Bm</span>parará</span> <span class="g"><span class="chord">C</span>del amor</span> de <span class="g"><span class="chord">D</span>Cristo?</span>
+¿<span class="g"><span class="chord">G</span>Quién</span> nos a<span class="g"><span class="chord">Bm</span>lejará</span> <span class="g"><span class="chord">C</span>del amor</span> de <span class="g"><span class="chord">D</span>nuestro Dios?</span>
+<span class="g"><span class="chord">Em</span>Ni lo alto ni lo profundo,</span>
+<span class="g"><span class="chord">D</span>Ni ninguna otra cosa creada,</span>
+<span class="g"><span class="chord">C</span>Nos podrá</span> sepa<span class="g"><span class="chord">Am</span>rar de</span> su a<span class="g"><span class="chord">D</span>mor.</span>
+
+<span class="g"><span class="chord">G</span>En Cristo</span> <span class="g"><span class="chord">Bm</span>somos</span> <span class="g"><span class="chord">C</span>más que</span> vence<span class="g"><span class="chord">D</span>dores,</span>
+<span class="g"><span class="chord">G</span>En Cristo</span> <span class="g"><span class="chord">Bm</span>somos</span> <span class="g"><span class="chord">C</span>más que</span> gana<span class="g"><span class="chord">D</span>dores,</span>
+<span class="g"><span class="chord">C</span>Ni la vida</span> ni la <span class="g"><span class="chord">D</span>muerte,</span>
+<span class="g"><span class="chord">Bm</span>Podrá</span> sepa<span class="g"><span class="chord">Em</span>rarnos,</span>
+<span class="g"><span class="chord">C</span>Del amor</span> de <span class="g"><span class="chord">D</span>Dios</span>
+En Cristo Je<span class="g"><span class="chord">G</span>sús.</span>
+        `
+    },
+
+    {
+        title: "Yo te Busco",
+        artist: "Marcos Witt",
+        key: "D",
+        type: "Adoración",
+        content: `
+<span class="g"><span class="chord">D</span>Yo te</span> <span class="g"><span class="chord">G</span>busco,</span>
+<span class="g"><span class="chord">D</span>Yo te</span> <span class="g"><span class="chord">G</span>busco,</span>
+Con fuego <span class="g"><span class="chord">G</span>en mi</span> cora<span class="g"><span class="chord">D</span>zón.</span>
+
+<span class="g"><span class="chord">D</span>Yo te</span> <span class="g"><span class="chord">G</span>busco,</span>
+<span class="g"><span class="chord">D</span>Yo te</span> <span class="g"><span class="chord">G</span>busco,</span>
+Recibe <span class="g"><span class="chord">G</span>mi</span> adora<span class="g"><span class="chord">D</span>ción.</span>
+
+Te an<span class="g"><span class="chord">F#m</span>he</span><span class="g"><span class="chord">G</span>lo,</span>
+Te nece<span class="g"><span class="chord">Bm</span>si</span><span class="g"><span class="chord">A</span>to,</span>
+Te <span class="g"><span class="chord">F#m</span>a</span><span class="g"><span class="chord">G</span>mo,</span>
+<span class="g"><span class="chord">Em</span>más</span> que a mi <span class="g"><span class="chord">D</span>ser.</span>
+        `
+    },
+
+    {
+        title: "Se que mi Redentor vive",
+        artist: "Cristal Lewis",
+        key: "G",
+        type: "Adoración",
+        content: `
+Se que <span class="g"><span class="chord">G</span>mi</span> reden<span class="g"><span class="chord">D</span>tor</span> <span class="g"><span class="chord">Em</span>vive,</span>
+Y al <span class="g"><span class="chord">C</span>fin me</span> le<span class="g"><span class="chord">Am</span>vanta</span><span class="g"><span class="chord">D</span>rá.</span>
+
+Se que <span class="g"><span class="chord">G</span>mi</span> reden<span class="g"><span class="chord">D</span>tor</span> <span class="g"><span class="chord">Em</span>vive,</span>
+Y al <span class="g"><span class="chord">C</span>fin sobre</span> la tie<span class="g"><span class="chord">Am</span>rra</span> reina<span class="g"><span class="chord">D</span>rá.</span>
+
+[Puente]
+Aunque mi <span class="g"><span class="chord">Em</span>carne</span> sea des<span class="g"><span class="chord">Bm</span>hecha,</span>
+Con mis o<span class="g"><span class="chord">C</span>jos</span> ve<span class="g"><span class="chord">Am</span>ré</span> a mi <span class="g"><span class="chord">C</span>Dios.</span> <span class="g"><span class="chord">D</span>..</span> 
+
+[Coro]
+Sé que <span class="g"><span class="chord">C</span>mi</span>  r<span class="g"><span class="chord">D</span>eden</span><span class="g"><span class="chord">Em</span>tor</span> vi<span class="g"><span class="chord">Bm</span>ve,</span>
+Y con <span class="g"><span class="chord">C</span>él me</span> le<span class="g"><span class="chord">D</span>vanta</span><span class="g"><span class="chord">G</span>ré.</span>
+
+[Verso 3]
+Mi cora<span class="g"><span class="chord">G</span>zón</span> desfa<span class="g"><span class="chord">D</span>llece</span> en <span class="g"><span class="chord">Em</span>mi,</span>
+Espe<span class="g"><span class="chord">C</span>rando</span> el regr<span class="g"><span class="chord">Am</span>eso de</span> Je<span class="g"><span class="chord">D</span>sús.</span>
+
+Mi cora<span class="g"><span class="chord">G</span>zón</span> desfa<span class="g"><span class="chord">D</span>llece</span> en <span class="g"><span class="chord">Em</span>mi,</span>
+Espe<span class="g"><span class="chord">C</span>rando</span> que  él regr<span class="g"><span class="chord">Am</span>ese a</span> rei<span class="g"><span class="chord">D</span>nar.</span> 
+        `
+    },
 ];
