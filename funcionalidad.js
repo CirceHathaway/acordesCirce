@@ -1,7 +1,7 @@
 /* --- VARIABLES GLOBALES DE FIREBASE (Inicializadas en null) --- */
 let app, db, storage;
-let ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect; // Funciones DB
-let firebaseLoaded = false; // Bandera para saber si hay internet/firebase
+let ref, set, onValue, off, get, push, onChildAdded, remove, onDisconnect; 
+let firebaseLoaded = false; 
 
 /* --- CONFIGURACIÓN DE FIREBASE --- */
 const firebaseConfig = {
@@ -33,6 +33,7 @@ let showChords = localStorage.getItem('acordify_showChords') !== 'false';
 
 let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
 let currentContextList = []; 
+let lastCloudPlaylistString = ""; // Para controlar el doble dibujo
 
 /* --- VARIABLES LIVE & CHAT --- */
 const FIXED_ROOM_ID = "SESSION_1"; 
@@ -46,7 +47,7 @@ let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
 
-/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE --- */
+/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE (PARALELO) --- */
 async function initFirebase() {
     try {
         const appModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js");
@@ -68,7 +69,6 @@ async function initFirebase() {
         firebaseLoaded = true;
         console.log("Firebase cargado correctamente (Online)");
 
-        // Si ya estábamos conectados (por refresh), reconectar
         if (isConnected) {
             reconnectSession();
         }
@@ -76,20 +76,21 @@ async function initFirebase() {
     } catch (error) {
         console.warn("Modo Offline: No se pudo cargar Firebase.", error);
         firebaseLoaded = false;
-        // Solo mostramos notificación si realmente intentamos una acción live
     }
 }
 
-/* --- INICIALIZACIÓN --- */
+/* --- INICIALIZACIÓN (OFFLINE FIRST) --- */
 window.onload = function() {
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
     }
     
     if (typeof songs !== 'undefined') {
+        // Renderizado inicial inmediato con memoria local
         if (window.location.pathname.includes('lista.html')) {
             window.loadPlaylistMode();
             window.generateKeyButtons();
+            setupDelegatedDragEvents(); // DELEGACIÓN DE EVENTOS 
         } else {
             window.applyGlobalFilters(); 
             window.generateKeyButtons();
@@ -123,16 +124,14 @@ window.onload = function() {
         console.error("Error: No se cargó canciones.js");
     }
 
-    // Cargar Firebase
-    initFirebase();
+    // Cargar Firebase en paralelo, sin bloquear la UI
+    setTimeout(initFirebase, 10); 
 };
 
-/* --- DETECTOR DE CONEXIÓN --- */
 window.addEventListener('online', () => {
     if (!firebaseLoaded) initFirebase();
 });
 
-/* --- NAVEGACIÓN --- */
 window.addEventListener('popstate', (event) => {
     if (isChatOpen) {
         window.toggleChat();
@@ -295,6 +294,7 @@ window.closeAllModals = function() {
     if(overlay) overlay.style.display = 'none';
 }
 
+/* --- FILTROS Y RENDER DE INICIO (BLOQUE ÚNICO) --- */
 window.applyGlobalFilters = function() {
     let filtered = songs.filter(song => {
         if (activeFilters.type && song.type !== activeFilters.type) return false;
@@ -330,7 +330,6 @@ window.sortSongs = function(criteria) {
     }
     renderTable(sorted);
 }
-
 window.resetFilters = function() { activeFilters = { type: null, key: null, search: '' }; document.getElementById('searchInput').value = ''; window.applyGlobalFilters(); }
 
 function updateFilterVisuals() {
@@ -345,8 +344,14 @@ function updateFilterVisuals() {
 function renderTable(data) {
     const tbody = document.getElementById('tableBody');
     if (!tbody) return;
-    tbody.innerHTML = '';
-    if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; }
+    
+    if (data.length === 0) { 
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; 
+        return; 
+    }
+    
+    // RENDERIZADO EN BLOQUE ÚNICO
+    let htmlContent = '';
     data.forEach((song, index) => {
         const originalIndex = songs.indexOf(song);
         const isAdded = myPlaylist.includes(originalIndex);
@@ -354,36 +359,53 @@ function renderTable(data) {
         const btnText = isAdded ? "✓" : "+";
         const btnAction = isAdded ? "" : `onclick="addToPlaylist(${originalIndex}, this)"`;
 
-        let row = `<tr>
+        htmlContent += `<tr>
             <td class="index-col">${index + 1}</td>
             <td class="song-title" onclick="openSong(${originalIndex})">${song.title}</td>
             <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
             <td><span class="artist-link" onclick="filterByArtist('${song.artist}')">${song.artist}</span></td>
-            <td class="action-col"><button class="${btnClass}" ${btnAction}>${btnText}</button></td>
+            <td class="action-col"><button id="addBtn-${originalIndex}" class="${btnClass}" ${btnAction}>${btnText}</button></td>
         </tr>`;
-        tbody.innerHTML += row;
     });
+    tbody.innerHTML = htmlContent;
 }
 
+/* --- GESTIÓN DE PLAYLIST (ACTUALIZACIÓN QUIRÚRGICA) --- */
 window.addToPlaylist = function(index, btnElement) {
     if (!myPlaylist.includes(index)) {
         myPlaylist.push(index);
         localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+        
+        // ACTUALIZACIÓN QUIRÚRGICA: Solo modificamos el botón tocado
         if(btnElement) {
             btnElement.innerText = "✓";
             btnElement.classList.add('added');
+            btnElement.onclick = null; // Quitamos el evento para evitar dobles clicks
         }
-        window.showNotification("Canción agregada a tu lista");
         
-        // CORRECCIÓN CLAVE: Enviar a la nube inmediatamente si está conectado
+        window.showNotification("Canción agregada a tu lista");
         broadcastChange();
     }
 }
 
-window.removeFromPlaylist = function(index) {
+window.removeFromPlaylist = function(index, rowElement) {
     myPlaylist = myPlaylist.filter(id => id !== index);
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
-    window.loadPlaylistMode();
+    
+    // ACTUALIZACIÓN QUIRÚRGICA: Borramos solo la fila en vez de repintar todo
+    if (rowElement && rowElement.parentNode) {
+        rowElement.parentNode.removeChild(rowElement);
+        // Recalcular índices visuales
+        document.querySelectorAll('#tableBody .index-col').forEach((td, i) => {
+            td.innerText = i + 1;
+        });
+        if(myPlaylist.length === 0) {
+            document.getElementById('tableBody').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
+        }
+    } else {
+        window.loadPlaylistMode(); // Respaldo por si falla
+    }
+    
     broadcastChange();
 }
 
@@ -412,24 +434,27 @@ window.loadPlaylistMode = function() {
 function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
     if(!tbody) return;
-    tbody.innerHTML = '';
-    if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; }
+    
+    if (songsData.length === 0) { 
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; 
+        return; 
+    }
+    
+    // RENDERIZADO EN BLOQUE ÚNICO
+    let htmlContent = '';
     songsData.forEach((song, i) => {
         const globalIndex = originalIds[i]; 
-        let row = document.createElement('tr');
-        row.setAttribute('data-index', globalIndex); 
-        row.classList.add('draggable-row'); 
-        row.oncontextmenu = function(event) { event.preventDefault(); event.stopPropagation(); return false; };
-        row.innerHTML = `
+        // Pasamos 'this.closest("tr")' para la eliminación quirúrgica
+        htmlContent += `
+        <tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="event.preventDefault(); event.stopPropagation(); return false;">
             <td class="index-col">${i + 1}</td>
             <td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td>
             <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
             <td style="color: var(--text-white);">${song.artist}</td>
-            <td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex})">×</button></td>
-        `;
-        tbody.appendChild(row);
+            <td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex}, this.closest('tr'))">×</button></td>
+        </tr>`;
     });
-    enableLongPressDrag();
+    tbody.innerHTML = htmlContent;
 }
 
 window.sharePlaylistUrl = function() {
@@ -439,31 +464,65 @@ window.sharePlaylistUrl = function() {
     else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); }
 }
 
-function enableLongPressDrag() {
-    const rows = document.querySelectorAll('.draggable-row');
+/* --- DELEGACIÓN DE EVENTOS (ARRASTRE OPTIMIZADO) --- */
+function setupDelegatedDragEvents() {
     const tbody = document.getElementById('tableBody');
+    if (!tbody) return;
+
     let pressTimer, isDragging = false, draggingRow = null, startY = 0;
 
-    rows.forEach(row => {
-        row.addEventListener('touchstart', (e) => {
-            if (e.target.classList.contains('btn-remove')) return;
-            isDragging = false;
-            startY = e.touches[0].clientY;
-            pressTimer = setTimeout(() => { isDragging = true; draggingRow = row; row.classList.add('dragging'); if (navigator.vibrate) navigator.vibrate(50); }, 600); 
-        }, { passive: false });
-
-        row.addEventListener('touchmove', (e) => {
-            const currentY = e.touches[0].clientY;
-            if (!isDragging) { if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer); } 
-            else { e.preventDefault(); const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY); const rowBelow = elementBelow ? elementBelow.closest('tr') : null; if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) { const bounding = rowBelow.getBoundingClientRect(); const offset = bounding.y + (bounding.height / 2); if (currentY - offset > 0) rowBelow.after(draggingRow); else rowBelow.before(draggingRow); } }
-        }, { passive: false });
-
-        row.addEventListener('touchend', (e) => {
-            clearTimeout(pressTimer);
-            if (isDragging) { isDragging = false; draggingRow.classList.remove('dragging'); draggingRow = null; saveNewOrder(); e.preventDefault(); }
-        });
+    tbody.addEventListener('touchstart', (e) => {
+        const row = e.target.closest('.draggable-row');
+        if (!row || e.target.classList.contains('btn-remove')) return;
         
-        row.addEventListener('touchcancel', () => { clearTimeout(pressTimer); if (draggingRow) draggingRow.classList.remove('dragging'); isDragging = false; });
+        isDragging = false;
+        startY = e.touches[0].clientY;
+        
+        pressTimer = setTimeout(() => { 
+            isDragging = true; 
+            draggingRow = row; 
+            row.classList.add('dragging'); 
+            if (navigator.vibrate) navigator.vibrate(50); 
+        }, 600); 
+    }, { passive: false });
+
+    tbody.addEventListener('touchmove', (e) => {
+        if (!isDragging) { 
+            const currentY = e.touches[0].clientY;
+            if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer); 
+        } 
+        else { 
+            e.preventDefault(); 
+            const currentY = e.touches[0].clientY;
+            const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY); 
+            const rowBelow = elementBelow ? elementBelow.closest('tr') : null; 
+            
+            if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) { 
+                const bounding = rowBelow.getBoundingClientRect(); 
+                const offset = bounding.y + (bounding.height / 2); 
+                if (currentY - offset > 0) rowBelow.after(draggingRow); 
+                else rowBelow.before(draggingRow); 
+            } 
+        }
+    }, { passive: false });
+
+    const endDrag = (e) => {
+        clearTimeout(pressTimer);
+        if (isDragging && draggingRow) { 
+            isDragging = false; 
+            draggingRow.classList.remove('dragging'); 
+            draggingRow = null; 
+            saveNewOrder(); 
+            if(e) e.preventDefault(); 
+        }
+    };
+
+    tbody.addEventListener('touchend', endDrag);
+    tbody.addEventListener('touchcancel', () => {
+        clearTimeout(pressTimer); 
+        if (draggingRow) draggingRow.classList.remove('dragging'); 
+        isDragging = false;
+        draggingRow = null;
     });
 }
 
@@ -489,7 +548,7 @@ window.executeClearList = function() {
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
     window.closeConfirmModal(); 
     window.showNotification("Lista vaciada correctamente"); 
-    window.loadPlaylistMode(); 
+    if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode(); 
     broadcastChange();
 }
 
@@ -520,7 +579,6 @@ window.connectToSession = function() {
     sessionStorage.setItem('acordify_user_key', currentUserKey);
     isConnected = true;
     
-    // Al conectar, forzamos que la lista local sea la "verdadera" inicialmente
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
     const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID);
     const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID);
@@ -529,11 +587,8 @@ window.connectToSession = function() {
     onDisconnect(myConnectionRef).remove();
 
     get(roomRef).then((snapshot) => {
-        // SI YA HAY DATOS EN LA NUBE, LOS RESPETAMOS.
-        // SI LA NUBE ESTÁ VACÍA O SOMOS LOS PRIMEROS, SUBIMOS LO NUESTRO.
         if (snapshot.exists() && snapshot.val()) {
             window.showNotification("Sincronizando con la banda... 📡");
-            // Aquí Firebase se encargará de actualizar myPlaylist a través de startListening
         } else {
             set(roomRef, myPlaylist)
                 .then(() => window.showNotification("Sala iniciada. Lista subida ☁️"));
@@ -560,30 +615,45 @@ function reconnectSession() {
     set(myConnectionRef, currentUserKey);
     onDisconnect(myConnectionRef).remove();
 
-    // AQUÍ ESTÁ EL CAMBIO CLAVE:
-    // No sobrescribimos inmediatamente. Escuchamos cambios.
-    // Si acabamos de agregar algo en local, broadcastChange lo subirá.
-    
     startListening(roomRef);
     startChatListener(); 
     updateUIConnected();
     
-    // Forzamos una subida de nuestra lista local actual para asegurar que lo que acabamos de agregar se guarde
     broadcastChange();
 }
 
 function startListening(roomRef) {
     onValue(roomRef, (snapshot) => {
-        const cloudPlaylist = snapshot.val();
-        // Solo actualizamos si la nube tiene datos y son diferentes a los locales
-        if (cloudPlaylist && JSON.stringify(cloudPlaylist) !== JSON.stringify(myPlaylist)) {
-            myPlaylist = cloudPlaylist || [];
-            localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+        const cloudPlaylist = snapshot.val() || [];
+        const cloudString = JSON.stringify(cloudPlaylist);
+        
+        // CONTROL DE DOBLE DIBUJO: 
+        // Solo repintamos si la lista en la nube es REALMENTE diferente 
+        // a nuestra lista local Y a la última actualización conocida.
+        if (cloudString !== JSON.stringify(myPlaylist) && cloudString !== lastCloudPlaylistString) {
             
-            // Actualizar vista si estamos en la lista
-            if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode();
-            // Actualizar vista si estamos en inicio (para pintar los checkmarks)
-            else if (!window.location.hash) window.applyGlobalFilters();
+            myPlaylist = cloudPlaylist;
+            localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+            lastCloudPlaylistString = cloudString;
+            
+            // Actualizar vista pasivamente si es necesario
+            if (window.location.pathname.includes('lista.html')) {
+                window.loadPlaylistMode();
+            } else if (!window.location.hash) {
+                // Si estamos en index, solo actualizamos las clases de los botones "✓" sin redibujar todo
+                document.querySelectorAll('.btn-add').forEach(btn => {
+                    const rowId = parseInt(btn.id.split('-')[1]);
+                    if (myPlaylist.includes(rowId)) {
+                        btn.innerText = "✓";
+                        btn.classList.add('added');
+                        btn.onclick = null;
+                    } else {
+                        btn.innerText = "+";
+                        btn.classList.remove('added');
+                        btn.setAttribute('onclick', `addToPlaylist(${rowId}, this)`);
+                    }
+                });
+            }
         }
     });
 }
@@ -611,6 +681,7 @@ window.disconnectSession = function() {
         isConnected = false;
         currentUserKey = null;
         sessionStorage.removeItem('acordify_user_key');
+        lastCloudPlaylistString = "";
         updateUIDisconnected();
         window.resetLiveModal();
         window.showNotification("Desconectado 🔌");
@@ -628,6 +699,7 @@ function updateUIDisconnected() {
 function broadcastChange() {
     if (!isConnected || !firebaseLoaded) return; 
     const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID);
+    lastCloudPlaylistString = JSON.stringify(myPlaylist); // Prevenir el rebote del doble dibujo
     set(roomRef, myPlaylist).catch((e) => console.error(e));
 }
 
@@ -757,13 +829,11 @@ window.closeKeyModal = function() {
     if(modal) modal.style.display = 'none'; 
 }
 
-// NUEVO: Sub-modal para seleccionar si es Mayor o Menor
 window.openSubKeyModal = function(baseKey) {
-    window.closeKeyModal(); // Ocultamos el panel inicial
+    window.closeKeyModal(); 
     
     let subModal = document.getElementById('subKeyModal');
     
-    // Si no existe en el HTML, lo creamos dinámicamente
     if (!subModal) {
         subModal = document.createElement('div');
         subModal.id = 'subKeyModal';
@@ -781,7 +851,6 @@ window.openSubKeyModal = function(baseKey) {
         document.body.appendChild(subModal);
     }
 
-    // Configurar botón MAYOR
     const btnMajor = document.getElementById('btnMajorKey');
     btnMajor.innerText = baseKey;
     btnMajor.onclick = function() {
@@ -789,7 +858,6 @@ window.openSubKeyModal = function(baseKey) {
         window.closeSubKeyModal();
     };
 
-    // Configurar botón MENOR
     const btnMinor = document.getElementById('btnMinorKey');
     btnMinor.innerText = baseKey + 'm';
     btnMinor.onclick = function() {
@@ -797,7 +865,6 @@ window.openSubKeyModal = function(baseKey) {
         window.closeSubKeyModal();
     };
 
-    // Mostramos el modal
     subModal.style.display = 'flex';
 }
 
@@ -814,7 +881,6 @@ window.generateKeyButtons = function() {
         let btn = document.createElement('button');
         btn.className = 'key-btn';
         btn.innerText = key;
-        // AQUÍ ES EL CAMBIO: Ahora abre el sub modal
         btn.onclick = function() { window.openSubKeyModal(key); };
         grid.appendChild(btn);
     });
