@@ -3097,4 +3097,115 @@ Mi cora<span class="g"><span class="chord">G</span>zón</span> desfa<span class=
 Espe<span class="g"><span class="chord">C</span>rando</span> que  él regr<span class="g"><span class="chord">Am</span>ese a</span> rei<span class="g"><span class="chord">D</span>nar.</span> 
         `
     },
+
+    {
+        title: "Grande y Fuerte es nuestro Dios",
+        artist: "Miel San Marcos",
+        key: "Am",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">F</span></span><span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">Am</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Am</span>Grande</span> y fu<span class="g"><span class="chord">F</span>erte</span> es nu<span class="g"><span class="chord">Em</span>estro</span> <span class="g"><span class="chord">Am</span>Dios,</span> <span class="g"><span class="chord">F</span>..</span><span class="g"><span class="chord">Em</span>..</span> 
+<span class="g"><span class="chord">Am</span>Grande</span> y fu<span class="g"><span class="chord">F</span>erte</span> es nu<span class="g"><span class="chord">Em</span>estro</span> <span class="g"><span class="chord">Am</span>Dios,</span> <span class="g"><span class="chord">F</span>..</span><span class="g"><span class="chord">Em</span>..</span>
+<span class="g"><span class="chord">Am</span>Grande</span> y fu<span class="g"><span class="chord">F</span>erte</span> es nu<span class="g"><span class="chord">Em</span>estro</span> <span class="g"><span class="chord">Am</span>Dios,</span> <span class="g"><span class="chord">F</span>..</span><span class="g"><span class="chord">Em</span>..</span>
+<span class="g"><span class="chord">Am</span>Grande</span> y fu<span class="g"><span class="chord">F</span>erte</span> es nu<span class="g"><span class="chord">Em</span>estro</span> <span class="g"><span class="chord">Am</span>Dios,</span> <span class="g"><span class="chord">F</span>..</span><span class="g"><span class="chord">Em</span>..</span>
+
+[Coro]
+Ves<span class="g"><span class="chord">Dm</span>tido en</span> majes<span class="g"><span class="chord">G</span>tad</span> coro<span class="g"><span class="chord">Dm</span>nado con</span> po<span class="g"><span class="chord">Am</span>der,</span>
+Digno <span class="g"><span class="chord">F</span>de toda</span> <span class="g"><span class="chord">G</span>la</span> adorac<span class="g"><span class="chord">Am</span>ión.</span><span class="g"><span class="chord">G/B</span>..</span><span class="g"><span class="chord">C</span>..</span>
+Ves<span class="g"><span class="chord">Dm</span>tido en</span> majes<span class="g"><span class="chord">G</span>tad</span> coro<span class="g"><span class="chord">Dm</span>nado con</span> po<span class="g"><span class="chord">Am</span>der,</span>
+Toda <span class="g"><span class="chord">F</span>gloria</span> y honra <span class="g"><span class="chord">G</span>sea para</span> <span class="g"><span class="chord">Am</span>ti.</span>
+
+[Verso 1]
+[Coro]
+[Verso 1]
+[Coro]
+
+[Verso 2 x2]
+<span class="g"><span class="chord">Am</span>Grande, fuerte,</span>
+Es nu<span class="g"><span class="chord">F</span>estro</span> <span class="g"><span class="chord">Em</span>Dios.</span>
+
+[Final x4 termina en Am]
+<span class="g"><span class="chord">Am</span>Grande</span> y fu<span class="g"><span class="chord">G</span>erte</span> es nu<span class="g"><span class="chord">F</span>estro</span> <span class="g"><span class="chord">Em</span>Dios.</span>
+        `
+    },
+
+    {
+        title: "Santo Por Siempre",
+        artist: "Adoración La IBI",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">G</span>Mil generaciones,</span>
+Se <span class="g"><span class="chord">C</span>postran</span> ado<span class="g"><span class="chord">G</span>rarle,</span>
+Le can<span class="g"><span class="chord">Em</span>tan al</span> cor<span class="g"><span class="chord">D</span>dero que</span> ven<span class="g"><span class="chord">C</span>ció.</span>
+
+[Verso 2]
+Los <span class="g"><span class="chord">G</span>que nos precedieron,</span>
+y <span class="g"><span class="chord">C</span>los que</span> en él cre<span class="g"><span class="chord">G</span>erán,</span>
+Le <span class="g"><span class="chord">Em</span>cantarán</span> a aqu<span class="g"><span class="chord">D</span>el que</span> ya ven<span class="g"><span class="chord">C</span>ció.</span>
+
+[Puente]
+Tu nombre, es más alto,
+Tu n<span class="g"><span class="chord">D</span>ombre, es más grande,</span>
+Tu n<span class="g"><span class="chord">Em</span>ombre,</span> sobre <span class="g"><span class="chord">D</span>todo</span> <span class="g"><span class="chord">C</span>es.</span>
+
+Sean tronos, dominios,
+Po<span class="g"><span class="chord">D</span>deres y reinos,</span>
+Tu n<span class="g"><span class="chord">Em</span>ombre,</span> sobre <span class="g"><span class="chord">D</span>todo</span> <span class="g"><span class="chord">Am7</span>es.</span>
+
+[Coro]
+Claman ánge<span class="g"><span class="chord">C</span>les,</span>
+<span class="g"><span class="chord">Em</span>San</span>-<span class="g"><span class="chord">D</span>to,</span>
+Clama la creaci<span class="g"><span class="chord">Bm7</span>ón,</span>
+San<span class="g"><span class="chord">Em</span>to,</span>
+Exaltado D<span class="g"><span class="chord">Am7</span>ios,</span>
+San<span class="g"><span class="chord">D</span>to,</span>
+Santo por si<span class="g"><span class="chord">G</span>empre.</span>
+
+[Verso 3]
+Si te ha perdonado,
+y ti<span class="g"><span class="chord">C</span>enes</span> salvac<span class="g"><span class="chord">G</span>ión,</span>
+<span class="g"><span class="chord">Em</span>Cántale</span> al cor<span class="g"><span class="chord">D</span>dero que</span> ven<span class="g"><span class="chord">C</span>ció.</span>
+
+[Verso 4]
+<span class="g"><span class="chord">G</span>Si te ha libertado,</span>
+Su n<span class="g"><span class="chord">C</span>ombre</span> ha puesto en <span class="g"><span class="chord">G</span>ti,</span>
+<span class="g"><span class="chord">Em</span>Cántale</span> al cor<span class="g"><span class="chord">D</span>dero que</span> ven<span class="g"><span class="chord">C</span>ció.</span>
+
+[Puente 2]
+<span class="g"><span class="chord">Em</span>Cantaremos</span> si<span class="g"><span class="chord">D</span>empre</span> A<span class="g"><span class="chord">Am</span>mén.</span>
+
+[Coro]
+Claman ánge<span class="g"><span class="chord">C</span>les,</span>
+<span class="g"><span class="chord">Em</span>San</span>-<span class="g"><span class="chord">D</span>to,</span>
+Clama la creaci<span class="g"><span class="chord">Bm7</span>ón,</span>
+San<span class="g"><span class="chord">Em</span>to,</span>
+Exaltado D<span class="g"><span class="chord">Am7</span>ios,</span>
+San<span class="g"><span class="chord">D</span>to,</span>
+Santo por si<span class="g"><span class="chord">G</span>empre.</span>
+
+[Coro 2]
+Canta el pueblo al <span class="g"><span class="chord">C</span>rey,</span>
+<span class="g"><span class="chord">Em</span>San</span>-<span class="g"><span class="chord">D</span>to,</span>
+Soberano es <span class="g"><span class="chord">Bm7</span>él,</span>
+San<span class="g"><span class="chord">Em</span>to,</span>
+Y por siempre <span class="g"><span class="chord">Am7</span>es,</span>
+San<span class="g"><span class="chord">D</span>to,</span>
+Santo por si<span class="g"><span class="chord">G</span>empre.</span>
+
+[Puente]
+[Coro]
+[Coro 2]
+
+[Final]
+Y por siempre <span class="g"><span class="chord">Am7</span>es,</span>
+San<span class="g"><span class="chord">D</span>to,</span>
+Santo por si<span class="g"><span class="chord">G</span>empre.</span>
+        `
+    },
 ];
