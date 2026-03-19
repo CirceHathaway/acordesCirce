@@ -37,7 +37,7 @@ let lastCloudPlaylistString = ""; // Para controlar el doble dibujo
 
 /* --- VARIABLES LIVE & CHAT --- */
 const FIXED_ROOM_ID = "SESSION_1"; 
-const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU', 'ANGEL'];
+const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU', 'ANGEL', 'CRIS'];
 
 let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
 let isConnected = !!currentUserKey; 
@@ -803,7 +803,8 @@ function renderMessage(msg) {
         else if (msg.user === 'SAM') bubbleClass += ' user-SAM';
         else if (msg.user === 'PASTOR') bubbleClass += ' user-PASTOR';
         else if (msg.user === 'SAMU') bubbleClass += ' user-SAMU';
-        else if (msg.user === 'ANGEL') bubbleClass += ' user-SAMU';
+        else if (msg.user === 'ANGEL') bubbleClass += ' user-ANGEL';
+        else if (msg.user === 'CRIS') bubbleClass += ' user-CRIS';
         else bubbleClass += ' user-UNKNOWN';
     }
     
