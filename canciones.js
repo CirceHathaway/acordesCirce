@@ -3208,4 +3208,66 @@ San<span class="g"><span class="chord">D</span>to,</span>
 Santo por si<span class="g"><span class="chord">G</span>empre.</span>
         `
     },
+
+    {
+        title: "Grande y Fuerte es nuestro Dios",
+        artist: "Miel San Marcos",
+        key: "Am",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">Cm</span></span><span class="g"><span class="chord">G#</span></span><span class="g"><span class="chord">A#</span></span><span class="g"><span class="chord">Cm</span></span>
+
+[Verso 1]
+Cuan<span class="g"><span class="chord">Cm</span>do le</span> canto la <span class="g"><span class="chord">A#</span>tierra</span> se estremece,
+Los <span class="g"><span class="chord">Fm</span>muros</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+Cuan<span class="g"><span class="chord">Cm</span>do le</span> adoro se <span class="g"><span class="chord">A#</span>rompen</span> las cadenas,
+Los <span class="g"><span class="chord">Fm</span>muros</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+[Coro]
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Al sonar mi <span class="g"><span class="chord">A#</span>cantico</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Con gritos de <span class="g"><span class="chord">A#</span>júbilo</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+[Intro] 
+<span class="g"><span class="chord">Cm</span></span><span class="g"><span class="chord">G#</span></span><span class="g"><span class="chord">A#</span></span><span class="g"><span class="chord">Cm</span></span>
+
+[Verso 2]
+Cuan<span class="g"><span class="chord">Cm</span>do yo</span> danzo <span class="g"><span class="chord">A#</span>aumenta</span> Dios mis fuerzas,
+Los <span class="g"><span class="chord">Fm</span>muros</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+Cuan<span class="g"><span class="chord">Cm</span>do yo</span> grito mis <span class="g"><span class="chord">A#</span>enemigos</span> huyen,
+Los <span class="g"><span class="chord">Fm</span>muros</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+[Coro]
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Al sonar mi <span class="g"><span class="chord">A#</span>cantico</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Con gritos de <span class="g"><span class="chord">A#</span>júbilo</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+[Verso 3]
+Caen los <span class="g"><span class="chord">Cm</span>muros,</span> <span class="g"><span class="chord">A#</span>..</span>
+Caen los <span class="g"><span class="chord">Cm</span>muros,</span> <span class="g"><span class="chord">A#</span>..</span>
+
+<span class="g"><span class="chord">Fm</span>Saltando,</span> <span class="g"><span class="chord">Gm</span>saltando,</span> <span class="g"><span class="chord">Cm</span>los muros</span> <span class="g"><span class="chord">A#</span>caerán.</span>
+<span class="g"><span class="chord">Fm</span>Gritando,</span> <span class="g"><span class="chord">Gm</span>gritando,</span> <span class="g"><span class="chord">Cm</span>los muros</span> <span class="g"><span class="chord">A#</span>caerán.</span>
+
+[Coro]
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Al sonar mi <span class="g"><span class="chord">A#</span>cantico</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+
+Los <span class="g"><span class="chord">Cm</span>muros</span> caerán,
+Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
+Con gritos de <span class="g"><span class="chord">A#</span>júbilo</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
+`
+    },
 ];
