@@ -3270,4 +3270,33 @@ Los <span class="g"><span class="chord">G#</span>muros</span> caerán,
 Con gritos de <span class="g"><span class="chord">A#</span>júbilo</span> <span class="g"><span class="chord">Gm</span>..</span> cae<span class="g"><span class="chord">Cm</span>rán.</span>
 `
     },
+
+    {
+        title: "Voy Cantando",
+        artist: "Conquistando Fronteras",
+        key: "D",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">G</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">D</span>El tiempo,</span> <span class="g"><span class="chord">F#m</span>de la</span> canción <span class="g"><span class="chord">Bm</span>llegó,</span>
+Los cielos, des<span class="g"><span class="chord">G</span>tilan</span> gloria y <span class="g"><span class="chord">A</span>salva</span><span class="g"><span class="chord">D</span>ción.</span>
+
+La tierra <span class="g"><span class="chord">F#m</span>resplandece</span> con tu <span class="g"><span class="chord">Bm</span>luz,</span>
+Cautivándo<span class="g"><span class="chord">Em</span>nos,</span> con tu <span class="g"><span class="chord">G</span>cruz</span> <span class="g"><span class="chord">A</span>y yo...</span>
+
+[Coro]
+<span class="g"><span class="chord">D</span>Voy cantando,</span> voy cantando a tu pre<span class="g"><span class="chord">F#m</span>sencia,</span>
+A tu pre<span class="g"><span class="chord">G</span>sencia,</span> cantando santo...
+
+[Intro] 
+<span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">G</span></span>
+
+[Puente]
+<span class="g"><span class="chord">Em</span>Canta,</span> mi espíritu <span class="g"><span class="chord">D</span>canta,</span>
+<span class="g"><span class="chord">Em</span>Danza,</span> mi espíritu <span class="g"><span class="chord">D</span>danza.</span>
+        `
+    },
 ];
