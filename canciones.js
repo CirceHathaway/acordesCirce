@@ -3210,9 +3210,9 @@ Santo por si<span class="g"><span class="chord">G</span>empre.</span>
     },
 
     {
-        title: "Grande y Fuerte es nuestro Dios",
+        title: "Los Muros Caerán",
         artist: "Miel San Marcos",
-        key: "Am",
+        key: "Cm",
         type: "Alabanza",
         content: `
 [Intro] 
