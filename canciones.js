@@ -749,7 +749,7 @@ Tu <span class="g"><span class="chord">G</span>reinas</span> sobre princi<span c
 Sen<span class="g"><span class="chord">C</span>tado </span><span class="g"><span class="chord">Am</span>a la</span> diestra de <span class="g"><span class="chord">D</span>Dios.</span>
 
 <span class="g"><span class="chord">G</span>Exáltate</span> ¡oh! gran <span class="g"><span class="chord">Em</span>cordero,</span>
-Tu <span class="g"><span class="chord">C</span>vives</span> hoy <span class="g"><span class="chord">Am</span>y</span><span class="g"><span class="chord">D</span>vivirás</span>
+Tu <span class="g"><span class="chord">C</span>vives</span> hoy <span class="g"><span class="chord">Am</span>y</span> vivi<span class="g"><span class="chord">D</span>rás</span>
 
 <span class="g"><span class="chord">G</span>Corónate</span> con mi ala<span class="g"><span class="chord">Em</span>banza,</span>
 Tu <span class="g"><span class="chord">C</span>nombre</span> es <span class="g"><span class="chord">D</span>el</span> vence<span class="g"><span class="chord">G</span>dor.</span>
@@ -2247,7 +2247,7 @@ Yo <span class="g"><span class="chord">Am7</span>tengo</span> <span class="g"><s
     {
         title: "Si tan solo",
         artist: "Juan Carlos Alvarado",
-        key: "G",
+        key: "Em",
         type: "Adoración",
         content: `
 Si tan <span class="g"><span class="chord">Em</span>solo</span> to<span class="g"><span class="chord">D</span>care</span> el borde de su <span class="g"><span class="chord">C</span>manto,</span>
@@ -2961,7 +2961,7 @@ Yo <span class="g"><span class="chord">A</span>no</span> me quiero <span class="
 <span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">F#m</span></span><span class="g"><span class="chord">Bm7</span></span><span class="g"><span class="chord">G</span></span>
 
 <span class="g"><span class="chord">D</span>No</span> me quiero ir,
-<span class="g"><span class="chord">D</span>De</span> tus brazos Dios,
+<span class="g"><span class="chord">F#m</span>De</span> tus brazos Dios,
 <span class="g"><span class="chord">Bm</span>Porque</span> <span class="g"><span class="chord">A</span>solo tu,</span>
 <span class="g"><span class="chord">G</span>Tienes palabras para mi.</span>
 
@@ -3297,6 +3297,33 @@ A tu pre<span class="g"><span class="chord">G</span>sencia,</span> cantando sant
 [Puente]
 <span class="g"><span class="chord">Em</span>Canta,</span> mi espíritu <span class="g"><span class="chord">D</span>canta,</span>
 <span class="g"><span class="chord">Em</span>Danza,</span> mi espíritu <span class="g"><span class="chord">D</span>danza.</span>
+        `
+    },
+
+    {
+        title: "Yo te adoro Señor",
+        artist: "Juan Carlos Alvarado",
+        key: "Em",
+        type: "Alabanza",
+        content: `
+[Verso 1]
+Pues <span class="g"><span class="chord">Am</span>tu</span> glo<span class="g"><span class="chord">D</span>rioso</span> <span class="g"><span class="chord">G</span>eres</span> <span class="g"><span class="chord">Em</span>Señor,</span>
+Y tu <span class="g"><span class="chord">Am</span>nombre</span> es <span class="g"><span class="chord">B7</span>digno</span> de <span class="g"><span class="chord">Em</span>alabar.</span>
+
+Haz mi <span class="g"><span class="chord">Am</span>cora</span><span class="g"><span class="chord">D</span>zón</span> puro y <span class="g"><span class="chord">G</span>santo</span> ante <span class="g"><span class="chord">Em</span>ti,</span>
+Yo te <span class="g"><span class="chord">Am</span>adoro</span> con <span class="g"><span class="chord">B7</span>todo</span> mi cora<span class="g"><span class="chord">Em</span>zón.</span>
+
+Yo te <span class="g"><span class="chord">Em</span>adoro</span> Señor con <span class="g"><span class="chord">Am</span>todo mi ser,</span>
+Yo con <span class="g"><span class="chord">Em</span>salmo</span> te alaba<span class="g"><span class="chord">B7</span>ré,</span>
+Yo te <span class="g"><span class="chord">Em</span>adoro</span> Señor con <span class="g"><span class="chord">Am</span>todo mi ser,</span>
+Todo el <span class="g"><span class="chord">C</span>día</span> <span class="g"><span class="chord">B7</span>te</span> alaba<span class="g"><span class="chord">Em</span>ré.</span>
+
+<span class="g"><span class="chord">Em</span>Yo te amo,</span>
+<span class="g"><span class="chord">Am</span>Yo te amo,</span>
+<span class="g"><span class="chord">D</span>Yo confió en ti,</span>
+<span class="g"><span class="chord">G</span>Yo confío en ti,</span>
+<span class="g"><span class="chord">Em</span>Yo te amo,</span> <span class="g"><span class="chord">Am</span>yo te amo,</span>
+<span class="g"><span class="chord">F#m</span>De la roca</span> me refigia<span class="g"><span class="chord">B7</span>ré.</span>
         `
     },
 ];
