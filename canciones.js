@@ -458,6 +458,7 @@ Grande es tu <span class="g"><span class="chord">D</span>gloria.</span>`
         artist: "Vino Nuevo",
         key: "E",
         type: "Adoración",
+        comentario:"Si la canta Gisel, la nota es la misma. (Antes del final 'si no hubiera conocido' hay que hacer F#m y pasar a A+ para cerrar)",
         content: `
 Cristo yo te <span class="g"><span class="chord">E</span>amo,</span>
 Cristo yo te <span class="g"><span class="chord">C#m</span>amo,</span>
@@ -1030,6 +1031,7 @@ y <span class="g"><span class="chord">Am</span>sé</span>que transfor<span class
         artist: "Marco Barrientos",
         key: "D",
         type: "Adoración",
+        comentario:"Si la canta Gisel, la nota es en C+.",
         content: `
 <span class="g"><span class="chord">D</span>Ven</span> es<span class="g"><span class="chord">A</span>píritu</span> <span class="g"><span class="chord">Bm</span>ven,</span>
 Y lléname Se<span class="g"><span class="chord">G</span>ñor,</span>
@@ -1105,6 +1107,7 @@ yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class=
         artist: "Marcos Witt",
         key: "C",
         type: "Adoración",
+        comentario:"Si la canta Gisel, la nota es en B+ y la engancha con Quiero llenar tu trono de alabanza.",
         content: `
 <span class="g"><span class="chord">C</span>Tu</span> fidelidad es <span class="g"><span class="chord">F</span>grande,</span>
 <span class="g"><span class="chord">G</span>Tu</span> fidelidad, in<span class="g"><span class="chord">Em</span>comparable</span> es,
@@ -1453,6 +1456,7 @@ A<span class="g"><span class="chord">C</span>mén,</span> A<span class="g"><span
         artist: "Samuel Hernández",
         key: "D",
         type: "Adoración",
+        comentario:"Si la canta Alejandro, la nota es la misma.",
         content: `
 <span class="g"><span class="chord">D</span>Levanto</span> mis <span class="g"><span class="chord">G</span>manos,</span> <span class="g"><span class="chord">A</span>..</span>
 Aunque no tenga <span class="g"><span class="chord">F#m</span>fuerzas,</span> <span class="g"><span class="chord">Bm</span>..</span>
@@ -2439,6 +2443,7 @@ Re<span class="g"><span class="chord">D</span>cibe</span> el re<span class="g"><
         artist: "Danilo Montero",
         key: "C",
         type: "Adoración",
+        comentario:"Si la canta Sol, la nota inicial es A#.",
         content: `
 <span class="g"><span class="chord">F</span>Por</span> mucho <span class="g"><span class="chord">G</span>tiempo</span> bus<span class="g"><span class="chord">C</span>qué,</span> <span class="g"><span class="chord">Em</span>..</span>
 <span class="g"><span class="chord">F</span>Una</span> ra<span class="g"><span class="chord">G</span>zón</span> de vi<span class="g"><span class="chord">C</span>vir,</span> <span class="g"><span class="chord">Em</span>..</span>
@@ -3325,5 +3330,53 @@ Todo el <span class="g"><span class="chord">C</span>día</span> <span class="g">
 <span class="g"><span class="chord">Em</span>Yo te amo,</span> <span class="g"><span class="chord">Am</span>yo te amo,</span>
 <span class="g"><span class="chord">F#m</span>De la roca</span> me refigia<span class="g"><span class="chord">B7</span>ré.</span>
         `
+    },
+
+    {
+        title: "Vengo a Adorarte",
+        artist: "Hillsong",
+        key: "D",
+        type: "Adoración",
+        content: `
+[C1]
+<span class="g"><span class="chord">D</span>Oh luz</span> del <span class="g"><span class="chord">A</span>mundo</span> ba<span class="g"><span class="chord">G</span>jasta</span> a la os<span class="g"><span class="chord">A</span>curidad,</span>
+Mis <span class="g"><span class="chord">D</span>ojos</span> a<span class="g"><span class="chord">A</span>briste</span> pude <span class="g"><span class="chord">G</span>ver.</span>
+
+Be<span class="g"><span class="chord">D</span>lleza</span> que <span class="g"><span class="chord">A</span>causa</span> que <span class="g"><span class="chord">G</span>mi ser</span> te a<span class="g"><span class="chord">A</span>dore,</span>
+Espe<span class="g"><span class="chord">D</span>ranza</span> de <span class="g"><span class="chord">A</span>vida</span> en <span class="g"><span class="chord">G</span>ti.</span>
+
+[Coro]
+Vengo a ado<span class="g"><span class="chord">D</span>rarte,</span>
+Vengo a pos<span class="g"><span class="chord">A</span>trarme,</span>
+Vengo a de<span class="g"><span class="chord">Bm</span>cir,</span>
+Que eres mi <span class="g"><span class="chord">G</span>Dios.</span>
+
+Eres simplemente <span class="g"><span class="chord">D</span>bello,</span>
+Simplemente <span class="g"><span class="chord">A</span>digno,</span>
+Tan maravi<span class="g"><span class="chord">Bm</span>lloso</span>
+para <span class="g"><span class="chord">G</span>mi.</span>
+
+[C2]
+<span class="g"><span class="chord">D</span>Oh Rey</span> e<span class="g"><span class="chord">A</span>termo</span> tan <span class="g"><span class="chord">G</span>alto</span> y exal<span class="g"><span class="chord">A</span>tado,</span>
+Glo<span class="g"><span class="chord">D</span>rioso</span> en el <span class="g"><span class="chord">A</span>cielo</span> eres <span class="g"><span class="chord">G</span>tu.</span>
+
+Al <span class="g"><span class="chord">D</span>mundo</span> que hi<span class="g"><span class="chord">A</span>ciste</span> hu<span class="g"><span class="chord">G</span>milde</span> vi<span class="g"><span class="chord">A</span>niste,</span>
+<span class="g"><span class="chord">D</span>Pobre</span> te hi<span class="g"><span class="chord">A</span>ciste</span> por <span class="g"><span class="chord">G</span>amor.</span>
+
+[Coro]
+Vengo a ado<span class="g"><span class="chord">D</span>rarte,</span>
+Vengo a pos<span class="g"><span class="chord">A</span>trarme,</span>
+Vengo a de<span class="g"><span class="chord">Bm</span>cir,</span>
+Que eres mi <span class="g"><span class="chord">G</span>Dios.</span>
+
+Eres simplemente <span class="g"><span class="chord">D</span>bello,</span>
+Simplemente <span class="g"><span class="chord">A</span>digno,</span>
+Tan maravi<span class="g"><span class="chord">Bm</span>lloso</span>
+para <span class="g"><span class="chord">G</span>mi.</span>
+
+[Puente]
+Nun<span class="g"><span class="chord">A</span>ca</span> sa<span class="g"><span class="chord">Bm</span>bre</span> cuan<span class="g"><span class="chord">G</span>to costo,</span>
+Ver <span class="g"><span class="chord">A</span>mi</span> pe<span class="g"><span class="chord">Bm</span>cado</span> <span class="g"><span class="chord">G</span>en la cruz...</span>
+`
     },
 ];
