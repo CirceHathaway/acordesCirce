@@ -3339,7 +3339,7 @@ Todo el <span class="g"><span class="chord">C</span>día</span> <span class="g">
         type: "Adoración",
         content: `
 [C1]
-<span class="g"><span class="chord">D</span>Oh luz</span> del <span class="g"><span class="chord">A</span>mundo</span> ba<span class="g"><span class="chord">G</span>jasta</span> a la os<span class="g"><span class="chord">A</span>curidad,</span>
+<span class="g"><span class="chord">D</span>Oh luz</span> del <span class="g"><span class="chord">A</span>mundo</span> ba<span class="g"><span class="chord">G</span>jaste</span> a la os<span class="g"><span class="chord">A</span>curidad,</span>
 Mis <span class="g"><span class="chord">D</span>ojos</span> a<span class="g"><span class="chord">A</span>briste</span> pude <span class="g"><span class="chord">G</span>ver.</span>
 
 Be<span class="g"><span class="chord">D</span>lleza</span> que <span class="g"><span class="chord">A</span>causa</span> que <span class="g"><span class="chord">G</span>mi ser</span> te a<span class="g"><span class="chord">A</span>dore,</span>
@@ -3360,7 +3360,7 @@ para <span class="g"><span class="chord">G</span>mi.</span>
 <span class="g"><span class="chord">D</span>Oh Rey</span> e<span class="g"><span class="chord">A</span>termo</span> tan <span class="g"><span class="chord">G</span>alto</span> y exal<span class="g"><span class="chord">A</span>tado,</span>
 Glo<span class="g"><span class="chord">D</span>rioso</span> en el <span class="g"><span class="chord">A</span>cielo</span> eres <span class="g"><span class="chord">G</span>tu.</span>
 
-Al <span class="g"><span class="chord">D</span>mundo</span> que hi<span class="g"><span class="chord">A</span>ciste</span> hu<span class="g"><span class="chord">G</span>milde</span> vi<span class="g"><span class="chord">A</span>niste,</span>
+Al <span class="g"><span class="chord">D</span>mundo</span> que <span class="g"><span class="chord">A</span>hiciste</span> hu<span class="g"><span class="chord">G</span>milde</span> vi<span class="g"><span class="chord">A</span>niste,</span>
 <span class="g"><span class="chord">D</span>Pobre</span> te hi<span class="g"><span class="chord">A</span>ciste</span> por <span class="g"><span class="chord">G</span>amor.</span>
 
 [Coro]
