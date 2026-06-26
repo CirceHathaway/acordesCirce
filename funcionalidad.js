@@ -47,7 +47,7 @@ let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
 
-/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE --- */
+/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE (PARALELO) --- */
 async function initFirebase() {
     try {
         const appModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js");
@@ -79,7 +79,7 @@ async function initFirebase() {
     }
 }
 
-/* --- INICIALIZACIÓN --- */
+/* --- INICIALIZACIÓN (OFFLINE FIRST) --- */
 window.onload = function() {
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
@@ -203,23 +203,20 @@ function closeSongUI() {
     window.scrollTo(0,0);
 }
 
-// NUEVA LÓGICA DE DIBUJADO DE TARJETAS (CARDS) Y ETIQUETAS
+// LÓGICA DE DIBUJADO DE TARJETAS (CARDS) Y ETIQUETAS
 function updateSongView() {
     if (currentSongIndex === -1) return;
     const songOriginal = songs[currentSongIndex].content;
     
-    let hasIntro = false, hasV1 = false, hasV2 = false, hasV3 = false, hasV4 = false, hasV5 = false, hasV6 = false, hasP = false, hasC = false, hasC2 = false, hasFinal = false;
+    let hasIntro = false, hasV1 = false, hasV2 = false, hasV3 = false, hasV4 = false, hasV5 = false, hasV6 = false, hasP = false, hasP2 = false, hasC = false, hasC2 = false, hasC3 = false, hasC4 = false, hasIns = false, hasFinal = false;
     
-    // Separamos el texto usando una expresión regular para agarrar los "[Corchetes]"
     const sections = songOriginal.split(/\[(.*?)\]/g);
     let htmlOutput = "";
 
-    // Si hay texto ANTES del primer corchete, lo envolvemos genérico
     if (sections[0] && sections[0].trim() !== "") {
         htmlOutput += `<div class="song-card"><div class="song-lyrics">${sections[0]}</div></div>`;
     }
 
-    // Leemos en pares (Tag y Contenido)
     for (let i = 1; i < sections.length; i += 2) {
         let tag = sections[i].trim();
         let content = sections[i+1] ? sections[i+1] : "";
@@ -227,7 +224,6 @@ function updateSongView() {
         let secId = "", secClass = "", abrv = "", label = tag;
         const lowerTag = tag.toLowerCase();
 
-        // Mapeo automático de colores, IDs y abreviaturas
         if (lowerTag === 'intro') { secId = 'intro'; secClass = 'bg-intro'; abrv = 'IN'; hasIntro = true; }
         else if (lowerTag === 'verso' || lowerTag === 'verso 1') { secId = 'v1'; secClass = 'bg-v1'; abrv = 'V1'; hasV1 = true; }
         else if (lowerTag === 'verso 2') { secId = 'v2'; secClass = 'bg-v2'; abrv = 'V2'; hasV2 = true; }
@@ -236,15 +232,17 @@ function updateSongView() {
         else if (lowerTag === 'verso 5') { secId = 'v5'; secClass = 'bg-v5'; abrv = 'V5'; hasV5 = true; }
         else if (lowerTag === 'verso 6') { secId = 'v6'; secClass = 'bg-v6'; abrv = 'V6'; hasV6 = true; }
         else if (lowerTag === 'puente') { secId = 'p'; secClass = 'bg-p'; abrv = 'P'; hasP = true; }
+        else if (lowerTag === 'puente 2') { secId = 'p2'; secClass = 'bg-p2'; abrv = 'P2'; hasP2 = true; }
         else if (lowerTag === 'coro') { secId = 'c'; secClass = 'bg-c'; abrv = 'C'; hasC = true; }
         else if (lowerTag === 'coro 2') { secId = 'c2'; secClass = 'bg-c2'; abrv = 'C2'; hasC2 = true; }
+        else if (lowerTag === 'coro 3') { secId = 'c3'; secClass = 'bg-c3'; abrv = 'C3'; hasC3 = true; }
+        else if (lowerTag === 'coro 4') { secId = 'c4'; secClass = 'bg-c4'; abrv = 'C4'; hasC4 = true; }
+        else if (lowerTag === 'instrumental') { secId = 'ins'; secClass = 'bg-ins'; abrv = 'INS'; hasIns = true; }
         else if (lowerTag === 'final') { secId = 'final'; secClass = 'bg-final'; abrv = 'F'; hasFinal = true; }
         else { secId = 'misc'; secClass = 'bg-v1'; abrv = tag.substring(0,2).toUpperCase(); } 
         
-        // Limpiamos saltos de linea innecesarios en el contenido
         content = content.replace(/^\s+|\s+$/g, '');
 
-        // Construimos la Estructura de la Tarjeta HTML
         htmlOutput += `
         <div id="sec-${secId}" class="song-card">
             <div class="song-badge ${secClass}">
@@ -255,7 +253,6 @@ function updateSongView() {
         </div>`;
     }
 
-    // Activar o desactivar botones superiores según correspondan
     if(document.getElementById('nav-intro')) document.getElementById('nav-intro').style.display = hasIntro ? 'flex' : 'none';
     if(document.getElementById('nav-v1')) document.getElementById('nav-v1').style.display = hasV1 ? 'flex' : 'none';
     if(document.getElementById('nav-v2')) document.getElementById('nav-v2').style.display = hasV2 ? 'flex' : 'none';
@@ -264,11 +261,14 @@ function updateSongView() {
     if(document.getElementById('nav-v5')) document.getElementById('nav-v5').style.display = hasV5 ? 'flex' : 'none';
     if(document.getElementById('nav-v6')) document.getElementById('nav-v6').style.display = hasV6 ? 'flex' : 'none';
     if(document.getElementById('nav-p'))  document.getElementById('nav-p').style.display  = hasP  ? 'flex' : 'none';
+    if(document.getElementById('nav-p2')) document.getElementById('nav-p2').style.display = hasP2 ? 'flex' : 'none';
     if(document.getElementById('nav-c'))  document.getElementById('nav-c').style.display  = hasC  ? 'flex' : 'none';
     if(document.getElementById('nav-c2')) document.getElementById('nav-c2').style.display = hasC2 ? 'flex' : 'none';
+    if(document.getElementById('nav-c3')) document.getElementById('nav-c3').style.display = hasC3 ? 'flex' : 'none';
+    if(document.getElementById('nav-c4')) document.getElementById('nav-c4').style.display = hasC4 ? 'flex' : 'none';
+    if(document.getElementById('nav-ins')) document.getElementById('nav-ins').style.display = hasIns ? 'flex' : 'none';
     if(document.getElementById('nav-final')) document.getElementById('nav-final').style.display = hasFinal ? 'flex' : 'none';
 
-    // Ahora aplicamos la lógica musical sobre este nuevo HTML ya estructurado en tarjetas
     let tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlOutput;
     
@@ -502,7 +502,9 @@ window.removeFromPlaylist = function(index, rowElement) {
     if (rowElement && rowElement.parentNode) {
         rowElement.parentNode.removeChild(rowElement);
         document.querySelectorAll('#tableBody .index-col').forEach((td, i) => { td.innerText = i + 1; });
-        if(myPlaylist.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; }
+        if(myPlaylist.length === 0) {
+            document.getElementById('tableBody').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
+        }
     } else {
         window.loadPlaylistMode(); 
     }
