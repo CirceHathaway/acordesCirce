@@ -110,6 +110,7 @@ tr:hover { background-color: #252525; }
     white-space: nowrap;
 }
 
+/* Título Enorme y Dominante */
 #detailTitle { margin: 0; font-size: 1.8rem; color: var(--text-primary); text-overflow: ellipsis; overflow: hidden; line-height: 1.2; font-weight: 900;}
 
 .hamburger-btn {
@@ -345,7 +346,21 @@ tr:hover { background-color: #252525; }
 .key-btn:hover { background: var(--accent); color: black; }
 
 /* --- MODALES PEQUEÑOS (ISLA FLOTANTE INFERIOR) --- */
-.mini-modal { display: none; position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); background: rgba(28, 31, 38, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 10px 15px; border-radius: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); border: none; z-index: 1200; }
+.mini-modal {
+    display: none; 
+    position: fixed; 
+    bottom: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(28, 31, 38, 0.85); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    padding: 10px 15px;
+    border-radius: 50px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+    border: none;
+    z-index: 1200;
+}
 .mini-modal.active { display: flex; flex-direction: row; flex-wrap: nowrap; width: max-content; gap: 12px; justify-content: center; align-items: center; animation: popUpFloating 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 @keyframes popUpFloating { 0% { transform: translateX(-50%) translateY(40px) scale(0.8); opacity: 0; } 100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; } }
 
@@ -359,7 +374,7 @@ tr:hover { background-color: #252525; }
 #sectionNoteModal .modal-content {
     max-width: 450px;
     width: 90%;
-    height: 70vh; /* Ocupa el 75% del alto de la pantalla */
+    height: 75vh;
     max-height: 750px;
     display: flex;
     flex-direction: column;
@@ -369,7 +384,6 @@ tr:hover { background-color: #252525; }
 #sectionNoteTextarea {
     width: 100%;
     flex: 1;
-    height: 250px; /* Cuadro grande y cómodo */
     background: #121212;
     color: #fff;
     border: 1px solid #333;
@@ -382,10 +396,10 @@ tr:hover { background-color: #252525; }
     font-size: 1.05rem;
     line-height: 1.5;
     transition: background-color 0.2s, border-color 0.2s, padding 0.2s;
-    margin-bottom: 0; /* Para el modo lectura queda pegado al fondo */
+    margin-bottom: 0; 
 }
 
-/* Modo Lectura (Sin bordes, sin padding) */
+/* Modo Lectura */
 #sectionNoteTextarea[readonly] {
     background-color: transparent;
     border-color: transparent;
@@ -394,7 +408,6 @@ tr:hover { background-color: #252525; }
     padding: 0; 
 }
 
-/* Botones flotantes invisibles del Header (Editar/Borrar) */
 .note-header-btn {
     background: transparent;
     border: none;
@@ -409,7 +422,6 @@ tr:hover { background-color: #252525; }
 .note-header-btn:hover { color: var(--text-primary); transform: scale(1.1); }
 .note-header-btn.delete-btn:hover { color: #e55039; }
 
-/* Contenedor de Guardar/Cancelar (Modo Edición) */
 .note-modal-actions {
     display: flex;
     gap: 12px;
@@ -419,7 +431,7 @@ tr:hover { background-color: #252525; }
 
 .overlay-click-close { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 150; background: transparent; }
 
-/* Footer */
+/* Footer Original */
 .custom-footer { margin-top: 60px; background-color: var(--card-bg); border-top: 1px solid #333; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .footer-copyright { color: #7f8c8d; font-size: 0.95rem; font-weight: 500; }
 .footer-credit { color: #7f8c8d; font-size: 0.95rem; }
@@ -451,12 +463,12 @@ tr:hover { background-color: #252525; }
     .modal-btn { width: 40px; height: 40px; font-size: 14px; }
     .modal-btn-orig { min-width: 55px; padding: 0 15px; font-size: 13px; }
     
-    #sectionNoteTextarea { height: 180px; }
+    #sectionNoteModal .modal-content { height: 85vh; padding: 20px; }
 
     .custom-footer { flex-direction: column; gap: 15px; text-align: center; padding-bottom: 80px; }
 }
 
-/* Botones Acción y Funciones Live */
+/* Botones Acción y Funciones Live Originales */
 .action-col { text-align: center; width: 50px; }
 .btn-add, .btn-remove { background: none; border: 2px solid; width: 30px; height: 30px; border-radius: 50%; font-weight: bold; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
 .btn-add { border-color: #4cd137; color: #4cd137; }

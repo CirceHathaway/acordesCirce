@@ -18,6 +18,7 @@ const firebaseConfig = {
 const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const flatMap = { "Db": "C#", "Eb": "D#", "Gb": "F#", "Ab": "G#", "Bb": "A#" };
 const scaleSpanish = ["DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI"];
+const filterKeys = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 /* --- ESTADO GLOBAL (CON PERSISTENCIA) --- */
 let activeFilters = { type: null, key: null, search: '' };
@@ -27,7 +28,7 @@ let currentSemitones = 0;
 let isSpanish = false; 
 let currentSectionNoteId = null; 
 
-// LEER MEMORIA
+// LEER MEMORIA LOCAL
 let savedSize = localStorage.getItem('acordify_fontSize');
 let currentFontSize = savedSize ? parseInt(savedSize) : 17;
 let showChords = localStorage.getItem('acordify_showChords') !== 'false'; 
@@ -43,10 +44,184 @@ const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU', 'ANGEL', 'CRIS'];
 let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
 let isConnected = !!currentUserKey; 
 
-// Chat & Presence
 let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
+
+/* --- DECLARACIONES EN WINDOW PARA PREVENIR ERRORES DE MODULO --- */
+window.showNotification = function(message) {
+    const toast = document.getElementById("toastNotification");
+    if (!toast) return; 
+    toast.innerText = message;
+    toast.className = "custom-notification show"; 
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+window.openKeyModal = function() { 
+    const modal = document.getElementById('keyModal');
+    if(modal) modal.style.display = 'flex'; 
+}
+
+window.closeKeyModal = function() { 
+    const modal = document.getElementById('keyModal');
+    if(modal) modal.style.display = 'none'; 
+}
+
+window.generateKeyButtons = function() {
+    const grid = document.getElementById('keyGrid');
+    if (!grid) return; 
+    grid.innerHTML = '';
+    filterKeys.forEach(key => {
+        let btn = document.createElement('button');
+        btn.className = 'key-btn';
+        btn.innerText = key;
+        btn.onclick = function() { window.openSubKeyModal(key); };
+        grid.appendChild(btn);
+    });
+}
+
+window.openSubKeyModal = function(baseKey) {
+    window.closeKeyModal(); 
+    let subModal = document.getElementById('subKeyModal');
+    if (!subModal) {
+        subModal = document.createElement('div'); 
+        subModal.id = 'subKeyModal'; 
+        subModal.className = 'modal';
+        subModal.innerHTML = `<div class="modal-content" style="max-width: 300px;"><h3 style="color: var(--text-primary); margin-top: 0;">¿Mayor o Menor?</h3><div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;"><button id="btnMajorKey" class="key-btn" style="flex: 1; padding: 20px; font-size: 1.5rem;"></button><button id="btnMinorKey" class="key-btn" style="flex: 1; padding: 20px; font-size: 1.5rem;"></button></div><button class="btn-text" style="margin-top: 20px;" onclick="window.closeSubKeyModal(); window.openKeyModal();">← Volver</button></div>`;
+        document.body.appendChild(subModal);
+    }
+    const btnMajor = document.getElementById('btnMajorKey'); 
+    btnMajor.innerText = baseKey; 
+    btnMajor.onclick = function() { window.filterByKey(baseKey); window.closeSubKeyModal(); };
+    
+    const btnMinor = document.getElementById('btnMinorKey'); 
+    btnMinor.innerText = baseKey + 'm'; 
+    btnMinor.onclick = function() { window.filterByKey(baseKey + 'm'); window.closeSubKeyModal(); };
+    subModal.style.display = 'flex';
+}
+
+window.closeSubKeyModal = function() { 
+    const subModal = document.getElementById('subKeyModal'); 
+    if (subModal) subModal.style.display = 'none'; 
+}
+
+window.filterByKey = function(selectedKey) { 
+    activeFilters.key = selectedKey; 
+    window.closeKeyModal(); 
+    window.applyGlobalFilters(); 
+}
+
+window.applyGlobalFilters = function() { 
+    let filtered = songs.filter(song => { 
+        if (activeFilters.type && song.type !== activeFilters.type) return false; 
+        if (activeFilters.key && song.key !== activeFilters.key) return false; 
+        if (activeFilters.search) { 
+            const query = activeFilters.search.toLowerCase(); 
+            const matchesTitle = song.title.toLowerCase().includes(query); 
+            const matchesArtist = song.artist.toLowerCase().includes(query); 
+            if (!matchesTitle && !matchesArtist) return false; 
+        } 
+        return true; 
+    }); 
+    filtered.sort((a, b) => a.title.localeCompare(b.title)); 
+    displaySongs = filtered; 
+    renderTable(displaySongs); 
+    updateFilterVisuals();  
+}
+
+window.filterByType = function(type) { 
+    activeFilters.type = activeFilters.type === type ? null : type; 
+    window.applyGlobalFilters(); 
+}
+
+window.filterSongs = function() { 
+    const query = document.getElementById('searchInput').value; 
+    activeFilters.search = query; 
+    window.applyGlobalFilters(); 
+}
+
+window.sortSongs = function(criteria) { 
+    let sorted = [...displaySongs]; 
+    if (criteria === 'artist') { 
+        sorted.sort((a, b) => a.artist.localeCompare(b.artist)); 
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); 
+        if(window.event && window.event.target) window.event.target.classList.add('active'); 
+    } 
+    renderTable(sorted); 
+}
+
+window.resetFilters = function() { 
+    activeFilters = { type: null, key: null, search: '' }; 
+    document.getElementById('searchInput').value = ''; 
+    window.applyGlobalFilters(); 
+}
+
+window.filterByArtist = function(artistName) { 
+    const searchInput = document.getElementById('searchInput'); 
+    if(searchInput) { searchInput.value = artistName; activeFilters.search = artistName; window.applyGlobalFilters(); } 
+    if(window.event) window.event.stopPropagation(); 
+}
+
+window.openLiveModal = function() { 
+    if (!firebaseLoaded) { window.showNotification("Necesitas internet para esto 📡"); return; } 
+    const modal = document.getElementById('liveModal'); 
+    if(modal) modal.style.display = 'flex'; 
+    if (isConnected) showConnectedScreen(); else window.resetLiveModal(); 
+}
+
+window.closeLiveModal = function() { 
+    const modal = document.getElementById('liveModal'); 
+    if(modal) modal.style.display = 'none'; 
+}
+
+window.resetLiveModal = function() { 
+    document.getElementById('liveConnectionScreen').style.display = 'block'; 
+    document.getElementById('liveConnected').style.display = 'none'; 
+    document.getElementById('sessionCodeInput').value = ''; 
+}
+
+window.askClearPlaylist = function() { 
+    const modal = document.getElementById('confirmModal'); 
+    if(modal) modal.style.display = 'flex'; 
+}
+
+window.closeConfirmModal = function() { 
+    const modal = document.getElementById('confirmModal'); 
+    if(modal) modal.style.display = 'none'; 
+}
+
+window.executeClearList = function() { 
+    myPlaylist = []; 
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
+    window.closeConfirmModal(); 
+    window.showNotification("Lista vaciada correctamente"); 
+    if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode(); 
+    broadcastChange(); 
+}
+
+window.sharePlaylistUrl = function() { 
+    if (myPlaylist.length === 0) { window.showNotification("Lista vacía."); return; } 
+    const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(','); 
+    if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl }); 
+    else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); } 
+}
+
+window.toggleModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    const overlay = document.getElementById('modalOverlay');
+    if (modal && modal.classList.contains('active')) {
+        window.closeAllModals();
+    } else if(modal) {
+        window.closeAllModals();
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        if(overlay) overlay.style.display = 'block';
+    }
+}
+
+window.openCommentModal = function() { const modal = document.getElementById('commentModal'); if (modal) modal.style.display = 'flex'; }
+window.closeCommentModal = function() { const modal = document.getElementById('commentModal'); if (modal) modal.style.display = 'none'; }
+
 
 /* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE --- */
 async function initFirebase() {
@@ -289,25 +464,11 @@ window.toggleNotation = function() { isSpanish = !isSpanish; updateSongView(); }
 window.changeFontSize = function(amount) { currentFontSize += amount; if (currentFontSize < 8) currentFontSize = 8; if (currentFontSize > 30) currentFontSize = 30; localStorage.setItem('acordify_fontSize', currentFontSize); updateSongView(); }
 window.resetFontSize = function() { currentFontSize = 17; localStorage.setItem('acordify_fontSize', currentFontSize); updateSongView(); window.closeAllModals(); }
 
-window.toggleModal = function(modalId) {
-    const modal = document.getElementById(modalId);
-    const overlay = document.getElementById('modalOverlay');
-    if (modal.classList.contains('active')) {
-        window.closeAllModals();
-    } else {
-        window.closeAllModals();
-        modal.classList.add('active');
-        modal.style.display = 'flex';
-        if(overlay) overlay.style.display = 'block';
-    }
-}
-
 window.closeAllModals = function() {
     document.querySelectorAll('.mini-modal').forEach(m => { m.classList.remove('active'); m.style.display = 'none'; });
     const overlay = document.getElementById('modalOverlay'); if(overlay) overlay.style.display = 'none';
 }
 
-/* --- CONTROLADOR DE SCROLL --- */
 window.addEventListener('scroll', () => {
     const header = document.getElementById('songHeaderSticky');
     if (header && document.getElementById('songDetailView').style.display === 'block') {
@@ -330,13 +491,11 @@ window.openSectionNoteModal = function(secId, secLabel) {
     const textarea = document.getElementById('sectionNoteTextarea');
     
     if (currentSongNotes[secId]) {
-        // MODO LECTURA: Mostrar los íconos de Editar/Borrar arriba. Ocultar los botones de abajo.
         textarea.value = currentSongNotes[secId];
         textarea.setAttribute('readonly', true);
         document.getElementById('sectionNoteHeaderActions').style.display = 'flex';
         document.getElementById('sectionNoteEditActions').style.display = 'none';
     } else {
-        // MODO EDICIÓN: El campo está vacío. Ocultar íconos de arriba, mostrar botones de abajo.
         textarea.value = '';
         textarea.removeAttribute('readonly');
         document.getElementById('sectionNoteHeaderActions').style.display = 'none';
@@ -361,13 +520,11 @@ window.cancelSectionNoteEdit = function() {
     let currentSongNotes = savedSectionNotes[songTitle] || {};
     
     if (currentSongNotes[currentSectionNoteId]) {
-        // Restaurar estado de Lectura si ya existía una nota
         document.getElementById('sectionNoteTextarea').value = currentSongNotes[currentSectionNoteId];
         document.getElementById('sectionNoteTextarea').setAttribute('readonly', true);
         document.getElementById('sectionNoteHeaderActions').style.display = 'flex';
         document.getElementById('sectionNoteEditActions').style.display = 'none';
     } else {
-        // Si era nueva y canceló, cerramos el modal
         window.closeSectionNoteModal();
     }
 }
@@ -412,35 +569,99 @@ window.deleteSectionNote = function() {
     window.showNotification("Anotación eliminada 🗑️");
 }
 
-// Ventanas Modales Generales
-window.openCommentModal = function() { const modal = document.getElementById('commentModal'); if (modal) modal.style.display = 'flex'; }
-window.closeCommentModal = function() { const modal = document.getElementById('commentModal'); if (modal) modal.style.display = 'none'; }
-
+/* --- CLICK FUERA DE MODALES --- */
 window.onclick = function(event) {
-    let keyModal = document.getElementById('keyModal'); let subKeyModal = document.getElementById('subKeyModal'); let confirmModal = document.getElementById('confirmModal'); let commentModal = document.getElementById('commentModal'); let sectionNoteModal = document.getElementById('sectionNoteModal');
-    if (event.target == keyModal) keyModal.style.display = "none"; if (subKeyModal && event.target == subKeyModal) window.closeSubKeyModal(); if (event.target == confirmModal) window.closeConfirmModal(); if (commentModal && event.target == commentModal) window.closeCommentModal(); if (sectionNoteModal && event.target == sectionNoteModal) window.closeSectionNoteModal();
+    let keyModal = document.getElementById('keyModal'); 
+    let subKeyModal = document.getElementById('subKeyModal'); 
+    let confirmModal = document.getElementById('confirmModal'); 
+    let commentModal = document.getElementById('commentModal'); 
+    let sectionNoteModal = document.getElementById('sectionNoteModal');
+    let liveModal = document.getElementById('liveModal');
+
+    if (keyModal && event.target === keyModal) window.closeKeyModal();
+    if (subKeyModal && event.target === subKeyModal) window.closeSubKeyModal();
+    if (confirmModal && event.target === confirmModal) window.closeConfirmModal();
+    if (commentModal && event.target === commentModal) window.closeCommentModal();
+    if (sectionNoteModal && event.target === sectionNoteModal) window.closeSectionNoteModal();
+    if (liveModal && event.target === liveModal) window.closeLiveModal();
+    
     window.closeHamburgerDropdown(); 
 }
 
-/* --- FILTROS Y RENDER DE INICIO --- */
-window.applyGlobalFilters = function() { let filtered = songs.filter(song => { if (activeFilters.type && song.type !== activeFilters.type) return false; if (activeFilters.key && song.key !== activeFilters.key) return false; if (activeFilters.search) { const query = activeFilters.search.toLowerCase(); const matchesTitle = song.title.toLowerCase().includes(query); const matchesArtist = song.artist.toLowerCase().includes(query); if (!matchesTitle && !matchesArtist) return false; } return true; }); filtered.sort((a, b) => a.title.localeCompare(b.title)); displaySongs = filtered; renderTable(displaySongs); updateFilterVisuals();  }
-window.filterByType = function(type) { activeFilters.type = activeFilters.type === type ? null : type; window.applyGlobalFilters(); }
-window.filterByKey = function(selectedKey) { activeFilters.key = activeFilters.key === selectedKey ? null : selectedKey; window.closeKeyModal(); window.applyGlobalFilters(); }
-window.filterByArtist = function(artistName) { const searchInput = document.getElementById('searchInput'); if(searchInput) { searchInput.value = artistName; activeFilters.search = artistName; window.applyGlobalFilters(); } if(event) event.stopPropagation(); }
-window.filterSongs = function() { const query = document.getElementById('searchInput').value; activeFilters.search = query; window.applyGlobalFilters(); }
-window.sortSongs = function(criteria) { let sorted = [...displaySongs]; if (criteria === 'artist') { sorted.sort((a, b) => a.artist.localeCompare(b.artist)); document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); if(event && event.target) event.target.classList.add('active'); } renderTable(sorted); }
-window.resetFilters = function() { activeFilters = { type: null, key: null, search: '' }; document.getElementById('searchInput').value = ''; window.applyGlobalFilters(); }
+function updateFilterVisuals() { 
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText === activeFilters.type) btn.classList.add('active');
+        if ((btn.innerText === "Nota" || btn.innerText.startsWith("Nota: ")) && activeFilters.key) {
+            btn.classList.add('active');
+            btn.innerText = "Nota: " + activeFilters.key;
+        } else if (btn.innerText.startsWith("Nota: ") && !activeFilters.key) {
+            btn.innerText = "Nota";
+        }
+    }); 
+}
 
-function updateFilterVisuals() { document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); document.querySelectorAll(".filter-btn").forEach(btn => { if (btn.innerText === activeFilters.type) btn.classList.add('active'); if (btn.innerText === "Por Nota" && activeFilters.key) { btn.classList.add('active'); btn.innerText = "Nota: " + activeFilters.key; } else if (btn.innerText.startsWith("Nota: ")) { btn.innerText = "Por Nota"; } }); }
-
-function renderTable(data) { const tbody = document.getElementById('tableBody'); if (!tbody) return; if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; } let htmlContent = ''; data.forEach((song, index) => { const originalIndex = songs.indexOf(song); const isAdded = myPlaylist.includes(originalIndex); const btnClass = isAdded ? "btn-add added" : "btn-add"; const btnText = isAdded ? "✓" : "+"; const btnAction = isAdded ? "" : `onclick="addToPlaylist(${originalIndex}, this)"`; htmlContent += `<tr><td class="index-col">${index + 1}</td><td class="song-title" onclick="openSong(${originalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td><span class="artist-link" onclick="filterByArtist('${song.artist}')">${song.artist}</span></td><td class="action-col"><button id="addBtn-${originalIndex}" class="${btnClass}" ${btnAction}>${btnText}</button></td></tr>`; }); tbody.innerHTML = htmlContent; }
+function renderTable(data) { 
+    const tbody = document.getElementById('tableBody'); 
+    if (!tbody) return; 
+    if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; } 
+    let htmlContent = ''; 
+    data.forEach((song, index) => { 
+        const originalIndex = songs.indexOf(song); 
+        const isAdded = myPlaylist.includes(originalIndex); 
+        const btnClass = isAdded ? "btn-add added" : "btn-add"; 
+        const btnText = isAdded ? "✓" : "+"; 
+        const btnAction = isAdded ? "" : `onclick="window.addToPlaylist(${originalIndex}, this)"`; 
+        htmlContent += `<tr><td class="index-col">${index + 1}</td><td class="song-title" onclick="window.openSong(${originalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td><span class="artist-link" onclick="window.filterByArtist('${song.artist}')">${song.artist}</span></td><td class="action-col"><button id="addBtn-${originalIndex}" class="${btnClass}" ${btnAction}>${btnText}</button></td></tr>`; 
+    }); 
+    tbody.innerHTML = htmlContent; 
+}
 
 /* --- GESTIÓN DE PLAYLIST --- */
 window.addToPlaylist = function(index, btnElement) { if (!myPlaylist.includes(index)) { myPlaylist.push(index); localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); if(btnElement) { btnElement.innerText = "✓"; btnElement.classList.add('added'); btnElement.onclick = null; } window.showNotification("Canción agregada a tu lista"); broadcastChange(); } }
-window.removeFromPlaylist = function(index, rowElement) { myPlaylist = myPlaylist.filter(id => id !== index); localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); if (rowElement && rowElement.parentNode) { rowElement.parentNode.removeChild(rowElement); document.querySelectorAll('#tableBody .index-col').forEach((td, i) => { td.innerText = i + 1; }); if(myPlaylist.length === 0) { document.getElementById('tableBody').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; } } else { window.loadPlaylistMode(); } broadcastChange(); }
-window.loadPlaylistMode = function() { const urlParams = new URLSearchParams(window.location.search); const sharedIds = urlParams.get('ids'); let playlistIds = sharedIds ? sharedIds.split(',').map(Number) : myPlaylist; currentContextList = playlistIds; if (sharedIds) { const shareBtn = document.getElementById('shareListBtn'); if(shareBtn) { shareBtn.innerText = "Guardar esta lista compartida"; shareBtn.onclick = function() { myPlaylist = playlistIds; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.showNotification("¡Lista guardada!"); setTimeout(() => window.location.href = 'lista.html', 2000); }; } } displaySongs = playlistIds.map(id => songs[id]).filter(s => s !== undefined); renderPlaylistTable(displaySongs, playlistIds); }
-function renderPlaylistTable(songsData, originalIds) { const tbody = document.getElementById('tableBody'); if(!tbody) return; if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; } let htmlContent = ''; songsData.forEach((song, i) => { const globalIndex = originalIds[i]; htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="event.preventDefault(); event.stopPropagation(); return false;"><td class="index-col">${i + 1}</td><td class="song-title" onclick="openSong(${globalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td style="color: var(--text-white);">${song.artist}</td><td class="action-col"><button class="btn-remove" onclick="removeFromPlaylist(${globalIndex}, this.closest('tr'))">×</button></td></tr>`; }); tbody.innerHTML = htmlContent; }
-window.sharePlaylistUrl = function() { if (myPlaylist.length === 0) { window.showNotification("Lista vacía."); return; } const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(','); if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl }); else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); } }
+window.removeFromPlaylist = function(index, rowElement) { 
+    myPlaylist = myPlaylist.filter(id => id !== index); 
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
+    if (rowElement && rowElement.parentNode) { 
+        rowElement.parentNode.removeChild(rowElement); 
+        document.querySelectorAll('#tableBody .index-col').forEach((td, i) => { td.innerText = i + 1; }); 
+        if(myPlaylist.length === 0) { 
+            const t = document.getElementById('tableBody');
+            if(t) t.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; 
+        } 
+    } else { 
+        window.loadPlaylistMode(); 
+    } 
+    broadcastChange(); 
+}
+
+window.loadPlaylistMode = function() { 
+    const urlParams = new URLSearchParams(window.location.search); 
+    const sharedIds = urlParams.get('ids'); 
+    let playlistIds = sharedIds ? sharedIds.split(',').map(Number) : myPlaylist; 
+    currentContextList = playlistIds; 
+    if (sharedIds) { 
+        const shareBtn = document.getElementById('shareListBtn'); 
+        if(shareBtn) { 
+            shareBtn.innerText = "Guardar esta lista compartida"; 
+            shareBtn.onclick = function() { myPlaylist = playlistIds; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.showNotification("¡Lista guardada!"); setTimeout(() => window.location.href = 'lista.html', 2000); }; 
+        } 
+    } 
+    displaySongs = playlistIds.map(id => songs[id]).filter(s => s !== undefined); 
+    renderPlaylistTable(displaySongs, playlistIds); 
+}
+
+function renderPlaylistTable(songsData, originalIds) { 
+    const tbody = document.getElementById('tableBody'); 
+    if(!tbody) return; 
+    if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; } 
+    let htmlContent = ''; 
+    songsData.forEach((song, i) => { 
+        const globalIndex = originalIds[i]; 
+        htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;"><td class="index-col">${i + 1}</td><td class="song-title" onclick="window.openSong(${globalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td style="color: var(--text-white);">${song.artist}</td><td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${globalIndex}, this.closest('tr'))">×</button></td></tr>`; 
+    }); 
+    tbody.innerHTML = htmlContent; 
+}
 
 function setupDelegatedDragEvents() {
     const tbody = document.getElementById('tableBody'); if (!tbody) return; let pressTimer, isDragging = false, draggingRow = null, startY = 0;
@@ -450,17 +671,10 @@ function setupDelegatedDragEvents() {
     tbody.addEventListener('touchend', endDrag); tbody.addEventListener('touchcancel', () => { clearTimeout(pressTimer); if (draggingRow) draggingRow.classList.remove('dragging'); isDragging = false; draggingRow = null; });
 }
 function saveNewOrder() { const rows = document.querySelectorAll('#tableBody tr'); const newPlaylist = []; rows.forEach(row => { const id = row.getAttribute('data-index'); if (id !== null) newPlaylist.push(parseInt(id)); }); myPlaylist = newPlaylist; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist; rows.forEach((row, index) => { const indexCell = row.querySelector('.index-col'); if(indexCell) indexCell.innerText = index + 1; }); window.showNotification("Orden guardado"); broadcastChange(); }
-window.askClearPlaylist = function() { const modal = document.getElementById('confirmModal'); if(modal) modal.style.display = 'flex'; }
-window.closeConfirmModal = function() { const modal = document.getElementById('confirmModal'); if(modal) modal.style.display = 'none'; }
-window.executeClearList = function() { myPlaylist = []; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.closeConfirmModal(); window.showNotification("Lista vaciada correctamente"); if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode(); broadcastChange(); }
 
-window.openLiveModal = function() { if (!firebaseLoaded) { window.showNotification("Necesitas internet para esto 📡"); return; } document.getElementById('liveModal').style.display = 'flex'; if (isConnected) showConnectedScreen(); else window.resetLiveModal(); }
-window.closeLiveModal = function() { document.getElementById('liveModal').style.display = 'none'; }
-window.resetLiveModal = function() { document.getElementById('liveConnectionScreen').style.display = 'block'; document.getElementById('liveConnected').style.display = 'none'; document.getElementById('sessionCodeInput').value = ''; }
-function showConnectedScreen() { document.getElementById('liveConnectionScreen').style.display = 'none'; document.getElementById('liveConnected').style.display = 'block'; const keyDisplay = document.getElementById('connectedKeyDisplay'); if(keyDisplay) keyDisplay.innerText = currentUserKey; }
 window.connectToSession = function() { if (!firebaseLoaded) { window.showNotification("Sin conexión para Live"); return; } const codeInput = document.getElementById('sessionCodeInput').value.trim().toUpperCase(); if (!codeInput) { alert("Ingresa la clave."); return; } if (!VALID_KEYS.includes(codeInput)) { alert("Clave incorrecta."); return; } currentUserKey = codeInput; sessionStorage.setItem('acordify_user_key', currentUserKey); isConnected = true; const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID); const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID); const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID); myConnectionRef = push(connectionsRef); set(myConnectionRef, currentUserKey); onDisconnect(myConnectionRef).remove(); get(roomRef).then((snapshot) => { if (snapshot.exists() && snapshot.val()) { window.showNotification("Sincronizando con la banda... 📡"); } else { set(roomRef, myPlaylist).then(() => window.showNotification("Sala iniciada. Lista subida ☁️")); set(chatRef, null); } startListening(roomRef); startChatListener(); updateUIConnected(); window.closeLiveModal(); }).catch((error) => { console.error(error); alert("Error de conexión"); }); }
 function reconnectSession() { if (!firebaseLoaded || !currentUserKey) return; const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID); const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID); myConnectionRef = push(connectionsRef); set(myConnectionRef, currentUserKey); onDisconnect(myConnectionRef).remove(); startListening(roomRef); startChatListener(); updateUIConnected(); broadcastChange(); }
-function startListening(roomRef) { onValue(roomRef, (snapshot) => { const cloudPlaylist = snapshot.val() || []; const cloudString = JSON.stringify(cloudPlaylist); if (cloudString !== JSON.stringify(myPlaylist) && cloudString !== lastCloudPlaylistString) { myPlaylist = cloudPlaylist; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); lastCloudPlaylistString = cloudString; if (window.location.pathname.includes('lista.html')) { window.loadPlaylistMode(); } else if (!window.location.hash) { document.querySelectorAll('.btn-add').forEach(btn => { const rowId = parseInt(btn.id.split('-')[1]); if (myPlaylist.includes(rowId)) { btn.innerText = "✓"; btn.classList.add('added'); btn.onclick = null; } else { btn.innerText = "+"; btn.classList.remove('added'); btn.setAttribute('onclick', `addToPlaylist(${rowId}, this)`); } }); } } }); }
+function startListening(roomRef) { onValue(roomRef, (snapshot) => { const cloudPlaylist = snapshot.val() || []; const cloudString = JSON.stringify(cloudPlaylist); if (cloudString !== JSON.stringify(myPlaylist) && cloudString !== lastCloudPlaylistString) { myPlaylist = cloudPlaylist; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); lastCloudPlaylistString = cloudString; if (window.location.pathname.includes('lista.html')) { window.loadPlaylistMode(); } else if (!window.location.hash) { document.querySelectorAll('.btn-add').forEach(btn => { const rowId = parseInt(btn.id.split('-')[1]); if (myPlaylist.includes(rowId)) { btn.innerText = "✓"; btn.classList.add('added'); btn.onclick = null; } else { btn.innerText = "+"; btn.classList.remove('added'); btn.setAttribute('onclick', `window.addToPlaylist(${rowId}, this)`); } }); } } }); }
 function updateUIConnected() { const btnLive = document.getElementById('btnLiveHeader'); const btnChat = document.getElementById('btnChatHeader'); if(btnLive) { btnLive.classList.add('active'); btnLive.innerText = "📡 " + currentUserKey; } if(btnChat) btnChat.style.display = 'flex'; }
 window.disconnectSession = function() { if (!isConnected) return; if (!firebaseLoaded) { isConnected = false; updateUIDisconnected(); return; } const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID); const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID); const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID); get(connectionsRef).then((snapshot) => { if (snapshot.size <= 1) { set(chatRef, null); } if(myConnectionRef) remove(myConnectionRef); off(roomRef); off(chatRef); isConnected = false; currentUserKey = null; sessionStorage.removeItem('acordify_user_key'); lastCloudPlaylistString = ""; updateUIDisconnected(); window.resetLiveModal(); window.showNotification("Desconectado 🔌"); window.closeLiveModal(); }); }
 function updateUIDisconnected() { const btnLive = document.getElementById('btnLiveHeader'); const btnChat = document.getElementById('btnChatHeader'); if(btnLive) { btnLive.classList.remove('active'); btnLive.innerText = "📡 LIVE"; } if(btnChat) { btnChat.style.display = 'none'; document.getElementById('chatOverlay').style.display = 'none'; isChatOpen = false; } }
@@ -477,7 +691,6 @@ let deferredPrompt; const actionBtn = document.getElementById('actionBtn'); wind
 if (actionBtn) { actionBtn.addEventListener('click', async (e) => { e.preventDefault(); if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; deferredPrompt = null; if (outcome === 'accepted') resetToShare(); } else window.shareApp(); }); }
 window.addEventListener('appinstalled', () => resetToShare());
 function resetToShare() { if (!actionBtn) return; actionBtn.innerHTML = "Compartir"; actionBtn.style.color = "#ffffff"; actionBtn.classList.remove('mode-install'); actionBtn.classList.add('mode-share'); }
-window.shareApp = function() { if (navigator.share) navigator.share({ title: 'Acordify', url: window.location.href }); else { navigator.clipboard.writeText(window.location.href); window.showNotification("Enlace copiado!"); } }
 
 let touchStartX = 0; let touchStartY = 0;
 document.addEventListener('touchstart', function(e) { if (document.getElementById('songDetailView').style.display === 'block') { touchStartX = e.changedTouches[0].screenX; touchStartY = e.changedTouches[0].screenY; } }, { passive: true }); 
