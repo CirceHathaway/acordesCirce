@@ -51,7 +51,7 @@
             </table>
         </div>
 
-        <div id="songDetailView">
+        <div id="songDetailView" style="display: none;">
             
             <div id="songHeaderSticky" class="song-header-sticky">
                 
@@ -93,7 +93,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"></path></svg>
                     </button>
                     
-                    <button id="btnNotaMain" class="clean-icon-btn" onclick="window.openCommentModal()" title="Ver Notas">
+                    <button id="btnNotaMain" class="clean-icon-btn" onclick="window.openCommentModal()" title="Ver Comentario Principal">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                     </button>
                 </div>
@@ -130,7 +130,7 @@
                         <button class="clean-icon-btn" onclick="window.toggleModal('formatModal')" title="Tamaño Texto">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"></path></svg>
                         </button>
-                        <button id="hamburgerCommentBtn" class="clean-icon-btn" onclick="window.openCommentModal(); window.closeHamburgerDropdown();" title="Ver Notas">
+                        <button id="hamburgerCommentBtn" class="clean-icon-btn" onclick="window.openCommentModal(); window.closeHamburgerDropdown();" title="Ver Comentario Principal">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </button>
                     </div>
@@ -153,9 +153,25 @@
 
     <div id="commentModal" class="modal">
         <div class="modal-content" style="max-width: 400px; text-align: left;">
-            <h3 style="color: var(--text-primary); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px;">Notas</h3>
+            <h3 style="color: var(--text-primary); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px;">Comentario Principal</h3>
             <p id="fullCommentText" style="color: var(--text-white); font-size: 1.1rem; line-height: 1.5;"></p>
             <button class="btn-text" style="margin-top: 15px; background: #333;" onclick="window.closeCommentModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="sectionNoteModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px;">
+                <h3 style="color: var(--text-primary); margin: 0;">Anotación <span id="sectionNoteLabel" style="font-size: 0.9rem; color: #888;"></span></h3>
+                <button id="btnDeleteSectionNote" onclick="window.deleteSectionNote()" style="background: none; border: none; color: #e55039; cursor: pointer; display: none;" title="Borrar nota">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+            </div>
+            <textarea id="sectionNoteTextarea" placeholder="Escribe tu anotación privada aquí..." style="width: 100%; height: 120px; background: #121212; color: #fff; border: 1px solid #333; border-radius: 8px; padding: 10px; box-sizing: border-box; font-family: inherit; resize: none; margin-bottom: 15px; outline: none; font-size: 1rem;"></textarea>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-modal-action cancel" onclick="window.closeSectionNoteModal()">Cancelar</button>
+                <button class="btn-modal-action" style="background-color: #4cd137; color: #000;" onclick="window.saveSectionNote()">Guardar</button>
+            </div>
         </div>
     </div>
 

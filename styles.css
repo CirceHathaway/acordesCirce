@@ -110,16 +110,7 @@ tr:hover { background-color: #252525; }
     white-space: nowrap;
 }
 
-/* Título Enorme y Dominante */
-#detailTitle { 
-    margin: 0; 
-    font-size: 1.8rem; 
-    color: var(--text-primary); 
-    text-overflow: ellipsis; 
-    overflow: hidden; 
-    line-height: 1.2; 
-    font-weight: 900;
-}
+#detailTitle { margin: 0; font-size: 1.4rem; color: var(--text-primary); text-overflow: ellipsis; overflow: hidden; line-height: 1.2; font-weight: 900;}
 
 .hamburger-btn {
     background: transparent;
@@ -134,7 +125,6 @@ tr:hover { background-color: #252525; }
 .hamburger-btn:hover { color: var(--text-primary); }
 .hamburger-btn svg { width: 26px; height: 26px; display: block; }
 
-/* Comentario acortable (oculto visualmente en HTML para ir al hamburguesa) */
 .song-comment { display: none !important; }
 
 /* --- BOTONES LIMPIOS FLOTANTES --- */
@@ -165,6 +155,18 @@ tr:hover { background-color: #252525; }
 .clean-icon-btn:active { transform: scale(0.95); }
 .clean-icon-btn svg { width: 20px; height: 20px; }
 
+/* --- EFECTO DE PARPADEO PARA BOTÓN DE NOTAS PRINCIPAL --- */
+.active-note-blink {
+    color: #f1c40f !important; /* Dorado brillante llamativo */
+    border-color: #f1c40f !important;
+    animation: slowBlinkAttention 2s infinite ease-in-out;
+}
+@keyframes slowBlinkAttention {
+    0% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 rgba(241, 196, 15, 0); }
+    50% { opacity: 0.5; transform: scale(1.05); box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
+    100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 rgba(241, 196, 15, 0); }
+}
+
 /* --- BARRA DE SECCIONES (CÍRCULOS DE NEÓN) --- */
 .sections-bar {
     display: flex;
@@ -194,7 +196,6 @@ tr:hover { background-color: #252525; }
 }
 .section-btn:active { transform: scale(0.92); }
 
-/* Colores de Borde Neón y Badges */
 .intro-btn { border-color: #55efc4; } .intro-btn:hover { background-color: rgba(85, 239, 196, 0.2); }
 .v1-btn { border-color: #81ecec; } .v1-btn:hover { background-color: rgba(129, 236, 236, 0.2); }
 .v2-btn { border-color: #74b9ff; } .v2-btn:hover { background-color: rgba(116, 185, 255, 0.2); }
@@ -210,24 +211,6 @@ tr:hover { background-color: #252525; }
 .c4-btn { border-color: #be2edd; } .c4-btn:hover { background-color: rgba(190, 46, 221, 0.2); }
 .ins-btn { border-color: #feca57; } .ins-btn:hover { background-color: rgba(254, 202, 87, 0.2); }
 .final-btn { border-color: #c8d6e5; } .final-btn:hover { background-color: rgba(200, 214, 229, 0.2); }
-
-.bg-intro { background-color: #55efc4; } 
-.bg-v1    { background-color: #81ecec; } 
-.bg-v2    { background-color: #74b9ff; } 
-.bg-v3    { background-color: #a29bfe; } 
-.bg-v4    { background-color: #fd79a8; } 
-.bg-v5    { background-color: #bb0646; color: #fff; } 
-.bg-v6    { background-color: #11ff00; } 
-.bg-p     { background-color: #ffeaa7; } 
-.bg-p2    { background-color: #fab1a0; } 
-.bg-c     { background-color: #ff7675; } 
-.bg-c2    { background-color: #ff9ff3; } 
-.bg-c3    { background-color: #f368e0; } 
-.bg-c4    { background-color: #be2edd; color: #fff;} 
-.bg-ins   { background-color: #feca57; } 
-.bg-final { background-color: #c8d6e5; }
-
-.bg-v5 .badge-label, .bg-c4 .badge-label { color: #ffffff; }
 
 /* --- MANEJO DE CAMBIO DE ESTADO AL HACER SCROLL --- */
 .song-header-sticky.scrolled { padding-top: 15px; padding-bottom: 10px; }
@@ -271,12 +254,18 @@ tr:hover { background-color: #252525; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.song-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
 .song-badge {
     display: inline-flex;
     align-items: center;
     border-radius: 25px; 
     padding: 4px 14px 4px 4px; 
-    margin-bottom: 18px;
     font-weight: 800;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -298,6 +287,51 @@ tr:hover { background-color: #252525; }
     font-size: 0.95rem;
     text-transform: capitalize;
     color: #121212; 
+}
+
+/* Colores de Fondos para los Badges */
+.bg-intro { background-color: #55efc4; } 
+.bg-v1    { background-color: #81ecec; } 
+.bg-v2    { background-color: #74b9ff; } 
+.bg-v3    { background-color: #a29bfe; } 
+.bg-v4    { background-color: #fd79a8; } 
+.bg-v5    { background-color: #bb0646; color: #fff; } 
+.bg-v6    { background-color: #11ff00; } 
+.bg-p     { background-color: #ffeaa7; } 
+.bg-p2    { background-color: #fab1a0; } 
+.bg-c     { background-color: #ff7675; } 
+.bg-c2    { background-color: #ff9ff3; } 
+.bg-c3    { background-color: #f368e0; } 
+.bg-c4    { background-color: #be2edd; color: #fff;} 
+.bg-ins   { background-color: #feca57; } 
+.bg-final { background-color: #c8d6e5; }
+.bg-v5 .badge-label, .bg-c4 .badge-label { color: #ffffff; }
+
+/* Botón de Notas por Sección */
+.section-note-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.section-note-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+.section-note-btn:active { transform: scale(0.9); }
+
+/* Cuando la sección tiene una nota guardada */
+.section-note-btn.has-note {
+    color: #4cd137; /* Verde vivo */
+    border-color: #4cd137;
+    background: rgba(76, 209, 55, 0.1);
 }
 
 .song-lyrics {
