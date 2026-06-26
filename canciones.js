@@ -682,10 +682,12 @@ Alelu<span class="g"><span class="chord">E</span>ya.</span>
         key: "D",
         type: "Adoración",
         content: ` 
+[Verso 1]
 En <span class="g"><span class="chord">D</span>ti</span> confía mi <span class="g"><span class="chord">G</span>corazón,</span>
 En <span class="g"><span class="chord">A</span>ti</span> reposa mi <span class="g"><span class="chord">F#m</span>alma</span> mi <span class="g"><span class="chord">Bm</span>ser</span>
 Descansa en <span class="g"><span class="chord">Em</span>ti,</span> <span class="g"><span class="chord">G</span>puedo</span> ser fe<span class="g"><span class="chord">A</span>liz.</span>
 
+[Coro]
 <span class="g"><span class="chord">A#</span>Por</span>que <span class="g"><span class="chord">C</span>se</span> que estas o<span class="g"><span class="chord">Dm</span>brando,</span>
 <span class="g"><span class="chord">A#m</span>Tu</span>per<span class="g"><span class="chord">C</span>fecta</span> volun<span class="g"><span class="chord">Dm</span>tad,</span>
 <span class="g"><span class="chord">A#m</span>En</span>mi vi<span class="g"><span class="chord">C</span>da</span>estas o<span class="g"><span class="chord">Dm</span>brando,</span>
@@ -699,15 +701,18 @@ Descansa en <span class="g"><span class="chord">Em</span>ti,</span> <span class=
         key: "G",
         type: "Adoración",
         content: ` 
+[Verso 1]
 <span class="g"><span class="chord">G</span>Quiero</span> escuchar tu <span class="g"><span class="chord">D</span>dulce voz,</span>
 Rom<span class="g"><span class="chord">C</span>piendo</span> el silencio en mi <span class="g"><span class="chord">D</span>ser.</span>
 <span class="g"><span class="chord">G</span>Se</span> que me haría es<span class="g"><span class="chord">D</span>tremecer,</span>
 Me ha<span class="g"><span class="chord">C</span>ría</span> llorar o re<span class="g"><span class="chord">D</span>ír,</span>
 Y cae<span class="g"><span class="chord">C</span>ría</span> rendi<span class="g"><span class="chord">Am</span>do</span> ante <span class="g"><span class="chord">D</span>ti.</span>
 
+[Coro]
 Y <span class="g"><span class="chord">G</span>no</span> podría es<span class="g"><span class="chord">D</span>tar</span> ante ti,</span>
 Escu<span class="g"><span class="chord">Am</span>chandote</span> hablar sin llo<span class="g"><span class="chord">C</span>rar</span> como un <span class="g"><span class="chord">D</span>niño.</span>
 
+[Coro 2]
 Y <span class="g"><span class="chord">G</span>pasaría</span>el <span class="g"><span class="chord">D</span>tiempo</span>así, sin que<span class="g"><span class="chord">C</span>rer nada más,</span>
 Nada <span class="g"><span class="chord">Am</span>más</span> que escu<span class="g"><span class="chord">D</span>charte</span> ha<span class="g"><span class="chord">G</span>blar.</span>
     `
@@ -720,19 +725,23 @@ Nada <span class="g"><span class="chord">Am</span>más</span> que escu<span clas
         type: "Alabanza",
         comentario: "Nota para Ángel en Bm.",
         content: ` 
+[Verso 1]
 La <span class="g"><span class="chord">Am</span>única</span> razón de mi a<span class="g"><span class="chord">F</span>doración</span>
 Eres<span class="g"><span class="chord">C</span>tú,</span> mi Je<span class="g"><span class="chord">G</span>sús,</span>
 El <span class="g"><span class="chord">Am</span>único</span> motivo pa<span class="g"><span class="chord">F</span>ra vivir</span>
 <span class="g"><span class="chord">C</span>Eres</span> tú, mi Se<span class="g"><span class="chord">G</span>ñor.</span>
 
+[Verso 2]
 Mi úni<span class="g"><span class="chord">Am</span>ca</span> verdad es<span class="g"><span class="chord">F</span>tá en ti</span>
 Eres mi <span class="g"><span class="chord">C</span>luz</span> y mi salvaci<span class="g"><span class="chord">G</span>ón,</span>
 Mi úni<span class="g"><span class="chord">Am</span>co</span> amor eres <span class="g"><span class="chord">F</span>tú, Señor</span>
 Y por <span class="g"><span class="chord">C</span>siempre</span> te alaba<span class="g"><span class="chord">Em</span>ré.</span>
 
+[Coro]
 Tu eres <span class="g"><span class="chord">Am</span>todo</span> pode<span class="g"><span class="chord">F</span>roso,</span>
 Eres <span class="g"><span class="chord">C</span>grande</span> y majestu<span class="g"><span class="chord">G</span>oso,</span>
 
+[Coro 2]
 Eres <span class="g"><span class="chord">Am</span>fuerte,</span> inven<span class="g"><span class="chord">F</span>cible</span>
 Y no hay <span class="g"><span class="chord">C</span>nadie</span> como <span class="g"><span class="chord">Em</span>tú.</span>
     `
@@ -744,14 +753,17 @@ Y no hay <span class="g"><span class="chord">C</span>nadie</span> como <span cla
         key: "G",
         type: "Adoración",
         content: ` 
+[Verso 1]
 <span class="g"><span class="chord">G</span>Al</span> borde de tu gran <span class="g"><span class="chord">Em</span>trono</span>
 me <span class="g"><span class="chord">C</span>postrare</span><span class="g"><span class="chord">Am</span>hoy</span> a <span class="g"><span class="chord">D</span>ti.</span>
 Tu <span class="g"><span class="chord">G</span>reinas</span> sobre princi<span class="g"><span class="chord">Em</span>pados</span>
 Sen<span class="g"><span class="chord">C</span>tado </span><span class="g"><span class="chord">Am</span>a la</span> diestra de <span class="g"><span class="chord">D</span>Dios.</span>
 
+[Coro]
 <span class="g"><span class="chord">G</span>Exáltate</span> ¡oh! gran <span class="g"><span class="chord">Em</span>cordero,</span>
 Tu <span class="g"><span class="chord">C</span>vives</span> hoy <span class="g"><span class="chord">Am</span>y</span> vivi<span class="g"><span class="chord">D</span>rás</span>
 
+[Coro 2]
 <span class="g"><span class="chord">G</span>Corónate</span> con mi ala<span class="g"><span class="chord">Em</span>banza,</span>
 Tu <span class="g"><span class="chord">C</span>nombre</span> es <span class="g"><span class="chord">D</span>el</span> vence<span class="g"><span class="chord">G</span>dor.</span>
     `
@@ -763,26 +775,31 @@ Tu <span class="g"><span class="chord">C</span>nombre</span> es <span class="g">
         key: "Em",
         type: "Adoración",
         content: ` 
+[Verso 1]
 Me has to<span class="g"><span class="chord">Em</span>mado</span> en tus brazos
 Y me has <span class="g"><span class="chord">D</span>dado</span> salvación
 De tu a<span class="g"><span class="chord">Em</span>mor,</span> has derramado
 En mi cora<span class="g"><span class="chord">D</span>zón.</span>
 
+[Verso 2]
 No sa<span class="g"><span class="chord">Em</span>bré</span> agradecerte
 Lo que has <span class="g"><span class="chord">D</span>hecho</span> por mí,
 solo <span class="g"><span class="chord">Em</span>puedo</span> darte ahora
 Mi canci<span class="g"><span class="chord">D</span>ón.</span>
 
+[Coro]
 <span class="g"><span class="chord">G</span>Gra</span><span class="g"><span class="chord">D</span>cias</span>
 <span class="g"><span class="chord">Am</span>Gracias,</span> Se<span class="g"><span class="chord">Em</span>ñor,</span>
 <span class="g"><span class="chord">G</span>Gracias,</span> mi Se<span class="g"><span class="chord">D</span>ñor,</span>
 Je<span class="g"><span class="chord">C</span>sús.</span>
 
+[Verso 3]
 En la cr<span class="g"><span class="chord">Em</span>uz,</span> diste tu vida
 entre<span class="g"><span class="chord">D</span>gaste</span> todo ahí,
 Vida e<span class="g"><span class="chord">Em</span>terna</span> regalaste,
 Al mo<span class="g"><span class="chord">D</span>rir.</span>
 
+[Verso 4]
 Por tu <span class="g"><span class="chord">Em</span>sangre</span> tengo entrada,
 Ante el <span class="g"><span class="chord">D</span>trono</span> celestial,
 Yo puedo <span class="g"><span class="chord">Em</span>entrar</span> confiadamente,
@@ -799,10 +816,12 @@ Ante <span class="g"><span class="chord">D</span>ti.</span>
 [Intro] 
 <span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span>
 
+[Verso 1]
 <span class="g"><span class="chord">A</span>Quien</span>rompe el poder del pecado,
 <span class="g"><span class="chord">D</span>Su</span>amor es fuerte y poderoso,
 <span class="g"><span class="chord">F#m</span> El</span>rey de gloria <span class="g"><span class="chord">E</span> el</span> rey de majes<span class="g"><span class="chord">D</span>tad.</span>
 
+[Verso 2]
 <span class="g"><span class="chord">A</span>Conmueve</span>al mundo con su estruendo,
 <span class="g"><span class="chord">D</span>Y</span>nos asombra con maravillas,
 <span class="g"><span class="chord">F#m</span> El</span>rey de gloria <span class="g"><span class="chord">E</span> el</span> rey de majes<span class="g"><span class="chord">D</span>tad.</span>
@@ -832,12 +851,13 @@ Tu vida diste a<span class="g"><span class="chord">A</span>hí</span> y ahora li
 <span class="g"><span class="chord">F#m</span>Digno</span> es el cordero de <span class="g"><span class="chord">E</span>Dios</span>
 Digno, <span class="g"><span class="chord">D</span>digno,</span> digno.
 
+[Coro 2]
 Gracia sublime <span class="g"><span class="chord">A</span>es,</span> perfecto es tu a<span class="g"><span class="chord">D</span>mor,</span>
 Tomaste mi lu<span class="g"><span class="chord">F#m</span>gar</span> cargaste tu mi <span class="g"><span class="chord">E</span>cruz,</span>
 Tu vida diste a<span class="g"><span class="chord">A</span>hí</span> y ahora libre <span class="g"><span class="chord">D</span>soy,</span>
 <span class="g"><span class="chord">F#m</span> Jesús</span> te adoro <span class="g"><span class="chord">E</span>por</span> lo que hiciste en <span class="g"><span class="chord">A</span>mí.</span>
 
-[Intro]
+[Final]
 <span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span>
     `
     },
@@ -848,6 +868,7 @@ Tu vida diste a<span class="g"><span class="chord">A</span>hí</span> y ahora li
         key: "A",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">A</span>Cerca</span> de Ti yo quiero es<span class="g"><span class="chord">C#m</span>tar,</span>
 Para <span class="g"><span class="chord">D</span>escuchar</span> tu <span class="g"><span class="chord">Bm</span>voz</span> y apren<span class="g"><span class="chord">D</span>der</span> de ti. <span class="g"><span class="chord">E</span>..</span>
 Quiero <span class="g"><span class="chord">A</span>ser</span> un reflejo de tu a<span class="g"><span class="chord">C#m</span>mor,</span>
@@ -868,6 +889,7 @@ Tú co<span class="g"><span class="chord">D</span>noces</span><span class="g"><s
         type: "Adoración",
         comentario:"Si la canta Sol, la nota es en G.",
         content: `
+[Verso 1]
 Al que esta sen<span class="g"><span class="chord">C</span>tado</span> en el <span class="g"><span class="chord">Am</span>trono,</span>
 Y al cor<span class="g"><span class="chord">F</span>dero,</span><span class="g"><span class="chord">Dm</span>  sea</span> el ho<span class="g"><span class="chord">G</span>nor,</span> <span class="g"><span class="chord">F</span>..</span>
 <span class="g"><span class="chord">G</span>Sea</span> la gl<span class="g"><span class="chord">C</span>oria,</span> sea la hon<span class="g"><span class="chord">Am</span>ra,</span>
@@ -879,17 +901,20 @@ Poderoso <span class="g"><span class="chord">Am</span>Dios,</span>
 Poderoso <span class="g"><span class="chord">F</span>Dios,</span>
 <span class="g"><span class="chord">Dm</span>  Mi</span> alma clama por <span class="g"><span class="chord">G</span>ti.</span>
 
+[Verso 2]
 Al que esta sen<span class="g"><span class="chord">C</span>tado</span> en el <span class="g"><span class="chord">Am</span>trono,</span>
 Y al cor<span class="g"><span class="chord">F</span>dero,</span><span class="g"><span class="chord">Dm</span>  sea</span> el ho<span class="g"><span class="chord">G</span>nor,</span> <span class="g"><span class="chord">F</span>..</span>
 <span class="g"><span class="chord">G</span>Sea</span> la gl<span class="g"><span class="chord">C</span>oria,</span> sea la hon<span class="g"><span class="chord">Am</span>ra,</span>
 Sea el do<span class="g"><span class="chord">F</span>minio</span> por los siglos de los <span class="g"><span class="chord">Dm</span>siglos,</span>
 Poderoso <span class="g"><span class="chord">G</span>Dios.</span>  <span class="g"><span class="chord">F</span>..</span> 
 
+[Coro 2]
 <span class="g"><span class="chord">G</span> Po</span>deroso <span class="g"><span class="chord">C</span>Dios,</span>
 Poderoso <span class="g"><span class="chord">Am</span>Dios,</span>
 Poderoso <span class="g"><span class="chord">F</span>Dios,</span>
 <span class="g"><span class="chord">Dm</span>  Mi</span> alma clama por <span class="g"><span class="chord">G</span>ti.</span>
 
+[Verso 3]
 Mi alma clama por <span class="g"><span class="chord">F</span>ti,</span>
 Mi alma clama por <span class="g"><span class="chord">G</span>ti.</span>
     `
@@ -901,6 +926,7 @@ Mi alma clama por <span class="g"><span class="chord">G</span>ti.</span>
         key: "F",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">F</span>Los</span> cielos cuentan tu gloria Señor,
 El firmamento an<span class="g"><span class="chord">C</span>uncia tus obras,</span>
 <span class="g"><span class="chord">Dm</span>De</span> día y noche es oí<span class="g"><span class="chord">A#</span>da tu voz,</span>
@@ -912,6 +938,7 @@ Anunciaré con mi <span class="g"><span class="chord">C</span>vida que tu eres e
 Y como el cielo y <span class="g"><span class="chord">Dm</span>las estrellas,</span>
 <span class="g"><span class="chord">A#</span>  Portador</span> de tu gl<span class="g"><span class="chord">F</span>oria seré.</span>
 
+[Verso 2]
 <span class="g"><span class="chord">F</span>  Yo quiero ser portador de tu gloria,</span>
 <span class="g"><span class="chord">C</span>  Yo quiero ser portador de tu gloria,</span>
 <span class="g"><span class="chord">Dm</span>  Yo quiero ser portador de tu gloria,</span>
@@ -926,6 +953,7 @@ Y como el cielo y <span class="g"><span class="chord">Dm</span>las estrellas,</s
         type: "Adoración",
         comentario:"Nota de Sol",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">C</span>Quiero</span> llenar
 Tu <span class="g"><span class="chord">F</span>trono</span> de alabanza,
 <span class="g"><span class="chord">G</span>Quiero</span> llenar
@@ -940,6 +968,7 @@ Y procla<span class="g"><span class="chord">F</span>mar</span><span class="g"><s
         key: "Bm",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">D</span>Santo,</span> Santo, <span class="g"><span class="chord">Bm</span>Santo,</span> sen<span class="g"><span class="chord">G</span>tado</span> en majes<span class="g"><span class="chord">A</span>tad,</span>
 Al<span class="g"><span class="chord">D</span>tísimo</span> y Su<span class="g"><span class="chord">Bm</span>blime,</span> el <span class="g"><span class="chord">Em</span>poderoso</span> <span class="g"><span class="chord">A</span>Dios.</span>
 
@@ -966,10 +995,12 @@ Procla<span class="g"><span class="chord">G</span>mando</span> sin ce<span class
         key: "G",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Siento</span> tu amor
 que <span class="g"><span class="chord">C</span>viene</span> sobre <span class="g"><span class="chord">D</span>mí</span>
 <span class="g"><span class="chord">G</span>siento</span> que una <span class="g"><span class="chord">Em</span>nube</span> desci<span class="g"><span class="chord">C</span>ende.</span><span class="g"><span class="chord">D</span>..</span>
 
+[Verso 2]
 <span class="g"><span class="chord">G</span>Siento</span> tu amor
 que <span class="g"><span class="chord">C</span>viene</span> sobre <span class="g"><span class="chord">D</span>mí</span>
 <span class="g"><span class="chord">G</span>siento</span> que una <span class="g"><span class="chord">Em</span>nube</span> desci<span class="g"><span class="chord">C</span>ende.</span>
@@ -979,6 +1010,7 @@ que <span class="g"><span class="chord">C</span>viene</span> sobre <span class="
 que mi lámpara esté <span class="g"><span class="chord">Bm</span>siempre</span> encend<span class="g"><span class="chord">Em</span>ida,</span>
 quiero ado<span class="g"><span class="chord">Am</span>rarte</span> bende<span class="g"><span class="chord">C</span>cirte</span> Se<span class="g"><span class="chord">D</span>ñor.</span>
 
+[Coro 2]
 Llévame</span> a tu ho<span class="g"><span class="chord">C</span>gar,</span> a<span class="g"><span class="chord">D</span>rriba</span>
 que mi lámpara esté <span class="g"><span class="chord">Bm</span>siempre</span> encend<span class="g"><span class="chord">Em</span>ida,</span>
 quiero ado<span class="g"><span class="chord">Am</span>rarte</span> bende<span class="g"><span class="chord">C</span>cir</span><span class="g"><span class="chord">D</span>te</span> Se<span class="g"><span class="chord">G</span>ñor.</span>
@@ -994,12 +1026,13 @@ quiero ado<span class="g"><span class="chord">Am</span>rarte</span> bende<span c
         key: "G",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> quiero más de <span class="g"><span class="chord">C</span>ti,</span> más de <span class="g"><span class="chord">D</span>ti,</span>
 Y habitar en Tú pre<span class="g"><span class="chord">G</span>sencia,</span>
 <span class="g"><span class="chord">Em</span>Menguar</span> para que crezcas <span class="g"><span class="chord">Am</span>Tú,</span>
 Y cada día se<span class="g"><span class="chord">C</span>ré</span><span class="g"><span class="chord">Am</span>  más</span>como <span class="g"><span class="chord">D</span>Tú.</span>
 
-
+[Coro]
 Quebranta mi <span class="g"><span class="chord">C</span>cora</span><span class="g"><span class="chord">D</span>zón,</span>
 Quebranta mi <span class="g"><span class="chord">Bm</span>vi</span><span class="g"><span class="chord">Em</span>da,</span>
 Te entrego mi <span class="g"><span class="chord">C</span>volun</span><span class="g"><span class="chord">D</span>tad</span> a <span class="g"><span class="chord">G</span>ti,</span>
@@ -1014,6 +1047,7 @@ Yo quiero men<span class="g"><span class="chord">Am</span>guar</span><span class
         key: "G",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> sé que <span class="g"><span class="chord">C</span>estás</span> a<span class="g"><span class="chord">G</span>quí,</span>
 siento Tu cami<span class="g"><span class="chord">Em</span>nar,</span>
 te mueves entre el <span class="g"><span class="chord">Am</span>pueblo,</span>
@@ -1033,6 +1067,7 @@ y <span class="g"><span class="chord">Am</span>sé</span>que transfor<span class
         type: "Adoración",
         comentario:"Si la canta Gisel, la nota es en C+.",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">D</span>Ven</span> es<span class="g"><span class="chord">A</span>píritu</span> <span class="g"><span class="chord">Bm</span>ven,</span>
 Y lléname Se<span class="g"><span class="chord">G</span>ñor,</span>
 Con <span class="g"><span class="chord">Em</span>tu</span>preciosa <span class="g"><span class="chord">A</span>unción.</span>
@@ -1042,6 +1077,7 @@ Puri<span class="g"><span class="chord">D</span>fícame</span> y <span class="g"
 Re<span class="g"><span class="chord">Bm</span>nuévame,</span> res<span class="g"><span class="chord">F#m</span>táurame,</span> Se<span class="g"><span class="chord">G</span>ñor</span>
 <span class="g"><span class="chord">Em</span>  Con</span> tu po<span class="g"><span class="chord">A</span>der.</span>
 
+[Coro 2]
 Puri<span class="g"><span class="chord">D</span>fícame</span> y <span class="g"><span class="chord">A</span>lávame</span>
 Re<span class="g"><span class="chord">Bm</span>nuévame,</span> res<span class="g"><span class="chord">F#m</span>táurame,</span> Se<span class="g"><span class="chord">G</span>ñor</span>
 Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"><span class="chord">D</span>cer.`
@@ -1053,6 +1089,7 @@ Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"
         key: "D",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">D</span>Ven</span> <span class="g"><span class="chord">A</span>Santo</span> Es<span class="g"><span class="chord">Bm7</span>píritu,</span>
 <span class="g"><span class="chord">G</span>Fluye</span> <span class="g"><span class="chord">A</span>Hoy</span> en <span class="g"><span class="chord">D</span>mí,</span>
 <span class="g"><span class="chord">D</span>Llena</span> <span class="g"><span class="chord">A</span>con</span> tu <span class="g"><span class="chord">Bm7</span>gracia</span> <span class="g"><span class="chord">Em</span>mi</span>ne<span class="g"><span class="chord">G</span>cesi</span><span class="g"><span class="chord">A</span>dad.</span>
@@ -1070,6 +1107,7 @@ Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"
         key: "G",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Tus</span> ojos revelan que yo <span class="g"><span class="chord">Em</span>nada</span> puedo esconder,
 Que no soy <span class="g"><span class="chord">C</span>nada</span> sin <span class="g"><span class="chord">Am</span>Ti</span>oh fiel Se<span class="g"><span class="chord">D</span>ñor.</span>
 
@@ -1077,7 +1115,7 @@ Que no soy <span class="g"><span class="chord">C</span>nada</span> sin <span cla
 <span class="g"><span class="chord">G</span>Todo</span> lo sabes de mí cuando <span class="g"><span class="chord">Em</span>miras</span> el corazón,
 <span class="g"><span class="chord">C</span>Todo</span> lo puedes <span class="g"><span class="chord">Am</span>ver</span> muy dentro de <span class="g"><span class="chord">D</span>mí.</span>
 
-[Pre-Coro]
+[Puente]
 <span class="g"><span class="chord">C</span>Lleva</span> mi vida a una sola ver<span class="g"><span class="chord">Em</span>dad,</span>
 Que cuando me <span class="g"><span class="chord">C</span>miras</span> <span class="g"><span class="chord">Am7</span>nada</span> puedo ocul<span class="g"><span class="chord">D</span>tar.</span>
 
@@ -1095,6 +1133,7 @@ Me <span class="g"><span class="chord">D</span>llena</span> de tu <span class="g
         type: "Adoración",
         comentario:"Nota para Sam",
         content: `
+[Verso 1]
 Yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class="g"><span class="chord">G</span>más</span> de <span class="g"><span class="chord">Am</span>Cristo</span>
 yo quiero <span class="g"><span class="chord">C</span>más</span> de su po<span class="g"><span class="chord">G</span>der,</span>
 yo quiero <span class="g"><span class="chord">C</span>más</span> de su pre<span class="g"><span class="chord">F</span>sencia,</span><span class="g"><span class="chord">Fm</span>..</span>
@@ -1109,6 +1148,7 @@ yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class=
         type: "Adoración",
         comentario:"Si la canta Gisel, la nota es en B+ y la engancha con Quiero llenar tu trono de alabanza.",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">C</span>Tu</span> fidelidad es <span class="g"><span class="chord">F</span>grande,</span>
 <span class="g"><span class="chord">G</span>Tu</span> fidelidad, in<span class="g"><span class="chord">Em</span>comparable</span> es,
 <span class="g"><span class="chord">Am</span>Nadie</span> como Tú, <span class="g"><span class="chord">F</span>bendito</span> Dios,
@@ -1122,24 +1162,29 @@ yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class=
         key: "G",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Cuando</span> todo parece oscuro, cuando <span class="g"><span class="chord">C</span>difícil</span> es decidir,
 Y la <span class="g"><span class="chord">D</span>vida</span> parece absurda, sin una <span class="g"><span class="chord">C</span>luz</span> para alum<span class="g"><span class="chord">G</span>brar.</span>
 Es posible que los amigos, a nuestro <span class="g"><span class="chord">C</span>lado</span> podrán estar,
 Pero en <span class="g"><span class="chord">D</span>nada</span> cambiará la vida, pues a su <span class="g"><span class="chord">C</span>alcance</span> no es<span class="g"><span class="chord">G</span>tá.</span>
 
+[Verso 2]
 Es entonces que yo medito, en a<span class="g"><span class="chord">C</span>quellas</span> promesas que,
 Hablan <span class="g"><span class="chord">D</span>del</span> Señor Jesucristo, de su <span class="g"><span class="chord">C</span>amor</span> y su gran po<span class="g"><span class="chord">G</span>der.</span>
 Entre aquellas promesas dichas, una <span class="g"><span class="chord">C</span>siempre</span> late en mi ser,
 Y la <span class="g"><span class="chord">D</span>grito</span> desde mi alma, di<span class="g"><span class="chord">C</span>cien</span><span class="g"><span class="chord">D</span>do.</span>
 
+[Coro]
 <span class="g"><span class="chord">G</span>Todo</span> lo puedo en <span class="g"><span class="chord">C</span>Cristo</span> que <span class="g"><span class="chord">D</span>  me</span> forta<span class="g"><span class="chord">G</span>lece,</span> sí
 <span class="g"><span class="chord">G</span>Todo</span> lo puedo en <span class="g"><span class="chord">C</span>Cristo</span> que <span class="g"><span class="chord">D</span>  me</span> forta<span class="g"><span class="chord">G</span>lece,</span> OH gloria.
 
+[Verso 3]
 <span class="g"><span class="chord">G</span>Hay</span> circunstancias en ésta vida, difíci<span class="g"><span class="chord">C</span>les</span> de atravesar,
 Y el diablo <span class="g"><span class="chord">D</span>trata</span> de engañarnos, diciendo <span class="g"><span class="chord">C</span>no</span>podréis ven<span class="g"><span class="chord">G</span>cer.</span>
 Está vencido y él lo sabe, por eso <span class="g"><span class="chord">C</span>no</span> hemos de aceptar,
 La men<span class="g"><span class="chord">D</span>tira</span> que él nos dice, di<span class="g"><span class="chord">C</span>ga</span><span class="g"><span class="chord">D</span>mos.</span>
 
+[Verso 4]
 <span class="g"><span class="chord">G</span>Ha</span> puesto para la naturaleza, al mundo <span class="g"><span class="chord">C</span>y</span>su fugaz placer,
 Al diablo <span class="g"><span class="chord">D</span>y</span>a la enfermedad, resisti<span class="g"><span class="chord">C</span>remos</span> en el nombre de <span class="g"><span class="chord">G</span>Él.</span>
 Mantengamos nuestra alabanza, nosotros <span class="g"><span class="chord">C</span>somos</span> hijos del Rey,
@@ -1153,6 +1198,7 @@ Pues nuestra <span class="g"><span class="chord">D</span>fe</span> y victoria cr
         key: "Em",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">Em</span>Todo</span> es de mi <span class="g"><span class="chord">C</span>Cristo,</span> por <span class="g"><span class="chord">D</span>Él</span> y para <span class="g"><span class="chord">Em</span>Él...</span>
 
 [Coro]
@@ -1170,6 +1216,7 @@ Insondables sus <span class="g"><span class="chord">C</span>juicios,</span> y <s
         key: "D",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">D</span>Una</span> ver<span class="g"><span class="chord">A</span>tiente</span> de ala<span class="g"><span class="chord">Bm</span>banza,</span>
 Brota de mi cora<span class="g"><span class="chord">G</span>zón,</span>
 Y <span class="g"><span class="chord">Em</span>llega</span> hasta el <span class="g"><span class="chord">G</span>trono</span> de mi <span class="g"><span class="chord">A</span>Dios.</span>
@@ -1195,9 +1242,11 @@ Todo el <span class="g"><span class="chord">F#m</span>fruto</span> de nuestro a<
         key: "G",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> quiero darte <span class="g"><span class="chord">Bm</span>gloria</span> Señor
 Porque <span class="g"><span class="chord">C</span>todo</span> lo has hecho <span class="g"><span class="chord">D</span>bien.</span>
 
+[Coro]
 Todo los has hecho <span class="g"><span class="chord">Bm</span>bien,</span> Se<span class="g"><span class="chord">Em</span>ñor,</span>
 incluso todos los <span class="g"><span class="chord">Am</span>males,</span>
 han <span class="g"><span class="chord">D</span>sido</span> <span class="g"><span class="chord">C</span>pa</span><span class="g"><span class="chord">D</span>ra</span> <span class="g"><span class="chord">G</span>bien.</span>
@@ -1210,12 +1259,13 @@ han <span class="g"><span class="chord">D</span>sido</span> <span class="g"><spa
         key: "D",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">D</span>Eres</span> tú la úni<span class="g"><span class="chord">A</span>ca</span> razón de mi <span class="g"><span class="chord">Bm</span>adoración</span>
 Oh <span class="g"><span class="chord">G</span>Jesús,</span>
 <span class="g"><span class="chord">D</span>Eres</span> tú la espe<span class="g"><span class="chord">A</span>ranza</span> que anhe<span class="g"><span class="chord">Bm</span>lé</span>tener
 Oh <span class="g"><span class="chord">G</span>Jesús,</span>
 
-[Pre-Coro]
+[Puente]
 <span class="g"><span class="chord">Em</span>Confié</span> en ti me has ayu<span class="g"><span class="chord">A</span>dado,</span>
 <span class="g"><span class="chord">Em7</span> Tu</span>salvación me has rega<span class="g"><span class="chord">A</span>lado,</span>
 <span class="g"><span class="chord">D</span>Hoy</span> hay gozo en mi cora<span class="g"><span class="chord">A</span>zón</span>
@@ -1225,7 +1275,7 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
 <span class="g"><span class="chord">E</span>Te</span> alaba<span class="g"><span class="chord">B</span>ré,</span> <span class="g"><span class="chord">C#m</span>te</span>glorifica<span class="g"><span class="chord">A</span>ré</span>
 <span class="g"><span class="chord">E</span>Te</span> alaba<span class="g"><span class="chord">B</span>ré,</span> mi buen Je<span class="g"><span class="chord">A</span>sús.</span>
 
-[Puente]
+[Verso 2]
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te alaba<span class="g"><span class="chord">E</span>ré,</span>
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te adora<span class="g"><span class="chord">B</span>ré.</span> `
     },
@@ -1236,12 +1286,14 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
         key: "G",
         type: "Adoración",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Sendas</span> Dios ha<span class="g"><span class="chord">D</span>rá,</span> donde <span class="g"><span class="chord">C</span>piensas</span> que no <span class="g"><span class="chord">G</span>hay,</span>
 <span class="g"><span class="chord">C</span>Él</span> obra en ma<span class="g"><span class="chord">G</span>neras</span> que <span class="g"><span class="chord">Am</span>no</span>po<span class="g"><span class="chord">Bm</span>demos</span> <span class="g"><span class="chord">C</span>enten</span><span class="g"><span class="chord">D</span>der.</span>
 <span class="g"><span class="chord">G</span>Él</span> me guia<span class="g"><span class="chord">D</span>rá</span>a su <span class="g"><span class="chord">C</span>lado</span> esta<span class="g"><span class="chord">G</span>ré,</span>
 <span class="g"><span class="chord">C</span>Amor</span> y fuerza <span class="g"><span class="chord">G</span>me</span>dará,
 <span class="g"><span class="chord">Am</span>Un</span> ca<span class="g"><span class="chord">Bm</span>mino</span> ha<span class="g"><span class="chord">C</span>rá</span> donde <span class="g"><span class="chord">D</span>no</span> lo <span class="g"><span class="chord">G</span>hay.</span>
 
+[Coro]
 Por ca<span class="g"><span class="chord">Eb</span>minos</span> en la <span class="g"><span class="chord">F</span>soledad</span> me <span class="g"><span class="chord">Bb</span>guiará,</span>
 Y <span class="g"><span class="chord">Eb</span>agua</span> en el desi<span class="g"><span class="chord">F</span>erto</span> encontra<span class="g"><span class="chord">G</span>ré,</span>
 <span class="g"><span class="chord">C</span>La</span> tierra pasa<span class="g"><span class="chord">D</span>rá</span> su pa<span class="g"><span class="chord">Bm</span>labra</span> perma<span class="g"><span class="chord">Em</span>necerá,</span>
@@ -1255,14 +1307,17 @@ Y <span class="g"><span class="chord">Eb</span>agua</span> en el desi<span class
         key: "G",
         type: "Alabanza",
         content: `
+[Verso 1]
 <span class="g"><span class="chord">G</span>Mi</span> corazón late por <span class="g"><span class="chord">D/F#</span>ti,</span>
 Ahora tengo vida en <span class="g"><span class="chord">Em</span>mí,</span>
 <span class="g"><span class="chord">C</span>Oh</span> oh precioso Je<span class="g"><span class="chord">G</span>sús.</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>
 
+[Verso 2]
 <span class="g"><span class="chord">G</span>Toda</span> mi vida está en <span class="g"><span class="chord">D/F#</span>ti,</span>
 Y tú eres todo mi exis<span class="g"><span class="chord">Em</span>tir,</span>
 Oh <span class="g"><span class="chord">C</span>oh,</span> precioso Je<span class="g"><span class="chord">G</span>sús.</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>
 
+[Coro]
 Eres <span class="g"><span class="chord">D</span>el</span> au<span class="g"><span class="chord">Em</span>tor</span> de vida y de <span class="g"><span class="chord">C</span>salva</span><span class="g"><span class="chord">G</span>ción,</span>
 Y mi <span class="g"><span class="chord">D</span>devo</span><span class="g"><span class="chord">Em</span>ción</span> será cono<span class="g"><span class="chord">C</span>cer</span> tu a<span class="g"><span class="chord">G</span>mor,</span>
 Por que <span class="g"><span class="chord">D</span>tú,</span> solo <span class="g"><span class="chord">C</span>tú,</span> eres mi <span class="g"><span class="chord">G</span>Dios,</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">G</span>..</span>

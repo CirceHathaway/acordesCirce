@@ -47,7 +47,7 @@ let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
 
-/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE (PARALELO) --- */
+/* --- FUNCIÓN DE CARGA DINÁMICA DE FIREBASE --- */
 async function initFirebase() {
     try {
         const appModule = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js");
@@ -79,7 +79,7 @@ async function initFirebase() {
     }
 }
 
-/* --- INICIALIZACIÓN (OFFLINE FIRST) --- */
+/* --- INICIALIZACIÓN --- */
 window.onload = function() {
     if (window.location.hash === '#song') {
         history.replaceState(null, null, ' ');
@@ -154,33 +154,27 @@ window.openSong = function(indexInGlobalArray) {
     document.getElementById('songListView').style.display = 'none';
     document.getElementById('songDetailView').style.display = 'block';
     
-    // Ocultar Header principal global
     const mainHeader = document.querySelector('header');
     if (mainHeader) mainHeader.style.display = 'none';
     
-    // Resetear el scroll del Sticky Header
     const stickyHeader = document.getElementById('songHeaderSticky');
     if(stickyHeader) stickyHeader.classList.remove('scrolled');
     window.closeHamburgerDropdown();
 
     document.getElementById('detailTitle').innerText = song.title;
-    document.getElementById('detailArtist').innerText = song.artist;
-
-    // Actualizar Nota en los Botones 1 (normal y hamburguesa)
     document.querySelectorAll('.song-key-display').forEach(el => el.innerText = song.key);
 
-    const commentEl = document.getElementById('detailComment');
     const fullCommentEl = document.getElementById('fullCommentText');
-    const commentHamburgerBtn = document.getElementById('hamburgerCommentBtn');
+    const btnNotaMain = document.getElementById('btnNotaMain');
+    const btnNotaBurger = document.getElementById('hamburgerCommentBtn');
     
     if (song.comentario) {
-        commentEl.innerText = song.comentario; 
         if (fullCommentEl) fullCommentEl.innerText = song.comentario;
-        commentEl.style.display = 'block';     
-        if (commentHamburgerBtn) commentHamburgerBtn.style.display = 'block';
+        if (btnNotaMain) btnNotaMain.style.display = 'flex';     
+        if (btnNotaBurger) btnNotaBurger.style.display = 'flex';
     } else {
-        commentEl.style.display = 'none';      
-        if (commentHamburgerBtn) commentHamburgerBtn.style.display = 'none';
+        if (btnNotaMain) btnNotaMain.style.display = 'none';      
+        if (btnNotaBurger) btnNotaBurger.style.display = 'none';
     }
     
     updateSongView();
@@ -201,7 +195,6 @@ function closeSongUI() {
     const listView = document.getElementById('songListView');
     if(listView) listView.style.display = 'block';
     
-    // Mostrar Header de nuevo
     const mainHeader = document.querySelector('header');
     if (mainHeader) mainHeader.style.display = '';
 
@@ -210,46 +203,76 @@ function closeSongUI() {
     window.scrollTo(0,0);
 }
 
+// NUEVA LÓGICA DE DIBUJADO DE TARJETAS (CARDS) Y ETIQUETAS
 function updateSongView() {
     if (currentSongIndex === -1) return;
-    let songOriginal = songs[currentSongIndex].content;
+    const songOriginal = songs[currentSongIndex].content;
     
-    // Banderas para saber si existen las secciones
     let hasIntro = false, hasV1 = false, hasV2 = false, hasV3 = false, hasV4 = false, hasV5 = false, hasV6 = false, hasP = false, hasC = false, hasC2 = false, hasFinal = false;
     
-    // Identificar Secciones para la Navegación (Marcas en el texto)
-    if (songOriginal.includes('[Intro]')) { songOriginal = songOriginal.replace('[Intro]', '<div id="sec-intro" class="section-marker">[Intro]</div>'); hasIntro = true; }
+    // Separamos el texto usando una expresión regular para agarrar los "[Corchetes]"
+    const sections = songOriginal.split(/\[(.*?)\]/g);
+    let htmlOutput = "";
 
-    if (songOriginal.includes('[Verso 1]')) { songOriginal = songOriginal.replace('[Verso 1]', '<div id="sec-v1" class="section-marker">[Verso 1]</div>'); hasV1 = true; }
-    else if (songOriginal.includes('[Verso]')) { songOriginal = songOriginal.replace('[Verso]', '<div id="sec-v1" class="section-marker">[Verso]</div>'); hasV1 = true; }
-    
-    if (songOriginal.includes('[Verso 2]')) { songOriginal = songOriginal.replace('[Verso 2]', '<div id="sec-v2" class="section-marker">[Verso 2]</div>'); hasV2 = true; }
-    if (songOriginal.includes('[Verso 3]')) { songOriginal = songOriginal.replace('[Verso 3]', '<div id="sec-v3" class="section-marker">[Verso 3]</div>'); hasV3 = true; }
-    if (songOriginal.includes('[Verso 4]')) { songOriginal = songOriginal.replace('[Verso 4]', '<div id="sec-v4" class="section-marker">[Verso 4]</div>'); hasV4 = true; }
-    if (songOriginal.includes('[Verso 5]')) { songOriginal = songOriginal.replace('[Verso 5]', '<div id="sec-v5" class="section-marker">[Verso 5]</div>'); hasV5 = true; }
-    if (songOriginal.includes('[Verso 6]')) { songOriginal = songOriginal.replace('[Verso 6]', '<div id="sec-v6" class="section-marker">[Verso 6]</div>'); hasV6 = true; }
-    if (songOriginal.includes('[Puente]')) { songOriginal = songOriginal.replace('[Puente]', '<div id="sec-p" class="section-marker">[Puente]</div>'); hasP = true; }
-    if (songOriginal.includes('[Coro]')) { songOriginal = songOriginal.replace('[Coro]', '<div id="sec-c" class="section-marker">[Coro]</div>'); hasC = true; }
-    if (songOriginal.includes('[Coro 2]')) { songOriginal = songOriginal.replace('[Coro 2]', '<div id="sec-c2" class="section-marker">[Coro 2]</div>'); hasC2 = true; }
-    if (songOriginal.includes('[Final]')) { songOriginal = songOriginal.replace('[Final]', '<div id="sec-final" class="section-marker">[Final]</div>'); hasFinal = true; }
+    // Si hay texto ANTES del primer corchete, lo envolvemos genérico
+    if (sections[0] && sections[0].trim() !== "") {
+        htmlOutput += `<div class="song-card"><div class="song-lyrics">${sections[0]}</div></div>`;
+    }
 
-    // Mostrar u ocultar botones según lo que se encontró
-    if(document.getElementById('nav-intro')) document.getElementById('nav-intro').style.display = hasIntro ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v1')) document.getElementById('nav-v1').style.display = hasV1 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v2')) document.getElementById('nav-v2').style.display = hasV2 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v3')) document.getElementById('nav-v3').style.display = hasV3 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v4')) document.getElementById('nav-v4').style.display = hasV4 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v5')) document.getElementById('nav-v5').style.display = hasV4 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-v6')) document.getElementById('nav-v6').style.display = hasV4 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-p'))  document.getElementById('nav-p').style.display  = hasP  ? 'inline-block' : 'none';
-    if(document.getElementById('nav-c'))  document.getElementById('nav-c').style.display  = hasC  ? 'inline-block' : 'none';
-    if(document.getElementById('nav-c2')) document.getElementById('nav-c2').style.display = hasC2 ? 'inline-block' : 'none';
-    if(document.getElementById('nav-final')) document.getElementById('nav-final').style.display = hasFinal ? 'inline-block' : 'none';
+    // Leemos en pares (Tag y Contenido)
+    for (let i = 1; i < sections.length; i += 2) {
+        let tag = sections[i].trim();
+        let content = sections[i+1] ? sections[i+1] : "";
+        
+        let secId = "", secClass = "", abrv = "", label = tag;
+        const lowerTag = tag.toLowerCase();
 
+        // Mapeo automático de colores, IDs y abreviaturas
+        if (lowerTag === 'intro') { secId = 'intro'; secClass = 'bg-intro'; abrv = 'IN'; hasIntro = true; }
+        else if (lowerTag === 'verso' || lowerTag === 'verso 1') { secId = 'v1'; secClass = 'bg-v1'; abrv = 'V1'; hasV1 = true; }
+        else if (lowerTag === 'verso 2') { secId = 'v2'; secClass = 'bg-v2'; abrv = 'V2'; hasV2 = true; }
+        else if (lowerTag === 'verso 3') { secId = 'v3'; secClass = 'bg-v3'; abrv = 'V3'; hasV3 = true; }
+        else if (lowerTag === 'verso 4') { secId = 'v4'; secClass = 'bg-v4'; abrv = 'V4'; hasV4 = true; }
+        else if (lowerTag === 'verso 5') { secId = 'v5'; secClass = 'bg-v5'; abrv = 'V5'; hasV5 = true; }
+        else if (lowerTag === 'verso 6') { secId = 'v6'; secClass = 'bg-v6'; abrv = 'V6'; hasV6 = true; }
+        else if (lowerTag === 'puente') { secId = 'p'; secClass = 'bg-p'; abrv = 'P'; hasP = true; }
+        else if (lowerTag === 'coro') { secId = 'c'; secClass = 'bg-c'; abrv = 'C'; hasC = true; }
+        else if (lowerTag === 'coro 2') { secId = 'c2'; secClass = 'bg-c2'; abrv = 'C2'; hasC2 = true; }
+        else if (lowerTag === 'final') { secId = 'final'; secClass = 'bg-final'; abrv = 'F'; hasFinal = true; }
+        else { secId = 'misc'; secClass = 'bg-v1'; abrv = tag.substring(0,2).toUpperCase(); } 
+        
+        // Limpiamos saltos de linea innecesarios en el contenido
+        content = content.replace(/^\s+|\s+$/g, '');
+
+        // Construimos la Estructura de la Tarjeta HTML
+        htmlOutput += `
+        <div id="sec-${secId}" class="song-card">
+            <div class="song-badge ${secClass}">
+                <span class="badge-circle">${abrv}</span>
+                <span class="badge-label">${label}</span>
+            </div>
+            <div class="song-lyrics">${content}</div>
+        </div>`;
+    }
+
+    // Activar o desactivar botones superiores según correspondan
+    if(document.getElementById('nav-intro')) document.getElementById('nav-intro').style.display = hasIntro ? 'flex' : 'none';
+    if(document.getElementById('nav-v1')) document.getElementById('nav-v1').style.display = hasV1 ? 'flex' : 'none';
+    if(document.getElementById('nav-v2')) document.getElementById('nav-v2').style.display = hasV2 ? 'flex' : 'none';
+    if(document.getElementById('nav-v3')) document.getElementById('nav-v3').style.display = hasV3 ? 'flex' : 'none';
+    if(document.getElementById('nav-v4')) document.getElementById('nav-v4').style.display = hasV4 ? 'flex' : 'none';
+    if(document.getElementById('nav-v5')) document.getElementById('nav-v5').style.display = hasV5 ? 'flex' : 'none';
+    if(document.getElementById('nav-v6')) document.getElementById('nav-v6').style.display = hasV6 ? 'flex' : 'none';
+    if(document.getElementById('nav-p'))  document.getElementById('nav-p').style.display  = hasP  ? 'flex' : 'none';
+    if(document.getElementById('nav-c'))  document.getElementById('nav-c').style.display  = hasC  ? 'flex' : 'none';
+    if(document.getElementById('nav-c2')) document.getElementById('nav-c2').style.display = hasC2 ? 'flex' : 'none';
+    if(document.getElementById('nav-final')) document.getElementById('nav-final').style.display = hasFinal ? 'flex' : 'none';
+
+    // Ahora aplicamos la lógica musical sobre este nuevo HTML ya estructurado en tarjetas
     let tempDiv = document.createElement('div');
-    tempDiv.innerHTML = songOriginal;
-    const chords = tempDiv.querySelectorAll('.chord');
+    tempDiv.innerHTML = htmlOutput;
     
+    const chords = tempDiv.querySelectorAll('.chord');
     chords.forEach(element => {
         let parts = element.innerText.split('/');
         let newChord = transformNote(parts[0]);
@@ -272,11 +295,10 @@ function updateSongView() {
     contentDiv.style.fontSize = currentFontSize + 'px';
 }
 
-// NUEVO: Funcionalidad de Desplazamiento a Sección (Compensando el Sticky Header)
 window.scrollToSection = function(secId) {
     const el = document.getElementById('sec-' + secId);
     if (el) {
-        const offset = 120; // Compensación de altura para que el título no quede tapado por el header comprimido
+        const offset = 100; 
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
@@ -360,7 +382,7 @@ window.closeAllModals = function() {
     if(overlay) overlay.style.display = 'none';
 }
 
-/* --- CONTROLADOR DE SCROLL PARA HEADER COMPACTO Y HAMBURGUESA --- */
+/* --- CONTROLADOR DE SCROLL --- */
 window.addEventListener('scroll', () => {
     const header = document.getElementById('songHeaderSticky');
     if (header && document.getElementById('songDetailView').style.display === 'block') {
@@ -368,7 +390,7 @@ window.addEventListener('scroll', () => {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
-            window.closeHamburgerDropdown(); // Auto cierra si subes
+            window.closeHamburgerDropdown(); 
         }
     }
 }, { passive: true });
@@ -438,11 +460,7 @@ function updateFilterVisuals() {
 function renderTable(data) {
     const tbody = document.getElementById('tableBody');
     if (!tbody) return;
-    
-    if (data.length === 0) { 
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; 
-        return; 
-    }
+    if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; }
     
     let htmlContent = '';
     data.forEach((song, index) => {
@@ -484,9 +502,7 @@ window.removeFromPlaylist = function(index, rowElement) {
     if (rowElement && rowElement.parentNode) {
         rowElement.parentNode.removeChild(rowElement);
         document.querySelectorAll('#tableBody .index-col').forEach((td, i) => { td.innerText = i + 1; });
-        if(myPlaylist.length === 0) {
-            document.getElementById('tableBody').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>';
-        }
+        if(myPlaylist.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; }
     } else {
         window.loadPlaylistMode(); 
     }
@@ -519,6 +535,7 @@ function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody');
     if(!tbody) return;
     if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; }
+    
     let htmlContent = '';
     songsData.forEach((song, i) => {
         const globalIndex = originalIds[i]; 
@@ -673,7 +690,7 @@ window.closeCommentModal = function() { const modal = document.getElementById('c
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal'); let subKeyModal = document.getElementById('subKeyModal'); let confirmModal = document.getElementById('confirmModal'); let commentModal = document.getElementById('commentModal'); 
     if (event.target == keyModal) keyModal.style.display = "none"; if (subKeyModal && event.target == subKeyModal) window.closeSubKeyModal(); if (event.target == confirmModal) window.closeConfirmModal(); if (commentModal && event.target == commentModal) window.closeCommentModal();
-    window.closeHamburgerDropdown(); // Cerrar dropdown si tocas fuera
+    window.closeHamburgerDropdown(); 
 }
 
 window.showNotification = function(message) { const toast = document.getElementById("toastNotification"); if (!toast) return; toast.innerText = message; toast.className = "custom-notification show"; setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000); }
