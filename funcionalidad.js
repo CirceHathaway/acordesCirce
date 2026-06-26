@@ -25,7 +25,7 @@ let displaySongs = [];
 let currentSongIndex = -1; 
 let currentSemitones = 0; 
 let isSpanish = false; 
-let currentSectionNoteId = null; // Para saber qué tarjeta estamos anotando
+let currentSectionNoteId = null; 
 
 // LEER MEMORIA
 let savedSize = localStorage.getItem('acordify_fontSize');
@@ -43,6 +43,7 @@ const VALID_KEYS = ['SOL', 'SAM', 'PASTOR', 'SAMU', 'ANGEL', 'CRIS'];
 let currentUserKey = sessionStorage.getItem('acordify_user_key'); 
 let isConnected = !!currentUserKey; 
 
+// Chat & Presence
 let isChatOpen = false;
 let unreadMessages = 0;
 let myConnectionRef = null; 
@@ -114,23 +115,11 @@ window.openSong = function(indexInGlobalArray) {
     
     if (song.comentario) {
         if (fullCommentEl) fullCommentEl.innerText = song.comentario;
-        if (btnNotaMain) {
-            btnNotaMain.style.display = 'flex';     
-            btnNotaMain.classList.add('active-note-blink'); // Efecto de parpadeo dorado
-        }
-        if (btnNotaBurger) {
-            btnNotaBurger.style.display = 'flex';
-            btnNotaBurger.classList.add('active-note-blink');
-        }
+        if (btnNotaMain) { btnNotaMain.style.display = 'flex'; btnNotaMain.classList.add('active-note-blink'); }
+        if (btnNotaBurger) { btnNotaBurger.style.display = 'flex'; btnNotaBurger.classList.add('active-note-blink'); }
     } else {
-        if (btnNotaMain) {
-            btnNotaMain.style.display = 'none';      
-            btnNotaMain.classList.remove('active-note-blink');
-        }
-        if (btnNotaBurger) {
-            btnNotaBurger.style.display = 'none';
-            btnNotaBurger.classList.remove('active-note-blink');
-        }
+        if (btnNotaMain) { btnNotaMain.style.display = 'none'; btnNotaMain.classList.remove('active-note-blink'); }
+        if (btnNotaBurger) { btnNotaBurger.style.display = 'none'; btnNotaBurger.classList.remove('active-note-blink'); }
     }
     
     updateSongView();
@@ -151,13 +140,11 @@ function closeSongUI() {
     window.scrollTo(0,0);
 }
 
-// LÓGICA DE DIBUJADO DE TARJETAS (CARDS) Y NOTAS POR SECCIÓN
 function updateSongView() {
     if (currentSongIndex === -1) return;
     const song = songs[currentSongIndex];
     let songOriginal = song.content;
     
-    // Leer notas guardadas del dispositivo
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     let currentSongNotes = savedSectionNotes[song.title] || {};
     
@@ -196,11 +183,10 @@ function updateSongView() {
         
         content = content.replace(/^\s+|\s+$/g, '');
         
-        // Verificamos si esta tarjeta específica tiene una nota
         let hasNote = !!currentSongNotes[secId];
         let noteIcon = hasNote 
-            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>` // Anotador (Lista)
-            : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`; // Lápiz
+            ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>` 
+            : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`; 
         
         let noteBtnClass = hasNote ? "section-note-btn has-note" : "section-note-btn";
 
@@ -333,7 +319,7 @@ window.addEventListener('scroll', () => {
 window.toggleHamburgerDropdown = function(event) { event.stopPropagation(); const dropdown = document.getElementById('hamburgerDropdownMenu'); if (dropdown) { dropdown.classList.toggle('active'); } }
 window.closeHamburgerDropdown = function() { const dropdown = document.getElementById('hamburgerDropdownMenu'); if (dropdown) { dropdown.classList.remove('active'); } }
 
-/* --- MANEJO DE NOTAS POR SECCIÓN (NUEVO) --- */
+/* --- MANEJO DE ESTADOS DE NOTAS POR SECCIÓN (LECTURA Y EDICIÓN) --- */
 window.openSectionNoteModal = function(secId, secLabel) {
     currentSectionNoteId = secId;
     const songTitle = songs[currentSongIndex].title;
@@ -342,17 +328,48 @@ window.openSectionNoteModal = function(secId, secLabel) {
     
     document.getElementById('sectionNoteLabel').innerText = `(${secLabel})`;
     const textarea = document.getElementById('sectionNoteTextarea');
-    const btnDelete = document.getElementById('btnDeleteSectionNote');
     
     if (currentSongNotes[secId]) {
+        // MODO LECTURA: Mostrar los íconos de Editar/Borrar arriba. Ocultar los botones de abajo.
         textarea.value = currentSongNotes[secId];
-        btnDelete.style.display = 'block';
+        textarea.setAttribute('readonly', true);
+        document.getElementById('sectionNoteHeaderActions').style.display = 'flex';
+        document.getElementById('sectionNoteEditActions').style.display = 'none';
     } else {
+        // MODO EDICIÓN: El campo está vacío. Ocultar íconos de arriba, mostrar botones de abajo.
         textarea.value = '';
-        btnDelete.style.display = 'none';
+        textarea.removeAttribute('readonly');
+        document.getElementById('sectionNoteHeaderActions').style.display = 'none';
+        document.getElementById('sectionNoteEditActions').style.display = 'flex';
     }
     
     document.getElementById('sectionNoteModal').style.display = 'flex';
+}
+
+window.activateSectionNoteEdit = function() {
+    const textarea = document.getElementById('sectionNoteTextarea');
+    textarea.removeAttribute('readonly');
+    textarea.focus();
+    
+    document.getElementById('sectionNoteHeaderActions').style.display = 'none';
+    document.getElementById('sectionNoteEditActions').style.display = 'flex';
+}
+
+window.cancelSectionNoteEdit = function() {
+    const songTitle = songs[currentSongIndex].title;
+    let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
+    let currentSongNotes = savedSectionNotes[songTitle] || {};
+    
+    if (currentSongNotes[currentSectionNoteId]) {
+        // Restaurar estado de Lectura si ya existía una nota
+        document.getElementById('sectionNoteTextarea').value = currentSongNotes[currentSectionNoteId];
+        document.getElementById('sectionNoteTextarea').setAttribute('readonly', true);
+        document.getElementById('sectionNoteHeaderActions').style.display = 'flex';
+        document.getElementById('sectionNoteEditActions').style.display = 'none';
+    } else {
+        // Si era nueva y canceló, cerramos el modal
+        window.closeSectionNoteModal();
+    }
 }
 
 window.closeSectionNoteModal = function() {
@@ -376,7 +393,7 @@ window.saveSectionNote = function() {
     
     localStorage.setItem('acordify_section_notes', JSON.stringify(savedSectionNotes));
     window.closeSectionNoteModal();
-    updateSongView(); // Refresca las tarjetas para actualizar iconos de lápiz a anotador
+    updateSongView(); 
     window.showNotification("Anotación guardada 📝");
 }
 
@@ -437,8 +454,6 @@ window.askClearPlaylist = function() { const modal = document.getElementById('co
 window.closeConfirmModal = function() { const modal = document.getElementById('confirmModal'); if(modal) modal.style.display = 'none'; }
 window.executeClearList = function() { myPlaylist = []; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.closeConfirmModal(); window.showNotification("Lista vaciada correctamente"); if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode(); broadcastChange(); }
 
-/* --- PWA Y LOGICA LIVE OMITIDA PARA AHORRAR ESPACIO (Se mantiene igual abajo) --- */
-window.showNotification = function(message) { const toast = document.getElementById("toastNotification"); if (!toast) return; toast.innerText = message; toast.className = "custom-notification show"; setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000); }
 window.openLiveModal = function() { if (!firebaseLoaded) { window.showNotification("Necesitas internet para esto 📡"); return; } document.getElementById('liveModal').style.display = 'flex'; if (isConnected) showConnectedScreen(); else window.resetLiveModal(); }
 window.closeLiveModal = function() { document.getElementById('liveModal').style.display = 'none'; }
 window.resetLiveModal = function() { document.getElementById('liveConnectionScreen').style.display = 'block'; document.getElementById('liveConnected').style.display = 'none'; document.getElementById('sessionCodeInput').value = ''; }
