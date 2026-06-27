@@ -3623,4 +3623,32 @@ Nun<span class="g"><span class="chord">A</span>ca</span> sa<span class="g"><span
 Ver <span class="g"><span class="chord">A</span>mi</span> pe<span class="g"><span class="chord">Bm</span>cado</span> <span class="g"><span class="chord">G</span>en la cruz...</span>
 `
     },
+
+    {
+        title: "Te entrego",
+        artist: "Marco Barrientos",
+        key: "F",
+        type: "Adoración",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">F</span>Te</span> entrego hoy Señor mi <span class="g"><span class="chord">A#</span>corazón,</span>
+Mi <span class="g"><span class="chord">Gm</span>vida</span> en grati<span class="g"><span class="chord">C</span>tud</span> y a<span class="g"><span class="chord">Am</span>doración.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Dm</span>Amandote</span> en verdad y con<span class="g"><span class="chord">A#</span>fiando en ti,</span>
+Todo mi <span class="g"><span class="chord">Gm</span>ser,</span>
+<span class="g"><span class="chord">C</span>hoy</span> se humilla a <span class="g"><span class="chord">F</span>ti.</span>
+
+[Coro]
+Porque eres <span class="g"><span class="chord">Am</span>dig</span><span class="g"><span class="chord">Dm</span>no,</span>
+<span class="g"><span class="chord">Gm</span>digno</span> de a<span class="g"><span class="chord">C</span>labar,</span>
+Eres <span class="g"><span class="chord">Am</span>dig</span><span class="g"><span class="chord">Dm</span>no,</span> 
+y <span class="g"><span class="chord">Gm</span>digno</span> de ado<span class="g"><span class="chord">C</span>rar.</span>
+
+[Coro 2]
+Mi <span class="g"><span class="chord">Dm</span>Dios</span> y redentor, mi <span class="g"><span class="chord">Am</span>Rey y</span> consola<span class="g"><span class="chord">Dm</span>dor,</span>
+Eres mi <span class="g"><span class="chord">Gm</span>Pa</span><span class="g"><span class="chord">C</span>dre,</span> 
+Dios de <span class="g"><span class="chord">F</span>amor.</span> 
+`
+    },
 ];
