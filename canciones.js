@@ -3651,4 +3651,28 @@ Eres mi <span class="g"><span class="chord">Gm</span>Pa</span><span class="g"><s
 Dios de <span class="g"><span class="chord">F</span>amor.</span> 
 `
     },
+
+    {
+        title: "Celebrad a Cristo",
+        artist: "Danilo Montero",
+        key: "E",
+        type: "Alabanza",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">E</span>¡Cele</span><span class="g"><span class="chord">A</span>brad</span> a <span class="g"><span class="chord">B</span>Cristo,</span> <span class="g"><span class="chord">E</span>celebrad!</span> <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span>
+<span class="g"><span class="chord">E</span>¡Cele</span><span class="g"><span class="chord">A</span>brad</span> a <span class="g"><span class="chord">B</span>Cristo,</span> <span class="g"><span class="chord">E</span>celebrad!</span>
+
+[Coro]
+Resuci<span class="g"><span class="chord">B</span>to,</span> resuci<span class="g"><span class="chord">C#m</span>to,</span>
+Y el <span class="g"><span class="chord">B</span>vive</span> para <span class="g"><span class="chord">C#m</span>siempre,</span>
+
+[Coro 2]
+Resuci<span class="g"><span class="chord">B</span>to,</span> resuci<span class="g"><span class="chord">C#m</span>to,</span>
+<span class="g"><span class="chord">B</span>Vamos</span> a celebrad, <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span>
+<span class="g"><span class="chord">B</span>Vamos</span> a celebrad, <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span>
+<span class="g"><span class="chord">B</span>Vamos a celebrad,</span>
+Que resuci<span class="g"><span class="chord">A</span>to,</span> <span class="g"><span class="chord">B</span>el</span> Se<span class="g"><span class="chord">E</span>ñor.</span>
+
+`
+    },
 ];
