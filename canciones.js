@@ -444,6 +444,7 @@ sea la <span class="g"><span class="chord">C</span>gloria,</span> sea la <span c
         artist: "Marcos Witt",
         key: "E",
         type: "Alabanza",
+        comentario:"Si la canta Ale, es en la misma nota.",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">E</span>Al</span> que me ciñe de poder,
@@ -639,6 +640,7 @@ Y <span class="g"><span class="chord">Em7</span>reflejar</span> al <span class="
         artist: "Rey de Reyes",
         key: "C",
         type: "Adoración",
+        comentario:"Si la canta Gisel, la nota es en G+.",
         content: `
 [Verso 1]
 Digno eres de <span class="g"><span class="chord">C</span>gloria</span> y ala<span class="g"><span class="chord">Am</span>banza,</span>
@@ -1322,6 +1324,7 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
         artist: "Don Moen",
         key: "G",
         type: "Adoración",
+        comentario:"Si la canta Sam, es en la misma nota.",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Sendas</span> Dios ha<span class="g"><span class="chord">D</span>rá,</span> donde <span class="g"><span class="chord">C</span>piensas</span> que no <span class="g"><span class="chord">G</span>hay,</span>
@@ -1536,6 +1539,7 @@ Y a<span class="g"><span class="chord">F</span>quí</span> permanece<span class=
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        comentario:"Si la canta Gisel o Sol, la nota es en E+.",
         content: `
 [Verso 1]
 Mas el <span class="g"><span class="chord">G</span>Dios</span> de toda <span class="g"><span class="chord">Bm</span>gra</span><span class="g"><span class="chord">Em7</span>cia,</span>
@@ -2401,6 +2405,7 @@ Yo <span class="g"><span class="chord">Am7</span>tengo</span> <span class="g"><s
         artist: "Juan Carlos Alvarado",
         key: "Em",
         type: "Adoración",
+        comentario:"Si la canta Sam, es en la misma nota.",
         content: `
 [Verso 1]
 Si tan <span class="g"><span class="chord">Em</span>solo</span> to<span class="g"><span class="chord">D</span>care</span> el borde de su <span class="g"><span class="chord">C</span>manto,</span>
