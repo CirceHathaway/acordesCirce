@@ -3677,7 +3677,49 @@ Resuci<span class="g"><span class="chord">B</span>to,</span> resuci<span class="
 <span class="g"><span class="chord">B</span>Vamos</span> a celebrad, <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span>
 <span class="g"><span class="chord">B</span>Vamos a celebrad,</span>
 Que resuci<span class="g"><span class="chord">A</span>to,</span> <span class="g"><span class="chord">B</span>el</span> Se<span class="g"><span class="chord">E</span>ñor.</span>
+`
+    },
 
+    {
+        title: "Delante de tu Trono",
+        artist: "Marco Barrientos",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+De<span class="g"><span class="chord">G</span>lante</span> de tu trono,
+Se<span class="g"><span class="chord">Em</span>ñor</span> yo quiero estar,
+<span class="g"><span class="chord">C</span>Para</span> contem<span class="g"><span class="chord">Am</span>plar,</span>
+Tu hermo<span class="g"><span class="chord">C</span>sura</span> y santi<span class="g"><span class="chord">D</span>dad.</span>
+
+[Coro]
+Y de<span class="g"><span class="chord">G</span>cir</span><span class="g"><span class="chord">D</span>te,</span> te <span class="g"><span class="chord">Em</span>amo</span>
+Y de<span class="g"><span class="chord">C</span>cir</span><span class="g"><span class="chord">Am</span>te,</span> te <span class="g"><span class="chord">D</span>adoro.</span>
+
+[Coro 2]
+Y de<span class="g"><span class="chord">G</span>cir</span><span class="g"><span class="chord">D</span>te,</span> te <span class="g"><span class="chord">Em</span>amo</span>
+Y que <span class="g"><span class="chord">C</span>eres</span> todo <span class="g"><span class="chord">D</span>para</span> <span class="g"><span class="chord">D</span>mi.</span>
+`
+    },
+
+    {
+        title: "He decidido seguir a Cristo",
+        artist: "Himno",
+        key: "G",
+        type: "Adoración",
+        comentario:"Esta nota es para Sol.",
+        content: `
+[Verso 1]
+He deci<span class="g"><span class="chord">G</span>dido</span> se<span class="g"><span class="chord">C</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+He deci<span class="g"><span class="chord">C</span>dido</span> se<span class="g"><span class="chord">D</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+He deci<span class="g"><span class="chord">G</span>dido</span> se<span class="g"><span class="chord">C</span>guir</span> a <span class="g"><span class="chord">G</span>Cristo,</span>
+no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><span class="g"><span class="chord">D</span>vo</span> a<span class="g"><span class="chord">G</span>trás.</span>
+
+[Verso 2]
+La cruz es<span class="g"><span class="chord">G</span>tá</span> ante mi, el <span class="g"><span class="chord">C</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+La cruz es<span class="g"><span class="chord">C</span>tá</span> ante mi, el <span class="g"><span class="chord">D</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+La cruz es<span class="g"><span class="chord">G</span>tá</span> ante mi, el <span class="g"><span class="chord">C</span>mundo</span> a<span class="g"><span class="chord">G</span>trás quedó,</span>
+no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><span class="g"><span class="chord">D</span>vo</span> a<span class="g"><span class="chord">G</span>trás.</span>
 `
     },
 ];
