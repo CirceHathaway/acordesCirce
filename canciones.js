@@ -3722,4 +3722,117 @@ La cruz es<span class="g"><span class="chord">G</span>tá</span> ante mi, el <sp
 no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><span class="g"><span class="chord">D</span>vo</span> a<span class="g"><span class="chord">G</span>trás.</span>
 `
     },
+
+    {
+        title: "Envíame a mí",
+        artist: "Jesús Adrián Romero",
+        key: "D",
+        type: "Adoración",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">D</span>La mies</span> es <span class="g"><span class="chord">A</span>mucha,</span> <span class="g"><span class="chord">Bm</span>hay gran</span> necesi<span class="g"><span class="chord">F#m</span>dad,</span>
+<span class="g"><span class="chord">G</span>Y pocos</span> o<span class="g"><span class="chord">Em</span>breros</span> al campo <span class="g"><span class="chord">A</span>van.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">D</span>Hoy muchos</span> se <span class="g"><span class="chord">A</span>pierden,</span> <span class="g"><span class="chord">Bm</span>viven sin</span> direc<span class="g"><span class="chord">F#m</span>ción,</span>
+<span class="g"><span class="chord">G</span>Vagan</span> como o<span class="g"><span class="chord">Em</span>bejas</span> sin pas<span class="g"><span class="chord">A</span>tor.</span>
+
+[Coro]
+<span class="g"><span class="chord">D</span>Heme</span> <span class="g"><span class="chord">A</span>aquí,</span> <span class="g"><span class="chord">Bm</span>   envíame a</span> <span class="g"><span class="chord">G</span>mi...</span>
+<span class="g"><span class="chord">D</span>Heme</span> <span class="g"><span class="chord">A</span>aquí,</span> <span class="g"><span class="chord">Bm</span>   envíame a</span> <span class="g"><span class="chord">G</span>mi...</span>
+Yo iré por a<span class="g"><span class="chord">D</span>quellos</span> que vagan sin <span class="g"><span class="chord">G</span>    ti,</span>
+Envíame a <span class="g"><span class="chord">G</span>mí,</span> <span class="g"><span class="chord">A</span>..</span>
+Yo i<span class="g"><span class="chord">D</span>ré.</span>
+`
+    },
+
+    {
+        title: "Ho Jesús",
+        artist: "Angel Fontora",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+Hoy siento tu pre<span class="g"><span class="chord">G</span>sencia,</span>
+estas dentro de <span class="g"><span class="chord">Em</span>mí,</span>
+como aquel primer <span class="g"><span class="chord">C</span>día,</span> <span class="g"><span class="chord">Am</span>..</span>
+en que te cono<span class="g"><span class="chord">D</span>cí.</span>
+
+[Verso 2]
+Y me tiemblan las <span class="g"><span class="chord">G</span>manos,</span>
+me estalla el cora<span class="g"><span class="chord">Em</span>zón,</span>
+cuando tu Espíritu <span class="g"><span class="chord">C</span>Santo,</span> <span class="g"><span class="chord">Am</span>..</span>
+reposa en mi inte<span class="g"><span class="chord">D</span>rior.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>¡Oh,</span> Jesús!
+yo te alaba<span class="g"><span class="chord">Bm</span>ré</span> Jesús,
+y <span class="g"><span class="chord">C</span>te</span> engrandeceré Jesús, 
+por gloria a tu <span class="g"><span class="chord">G</span>nombre</span>, a tu <span class="g"><span class="chord">D</span>nombre.</span>
+
+[Coro 2]
+<span class="g"><span class="chord">G</span>¡Oh,</span> Jesús!
+yo te abraza<span class="g"><span class="chord">Bm</span>ré</span> Jesús,
+y <span class="g"><span class="chord">C</span>testificaré</span> Jesús,
+tu palabra tie<span class="g"><span class="chord">G</span>ne</span> poder, tie<span class="g"><span class="chord">D</span>ne</span> poder.
+`
+    },
+
+    {
+        title: "Renuevame",
+        artist: "Marcos Witt",
+        key: "D",
+        type: "Adoración",
+        content: `
+[Verso 1]
+Re<span class="g"><span class="chord">D</span>nuéva</span><span class="g"><span class="chord">G</span>me,</span> Se<span class="g"><span class="chord">A</span>ñor</span> Je<span class="g"><span class="chord">F#m</span>sús,</span>
+<span class="g"><span class="chord">G</span>Ya</span> no <span class="g"><span class="chord">Em</span>quiero</span> ser <span class="g"><span class="chord">A</span>igual</span>
+Re<span class="g"><span class="chord">D</span>nuéva</span><span class="g"><span class="chord">G</span>me,</span> Se<span class="g"><span class="chord">A</span>ñor</span> Je<span class="g"><span class="chord">F#m</span>sús,</span>
+<span class="g"><span class="chord">G</span>Pon</span> en <span class="g"><span class="chord">Em</span>mi</span> tu cora<span class="g"><span class="chord">A</span>zón.</span>
+
+[Coro]
+Porque <span class="g"><span class="chord">D</span>todo</span> lo que <span class="g"><span class="chord">A</span>hay</span> den<span class="g"><span class="chord">Bm</span>tro</span> de <span class="g"><span class="chord">F#m</span>mi,</span>
+<span class="g"><span class="chord">G</span>Nece</span><span class="g"><span class="chord">Em</span>sita</span> ser cam<span class="g"><span class="chord">G</span>biado</span> Se<span class="g"><span class="chord">A</span>ñor,</span>
+Porque <span class="g"><span class="chord">D</span>todo</span> lo que <span class="g"><span class="chord">A</span>hay</span> dentro de <span class="g"><span class="chord">Bm</span>mi</span> cora<span class="g"><span class="chord">F#m</span>zón,</span>
+<span class="g"><span class="chord">G</span>Nece</span><span class="g"><span class="chord">A</span>sita</span> más de <span class="g"><span class="chord">D</span>ti.</span>
+`
+    },
+
+    {
+        title: "Sublime Gracia",
+        artist: "Himno",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+Su<span class="g"><span class="chord">G</span>blime</span> gracia <span class="g"><span class="chord">C</span>del</span> Se<span class="g"><span class="chord">G</span>ñor,</span>
+Que a un infeliz <span class="g"><span class="chord">D</span>salvó,</span>
+Fui <span class="g"><span class="chord">G</span>ciego</span> mas hoy <span class="g"><span class="chord">C</span>veo</span> <span class="g"><span class="chord">G</span>yo</span>
+Per<span class="g"><span class="chord">Em</span>dido</span> y <span class="g"><span class="chord">D</span>él</span> me <span class="g"><span class="chord">G</span>halló.</span>
+
+[Verso 2]
+Su <span class="g"><span class="chord">G</span>gracia</span> me ense<span class="g"><span class="chord">C</span>ñó</span> a te<span class="g"><span class="chord">G</span>mer,</span>
+Mis dudas ahuyen<span class="g"><span class="chord">D</span>tó,</span>
+Oh, <span class="g"><span class="chord">G</span>cúan</span> precioso <span class="g"><span class="chord">C</span>fue</span> a mi <span class="g"><span class="chord">G</span>ser,</span>
+Cuan<span class="g"><span class="chord">Em</span>do</span> él me <span class="g"><span class="chord">D</span>trans</span><span class="g"><span class="chord">G</span>formó.</span>
+
+[Coro]
+Ya libre <span class="g"><span class="chord">C</span>soy,</span> Dios me <span class="g"><span class="chord">G</span>salvó,</span>
+Y mis ca<span class="g"><span class="chord">C</span>denas</span> ya Él rom<span class="g"><span class="chord">G</span>pío.</span>
+Y como un <span class="g"><span class="chord">C</span>río</span> fluye el per<span class="g"><span class="chord">Em</span>dón,</span>
+Sublime <span class="g"><span class="chord">Am</span>gracia,</span> <span class="g"><span class="chord">D</span>    inmenso</span> a<span class="g"><span class="chord">G</span>mor.</span>
+
+[Verso 3]
+En <span class="g"><span class="chord">G</span>los</span> peligros <span class="g"><span class="chord">C</span>o aflic</span><span class="g"><span class="chord">G</span>ción,</span>
+Que yo he tenido a<span class="g"><span class="chord">D</span>quí,</span>
+Su <span class="g"><span class="chord">G</span>gracia</span> siempre <span class="g"><span class="chord">C</span>me</span> li<span class="g"><span class="chord">G</span>bró,</span>
+Y <span class="g"><span class="chord">Em</span>me</span> guia<span class="g"><span class="chord">D</span>rá</span> fe<span class="g"><span class="chord">G</span>liz.</span>
+
+[Verso 4]
+Y <span class="g"><span class="chord">G</span>cuando</span> en Sión por <span class="g"><span class="chord">C</span>siglos</span> <span class="g"><span class="chord">G</span>mil,</span>
+Brillando esté cuál <span class="g"><span class="chord">D</span>sol,</span>
+Yo <span class="g"><span class="chord">G</span>cantaré</span> por <span class="g"><span class="chord">C</span>siempre</span> a<span class="g"><span class="chord">G</span>llí,</span>
+Su <span class="g"><span class="chord">Em</span>amor</span> que <span class="g"><span class="chord">D</span>me</span> sal<span class="g"><span class="chord">G</span>vó.</span>
+`
+    },
 ];
