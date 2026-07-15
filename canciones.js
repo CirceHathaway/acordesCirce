@@ -4305,7 +4305,7 @@ No puedo es<span class="g"><span class="chord">B</span>tar</span> si no estás t
 
     {
         title: "Hay un Rey",
-        artist: "Brunet",
+        artist: "Marcos Brunet",
         key: "Dm",
         type: "Adoración",
         content: `
@@ -4483,7 +4483,7 @@ Haz tu volun<span class="g"><span class="chord">Em</span>tad</span> en mi <span 
 
     {
         title: "Deseable",
-        artist: "Brunet",
+        artist: "Marcos Brunet",
         key: "F#m",
         type: "Adoración",
         content: `
