@@ -720,6 +720,7 @@ Alelu<span class="g"><span class="chord">E</span>ya.</span>
         artist: "Marco Barrientos",
         key: "D",
         type: "Adoración",
+        comentario:"Si la canta Gi, es en la misma nota.",
         content: ` 
 [Verso 1]
 En <span class="g"><span class="chord">D</span>ti</span> confía mi <span class="g"><span class="chord">G</span>corazón,</span>
@@ -1145,6 +1146,7 @@ Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        comentario:"Si la canta Gi, la nota es en C+.",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Tus</span> ojos revelan que yo <span class="g"><span class="chord">Em</span>nada</span> puedo esconder,
@@ -1297,6 +1299,7 @@ han <span class="g"><span class="chord">D</span>sido</span> <span class="g"><spa
         artist: "Danilo Montero",
         key: "D",
         type: "Alabanza",
+        comentario:"Si la canta Ale, es en la misma nota.",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Eres</span> tú la úni<span class="g"><span class="chord">A</span>ca</span> razón de mi <span class="g"><span class="chord">Bm</span>adoración</span>
@@ -1314,7 +1317,7 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
 <span class="g"><span class="chord">E</span>Te</span> alaba<span class="g"><span class="chord">B</span>ré,</span> <span class="g"><span class="chord">C#m</span>te</span>glorifica<span class="g"><span class="chord">A</span>ré</span>
 <span class="g"><span class="chord">E</span>Te</span> alaba<span class="g"><span class="chord">B</span>ré,</span> mi buen Je<span class="g"><span class="chord">A</span>sús.</span>
 
-[Verso 2]
+[Coro 2]
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te alaba<span class="g"><span class="chord">E</span>ré,</span>
 <span class="g"><span class="chord">E</span>En</span> todo <span class="g"><span class="chord">A</span>tiempo</span> te adora<span class="g"><span class="chord">B</span>ré.</span> `
     },
@@ -3833,6 +3836,681 @@ Y <span class="g"><span class="chord">G</span>cuando</span> en Sión por <span c
 Brillando esté cuál <span class="g"><span class="chord">D</span>sol,</span>
 Yo <span class="g"><span class="chord">G</span>cantaré</span> por <span class="g"><span class="chord">C</span>siempre</span> a<span class="g"><span class="chord">G</span>llí,</span>
 Su <span class="g"><span class="chord">Em</span>amor</span> que <span class="g"><span class="chord">D</span>me</span> sal<span class="g"><span class="chord">G</span>vó.</span>
+`
+    },
+
+    {
+        title: "Bautízame",
+        artist: "Generación 12",
+        key: "Am",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">G</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Am</span>Sé</span> que tú de<span class="g"><span class="chord">G</span>seas</span> más de <span class="g"><span class="chord">Am</span>mí,</span> sé que <span class="g"><span class="chord">G</span>clamas</span> por <span class="g"><span class="chord">Dm</span>mí</span>
+Esperando es<span class="g"><span class="chord">G</span>toy</span> por Tu po<span class="g"><span class="chord">Dm</span>der,</span> <span class="g"><span class="chord">F</span></span>
+<span class="g"><span class="chord">Em</span>vien</span>to de Dios, sopla en <span class="g"><span class="chord">Am</span>mí.</span>
+
+[Coro]
+<span class="g"><span class="chord">Am</span>Bautí</span>zame con Tu <span class="g"><span class="chord">G</span>fuego,</span> <span class="g"><span class="chord">Dm</span>bautí</span>zame con Tu <span class="g"><span class="chord">Am</span>fuego</span>
+<span class="g"><span class="chord">C</span>San</span>to, santo, <span class="g"><span class="chord">Em</span>San</span>to Espíri<span class="g"><span class="chord">Am</span>tu.</span>
+
+[Puente]
+<span class="g"><span class="chord">C</span>Me</span> despojo de <span class="g"><span class="chord">G</span>mí,</span> sa<span class="g"><span class="chord">Dm</span>túra</span>me de <span class="g"><span class="chord">Am</span>ti</span>
+<span class="g"><span class="chord">C</span>Y</span> mis días vi<span class="g"><span class="chord">Dm</span>vi</span>ré por <span class="g"><span class="chord">F</span>ti,</span> <span class="g"><span class="chord">G</span>Es</span>píritu <span class="g"><span class="chord">Am</span>Santo.</span>
+
+[Coro 2]
+<span class="g"><span class="chord">Am</span>Bautí</span>zame con Tu <span class="g"><span class="chord">G</span>fuego,</span> <span class="g"><span class="chord">Dm</span>bautí</span>zame con Tu <span class="g"><span class="chord">Am</span>fuego</span>
+<span class="g"><span class="chord">C</span>San</span>to, santo, <span class="g"><span class="chord">Em</span>San</span>to Espíri<span class="g"><span class="chord">Am</span>tu.</span>
+`
+    },
+
+    {
+        title: "Es Él",
+        artist: "Marcos Brunet",
+        key: "A",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">A</span>Es</span>toy preparando el camino
+<span class="g"><span class="chord">F#m</span>En</span>derezando las ve<span class="g"><span class="chord">D</span>re</span><span class="g"><span class="chord">A</span>das</span>
+
+Cada vez más disminuyendo
+<span class="g"><span class="chord">F#m</span>Por</span>que im<span class="g"><span class="chord">D</span>por</span>ta que él <span class="g"><span class="chord">A</span>crez</span>ca.
+
+[Verso 2]
+<span class="g"><span class="chord">D</span>Mi</span> placer en él es<span class="g"><span class="chord">F#m</span>tá</span>
+Yo no soy digno de desa<span class="g"><span class="chord">A</span>tar</span>
+Sus san<span class="g"><span class="chord">E</span>da</span>lias.
+
+[Verso 3]
+<span class="g"><span class="chord">D</span>Mi</span> vida entera en él es<span class="g"><span class="chord">F#m</span>tá</span>
+Y yo camino con la cer<span class="g"><span class="chord">A</span>te</span>za
+De que volve<span class="g"><span class="chord">E</span>rá.</span>
+
+[Coro]
+<span class="g"><span class="chord">D</span>Es</span> él
+Por <span class="g"><span class="chord">E</span>él</span> que estoy gastando mi <span class="g"><span class="chord">F#m</span>vi</span>da
+Perdiendo <span class="g"><span class="chord">C#m</span>to</span>do por amor y con ale<span class="g"><span class="chord">D</span>grí</span>a
+Dueño de mis <span class="g"><span class="chord">E</span>dí</span>as.`
+    },
+
+    {
+        title: "Avívanos / La Tierra Clama",
+        artist: "Conquistando Fronteras",
+        key: "A#m",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">A#m</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">Am</span></span>
+
+[Verso 1]
+(x2)
+Llena <span class="g"><span class="chord">A#m</span>este</span> ambiente, Llena <span class="g"><span class="chord">C</span>este</span> lu<span class="g"><span class="chord">Dm</span>gar,</span> <span class="g"><span class="chord">Am</span>..</span> 
+Te <span class="g"><span class="chord">A#m</span>damos</span> libertad, Derrama <span class="g"><span class="chord">C</span>tu</span> espíri<span class="g"><span class="chord">Dm</span>tu,</span>
+<span class="g"><span class="chord">Am</span>Ohoh.</span>
+
+[Verso 2]
+(x2)
+Ven y
+<span class="g"><span class="chord">A#m</span>Haz</span> lo que ningún hombre pudo hacer,
+Ven y <span class="g"><span class="chord">A#m</span>haz</span> lo que la historia nunca <span class="g"><span class="chord">C</span>vio</span>
+Y a cum<span class="g"><span class="chord">Dm</span>plir</span> lo escrito en Joel, Avíva<span class="g"><span class="chord">Am</span>nos.</span>
+
+[Instrumental]
+(x3)
+<span class="g"><span class="chord">A#m</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">Am</span></span>
+
+[Coro]
+Que sea <span class="g"><span class="chord">A#m</span>hoy,</span> que sea ahora,
+Ven de<span class="g"><span class="chord">C</span>rrama</span> tu Espíritu,
+Que sea <span class="g"><span class="chord">Dm</span>hoy,</span> que sea ahora
+Ven de<span class="g"><span class="chord">Am</span>rrama</span> tu Espíritu
+
+[Verso 3]
+La tierra <span class="g"><span class="chord">A#m</span>clama</span> ohoh
+La <span class="g"><span class="chord">C</span>tierra</span> <span class="g"><span class="chord">Dm</span>llama,</span> llama, llama, <span class="g"><span class="chord">Am</span>..</span>
+Una vez <span class="g"><span class="chord">A#m</span>más,</span> queremos ver,
+A <span class="g"><span class="chord">C</span>Jesús</span> <span class="g"><span class="chord">Dm</span>des</span>cen<span class="g"><span class="chord">Am</span>der.</span>
+..
+
+[Puente]
+<span class="g"><span class="chord">A#m</span>Oh</span> oh oh ohohoh, Oh oh oh <span class="g"><span class="chord">C</span>ohohoh,</span>
+<span class="g"><span class="chord">Dm</span>Oh</span> oh oh ohohoh,
+<span class="g"><span class="chord">Am</span>Fuego</span> y gloria, Fuego y gloria.
+
+[Verso 4]
+<span class="g"><span class="chord">A#m</span>Ven</span> con fuego y muéstranos tu gloria,
+<span class="g"><span class="chord">A#m</span>Ven</span> con fuego y muéstranos tu glo<span class="g"><span class="chord">C</span>ria,</span> <span class="g"><span class="chord">Dm</span></span>
+<span class="g"><span class="chord">Dm</span>Ven</span> con fuego y muéstranos tu gloria,
+<span class="g"><span class="chord">Am</span>Fuego</span> y gloria, Fuego y gloria.
+
+[Verso 5]
+<span class="g"><span class="chord">A#m</span>Los</span> ojos de los ciegos hoy se abren,
+<span class="g"><span class="chord">A#m</span>La</span> lengua de los mudos hoy te ado<span class="g"><span class="chord">C</span>ra,</span> <span class="g"><span class="chord">Dm</span></span>
+<span class="g"><span class="chord">Dm</span>Los</span> cojos saltan de alegría,
+<span class="g"><span class="chord">Am</span>Aviva</span>nos, avivanos.
+`
+    },
+
+    {
+        title: "Yo Navegaré",
+        artist: "Dahiara",
+        key: "G#m",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">F#</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D#4</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">G#m</span>Yo</span> navegaré,
+En el río de tu Es<span class="g"><span class="chord">F#</span>pí</span>ritu,
+Y allí adora<span class="g"><span class="chord">E</span>ré,</span> <span class="g"><span class="chord">C#m</span>..</span>
+<span class="g"><span class="chord">D#7</span>Al</span> Dios que me amo.
+
+[Verso 2]
+<span class="g"><span class="chord">G#m</span>Yo</span> adorare,
+Al Dios que me da <span class="g"><span class="chord">F#</span>vi</span>da,
+Que me com<span class="g"><span class="chord">E</span>pren</span>de,  <span class="g"><span class="chord">C#m</span>..</span>
+<span class="g"><span class="chord">D#7</span>Sin</span> ninguna explicación.
+
+[Coro]
+<span class="g"><span class="chord">G#m</span>Es</span>píritu, Espíritu,
+Desciende como <span class="g"><span class="chord">F#</span>fue</span>go,
+Como en Pentecos<span class="g"><span class="chord">E</span>tés,</span>  <span class="g"><span class="chord">C#m</span>..</span>
+<span class="g"><span class="chord">D#7</span>Y</span> Lléname de nuevo.
+`
+    },
+
+    {
+        title: "Ven Espíritu Santo",
+        artist: "Barak",
+        key: "Em",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">B</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Em</span>Es</span>toy aquí desespe<span class="g"><span class="chord">D</span>ra</span>do por ti
+Con un cora<span class="g"><span class="chord">C</span>zón</span> sediento,
+Que espera be<span class="g"><span class="chord">B</span>ber</span> de ti,
+
+[Puente]
+<span class="g"><span class="chord">C</span>Cuan</span>do tu gloria desciende a un lugar,
+<span class="g"><span class="chord">D</span>To</span>da la tierra tiene que adorar,
+Resu<span class="g"><span class="chord">Am</span>ci</span>tan los muertos, se sanan enfermos por <span class="g"><span class="chord">B</span>tu</span> poder,
+<span class="g"><span class="chord">C</span>Que</span>remos sentir, llenarnos de ti,
+<span class="g"><span class="chord">D</span>Es</span>píritu santo envuélvenos en ti,
+<span class="g"><span class="chord">Am</span>De</span>rrama tu gloria,
+Espe<span class="g"><span class="chord">B</span>ra</span>mos por ti.
+
+[Coro]
+<span class="g"><span class="chord">Em</span>Ven,</span> ven, ven Espíritu Santo,
+<span class="g"><span class="chord">D</span>Ven,</span> ven, ven Espíritu Santo,
+<span class="g"><span class="chord">C</span>Ven,</span> ven, ven <span class="g"><span class="chord">Am</span>lle</span>na este lu<span class="g"><span class="chord">B</span>gar.</span>
+`
+    },
+
+    {
+        title: "Bautizados En Fuego",
+        artist: "Montesanto",
+        key: "Bm",
+        type: "Alabanza",
+        content: `
+[Intro]
+<span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Bm</span>Se</span> escucha un sonido,  el rugido del <span class="g"><span class="chord">D</span>León,</span>
+Le<span class="g"><span class="chord">Em</span>van</span>tando a sus hijos, desper<span class="g"><span class="chord">D</span>tan</span>do a esta na<span class="g"><span class="chord">A</span>ción.</span>
+
+[Puente]
+<span class="g"><span class="chord">G</span>Nos</span> dio poder y autoridad
+Sobre la muerte y toda la enferme<span class="g"><span class="chord">A</span>dad,</span>
+Nos ha sentado en un lugar celes<span class="g"><span class="chord">G</span>tial,</span>
+Con nuestra boca vamos a profeti<span class="g"><span class="chord">A</span>zar.</span>
+
+[Coro]
+<span class="g"><span class="chord">D</span>Je</span>sucristo es rey, la muerte ven<span class="g"><span class="chord">F#m</span>ció</span>
+Hemos nacido de <span class="g"><span class="chord">Bm</span>nue</span>vo, bautizados en <span class="g"><span class="chord">G</span>fue</span>go
+<span class="g"><span class="chord">D</span>A</span> una sola voz, canta la crea<span class="g"><span class="chord">F#m</span>ción</span>
+Hemos nacido de <span class="g"><span class="chord">Bm</span>nue</span>vo, bautizados en <span class="g"><span class="chord">G</span>fue</span>go
+Bauti<span class="g"><span class="chord">G</span>za</span>dos en fuego.
+
+[Verso 2]
+<span class="g"><span class="chord">G</span>Fue</span>go, fuego, <span class="g"><span class="chord">A</span>fue</span>go, fuego,
+<span class="g"><span class="chord">G</span>Fue</span>go, fuego, bauti<span class="g"><span class="chord">A</span>za</span>dos en fuego,
+<span class="g"><span class="chord">G</span>Fue</span>go, fuego, <span class="g"><span class="chord">A</span>fue</span>go, fuego,
+<span class="g"><span class="chord">G</span>Fue</span>go, fuego, bauti<span class="g"><span class="chord">A</span>za</span>dos.
+`
+    },
+
+    {
+        title: "Fiesta En El Desierto",
+        artist: "Montesanto",
+        key: "C#m",
+        type: "Alabanza",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">C#m</span>En</span> Santiago uno, verso dos,
+Está escrito que tenga gozo,
+Cuando pase por diversas pruebas,
+Porque de allí saldré victorioso.
+
+[Puente]
+<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>dan</span>za
+Ya no hay tris<span class="g"><span class="chord">G#7</span>te</span>za, solo ala<span class="g"><span class="chord">C#m</span>ban</span>za
+<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>dan</span>za
+Ya no hay tris<span class="g"><span class="chord">G#7</span>te</span>za.
+
+[Coro]
+<span class="g"><span class="chord">A</span>Yo</span> Danzo, danzo, <span class="g"><span class="chord">B</span>dan</span>zo, danzo
+<span class="g"><span class="chord">G#7</span>Dan</span>zo, danzo, <span class="g"><span class="chord">C#m</span>en</span> el proceso
+<span class="g"><span class="chord">A</span>Gri</span>to, grito, <span class="g"><span class="chord">B</span>gri</span>to, grito
+<span class="g"><span class="chord">G#7</span>Gri</span>to, grito, <span class="g"><span class="chord">C#m</span>no</span> moriré.
+
+[Coro 2]
+<span class="g"><span class="chord">A</span>Doy</span> vueltas, vueltas, <span class="g"><span class="chord">B</span>vuel</span>tas, vueltas,
+<span class="g"><span class="chord">G#7</span>Vuel</span>tas, vueltas, <span class="g"><span class="chord">C#m</span>no</span> me avergüenzo,
+<span class="g"><span class="chord">A</span>Hay</span> fiesta, fiesta, <span class="g"><span class="chord">B</span>fies</span>ta, fiesta,
+<span class="g"><span class="chord">G#7</span>Fies</span>ta, fiesta <span class="g"><span class="chord">C#m</span>en</span> el desierto.
+
+[Instrumental]
+<span class="g"><span class="chord">A</span>La</span> la la la la la
+<span class="g"><span class="chord">B</span>La</span> la la la la la
+<span class="g"><span class="chord">G#7</span>La</span> la la la la la
+<span class="g"><span class="chord">C#m</span>La</span> la la la
+
+[Verso 2]
+Aunque venga la enfermedad,
+Mientras viva te alabaré,
+Aunque mis labios quieran callar,
+Mientras viva te alabaré.
+
+[Verso 3]
+Aunque el de<span class="g"><span class="chord">A</span>sier</span>to me quiera secar,
+Mientras <span class="g"><span class="chord">B</span>vi</span>va te alabaré,
+Aunque la hi<span class="g"><span class="chord">C</span>gue</span>ra no florezca,
+Mientras <span class="g"><span class="chord">G#7</span>vi</span>va te alabaré.
+`
+    },
+
+    {
+        title: "La Ola",
+        artist: "New Wine",
+        key: "Dm",
+        type: "Alabanza",
+        content: `
+[Verso 1]
+(x2)
+<span class="g"><span class="chord">Dm</span>Dios</span> nos llama a expander Su reino y llevar,
+<span class="g"><span class="chord">Bb</span>Su</span> avivamiento <span class="g"><span class="chord">C</span>por</span> todo el mundo,
+<span class="g"><span class="chord">Dm</span>Ábranse</span> las costas y entrará la ola,
+<span class="g"><span class="chord">Bb</span>Del</span> avivamiento <span class="g"><span class="chord">C</span>por</span> todo el <span class="g"><span class="chord">D5</span>mundo.</span>
+
+[Puente]
+<span class="g"><span class="chord">A#</span>Nunca</span> parará la <span class="g"><span class="chord">C</span>ola,</span> nunca parará,
+<span class="g"><span class="chord">Dm</span>Nunca</span> parará la <span class="g"><span class="chord">Am</span>ola,</span> nunca parará,
+<span class="g"><span class="chord">A#</span>Nunca</span> parará la <span class="g"><span class="chord">C</span>ola,</span> nunca para<span class="g"><span class="chord">Dm</span>rá,</span>
+Nunca parará.
+
+[Coro]
+(x2)
+<span class="g"><span class="chord">Dm</span>Ven</span> muévete <span class="g"><span class="chord">A#</span>en</span> la corriente
+<span class="g"><span class="chord">C</span>De</span> Su Es<span class="g"><span class="chord">Am</span>píritu,</span>
+Ven a <span class="g"><span class="chord">Dm</span>ver</span> lo que <span class="g"><span class="chord">A#</span>ojo</span> no ha vis<span class="g"><span class="chord">C</span>to,</span>
+Le<span class="g"><span class="chord">Gm</span>vántate.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Dm</span>La</span> tierra está esperando y está clamando
+<span class="g"><span class="chord">A#</span>Por</span> avivamiento <span class="g"><span class="chord">C</span>por</span> todo el mundo
+<span class="g"><span class="chord">Dm</span>Ábranse</span> las costas y entrará la ola
+<span class="g"><span class="chord">A#</span>Del</span> avivamiento <span class="g"><span class="chord">C</span>por</span> todo el mundo.
+
+[Instrumental]
+<span class="g"><span class="chord">Dm</span>Wooh</span> oh oh <span class="g"><span class="chord">A#</span>oh,</span>
+<span class="g"><span class="chord">C</span>Wooh</span> oh oh oh,
+<span class="g"><span class="chord">Am</span>Wooh</span> oh oh oh oh.
+
+[Verso 3]
+<span class="g"><span class="chord">Gm</span>Cristo</span> Tu eres la <span class="g"><span class="chord">Dm</span>luz del mundo,</span>
+Nuestra espe<span class="g"><span class="chord">F</span>ranza,</span>
+Justicia trae<span class="g"><span class="chord">C</span>rás.</span>
+
+[Verso 4]
+Tu has derra<span class="g"><span class="chord">Gm</span>mado</span> tu Espíritu <span class="g"><span class="chord">Dm</span>Santo,</span>
+Lo que muerto es<span class="g"><span class="chord">F</span>tá</span> lo resucita<span class="g"><span class="chord">C</span>rás,</span>
+Lo resuci<span class="g"><span class="chord">A#</span>ta</span><span class="g"><span class="chord">C</span>rás,</span> <span class="g"><span class="chord">Dm</span>..</span> <span class="g"><span class="chord">Em</span>..</span>
+Lo resuci<span class="g"><span class="chord">A#</span>ta</span><span class="g"><span class="chord">C</span>ras.</span> <span class="g"><span class="chord">Dm</span>..</span>
+`
+    },
+
+    {
+        title: "Mi Gozo",
+        artist: "Barak",
+        key: "D",
+        type: "Alabanza",
+        content: `
+[Intro]
+<span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">A</span>Quien</span> po<span class="g"><span class="chord">D</span>drá</span> separarme de <span class="g"><span class="chord">Em</span>ti</span> <span class="g"><span class="chord">D</span>Dios,</span>
+Si <span class="g"><span class="chord">Bm</span>aún</span> cuando te <span class="g"><span class="chord">A</span>fa</span>llo,
+A<span class="g"><span class="chord">G</span>quí</span> estás.
+
+[Verso 2]
+<span class="g"><span class="chord">D</span>Tu</span> amor sobre pasa ba<span class="g"><span class="chord">Em</span>rre</span><span class="g"><span class="chord">D</span>ras</span>
+Que <span class="g"><span class="chord">Bm</span>aún</span> perdido
+Me <span class="g"><span class="chord">A</span>di</span>ces tu hijo <span class="g"><span class="chord">G</span>soy.</span>
+
+[Puente]
+Ni lo <span class="g"><span class="chord">A</span>alto</span> ni lo pro<span class="g"><span class="chord">Bm</span>fundo</span> me <span class="g"><span class="chord">G</span>pueden</span> alejar de ti
+Nin<span class="g"><span class="chord">A</span>guna</span> cosa en el <span class="g"><span class="chord">Bm</span>mundo,</span> me <span class="g"><span class="chord">G</span>puede</span> separar de ti.
+
+[Coro]
+Mejor es un <span class="g"><span class="chord">D</span>día</span> en tu casa,
+Que <span class="g"><span class="chord">G</span>mil</span> años lejos de <span class="g"><span class="chord">Bm</span>ti Dios,</span>
+<span class="g"><span class="chord">F#m</span>Tú</span> eres mi gozo <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Coro 2]
+<span class="g"><span class="chord">D</span>En</span> ti todo es nuevo,
+Borras mi pa<span class="g"><span class="chord">G</span>sado,</span>
+Ya no hay tris<span class="g"><span class="chord">Bm</span>teza,</span> <span class="g"><span class="chord">F#m</span>tú eres</span> mi gozo <span class="g"><span class="chord">G</span>Dios.</span>
+<span class="g"><span class="chord">Em</span>Tú</span> eres mi <span class="g"><span class="chord">A</span>go</span><span class="g"><span class="chord">D</span>zo,</span> Dios. <span class="g"><span class="chord">A</span>..</span>  <span class="g"><span class="chord">D</span>..</span>
+
+[Instrumental]
+<span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">A/C#</span></span> <span class="g"><span class="chord">G</span></span>
+<span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Verso 3]
+(x2)
+Le<span class="g"><span class="chord">A</span>vanta</span> tus manos, <span class="g"><span class="chord">Bm</span>mueve tus pies,</span>
+<span class="g"><span class="chord">G</span>Da</span> vueltas y vueltas, <span class="g"><span class="chord">D</span>grita amén.</span>
+
+[Instrumental 2]
+<span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">D</span></span> 
+<span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">G</span></span> 
+`
+    },
+
+    {
+        title: "Llueve",
+        artist: "Delirious",
+        key: "Bm",
+        type: "Alabanza",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">Bm</span>El</span> cielo hoy parece os<span class="g"><span class="chord">G</span>cu</span>ro
+<span class="g"><span class="chord">Bm</span>Los</span> vientos hoy van a cam<span class="g"><span class="chord">G</span>biar</span>
+<span class="g"><span class="chord">Bm</span>Ba</span>jo mis pies la tierra es<span class="g"><span class="chord">G</span>pe</span>ra
+<span class="g"><span class="chord">Bm</span>El</span> tiempo de tu lluvia ho <span class="g"><span class="chord">G</span>Dios</span>
+Hoy va a llo<span class="g"><span class="chord">D</span>ver,</span> otra vez.
+
+[Puente]
+<span class="g"><span class="chord">F</span>Que</span> seamos consumidos Dios,
+<span class="g"><span class="chord">F</span>Inún</span>danos hoy con tu fuego.
+
+[Coro]
+<span class="g"><span class="chord">D</span>Llue</span>ve todas las naciones cantan,
+<span class="g"><span class="chord">G</span>Llue</span>ve puedes escuchar la tierra,
+<span class="g"><span class="chord">D</span>Llue</span>ve estoy sediento pero canto,
+<span class="g"><span class="chord">G</span>Llue</span>ve haz llover.
+
+[Verso 2]
+<span class="g"><span class="chord">Bm</span>Mi</span> corazón ha conce<span class="g"><span class="chord">G</span>bi</span>do,
+<span class="g"><span class="chord">Bm</span>Es</span> tiempo otra vez para so<span class="g"><span class="chord">G</span>ñar,</span>
+<span class="g"><span class="chord">Bm</span>Oi</span>go tu voz y listo es<span class="g"><span class="chord">G</span>toy,</span>
+<span class="g"><span class="chord">Bm</span>Pa</span>ra danzar sobre el de<span class="g"><span class="chord">G</span>sier</span>to,
+<span class="g"><span class="chord">D</span>Lle</span>no de fe.
+
+[Verso 3]
+<span class="g"><span class="chord">C</span>A</span>bre <span class="g"><span class="chord">G</span>hoy,</span> <span class="g"><span class="chord">D</span>a</span>bre <span class="g"><span class="chord">A</span>hoy,</span> <span class="g"><span class="chord">F</span>a</span>bre <span class="g"><span class="chord">C</span>hoy</span> los <span class="g"><span class="chord">G</span>cie</span>los
+Pero <span class="g"><span class="chord">C</span>a</span>bre <span class="g"><span class="chord">G</span>hoy,</span> <span class="g"><span class="chord">D</span>a</span>bre <span class="g"><span class="chord">A</span>hoy,</span> <span class="g"><span class="chord">F</span>a</span>bre <span class="g"><span class="chord">F</span>hoy</span> nuestros <span class="g"><span class="chord">G</span>co</span>razones.
+`
+    },
+
+    {
+        title: "El Fuego de tus Ojos",
+        artist: "MiSion",
+        key: "Dm",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Gm7</span></span> <span class="g"><span class="chord">Bb</span></span>
+<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Gm7</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Dm</span>Me acerqué</span> permane<span class="g"><span class="chord">C</span>cí,</span>
+Y tu mirada me consu<span class="g"><span class="chord">Gm7</span>mió,</span>
+<span class="g"><span class="chord">Bb</span>Yo soy</span> solo <span class="g"><span class="chord">C</span>tuyo.</span>
+
+[Coro]
+<span class="g"><span class="chord">Dm</span>El fuego</span> de tus <span class="g"><span class="chord">C</span>ojos,</span>
+Me <span class="g"><span class="chord">Gm</span>hizo</span> enamorarme <span class="g"><span class="chord">Bb</span>más,</span> <span class="g"><span class="chord">C</span>..</span>
+Que<span class="g"><span class="chord">Dm</span>mó</span> los otros a<span class="g"><span class="chord">C</span>mores,</span>
+Que<span class="g"><span class="chord">Gm</span>mó</span> los otros a<span class="g"><span class="chord">Bb</span>mores.</span> <span class="g"><span class="chord">C</span>..</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Dm</span>Todavía</span> tengo hambre,
+<span class="g"><span class="chord">C</span>Todavía</span> tengo leña,
+<span class="g"><span class="chord">Gm7</span>Yo</span> quiero quemar,
+<span class="g"><span class="chord">Bb</span>Yo</span> quiero que<span class="g"><span class="chord">C</span>mar.</span>
+`
+    },
+
+    {
+        title: "A Donde Huiré",
+        artist: "Kabed",
+        key: "Em",
+        type: "Adoración",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">Em</span>Pusiste</span> en mi tu mano de presencia me ro<span class="g"><span class="chord">D</span>deaste,</span>
+Cuando sola y vacía me encontraba en mi an<span class="g"><span class="chord">C</span>dar,</span>
+Misericordia tan in<span class="g"><span class="chord">Am</span>mensa,</span> no la puedo compren<span class="g"><span class="chord">B</span>der.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Em</span>Con</span> tu amor a mi curaste todas mis do<span class="g"><span class="chord">D</span>lencias,</span>
+Cuando pienso en esconderme de hacer tu volun<span class="g"><span class="chord">C</span>tad,</span>
+Ahí llegas con tu <span class="g"><span class="chord">Am</span>manto,</span> y no me puedo conte<span class="g"><span class="chord">B</span>ner.</span>
+
+[Coro]
+A donde hui<span class="g"><span class="chord">Em</span>ré</span> de tu presencia santo espíritu,
+Donde me esconde<span class="g"><span class="chord">D</span>ré</span> de tu presencia mi señor,
+A donde hui<span class="g"><span class="chord">C</span>ré</span> de tu presencia santo es<span class="g"><span class="chord">Am</span>píritu,</span>
+Donde me esconde<span class="g"><span class="chord">B</span>ré.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Em</span>Con</span> tu amor a mi curaste todas mis do<span class="g"><span class="chord">D</span>lencias,</span>
+Cuando pienso en esconderme de hacer tu volun<span class="g"><span class="chord">C</span>tad,</span>
+Ahí llegas con tu <span class="g"><span class="chord">Am</span>manto,</span> y no me puedo conte<span class="g"><span class="chord">B</span>ner.</span>
+
+[Coro 2]
+En el si<span class="g"><span class="chord">Em</span>lencio</span> estás tu, en lo profundo estás tu,
+En el se<span class="g"><span class="chord">D</span>creto</span> estás tu, no puedo estar si no estas tu,
+En el si<span class="g"><span class="chord">C</span>lencio</span> estás tu, en lo profundo es<span class="g"><span class="chord">Am</span>tás</span> tu,
+No puedo es<span class="g"><span class="chord">B</span>tar</span> si no estás tu.
+
+[Instrumental]
+<span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">B</span></span>
+`
+    },
+
+    {
+        title: "Hay un Rey",
+        artist: "Brunet",
+        key: "Dm",
+        type: "Adoración",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Am7</span></span> <span class="g"><span class="chord">Dm7</span></span>
+
+[Verso 1]
+Hay un <span class="g"><span class="chord">Bb</span>rey,</span> Cristo mi <span class="g"><span class="chord">C</span>rey,</span>
+Cristo ven go<span class="g"><span class="chord">Am7</span>bierna</span> mi hogar,
+Venga tu <span class="g"><span class="chord">Dm7</span>reino</span> en la ciudad.
+
+[Coro]
+Y <span class="g"><span class="chord">Bb</span>todo</span> ojo te verá, <span class="g"><span class="chord">C</span>toda</span> lengua cantará,
+<span class="g"><span class="chord">Dm7</span>Cristo</span> es el rey, <span class="g"><span class="chord">Am7</span>Cristo</span> es el rey.
+
+[Puente]
+<span class="g"><span class="chord">Bb</span>Santo,</span> <span class="g"><span class="chord">C</span>santo,</span> <span class="g"><span class="chord">Dm7</span>santo</span> Dios pode<span class="g"><span class="chord">Am7</span>roso.</span>
+`
+    },
+
+    {
+        title: "Quiero Conocer a Jesús",
+        artist: "Generación 12",
+        key: "Em",
+        type: "Adoración",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">Bm</span></span>
+
+[Verso 1]
+Mi or<span class="g"><span class="chord">C</span>gullo</span> me sacó del jar<span class="g"><span class="chord">D</span>dín,</span>
+Su humil<span class="g"><span class="chord">Em</span>dad</span> puso el jardín en <span class="g"><span class="chord">Bm</span>mí,</span>
+Y si ven<span class="g"><span class="chord">C</span>diera</span> todo lo que tengo,
+A <span class="g"><span class="chord">D</span>cambio</span> de su amor,
+Yo falla<span class="g"><span class="chord">Em</span>ría.</span>  <span class="g"><span class="chord">Bm</span>..</span>
+
+[Verso 2]
+Porque su a<span class="g"><span class="chord">C</span>mor</span> no se compra,
+<span class="g"><span class="chord">D</span>Ni</span> se merece, su a<span class="g"><span class="chord">Em</span>mor</span> es un regalo,
+De <span class="g"><span class="chord">Bm</span>gracia</span> se recibe.
+
+[Coro]
+<span class="g"><span class="chord">C</span>Quiero</span> conocer a Je<span class="g"><span class="chord">D</span>sús,</span>
+Yo <span class="g"><span class="chord">Em</span>Quiero</span> conocer a Je<span class="g"><span class="chord">Bm</span>sús,</span>
+<span class="g"><span class="chord">C</span>Quiero</span> conocer a Je<span class="g"><span class="chord">D</span>sús,</span>
+<span class="g"><span class="chord">Em</span>Quiero</span> conocer a Je<span class="g"><span class="chord">Bm</span>sús.</span>
+
+[Verso 3]
+<span class="g"><span class="chord">C</span>Ser</span> hallado en Él,
+Ser ha<span class="g"><span class="chord">D</span>llado</span> en <span class="g"><span class="chord">Em</span>Él,</span> <span class="g"><span class="chord">Bm</span>..</span>
+Ser hallado en Él.
+
+[Puente]
+Ye<span class="g"><span class="chord">C</span>shua</span> <span class="g"><span class="chord">D</span>aaa</span>  <span class="g"><span class="chord">Em</span>aaaa</span> <span class="g"><span class="chord">Bm</span>aaaa...</span>
+
+[Coro 2]
+Mi a<span class="g"><span class="chord">C</span>mado</span> es, el más <span class="g"><span class="chord">Em</span>bello</span> entre
+Mi<span class="g"><span class="chord">G</span>llares</span> y mi<span class="g"><span class="chord">Bm7</span>llares...</span>
+`
+    },
+
+    {
+        title: "Que Ruja el león",
+        artist: "MiSion",
+        key: "F#m",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">Bm</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">F#m</span>Sobre el</span> trono de <span class="g"><span class="chord">E</span>justicia</span> eterna<span class="g"><span class="chord">D</span>mente</span>
+Habrá un <span class="g"><span class="chord">F#m</span>Rey,</span>
+<span class="g"><span class="chord">F#m</span>El volverá</span> para go<span class="g"><span class="chord">E</span>bernar</span> las na<span class="g"><span class="chord">D</span>ciones,</span>
+En a<span class="g"><span class="chord">F#m</span>mor.</span>
+
+[Coro]
+Que ruja el <span class="g"><span class="chord">F#m</span>león,</span>
+que la tierra se estre<span class="g"><span class="chord">E</span>mezca,</span>
+Ante la <span class="g"><span class="chord">D</span>majes</span><span class="g"><span class="chord">Bm</span>tad</span> de Je<span class="g"><span class="chord">F#m</span>sús.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F#m</span>El  descendiente</span> de David,
+<span class="g"><span class="chord">E</span>El</span> hombre más notable,
+<span class="g"><span class="chord">D</span>Él</span> ama la jus<span class="g"><span class="chord">Bm</span>ticia</span> y odia la iniqui<span class="g"><span class="chord">F#m</span>dad.</span>
+`
+    },
+
+    {
+        title: "Trae tu Presencia",
+        artist: "Barak",
+        key: "F#m",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">C#</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">F#m</span>Se  moverá,</span>
+Su espíritu a<span class="g"><span class="chord">D</span>quí,</span> en este lugar,
+Será tan fuerte que en sus alas,
+Nos envolve<span class="g"><span class="chord">E</span>rá</span> y nos bautiza<span class="g"><span class="chord">C#</span>rá.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">F#m</span>El  mudo</span> cantará,
+<span class="g"><span class="chord">D</span>El</span> ciego hoy verá,
+Ca<span class="g"><span class="chord">E</span>denas</span> se romperán,
+Su espíritu, a<span class="g"><span class="chord">C#</span>quí</span> está.
+
+[Coro]
+Es<span class="g"><span class="chord">F#m</span>píritu,</span> es<span class="g"><span class="chord">D</span>píritu,</span>
+<span class="g"><span class="chord">E</span>Trae</span> tu presencia, haz como quieras,
+<span class="g"><span class="chord">C#</span>En</span> este lugar.
+
+[Puente]
+<span class="g"><span class="chord">F#m</span>Como</span> en el pentecostés,
+<span class="g"><span class="chord">D</span>Ven</span> y hazlo otra vez,
+<span class="g"><span class="chord">E</span>Derrama</span> de tu gloria,
+<span class="g"><span class="chord">C#</span>Derrama</span> de tu gloria.
+`
+    },
+
+    {
+        title: "En tu Presencia",
+        artist: "Hillsong",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">C</span>Quieto</span> en tu pre<span class="g"><span class="chord">Em</span>sencia,</span>
+Ante ti me pre<span class="g"><span class="chord">G</span>sento,</span>
+Quiero oír tu <span class="g"><span class="chord">D</span>voz,</span>
+<span class="g"><span class="chord">B</span>Te</span> escucho se<span class="g"><span class="chord">C</span>ñor.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">C</span>Mi</span> atención te en<span class="g"><span class="chord">Em</span>trego,</span>
+A tus pies yo es<span class="g"><span class="chord">G</span>pero,</span>
+Aquí quiero es<span class="g"><span class="chord">D</span>tar.</span>
+
+[Puente]
+<span class="g"><span class="chord">G</span>Mi</span> corazón an<span class="g"><span class="chord">C</span>hela</span> más de ti,
+<span class="g"><span class="chord">Em</span>Haz</span> algo nuevo en mí,
+<span class="g"><span class="chord">G</span>A</span> ti me entrego <span class="g"><span class="chord">D</span>Dios.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Todo</span> en <span class="g"><span class="chord">C</span>mí,</span>
+Es movido por tu a<span class="g"><span class="chord">D</span>mor,</span>
+Cautivado por tu <span class="g"><span class="chord">Em</span>voz,</span>
+Mi deseo es conocerte <span class="g"><span class="chord">G</span>más</span> señor,
+<span class="g"><span class="chord">C</span>A</span> tus pies me rendi<span class="g"><span class="chord">D</span>ré,</span>
+Y mis miedos deja<span class="g"><span class="chord">Em</span>ré,</span>
+Transformado soy en tu pre<span class="g"><span class="chord">G</span>sencia.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">C</span>Woo'oh</span> <span class="g"><span class="chord">D</span>Woo'oh</span> <span class="g"><span class="chord">Em</span>Woo'oh</span> <span class="g"><span class="chord">G</span>Woo'oh</span>
+
+[Verso 3]
+<span class="g"><span class="chord">C</span>Tú</span> eres fuego en el <span class="g"><span class="chord">Em</span>día,</span>
+<span class="g"><span class="chord">G</span>Tú</span> eres briza en la noche,
+Aliento en mí <span class="g"><span class="chord">D</span>ser</span>
+<span class="g"><span class="chord">B</span>Tú</span> sacias mi <span class="g"><span class="chord">C</span>sed</span>
+No hay duda <span class="g"><span class="chord">Em</span>alguna</span> de tu amor y tu a<span class="g"><span class="chord">G</span>fecto</span>
+No hay nada i<span class="g"><span class="chord">D</span>gual.</span>
+
+[Puente 2]
+Mi cora<span class="g"><span class="chord">C</span>zón</span> abierto es<span class="g"><span class="chord">D</span>ta,</span>
+Mi cora<span class="g"><span class="chord">Em</span>zón</span> abierto está <span class="g"><span class="chord">G</span>Dios,</span>
+Haz lo que <span class="g"><span class="chord">C</span>quieras</span> en <span class="g"><span class="chord">D</span>mí,</span>
+Haz tu volun<span class="g"><span class="chord">Em</span>tad</span> en mi <span class="g"><span class="chord">G</span>Dios.</span> <span class="g"><span class="chord">C</span>..</span>
+`
+    },
+
+    {
+        title: "Deseable",
+        artist: "Brunet",
+        key: "F#m",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span>
+
+[Verso 1]
+No <span class="g"><span class="chord">F#m</span>se lo</span> que viste en <span class="g"><span class="chord">D</span>mi,</span>
+<span class="g"><span class="chord">F#m</span>Para</span> amarme tanto <span class="g"><span class="chord">D</span>así,</span>
+<span class="g"><span class="chord">A</span>Tanta</span> pa<span class="g"><span class="chord">D</span>ciencia,</span> <span class="g"><span class="chord">A</span>tanta</span> miseri<span class="g"><span class="chord">D</span>cordia,</span>
+Me hi<span class="g"><span class="chord">Bm7</span>ciste</span> de<span class="g"><span class="chord">A</span>seable</span> para <span class="g"><span class="chord">E</span>ti.</span>
+
+[Verso 2]
+Me ele<span class="g"><span class="chord">F#m</span>giste</span> antes que dijera <span class="g"><span class="chord">D</span>si,</span>
+Tanta <span class="g"><span class="chord">F#m</span>gracia</span> yo no puedo resis<span class="g"><span class="chord">D</span>tir,</span>
+Me lla<span class="g"><span class="chord">A</span>maste</span> por mi <span class="g"><span class="chord">D</span>nombre,</span>
+Me com<span class="g"><span class="chord">A</span>praste</span> con tu <span class="g"><span class="chord">D</span>sangre,</span>
+Me hi<span class="g"><span class="chord">Bm7</span>ciste</span> de<span class="g"><span class="chord">A</span>seable</span> para <span class="g"><span class="chord">E</span>ti.</span>
+
+[Coro]
+Y <span class="g"><span class="chord">A</span>llévame</span> Se<span class="g"><span class="chord">E</span>ñor,</span> a tus cámaras de a<span class="g"><span class="chord">Bm7</span>mor,</span>
+Donde <span class="g"><span class="chord">F#m</span>me enamoro</span> <span class="g"><span class="chord">D</span>más</span> de <span class="g"><span class="chord">E</span>ti.</span>
+Y <span class="g"><span class="chord">A</span>llévame</span> Se<span class="g"><span class="chord">E</span>ñor,</span> dentro de tu cora<span class="g"><span class="chord">Bm7</span>zón</span>
+Yo en<span class="g"><span class="chord">F#m</span>cuentro</span> mi lu<span class="g"><span class="chord">D</span>gar</span> en <span class="g"><span class="chord">E</span>ti.</span>
+
+[Puente]
+<span class="g"><span class="chord">F#m7</span>La</span> LA <span class="g"><span class="chord">C#m</span>LA</span> LA LALA <span class="g"><span class="chord">D</span>LA</span> LA LA LA <span class="g"><span class="chord">E</span>LA</span>
 `
     },
 ];
