@@ -4519,33 +4519,38 @@ Haz tu volun<span class="g"><span class="chord">Em</span>tad</span> en mi <span 
     {
         title: "Deseable",
         artist: "Marcos Brunet",
-        key: "F#m",
+        key: "C#m",
         type: "Adoración",
+        comentario: "Es la nota de Ruth, la original esta en F#m",
         content: `
 [Intro]
-<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span>
+<span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">B</span></span>
 
 [Verso 1]
-No <span class="g"><span class="chord">F#m</span>se lo</span> que viste en <span class="g"><span class="chord">D</span>mi,</span>
-<span class="g"><span class="chord">F#m</span>Para</span> amarme tanto <span class="g"><span class="chord">D</span>así,</span>
-<span class="g"><span class="chord">A</span>Tanta</span> pa<span class="g"><span class="chord">D</span>ciencia,</span> <span class="g"><span class="chord">A</span>tanta</span> miseri<span class="g"><span class="chord">D</span>cordia,</span>
-Me hi<span class="g"><span class="chord">Bm7</span>ciste</span> de<span class="g"><span class="chord">A</span>seable</span> para <span class="g"><span class="chord">E</span>ti.</span>
+No <span class="g"><span class="chord">C#m</span>sé lo</span> que <span class="g"><span class="chord">G#m</span>viste</span> en <span class="g"><span class="chord">A</span>mi,</span>
+<span class="g"><span class="chord">C#m</span>Para</span> amarme <span class="g"><span class="chord">G#m</span>tanto</span> <span class="g"><span class="chord">A</span>así,</span>
+<span class="g"><span class="chord">E</span>Tanta</span> pa<span class="g"><span class="chord">A</span>ciencia,</span> 
+<span class="g"><span class="chord">E</span>Tanta</span> miseri<span class="g"><span class="chord">A</span>cordia,</span>
+Me hi<span class="g"><span class="chord">F#m</span>ciste</span> de<span class="g"><span class="chord">G#m</span>seable</span> para <span class="g"><span class="chord">B</span>ti.</span>
 
 [Verso 2]
-Me ele<span class="g"><span class="chord">F#m</span>giste</span> antes que dijera <span class="g"><span class="chord">D</span>si,</span>
-Tanta <span class="g"><span class="chord">F#m</span>gracia</span> yo no puedo resis<span class="g"><span class="chord">D</span>tir,</span>
-Me lla<span class="g"><span class="chord">A</span>maste</span> por mi <span class="g"><span class="chord">D</span>nombre,</span>
-Me com<span class="g"><span class="chord">A</span>praste</span> con tu <span class="g"><span class="chord">D</span>sangre,</span>
-Me hi<span class="g"><span class="chord">Bm7</span>ciste</span> de<span class="g"><span class="chord">A</span>seable</span> para <span class="g"><span class="chord">E</span>ti.</span>
+Me ele<span class="g"><span class="chord">C#m</span>giste</span> antes <span class="g"><span class="chord">G#m</span>que</span> dijera <span class="g"><span class="chord">A</span>si,</span>
+Tanta <span class="g"><span class="chord">C#m</span>gracia</span> yo no <span class="g"><span class="chord">G#m</span>puedo</span> resis<span class="g"><span class="chord">A</span>tir,</span>
+Me lla<span class="g"><span class="chord">E</span>maste</span> por mi <span class="g"><span class="chord">A</span>nombre,</span>
+Me com<span class="g"><span class="chord">E</span>praste</span> con tu <span class="g"><span class="chord">A</span>sangre,</span>
+Me hi<span class="g"><span class="chord">F#m</span>ciste</span> de<span class="g"><span class="chord">G#m</span>seable</span> para <span class="g"><span class="chord">B</span>ti.</span>
 
 [Coro]
-Y <span class="g"><span class="chord">A</span>llévame</span> Se<span class="g"><span class="chord">E</span>ñor,</span> a tus cámaras de a<span class="g"><span class="chord">Bm7</span>mor,</span>
-Donde <span class="g"><span class="chord">F#m</span>me enamoro</span> <span class="g"><span class="chord">D</span>más</span> de <span class="g"><span class="chord">E</span>ti.</span>
-Y <span class="g"><span class="chord">A</span>llévame</span> Se<span class="g"><span class="chord">E</span>ñor,</span> dentro de tu cora<span class="g"><span class="chord">Bm7</span>zón</span>
-Yo en<span class="g"><span class="chord">F#m</span>cuentro</span> mi lu<span class="g"><span class="chord">D</span>gar</span> en <span class="g"><span class="chord">E</span>ti.</span>
+Y <span class="g"><span class="chord">E</span>llévame</span> Se<span class="g"><span class="chord">B</span>ñor,</span> a tus cámaras de a<span class="g"><span class="chord">F#m</span>mor,</span>
+Donde <span class="g"><span class="chord">G#m</span>me enamoro</span> <span class="g"><span class="chord">A</span>más</span> de <span class="g"><span class="chord">B</span>ti.</span>
+Y <span class="g"><span class="chord">E</span>llévame</span> Se<span class="g"><span class="chord">B</span>ñor,</span> dentro de tu cora<span class="g"><span class="chord">F#m</span>zón,</span>
+Yo en<span class="g"><span class="chord">G#m</span>cuentro</span> mi lu<span class="g"><span class="chord">A</span>gar</span> en <span class="g"><span class="chord">B</span>ti.</span>
+
+Cierre:
+Yo en<span class="g"><span class="chord">G#m</span>cuentro</span> mi lu<span class="g"><span class="chord">A</span>gar</span> <span class="g"><span class="chord">B</span>en</span> <span class="g"><span class="chord">C#m</span>ti.</span>
 
 [Puente]
-<span class="g"><span class="chord">F#m7</span>La</span> LA <span class="g"><span class="chord">C#m</span>LA</span> LA LALA <span class="g"><span class="chord">D</span>LA</span> LA LA LA <span class="g"><span class="chord">E</span>LA</span>
+<span class="g"><span class="chord">C#m</span>LA</span> LA <span class="g"><span class="chord">G#m</span>LA</span> LA LALA <span class="g"><span class="chord">A</span>LA</span> LA LA LA <span class="g"><span class="chord">B</span>LA</span>
 `
     },
 ];
