@@ -3842,28 +3842,34 @@ Su <span class="g"><span class="chord">Em</span>amor</span> que <span class="g">
     {
         title: "Bautízame",
         artist: "Generación 12",
-        key: "Am",
+        key: "A#m",
         type: "Adoración",
+        comentario: "Está en la nota para Ruth, la original está en Am",
         content: `
 [Intro]
-<span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">G</span></span>
+<span class="g"><span class="chord">A#m</span></span> <span class="g"><span class="chord">G#</span></span> <span class="g"><span class="chord">F#</span></span> <span class="g"><span class="chord">G#</span></span>
 
 [Verso 1]
-<span class="g"><span class="chord">Am</span>Sé</span> que tú de<span class="g"><span class="chord">G</span>seas</span> más de <span class="g"><span class="chord">Am</span>mí,</span> sé que <span class="g"><span class="chord">G</span>clamas</span> por <span class="g"><span class="chord">Dm</span>mí</span>
-Esperando es<span class="g"><span class="chord">G</span>toy</span> por Tu po<span class="g"><span class="chord">Dm</span>der,</span> <span class="g"><span class="chord">F</span></span>
-<span class="g"><span class="chord">Em</span>vien</span>to de Dios, sopla en <span class="g"><span class="chord">Am</span>mí.</span>
+<span class="g"><span class="chord">A#m</span>Sé</span> que tú de<span class="g"><span class="chord">G#</span>seas</span> más de <span class="g"><span class="chord">A#m</span>mí,</span> 
+sé que <span class="g"><span class="chord">G#</span>clamas</span> por <span class="g"><span class="chord">D#m</span>mí</span>
+Esperando es<span class="g"><span class="chord">G#</span>toy</span> por tu po<span class="g"><span class="chord">D#m</span>der,</span>
+<span class="g"><span class="chord">F#</span>viento</span> de <span class="g"><span class="chord">Fm</span>Dios,</span> sopla en <span class="g"><span class="chord">A#m</span>mí.</span>
 
 [Coro]
-<span class="g"><span class="chord">Am</span>Bautí</span>zame con Tu <span class="g"><span class="chord">G</span>fuego,</span> <span class="g"><span class="chord">Dm</span>bautí</span>zame con Tu <span class="g"><span class="chord">Am</span>fuego</span>
-<span class="g"><span class="chord">C</span>San</span>to, santo, <span class="g"><span class="chord">Em</span>San</span>to Espíri<span class="g"><span class="chord">Am</span>tu.</span>
+<span class="g"><span class="chord">A#m</span>Bautízame</span> con tu <span class="g"><span class="chord">G#</span>fuego,</span> 
+<span class="g"><span class="chord">D#m</span>bautízame</span> con tu <span class="g"><span class="chord">A#m</span>fuego,</span>
+<span class="g"><span class="chord">C#</span>Santo,</span> Santo, <span class="g"><span class="chord">Fm</span>Santo</span> Espíri<span class="g"><span class="chord">A#m</span>tu.</span>
 
 [Puente]
-<span class="g"><span class="chord">C</span>Me</span> despojo de <span class="g"><span class="chord">G</span>mí,</span> sa<span class="g"><span class="chord">Dm</span>túra</span>me de <span class="g"><span class="chord">Am</span>ti</span>
-<span class="g"><span class="chord">C</span>Y</span> mis días vi<span class="g"><span class="chord">Dm</span>vi</span>ré por <span class="g"><span class="chord">F</span>ti,</span> <span class="g"><span class="chord">G</span>Es</span>píritu <span class="g"><span class="chord">Am</span>Santo.</span>
+<span class="g"><span class="chord">C#</span>Me</span> despojo de <span class="g"><span class="chord">G#</span>mí,</span> 
+sa<span class="g"><span class="chord">D#m</span>túrame</span> de <span class="g"><span class="chord">A#m</span>ti,</span>
+<span class="g"><span class="chord">C#</span>Y</span> mis días vi<span class="g"><span class="chord">D#m</span>viré</span> por <span class="g"><span class="chord">F</span>ti,</span> 
+<span class="g"><span class="chord">G#</span>Espíritu</span> <span class="g"><span class="chord">A#m</span>Santo.</span>
 
 [Coro 2]
-<span class="g"><span class="chord">Am</span>Bautí</span>zame con Tu <span class="g"><span class="chord">G</span>fuego,</span> <span class="g"><span class="chord">Dm</span>bautí</span>zame con Tu <span class="g"><span class="chord">Am</span>fuego</span>
-<span class="g"><span class="chord">C</span>San</span>to, santo, <span class="g"><span class="chord">Em</span>San</span>to Espíri<span class="g"><span class="chord">Am</span>tu.</span>
+<span class="g"><span class="chord">A#m</span>Bautízame</span> con tu <span class="g"><span class="chord">G#</span>fuego,</span> 
+<span class="g"><span class="chord">D#m</span>bautízame</span> con tu <span class="g"><span class="chord">A#m</span>fuego,</span>
+<span class="g"><span class="chord">C#</span>Santo,</span> Santo, <span class="g"><span class="chord">Fm</span>Santo</span> Espíri<span class="g"><span class="chord">A#m</span>tu.</span>
 `
     },
 
@@ -4239,29 +4245,30 @@ Pero <span class="g"><span class="chord">C</span>a</span>bre <span class="g"><sp
     {
         title: "El Fuego de tus Ojos",
         artist: "MiSion",
-        key: "Dm",
+        key: "Gm",
         type: "Adoración",
+        comentario: "Esta es la nota de Ruth, la original está en Dm",
         content: `
 [Intro]
-<span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Gm7</span></span> <span class="g"><span class="chord">Bb</span></span>
-<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Gm7</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
+<span class="g"><span class="chord">A#</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Cm7</span></span> <span class="g"><span class="chord">D#</span></span>
+<span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Cm7</span></span> <span class="g"><span class="chord">D#</span></span> <span class="g"><span class="chord">F</span></span>
 
 [Verso 1]
-<span class="g"><span class="chord">Dm</span>Me acerqué</span> permane<span class="g"><span class="chord">C</span>cí,</span>
-Y tu mirada me consu<span class="g"><span class="chord">Gm7</span>mió,</span>
-<span class="g"><span class="chord">Bb</span>Yo soy</span> solo <span class="g"><span class="chord">C</span>tuyo.</span>
+<span class="g"><span class="chord">Gm</span>Me acerqué</span> permane<span class="g"><span class="chord">F</span>cí,</span>
+Y tu mirada me consu<span class="g"><span class="chord">Cm7</span>mió,</span>
+<span class="g"><span class="chord">D#</span>Yo soy</span> solo <span class="g"><span class="chord">F</span>tuyo.</span>
 
 [Coro]
-<span class="g"><span class="chord">Dm</span>El fuego</span> de tus <span class="g"><span class="chord">C</span>ojos,</span>
-Me <span class="g"><span class="chord">Gm</span>hizo</span> enamorarme <span class="g"><span class="chord">Bb</span>más,</span> <span class="g"><span class="chord">C</span>..</span>
-Que<span class="g"><span class="chord">Dm</span>mó</span> los otros a<span class="g"><span class="chord">C</span>mores,</span>
-Que<span class="g"><span class="chord">Gm</span>mó</span> los otros a<span class="g"><span class="chord">Bb</span>mores.</span> <span class="g"><span class="chord">C</span>..</span>
+<span class="g"><span class="chord">Gm</span>El fuego</span> de tus <span class="g"><span class="chord">F</span>ojos,</span>
+Me <span class="g"><span class="chord">Cm</span>hizo</span> enamorarme <span class="g"><span class="chord">D#</span>más,</span> <span class="g"><span class="chord">F</span>..</span>
+Que<span class="g"><span class="chord">Gm</span>mó</span> los otros a<span class="g"><span class="chord">F</span>mores,</span>
+Que<span class="g"><span class="chord">Cm</span>mó</span> los otros a<span class="g"><span class="chord">D#</span>mores.</span> <span class="g"><span class="chord">F</span>..</span>
 
-[Verso 2]
-<span class="g"><span class="chord">Dm</span>Todavía</span> tengo hambre,
-<span class="g"><span class="chord">C</span>Todavía</span> tengo leña,
-<span class="g"><span class="chord">Gm7</span>Yo</span> quiero quemar,
-<span class="g"><span class="chord">Bb</span>Yo</span> quiero que<span class="g"><span class="chord">C</span>mar.</span>
+[Verso 2 + "Ningún Principado"]
+<span class="g"><span class="chord">Gm</span>Todavía</span> tengo hambre,
+<span class="g"><span class="chord">F</span>Todavía</span> tengo leña,
+<span class="g"><span class="chord">Cm7</span>Yo</span> quiero quemar,
+<span class="g"><span class="chord">D#</span>Yo</span> quiero que<span class="g"><span class="chord">F</span>mar.</span>
 `
     },
 
