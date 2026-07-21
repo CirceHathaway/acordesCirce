@@ -3876,34 +3876,54 @@ sa<span class="g"><span class="chord">D#m</span>túrame</span> de <span class="g
     {
         title: "Es Él",
         artist: "Marcos Brunet",
-        key: "A",
+        key: "A#",
         type: "Adoración",
+        comentario: "La nota es para Ruth, la original esta en A",
         content: `
-[Intro]
-<span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span>
-
 [Verso 1]
-<span class="g"><span class="chord">A</span>Es</span>toy preparando el camino
-<span class="g"><span class="chord">F#m</span>En</span>derezando las ve<span class="g"><span class="chord">D</span>re</span><span class="g"><span class="chord">A</span>das</span>
-
-Cada vez más disminuyendo
-<span class="g"><span class="chord">F#m</span>Por</span>que im<span class="g"><span class="chord">D</span>por</span>ta que él <span class="g"><span class="chord">A</span>crez</span>ca.
+<span class="g"><span class="chord">A#</span>Estoy</span> preparando el camino,
+<span class="g"><span class="chord">Gm</span>Endere</span><span class="g"><span class="chord">D#</span>zando</span> las <span class="g"><span class="chord">A#</span>veredas,</span>
+Cada vez más disminuyendo,
+<span class="g"><span class="chord">Gm</span>Por</span>que im<span class="g"><span class="chord">D#</span>porta</span> que él <span class="g"><span class="chord">A#</span>crezca.</span>
 
 [Verso 2]
-<span class="g"><span class="chord">D</span>Mi</span> placer en él es<span class="g"><span class="chord">F#m</span>tá</span>
-Yo no soy digno de desa<span class="g"><span class="chord">A</span>tar</span>
-Sus san<span class="g"><span class="chord">E</span>da</span>lias.
+<span class="g"><span class="chord">D#</span>Mi</span> placer en él es<span class="g"><span class="chord">Gm</span>tá,</span>
+Yo no soy digno de desa<span class="g"><span class="chord">A#</span>tar,</span>
+Sus san<span class="g"><span class="chord">F</span>dalias.</span>
 
 [Verso 3]
-<span class="g"><span class="chord">D</span>Mi</span> vida entera en él es<span class="g"><span class="chord">F#m</span>tá</span>
-Y yo camino con la cer<span class="g"><span class="chord">A</span>te</span>za
-De que volve<span class="g"><span class="chord">E</span>rá.</span>
+<span class="g"><span class="chord">D#</span>Mi</span> vida entera en él es<span class="g"><span class="chord">Gm</span>tá,</span>
+Y yo camino con la cer<span class="g"><span class="chord">A#</span>teza,</span>
+De que volve<span class="g"><span class="chord">F</span>rá.</span>
 
 [Coro]
-<span class="g"><span class="chord">D</span>Es</span> él
-Por <span class="g"><span class="chord">E</span>él</span> que estoy gastando mi <span class="g"><span class="chord">F#m</span>vi</span>da
-Perdiendo <span class="g"><span class="chord">C#m</span>to</span>do por amor y con ale<span class="g"><span class="chord">D</span>grí</span>a
-Dueño de mis <span class="g"><span class="chord">E</span>dí</span>as.`
+Es <span class="g"><span class="chord">D#</span>él,</span>
+Por <span class="g"><span class="chord">F</span>él</span> que estoy gastando mi <span class="g"><span class="chord">Gm</span>vida,</span>
+Perdiendo <span class="g"><span class="chord">Dm</span>todo</span> por amor y con ale<span class="g"><span class="chord">D#</span>gría,</span>
+Dueño de mis <span class="g"><span class="chord">F</span>días.</span>
+
+[Puente]
+x2
+Él volve<span class="g"><span class="chord">A#</span>rá,</span> sobrerano en poder
+Él volve<span class="g"><span class="chord">Gm</span>rá,</span> y el gobierno en él está
+Ve<span class="g"><span class="chord">Cm</span>an, el</span> traerá en sus <span class="g"><span class="chord">D#</span>manos</span> su recom<span class="g"><span class="chord">F</span>pensa...</span>
+
+[Puente 2]
+x2
+Él volve<span class="g"><span class="chord">Gm</span>rá,</span> sobrerano en poder
+Él volve<span class="g"><span class="chord">A#</span>rá,</span> y el gobierno en él está
+Ve<span class="g"><span class="chord">Cm</span>an, el</span> traerá en sus <span class="g"><span class="chord">D#</span>manos</span> su recom<span class="g"><span class="chord">F</span>pensa...</span>
+
+[Coro]
+Es <span class="g"><span class="chord">D#</span>él,</span>
+Por <span class="g"><span class="chord">F</span>él</span> que estoy gastando mi <span class="g"><span class="chord">Gm</span>vida,</span>
+Perdiendo <span class="g"><span class="chord">Dm</span>todo</span> por amor y con ale<span class="g"><span class="chord">D#</span>gría,</span>
+Dueño de mis <span class="g"><span class="chord">F</span>días.</span>
+
+[Instrumental]
+x2
+<span class="g"><span class="chord">Cm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">A#</span></span>
+`
     },
 
     {
@@ -4250,7 +4270,6 @@ Pero <span class="g"><span class="chord">C</span>a</span>bre <span class="g"><sp
         comentario: "Esta es la nota de Ruth, la original está en Dm",
         content: `
 [Intro]
-<span class="g"><span class="chord">A#</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Cm7</span></span> <span class="g"><span class="chord">D#</span></span>
 <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Cm7</span></span> <span class="g"><span class="chord">D#</span></span> <span class="g"><span class="chord">F</span></span>
 
 [Verso 1]
@@ -4313,23 +4332,25 @@ No puedo es<span class="g"><span class="chord">B</span>tar</span> si no estás t
     {
         title: "Hay un Rey",
         artist: "Marcos Brunet",
-        key: "Dm",
+        key: "D#m",
         type: "Adoración",
+        comentario: "D#m es la tónica de la canción, que es para Ruth. La original esta en Dm. La canción se engancha con Que Ruja el León en D#m",
         content: `
 [Intro] 
-<span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Am7</span></span> <span class="g"><span class="chord">Dm7</span></span>
+<span class="g"><span class="chord">B</span></span> <span class="g"><span class="chord">C#</span></span> <span class="g"><span class="chord">A#m</span></span> <span class="g"><span class="chord">D#m</span></span>
 
 [Verso 1]
-Hay un <span class="g"><span class="chord">Bb</span>rey,</span> Cristo mi <span class="g"><span class="chord">C</span>rey,</span>
-Cristo ven go<span class="g"><span class="chord">Am7</span>bierna</span> mi hogar,
-Venga tu <span class="g"><span class="chord">Dm7</span>reino</span> en la ciudad.
+Hay un <span class="g"><span class="chord">B</span>rey,</span> Cristo mi <span class="g"><span class="chord">C#</span>rey,</span>
+Cristo ven go<span class="g"><span class="chord">A#m</span>bierna</span> mi hogar,
+Venga tu <span class="g"><span class="chord">D#m</span>reino</span> en la ciudad.
 
 [Coro]
-Y <span class="g"><span class="chord">Bb</span>todo</span> ojo te verá, <span class="g"><span class="chord">C</span>toda</span> lengua cantará,
-<span class="g"><span class="chord">Dm7</span>Cristo</span> es el rey, <span class="g"><span class="chord">Am7</span>Cristo</span> es el rey.
+Y <span class="g"><span class="chord">B</span>todo</span> ojo te verá, <span class="g"><span class="chord">C#</span>toda</span> lengua cantará,
+<span class="g"><span class="chord">D#m</span>Cristo</span> es el rey, <span class="g"><span class="chord">A#m</span>Cristo</span> es el rey.
 
 [Puente]
-<span class="g"><span class="chord">Bb</span>Santo,</span> <span class="g"><span class="chord">C</span>santo,</span> <span class="g"><span class="chord">Dm7</span>santo</span> Dios pode<span class="g"><span class="chord">Am7</span>roso.</span>
+<span class="g"><span class="chord">B</span>Santo,</span> <span class="g"><span class="chord">C#</span>santo,</span> 
+<span class="g"><span class="chord">D#m</span>santo,</span> Dios pode<span class="g"><span class="chord">A#m</span>roso.</span>
 `
     },
 
@@ -4377,27 +4398,34 @@ Mi<span class="g"><span class="chord">G</span>llares</span> y mi<span class="g">
     {
         title: "Que Ruja el león",
         artist: "MiSion",
-        key: "F#m",
+        key: "D#m",
         type: "Adoración",
+        comentario: "Esta es la nota para Ruth, la original esta en F#m",
         content: `
 [Intro]
-<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">Bm</span></span>
+<span class="g"><span class="chord">D#m</span></span> <span class="g"><span class="chord">C#</span></span> <span class="g"><span class="chord">B</span></span> <span class="g"><span class="chord">G#m</span></span>
 
 [Verso 1]
-<span class="g"><span class="chord">F#m</span>Sobre el</span> trono de <span class="g"><span class="chord">E</span>justicia</span> eterna<span class="g"><span class="chord">D</span>mente</span>
-Habrá un <span class="g"><span class="chord">F#m</span>Rey,</span>
-<span class="g"><span class="chord">F#m</span>El volverá</span> para go<span class="g"><span class="chord">E</span>bernar</span> las na<span class="g"><span class="chord">D</span>ciones,</span>
-En a<span class="g"><span class="chord">F#m</span>mor.</span>
-
-[Coro]
-Que ruja el <span class="g"><span class="chord">F#m</span>león,</span>
-que la tierra se estre<span class="g"><span class="chord">E</span>mezca,</span>
-Ante la <span class="g"><span class="chord">D</span>majes</span><span class="g"><span class="chord">Bm</span>tad</span> de Je<span class="g"><span class="chord">F#m</span>sús.</span>
+<span class="g"><span class="chord">D#m</span>Sobre el</span> trono <span class="g"><span class="chord">C#</span>de justicia,</span> 
+e<span class="g"><span class="chord">B</span>ternamente</span>
+Habrá un <span class="g"><span class="chord">D#m</span>Rey,</span>
 
 [Verso 2]
-<span class="g"><span class="chord">F#m</span>El  descendiente</span> de David,
-<span class="g"><span class="chord">E</span>El</span> hombre más notable,
-<span class="g"><span class="chord">D</span>Él</span> ama la jus<span class="g"><span class="chord">Bm</span>ticia</span> y odia la iniqui<span class="g"><span class="chord">F#m</span>dad.</span>
+<span class="g"><span class="chord">D#m</span>El volverá</span> para go<span class="g"><span class="chord">C#</span>bernar</span> 
+Las na<span class="g"><span class="chord">B</span>ciones,</span>
+En a<span class="g"><span class="chord">D#m</span>mor.</span>
+
+[Coro]
+Que ruja el <span class="g"><span class="chord">D#m</span>león,</span>
+que la tierra se estre<span class="g"><span class="chord">C#</span>mezca,</span>
+Ante la <span class="g"><span class="chord">B</span>majes</span><span class="g"><span class="chord">G#m</span>tad</span> 
+de Je<span class="g"><span class="chord">D#m</span>sús.</span>
+
+[Verso 3]
+<span class="g"><span class="chord">D#m</span>El  descendiente</span> de David,
+<span class="g"><span class="chord">C#</span>El</span> hombre más notable,
+<span class="g"><span class="chord">B</span>Él</span> ama la jus<span class="g"><span class="chord">G#m</span>ticia</span> 
+Y odia la iniqui<span class="g"><span class="chord">D#m</span>dad.</span>
 `
     },
 
