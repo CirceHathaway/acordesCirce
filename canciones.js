@@ -4464,55 +4464,45 @@ Es<span class="g"><span class="chord">F#m</span>píritu,</span> es<span class="g
     },
 
     {
-        title: "En tu Presencia",
-        artist: "Hillsong",
+        title: "En Tu Presencia",
+        artist: "En Espíritu Y En Verdad",
         key: "G",
         type: "Adoración",
+        comentario: "Es la nota de Ruth, el original está en D.",
         content: `
-[Intro]
-<span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">D</span></span>
-
 [Verso 1]
-<span class="g"><span class="chord">C</span>Quieto</span> en tu pre<span class="g"><span class="chord">Em</span>sencia,</span>
-Ante ti me pre<span class="g"><span class="chord">G</span>sento,</span>
-Quiero oír tu <span class="g"><span class="chord">D</span>voz,</span>
-<span class="g"><span class="chord">B</span>Te</span> escucho se<span class="g"><span class="chord">C</span>ñor.</span>
+<span class="g"><span class="chord">G</span>Me</span> encuentro en ti, alegre estoy,
+<span class="g"><span class="chord">Am7</span>Todo</span> temor, Tú lo limpiarás Se<span class="g"><span class="chord">C</span>ñor,</span> en tu pre<span class="g"><span class="chord">G</span>sencia,</span>
+<span class="g"><span class="chord">G</span>Mis</span> ganancias no brillan  más,
+<span class="g"><span class="chord">Am7</span>Cada</span> corona a ti la rendi<span class="g"><span class="chord">C</span>ré</span> en tu pre<span class="g"><span class="chord">G</span>sencia.</span>
 
 [Verso 2]
-<span class="g"><span class="chord">C</span>Mi</span> atención te en<span class="g"><span class="chord">Em</span>trego,</span>
-A tus pies yo es<span class="g"><span class="chord">G</span>pero,</span>
-Aquí quiero es<span class="g"><span class="chord">D</span>tar.</span>
-
-[Puente]
-<span class="g"><span class="chord">G</span>Mi</span> corazón an<span class="g"><span class="chord">C</span>hela</span> más de ti,
-<span class="g"><span class="chord">Em</span>Haz</span> algo nuevo en mí,
-<span class="g"><span class="chord">G</span>A</span> ti me entrego <span class="g"><span class="chord">D</span>Dios.</span>
+<span class="g"><span class="chord">Em</span>Tiembla</span> el <span class="g"><span class="chord">D</span>cielo</span> al ver tu gran<span class="g"><span class="chord">C</span>deza,</span>
+<span class="g"><span class="chord">Em</span>Reinos</span> y <span class="g"><span class="chord">D</span>reyes</span> se asombran de <span class="g"><span class="chord">C</span>ti.</span> <span class="g"><span class="chord">D</span>..</span>
 
 [Coro]
-<span class="g"><span class="chord">G</span>Todo</span> en <span class="g"><span class="chord">C</span>mí,</span>
-Es movido por tu a<span class="g"><span class="chord">D</span>mor,</span>
-Cautivado por tu <span class="g"><span class="chord">Em</span>voz,</span>
-Mi deseo es conocerte <span class="g"><span class="chord">G</span>más</span> señor,
-<span class="g"><span class="chord">C</span>A</span> tus pies me rendi<span class="g"><span class="chord">D</span>ré,</span>
-Y mis miedos deja<span class="g"><span class="chord">Em</span>ré,</span>
-Transformado soy en tu pre<span class="g"><span class="chord">G</span>sencia.</span>
+En tu pre<span class="g"><span class="chord">G</span>sencia</span> nos con<span class="g"><span class="chord">D/F#</span>sumes,</span>
+En tu pre<span class="g"><span class="chord">Em7</span>sencia</span> el <span class="g"><span class="chord">D</span>cielo</span> y la tierra uno <span class="g"><span class="chord">C</span>son,</span>
+En tu pre<span class="g"><span class="chord">G</span>sencia</span> renuevas <span class="g"><span class="chord">D/F#</span>todo,</span>
+En tu pre<span class="g"><span class="chord">Em7</span>sencia</span> <span class="g"><span class="chord">D</span>todo</span> se postra ante <span class="g"><span class="chord">C</span>ti.</span>
 
 [Instrumental]
-<span class="g"><span class="chord">C</span>Woo'oh</span> <span class="g"><span class="chord">D</span>Woo'oh</span> <span class="g"><span class="chord">Em</span>Woo'oh</span> <span class="g"><span class="chord">G</span>Woo'oh</span>
+(x2)
+<span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">C</span></span>
 
-[Verso 3]
-<span class="g"><span class="chord">C</span>Tú</span> eres fuego en el <span class="g"><span class="chord">Em</span>día,</span>
-<span class="g"><span class="chord">G</span>Tú</span> eres briza en la noche,
-Aliento en mí <span class="g"><span class="chord">D</span>ser</span>
-<span class="g"><span class="chord">B</span>Tú</span> sacias mi <span class="g"><span class="chord">C</span>sed</span>
-No hay duda <span class="g"><span class="chord">Em</span>alguna</span> de tu amor y tu a<span class="g"><span class="chord">G</span>fecto</span>
-No hay nada i<span class="g"><span class="chord">D</span>gual.</span>
+[Puente]
+<span class="g"><span class="chord">Em</span>Espléndido,</span> <span class="g"><span class="chord">D</span>hermoso,</span> <span class="g"><span class="chord">C</span>glorioso,</span>  majes<span class="g"><span class="chord">Am</span>tad</span> sin i<span class="g"><span class="chord">Bm</span>gual</span>
+<span class="g"><span class="chord">Em</span>Espléndido,</span> <span class="g"><span class="chord">D</span>hermoso,</span> <span class="g"><span class="chord">C</span>glorioso,</span>  majes<span class="g"><span class="chord">Am</span>tad</span> sin i<span class="g"><span class="chord">Bm</span>gual.</span> <span class="g"><span class="chord">C</span>..</span>  <span class="g"><span class="chord">D</span>..</span>
 
-[Puente 2]
-Mi cora<span class="g"><span class="chord">C</span>zón</span> abierto es<span class="g"><span class="chord">D</span>ta,</span>
-Mi cora<span class="g"><span class="chord">Em</span>zón</span> abierto está <span class="g"><span class="chord">G</span>Dios,</span>
-Haz lo que <span class="g"><span class="chord">C</span>quieras</span> en <span class="g"><span class="chord">D</span>mí,</span>
-Haz tu volun<span class="g"><span class="chord">Em</span>tad</span> en mi <span class="g"><span class="chord">G</span>Dios.</span> <span class="g"><span class="chord">C</span>..</span>
+[Coro]
+En tu pre<span class="g"><span class="chord">G</span>sencia</span> nos con<span class="g"><span class="chord">D/F#</span>sumes,</span>
+En tu pre<span class="g"><span class="chord">Em7</span>sencia</span> el <span class="g"><span class="chord">D</span>cielo</span> y la tierra uno <span class="g"><span class="chord">C</span>son,</span>
+En tu pre<span class="g"><span class="chord">G</span>sencia</span> renuevas <span class="g"><span class="chord">D/F#</span>todo,</span>
+En tu pre<span class="g"><span class="chord">Em7</span>sencia</span> <span class="g"><span class="chord">D</span>todo</span> se postra ante <span class="g"><span class="chord">C</span>ti.</span>
+
+[Instrumental]
+(x2)
+<span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">C</span></span>
 `
     },
 
@@ -4551,6 +4541,54 @@ Yo en<span class="g"><span class="chord">G#m</span>cuentro</span> mi lu<span cla
 
 [Puente]
 <span class="g"><span class="chord">C#m</span>LA</span> LA <span class="g"><span class="chord">G#m</span>LA</span> LA LALA <span class="g"><span class="chord">A</span>LA</span> LA LA LA <span class="g"><span class="chord">B</span>LA</span>
+`
+    },
+
+    {
+        title: "Muestra tu gloria",
+        artist: "Jesús Culture",
+        key: "Bm",
+        type: "Adoración",
+        content: `
+[Intro]
+(x2)
+<span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">G9</span></span>
+
+[Verso 1]
+Veo la <span class="g"><span class="chord">Bm</span>nube,</span> <span class="g"><span class="chord">G9</span>..</span>
+y entro a<span class="g"><span class="chord">Bm</span>hí,</span> <span class="g"><span class="chord">G9</span>..</span>
+<span class="g"><span class="chord">Bm</span>Quiero</span> ver tu <span class="g"><span class="chord">F#m</span>Gloria</span> como Moi<span class="g"><span class="chord">Em7</span>sés,</span>
+reflejos de <span class="g"><span class="chord">Bm</span>luz,</span> <span class="g"><span class="chord">G9</span>..</span>
+relámpagos <span class="g"><span class="chord">Bm</span>truenos.</span>  <span class="g"><span class="chord">G9</span>..</span>
+
+[Puente]
+No teme<span class="g"><span class="chord">F#m</span>ré,</span>  <span class="g"><span class="chord">G9</span>..</span>
+No teme<span class="g"><span class="chord">F#m</span>ré.</span>  <span class="g"><span class="chord">G9</span>..</span>
+
+[Coro]
+(x2)
+Muestra tu <span class="g"><span class="chord">D</span>Gloria,</span> <span class="g"><span class="chord">A</span>..</span>
+Muestra tu <span class="g"><span class="chord">Bm</span>Gloria.</span>  <span class="g"><span class="chord">G</span>..</span>
+
+[Verso 2]
+Perdido en tus <span class="g"><span class="chord">Bm</span>ojos,</span> <span class="g"><span class="chord">G9</span>..</span>
+Marcado por <span class="g"><span class="chord">Bm</span>ti,</span>  <span class="g"><span class="chord">G9</span>..</span>
+<span class="g"><span class="chord">Bm</span>Caminare</span> en tu pre<span class="g"><span class="chord">F#m</span>sencia</span> como Je<span class="g"><span class="chord">Em7</span>sús</span>
+Me cubre tu <span class="g"><span class="chord">Bm</span>gloria,</span>  <span class="g"><span class="chord">G9</span>..</span>
+saturado es<span class="g"><span class="chord">Bm</span>toy,</span>  <span class="g"><span class="chord">G9</span>..</span>
+
+[Puente]
+No teme<span class="g"><span class="chord">F#m</span>ré,</span>  <span class="g"><span class="chord">G9</span>..</span>
+No teme<span class="g"><span class="chord">F#m</span>ré.</span>  <span class="g"><span class="chord">G9</span>..</span>
+
+[Coro]
+(x2)
+Muestra tu <span class="g"><span class="chord">D</span>Gloria,</span> <span class="g"><span class="chord">A</span>..</span>
+Muestra tu <span class="g"><span class="chord">Bm</span>Gloria.</span>  <span class="g"><span class="chord">G</span>..</span>
+
+[Coro 2]
+An<span class="g"><span class="chord">D</span>helo</span> ver el rostro de a<span class="g"><span class="chord">A</span>quel</span> que me amo,
+Es a<span class="g"><span class="chord">Bm</span>quí</span> en tu presencia <span class="g"><span class="chord">G</span>donde</span> quiero estar.
 `
     },
 ];
