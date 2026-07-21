@@ -3863,7 +3863,7 @@ Esperando es<span class="g"><span class="chord">G#</span>toy</span> por tu po<sp
 [Puente]
 <span class="g"><span class="chord">C#</span>Me</span> despojo de <span class="g"><span class="chord">G#</span>mí,</span> 
 sa<span class="g"><span class="chord">D#m</span>túrame</span> de <span class="g"><span class="chord">A#m</span>ti,</span>
-<span class="g"><span class="chord">C#</span>Y</span> mis días vi<span class="g"><span class="chord">D#m</span>viré</span> por <span class="g"><span class="chord">F</span>ti,</span> 
+<span class="g"><span class="chord">C#</span>Y</span> mis días vi<span class="g"><span class="chord">D#m</span>viré</span> por <span class="g"><span class="chord">F#</span>ti,</span> 
 <span class="g"><span class="chord">G#</span>Espíritu</span> <span class="g"><span class="chord">A#m</span>Santo.</span>
 
 [Coro 2]
