@@ -4188,25 +4188,25 @@ Lo resuci<span class="g"><span class="chord">A#</span>ta</span><span class="g"><
 
 [Verso 1]
 <span class="g"><span class="chord">A</span>Quien</span> po<span class="g"><span class="chord">D</span>drá</span> separarme de <span class="g"><span class="chord">Em</span>ti</span> <span class="g"><span class="chord">D</span>Dios,</span>
-Si <span class="g"><span class="chord">Bm</span>aún</span> cuando te <span class="g"><span class="chord">A</span>fa</span>llo,
+Si <span class="g"><span class="chord">Bm</span>aún</span> cuando te <span class="g"><span class="chord">A</span>fallo,</span>
 A<span class="g"><span class="chord">G</span>quí</span> estás.
 
 [Verso 2]
-<span class="g"><span class="chord">D</span>Tu</span> amor sobre pasa ba<span class="g"><span class="chord">Em</span>rre</span><span class="g"><span class="chord">D</span>ras</span>
-Que <span class="g"><span class="chord">Bm</span>aún</span> perdido
-Me <span class="g"><span class="chord">A</span>di</span>ces tu hijo <span class="g"><span class="chord">G</span>soy.</span>
+Tu <span class="g"><span class="chord">D</span>amor</span> sobre pasa ba<span class="g"><span class="chord">Em</span>rre</span><span class="g"><span class="chord">D</span>ras,</span>
+Que <span class="g"><span class="chord">Bm</span>aún</span> perdido,
+Me <span class="g"><span class="chord">A</span>dices</span> tu hijo <span class="g"><span class="chord">G</span>soy.</span>
 
 [Puente]
-Ni lo <span class="g"><span class="chord">A</span>alto</span> ni lo pro<span class="g"><span class="chord">Bm</span>fundo</span> me <span class="g"><span class="chord">G</span>pueden</span> alejar de ti
+Ni lo <span class="g"><span class="chord">A</span>alto</span> ni lo pro<span class="g"><span class="chord">Bm</span>fundo,</span> me <span class="g"><span class="chord">G</span>pueden</span> alejar de ti,
 Nin<span class="g"><span class="chord">A</span>guna</span> cosa en el <span class="g"><span class="chord">Bm</span>mundo,</span> me <span class="g"><span class="chord">G</span>puede</span> separar de ti.
 
 [Coro]
 Mejor es un <span class="g"><span class="chord">D</span>día</span> en tu casa,
 Que <span class="g"><span class="chord">G</span>mil</span> años lejos de <span class="g"><span class="chord">Bm</span>ti Dios,</span>
-<span class="g"><span class="chord">F#m</span>Tú</span> eres mi gozo <span class="g"><span class="chord">G</span>Dios.</span>
+<span class="g"><span class="chord">F#m</span>Tú eres</span> mi gozo <span class="g"><span class="chord">G</span>Dios.</span>
 
 [Coro 2]
-<span class="g"><span class="chord">D</span>En</span> ti todo es nuevo,
+En ti todo es <span class="g"><span class="chord">D</span>nuevo,</span>
 Borras mi pa<span class="g"><span class="chord">G</span>sado,</span>
 Ya no hay tris<span class="g"><span class="chord">Bm</span>teza,</span> <span class="g"><span class="chord">F#m</span>tú eres</span> mi gozo <span class="g"><span class="chord">G</span>Dios.</span>
 <span class="g"><span class="chord">Em</span>Tú</span> eres mi <span class="g"><span class="chord">A</span>go</span><span class="g"><span class="chord">D</span>zo,</span> Dios. <span class="g"><span class="chord">A</span>..</span>  <span class="g"><span class="chord">D</span>..</span>
