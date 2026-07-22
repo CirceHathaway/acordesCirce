@@ -4591,4 +4591,91 @@ An<span class="g"><span class="chord">D</span>helo</span> ver el rostro de a<spa
 Es a<span class="g"><span class="chord">Bm</span>quí</span> en tu presencia <span class="g"><span class="chord">G</span>donde</span> quiero estar.
 `
     },
+
+    {
+        title: "Yo Soy Libre",
+        artist: "David Quinlan",
+        key: "C",
+        type: "Alabanza",
+        comentario: "La original está en D.",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">C</span>Los</span> ciegos verán por ti los mudos cantarán
+<span class="g"><span class="chord">F</span>Los</span> muertos vivirán, los pueblos te adorarán
+<span class="g"><span class="chord">Am</span>Las</span> tinieblas huirán <span class="g"><span class="chord">G</span>por</span> ti yo grito
+<span class="g"><span class="chord">C</span>Yo</span> soy libre, (Yo soy libreeee)
+
+[Coro]
+<span class="g"><span class="chord">C</span>Libre</span> para Correr (Libre para correr)
+<span class="g"><span class="chord">F</span>Libre</span> para Danzar (Libre para danzar)
+<span class="g"><span class="chord">Am</span>Libre</span> para vivir <span class="g"><span class="chord">G</span>por</span> ti (Libre para vivir por ti)
+<span class="g"><span class="chord">C</span>Yo</span> soy libre, (Yo soy libreee)
+
+[Puente]
+<span class="g"><span class="chord">C</span>Oooooh</span> (OoOoOh)
+<span class="g"><span class="chord">F</span>Oooooh</span> (OoOoOh)
+<span class="g"><span class="chord">Am</span>Ooooh</span> (OoOoh)
+<span class="g"><span class="chord">G</span>Ooooh</span> (OoOoh)
+`
+    },
+
+    {
+        title: "Que Entre El Rey",
+        artist: "Karen Espinosa",
+        key: "Dm",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">Bb</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Dm</span>Que</span> día tan her<span class="g"><span class="chord">C</span>moso</span> se<span class="g"><span class="chord">Bb</span>rá,</span>
+<span class="g"><span class="chord">Dm</span>El</span> día que te <span class="g"><span class="chord">F</span>vea</span> lle<span class="g"><span class="chord">Gm</span>gar,</span>
+<span class="g"><span class="chord">Dm</span>En</span> un caballo <span class="g"><span class="chord">Am</span>blanco</span> ven<span class="g"><span class="chord">Bb</span>drá,</span>
+El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span> <span class="g"><span class="chord">F</span>..</span>
+El Rey de <span class="g"><span class="chord">Bb</span>Gloria.</span> <span class="g"><span class="chord">C</span>..</span>
+
+[Coro]
+Se <span class="g"><span class="chord">Bb</span>abren</span> los cielos,
+Sus <span class="g"><span class="chord">C</span>hijos</span> declaran,
+<span class="g"><span class="chord">F</span>Que</span> entre el <span class="g"><span class="chord">Bb</span>Rey,</span>
+<span class="g"><span class="chord">Dm</span>Que</span> entre el <span class="g"><span class="chord">C</span>Rey.</span>
+
+[Coro 2]
+La <span class="g"><span class="chord">Bb</span>tierra</span> proclama,
+No hay nadie mas <span class="g"><span class="chord">C</span>digno,</span>
+<span class="g"><span class="chord">F</span>Que</span> entre el <span class="g"><span class="chord">Bb</span>Rey,</span>
+<span class="g"><span class="chord">Dm</span>Que</span> entre el <span class="g"><span class="chord">C</span>Rey.</span>  <span class="g"><span class="chord">Dm</span>..</span>   <span class="g"><span class="chord">F</span>..</span>  <span class="g"><span class="chord">Bb</span>ohoh</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Dm</span>La</span> cosecha <span class="g"><span class="chord">F</span>lista</span> es<span class="g"><span class="chord">Bb</span>tá,</span>
+<span class="g"><span class="chord">Dm</span>Lámparas</span> encen<span class="g"><span class="chord">F</span>didas</span> es<span class="g"><span class="chord">Gm</span>tán,</span>
+<span class="g"><span class="chord">Dm</span>El</span> viene con jus<span class="g"><span class="chord">C</span>ticia</span> y ver<span class="g"><span class="chord">Bb</span>dad,</span>
+El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span> <span class="g"><span class="chord">F</span>..</span>
+El Rey de <span class="g"><span class="chord">Bb</span>Gloria,</span>  <span class="g"><span class="chord">C</span>..</span>
+El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span>  <span class="g"><span class="chord">F</span>..</span>
+El Rey de <span class="g"><span class="chord">Bb</span>Gloria.</span>  <span class="g"><span class="chord">C</span>..</span>
+
+[Interludio Pre-Ponte]
+<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
+
+[Puente]
+<span class="g"><span class="chord">Dm</span>El</span> que tiene ojos de fuego,
+<span class="g"><span class="chord">F</span>Y</span> su voz es como el mar,
+<span class="g"><span class="chord">Gm</span>El</span> que está sentado en su trono,
+<span class="g"><span class="chord">Bb</span>Digno</span> y santo siempre el se<span class="g"><span class="chord">C</span>rá,</span>
+<span class="g"><span class="chord">Dm</span>Presentado</span> como un cordero,
+<span class="g"><span class="chord">F</span>Y</span> ahora ruge como un león,
+<span class="g"><span class="chord">Gm</span>Pronto</span> viene por su iglesia,
+<span class="g"><span class="chord">Bb</span>Digno</span> y santo siempre el se<span class="g"><span class="chord">C</span>rá.</span>
+
+[Instrumental] 
+<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
+
+[Coro 3]
+Que ruja el le<span class="g"><span class="chord">Dm</span>ón,</span>
+Que la tierra se estre<span class="g"><span class="chord">C</span>mezca,</span>
+Ante la <span class="g"><span class="chord">Gm</span>majes</span><span class="g"><span class="chord">Bb</span>tad</span> de Je<span class="g"><span class="chord">C</span>sús.</span>
+`
+    },
 ];
