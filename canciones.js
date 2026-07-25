@@ -4827,4 +4827,55 @@ Tu voz me ha<span class="g"><span class="chord">G</span>bló</span> y a la muert
 Glorioso <span class="g"><span class="chord">G</span>día,</span> tu sangre me resca<span class="g"><span class="chord">D</span>tó.</span>
 `
     },
+
+    {
+        title: "Jesús Es El Nombre",
+        artist: "New Wine",
+        key: "Dm",
+        type: "Alabanza",
+        content: `
+[Intro]
+<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">Dm</span></span> 
+
+[Verso 1]
+Pongan <span class="g"><span class="chord">Dm</span>hoy</span> aten<span class="g"><span class="chord">A#</span>ción</span>
+Habi<span class="g"><span class="chord">Gm</span>tantes</span> de toda la <span class="g"><span class="chord">A7</span>tierra</span>
+Jesús <span class="g"><span class="chord">Dm</span>vino</span> a mo<span class="g"><span class="chord">A#</span>rir</span>
+Por a<span class="g"><span class="chord">Gm</span>mor</span> nos ha sal<span class="g"><span class="chord">A7</span>vado</span>
+Murió y <span class="g"><span class="chord">Dm</span>resu</span>ci<span class="g"><span class="chord">C/E</span>tó</span>
+La vic<span class="g"><span class="chord">Gm</span>toria</span> nos entre<span class="g"><span class="chord">A#</span>gó,</span>
+Oh <span class="g"><span class="chord">Gm</span>santos</span> aláben<span class="g"><span class="chord">A7</span>lo,</span>
+
+[Coro]
+<span class="g"><span class="chord">Dm</span>Jesús</span> es el <span class="g"><span class="chord">F</span>nombre</span> sobre todo <span class="g"><span class="chord">Gm</span>nombre</span> fuerte <span class="g"><span class="chord">A7</span>Dios</span>
+<span class="g"><span class="chord">Dm</span>Grítalo</span> y el po<span class="g"><span class="chord">F</span>der</span> de Dios se de<span class="g"><span class="chord">Gm</span>sata</span>
+Y <span class="g"><span class="chord">A7</span>todo</span> es posible.
+
+[Coro 2]
+Ven a<span class="g"><span class="chord">Dm</span>cércate</span> a <span class="g"><span class="chord">C</span>ver</span>
+Las grandes <span class="g"><span class="chord">G/B</span>cosas</span> que Dios está ha<span class="g"><span class="chord">A#</span>ciendo</span>
+Sordos <span class="g"><span class="chord">Dm</span>oyen,</span> ciegos <span class="g"><span class="chord">C</span>ven,</span> y el cora<span class="g"><span class="chord">G/B</span>zón</span> de ellos está cre<span class="g"><span class="chord">A#</span>yendo</span>
+Con él <span class="g"><span class="chord">Dm</span>yo</span> reina<span class="g"><span class="chord">C/E</span>ré</span> por el po<span class="g"><span class="chord">Gm</span>der</span> de resurrec<span class="g"><span class="chord">A#</span>ción</span>
+Oh <span class="g"><span class="chord">Gm</span>santos</span> aláben<span class="g"><span class="chord">A</span>lo.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">Dm</span></span>  <span class="g"><span class="chord">A#</span></span>  <span class="g"><span class="chord">Gm</span></span>  <span class="g"><span class="chord">A</span></span> 
+
+[Puente]
+<span class="g"><span class="chord">Dm</span>Todo</span>pode<span class="g"><span class="chord">A#</span>roso,</span> Rey y Se<span class="g"><span class="chord">C</span>ñor</span> <span class="g"><span class="chord">A</span>(Él</span> es el Gran yo <span class="g"><span class="chord">Dm</span>soy)</span>
+En él no hay <span class="g"><span class="chord">A#</span>sombra</span> de varia<span class="g"><span class="chord">C</span>ción</span> <span class="g"><span class="chord">A</span>(Él</span> es el Gran yo <span class="g"><span class="chord">Dm</span>soy)</span>
+Poder que <span class="g"><span class="chord">A#</span>es</span> sobrena<span class="g"><span class="chord">C</span>tural</span> <span class="g"><span class="chord">A</span>(Él</span> es el Gran yo <span class="g"><span class="chord">Dm</span>soy)</span>
+Omnipo<span class="g"><span class="chord">A#</span>tente</span> no hay otro i<span class="g"><span class="chord">C</span>gual</span> <span class="g"><span class="chord">A</span>(Él</span> es el Gran yo <span class="g"><span class="chord">Dm</span>soy)</span>
+<span class="g"><span class="chord">Dm</span>Él</span> es el Gran yo <span class="g"><span class="chord">A#</span>soy,</span> Él es el Gran yo <span class="g"><span class="chord">C</span>soy</span>
+<span class="g"><span class="chord">A</span>Nadie</span> se compara a ti
+
+<span class="g"><span class="chord">Dm</span>Él</span> es el Gran yo <span class="g"><span class="chord">A#</span>soy,</span> Él es el Gran yo <span class="g"><span class="chord">C</span>soy</span>
+<span class="g"><span class="chord">A7</span>Nadie</span> se compara a ti
+<span class="g"><span class="chord">Dm</span>Nada</span> se compara a ti
+<span class="g"><span class="chord">D#</span>Nada</span> se compara a ti
+<span class="g"><span class="chord">C/E</span>Nada</span> se compara a ti
+<span class="g"><span class="chord">A</span>Nada</span> se compara
+<span class="g"><span class="chord">Dm</span>Jesús</span>
+`
+    },
 ];
