@@ -177,6 +177,7 @@ Al que <span class="g"><span class="chord">F</span>vive</span> vive por <span cl
         artist: "Marcos Brunet",
         key: "C",
         type: "Adoración",
+        comentario: "Ruth lo hace en E+.",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">C</span>Es</span> a Ti a quien a <span class="g"><span class="chord">F</span>anhelo</span>
@@ -196,6 +197,10 @@ Quiero que el mundo <span class="g"><span class="chord">F</span>sepa</span>
 Quiero que el mundo <span class="g"><span class="chord">Dm</span>vea</span>
 Que Tú eres mi <span class="g"><span class="chord">F</span>amado</span> <span class="g"><span class="chord">G</span>...</span>
 Y yo soy <span class="g"><span class="chord">Am</span>tuyo.</span> <span class="g"><span class="chord">G</span>...</span> <span class="g"><span class="chord">C</span>...</span>
+
+[Instrumental]
+(x2)
+<span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">C</span></span>
 
 [Puente]
 <span class="g"><span class="chord">F</span>Yo</span> en ti y <span class="g"><span class="chord">Dm</span>Tu</span>en mí Je<span class="g"><span class="chord">Am</span>sús,</span>
@@ -4072,27 +4077,25 @@ Espe<span class="g"><span class="chord">B</span>ra</span>mos por ti.
 <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span>
 
 [Verso 1]
-<span class="g"><span class="chord">Bm</span>Se</span> escucha un sonido,  el rugido del <span class="g"><span class="chord">D</span>León,</span>
-Le<span class="g"><span class="chord">Em</span>van</span>tando a sus hijos, desper<span class="g"><span class="chord">D</span>tan</span>do a esta na<span class="g"><span class="chord">A</span>ción.</span>
+Se escucha un so<span class="g"><span class="chord">Bm</span>nido,</span> el rugido de <span class="g"><span class="chord">D</span>el</span> león,
+Levan<span class="g"><span class="chord">Em</span>tando</span> a sus hijos, desper<span class="g"><span class="chord">D</span>tando</span> a esta na<span class="g"><span class="chord">A</span>ción.</span>
 
 [Puente]
-<span class="g"><span class="chord">G</span>Nos</span> dio poder y autoridad
-Sobre la muerte y toda la enferme<span class="g"><span class="chord">A</span>dad,</span>
-Nos ha sentado en un lugar celes<span class="g"><span class="chord">G</span>tial,</span>
-Con nuestra boca vamos a profeti<span class="g"><span class="chord">A</span>zar.</span>
+Nos dio <span class="g"><span class="chord">G</span>poder</span> y autoridad,
+Sobre la muerte y toda <span class="g"><span class="chord">A</span>la</span> enfermedad,
+Nos ha sentado en un lu<span class="g"><span class="chord">G</span>gar</span> celestial,
+Con nuestra boca vamos <span class="g"><span class="chord">A</span>a profetizar.</span>
 
 [Coro]
-<span class="g"><span class="chord">D</span>Je</span>sucristo es rey, la muerte ven<span class="g"><span class="chord">F#m</span>ció</span>
-Hemos nacido de <span class="g"><span class="chord">Bm</span>nue</span>vo, bautizados en <span class="g"><span class="chord">G</span>fue</span>go
-<span class="g"><span class="chord">D</span>A</span> una sola voz, canta la crea<span class="g"><span class="chord">F#m</span>ción</span>
-Hemos nacido de <span class="g"><span class="chord">Bm</span>nue</span>vo, bautizados en <span class="g"><span class="chord">G</span>fue</span>go
-Bauti<span class="g"><span class="chord">G</span>za</span>dos en fuego.
+<span class="g"><span class="chord">D</span>Jesucristo</span> es rey, la muerte ven<span class="g"><span class="chord">F#m</span>ció,</span>
+Hemos nacido de <span class="g"><span class="chord">Bm</span>nuevo,</span> bautizados en <span class="g"><span class="chord">G</span>fuego,</span>
+<span class="g"><span class="chord">D</span>A</span> una sola voz, canta <span class="g"><span class="chord">F#m</span>la creación,</span>
+Hemos nacido de <span class="g"><span class="chord">Bm</span>nuevo,</span> bautizados en <span class="g"><span class="chord">G</span>fuego,</span>
+Bauti<span class="g"><span class="chord">G</span>zados</span> en fuego.
 
 [Verso 2]
-<span class="g"><span class="chord">G</span>Fue</span>go, fuego, <span class="g"><span class="chord">A</span>fue</span>go, fuego,
-<span class="g"><span class="chord">G</span>Fue</span>go, fuego, bauti<span class="g"><span class="chord">A</span>za</span>dos en fuego,
-<span class="g"><span class="chord">G</span>Fue</span>go, fuego, <span class="g"><span class="chord">A</span>fue</span>go, fuego,
-<span class="g"><span class="chord">G</span>Fue</span>go, fuego, bauti<span class="g"><span class="chord">A</span>za</span>dos.
+<span class="g"><span class="chord">G</span>    Fuego,</span> fuego, <span class="g"><span class="chord">A</span>    fuego,</span> fuego,
+<span class="g"><span class="chord">G</span>    Fuego,</span> fuego, <span class="g"><span class="chord">A</span>    bautizados</span> en fuego...
 `
     },
 
@@ -4109,22 +4112,22 @@ Cuando pase por diversas pruebas,
 Porque de allí saldré victorioso.
 
 [Puente]
-<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>dan</span>za
-Ya no hay tris<span class="g"><span class="chord">G#7</span>te</span>za, solo ala<span class="g"><span class="chord">C#m</span>ban</span>za
-<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>dan</span>za
-Ya no hay tris<span class="g"><span class="chord">G#7</span>te</span>za.
+<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>danza,</span>
+Ya no hay tris<span class="g"><span class="chord">G#7</span>teza,</span> solo ala<span class="g"><span class="chord">C#m</span>banza,</span>
+<span class="g"><span class="chord">A</span>Mi</span> lamento cambiaste por <span class="g"><span class="chord">B</span>danza,</span>
+Ya no hay tris<span class="g"><span class="chord">G#7</span>teza.</span>
 
 [Coro]
-<span class="g"><span class="chord">A</span>Yo</span> Danzo, danzo, <span class="g"><span class="chord">B</span>dan</span>zo, danzo
-<span class="g"><span class="chord">G#7</span>Dan</span>zo, danzo, <span class="g"><span class="chord">C#m</span>en</span> el proceso
-<span class="g"><span class="chord">A</span>Gri</span>to, grito, <span class="g"><span class="chord">B</span>gri</span>to, grito
-<span class="g"><span class="chord">G#7</span>Gri</span>to, grito, <span class="g"><span class="chord">C#m</span>no</span> moriré.
+<span class="g"><span class="chord">A</span>Yo</span> Danzo, danzo, <span class="g"><span class="chord">B</span>danza,</span> danzo,
+<span class="g"><span class="chord">G#7</span>Danzo,</span> danzo, <span class="g"><span class="chord">C#m</span>en</span> el proceso,
+<span class="g"><span class="chord">A</span>Grito,</span> grito, <span class="g"><span class="chord">B</span>grito,</span> grito,
+<span class="g"><span class="chord">G#7</span>Grito,</span> grito, <span class="g"><span class="chord">C#m</span>no</span> moriré.
 
 [Coro 2]
-<span class="g"><span class="chord">A</span>Doy</span> vueltas, vueltas, <span class="g"><span class="chord">B</span>vuel</span>tas, vueltas,
-<span class="g"><span class="chord">G#7</span>Vuel</span>tas, vueltas, <span class="g"><span class="chord">C#m</span>no</span> me avergüenzo,
-<span class="g"><span class="chord">A</span>Hay</span> fiesta, fiesta, <span class="g"><span class="chord">B</span>fies</span>ta, fiesta,
-<span class="g"><span class="chord">G#7</span>Fies</span>ta, fiesta <span class="g"><span class="chord">C#m</span>en</span> el desierto.
+<span class="g"><span class="chord">A</span>Doy</span> vueltas, vueltas, <span class="g"><span class="chord">B</span>vueltas,</span> vueltas,
+<span class="g"><span class="chord">G#7</span>Vueltas,</span> vueltas, <span class="g"><span class="chord">C#m</span>no</span> me avergüenzo,
+<span class="g"><span class="chord">A</span>Hay</span> fiesta, fiesta, <span class="g"><span class="chord">B</span>fiesta,</span> fiesta,
+<span class="g"><span class="chord">G#7</span>Fiesta,</span> fiesta <span class="g"><span class="chord">C#m</span>en</span> el desierto.
 
 [Instrumental]
 <span class="g"><span class="chord">A</span>La</span> la la la la la
@@ -4139,10 +4142,10 @@ Aunque mis labios quieran callar,
 Mientras viva te alabaré.
 
 [Verso 3]
-Aunque el de<span class="g"><span class="chord">A</span>sier</span>to me quiera secar,
-Mientras <span class="g"><span class="chord">B</span>vi</span>va te alabaré,
-Aunque la hi<span class="g"><span class="chord">C</span>gue</span>ra no florezca,
-Mientras <span class="g"><span class="chord">G#7</span>vi</span>va te alabaré.
+Aunque el de<span class="g"><span class="chord">A</span>sierto</span> me quiera secar,
+Mientras <span class="g"><span class="chord">B</span>viva</span> te alabaré,
+Aunque la hi<span class="g"><span class="chord">G#m</span>guera</span> no florezca,
+Mientras <span class="g"><span class="chord">C#m</span>viva</span> te alabaré.
 `
     },
 
@@ -4416,6 +4419,7 @@ Y <span class="g"><span class="chord">B</span>todo</span> ojo te verá, <span cl
         type: "Adoración",
         content: `
 [Intro] 
+(x2)
 <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">Bm</span></span>
 
 [Verso 1]
@@ -4430,7 +4434,7 @@ Porque su a<span class="g"><span class="chord">C</span>mor</span> no se compra,
 <span class="g"><span class="chord">D</span>Ni</span> se merece, su a<span class="g"><span class="chord">Em</span>mor</span> es un regalo,
 De <span class="g"><span class="chord">Bm</span>gracia</span> se recibe.
 
-[Coro]
+[Puente]
 <span class="g"><span class="chord">C</span>Quiero</span> conocer a Je<span class="g"><span class="chord">D</span>sús,</span>
 Yo <span class="g"><span class="chord">Em</span>Quiero</span> conocer a Je<span class="g"><span class="chord">Bm</span>sús,</span>
 <span class="g"><span class="chord">C</span>Quiero</span> conocer a Je<span class="g"><span class="chord">D</span>sús,</span>
@@ -4441,12 +4445,22 @@ Yo <span class="g"><span class="chord">Em</span>Quiero</span> conocer a Je<span 
 Ser ha<span class="g"><span class="chord">D</span>llado</span> en <span class="g"><span class="chord">Em</span>Él,</span> <span class="g"><span class="chord">Bm</span>..</span>
 Ser hallado en Él.
 
-[Puente]
+[Coro]
 Ye<span class="g"><span class="chord">C</span>shua</span> <span class="g"><span class="chord">D</span>aaa</span>  <span class="g"><span class="chord">Em</span>aaaa</span> <span class="g"><span class="chord">Bm</span>aaaa...</span>
 
 [Coro 2]
 Mi a<span class="g"><span class="chord">C</span>mado</span> es, el más <span class="g"><span class="chord">Em</span>bello</span> entre
-Mi<span class="g"><span class="chord">G</span>llares</span> y mi<span class="g"><span class="chord">Bm7</span>llares...</span>
+Mi<span class="g"><span class="chord">G</span>llares</span> y mi<span class="g"><span class="chord">D</span>llares...</span>
+
+[Verso 4]
+Ven a <span class="g"><span class="chord">C</span>Hacer</span> lo que ningún hombre pudo hacer,
+Ven a hacer lo que la historia nunca <span class="g"><span class="chord">D</span>vio</span>
+Y a cum<span class="g"><span class="chord">Em</span>plir</span> lo escrito en Joel, <span class="g"><span class="chord">Bm</span>avívanos.</span>
+
+[Verso 5]
+La tierra <span class="g"><span class="chord">C</span>clama</span> ohoh,
+La <span class="g"><span class="chord">D</span>tierra</span> <span class="g"><span class="chord">Em</span>llama,</span> llama, <span class="g"><span class="chord">Bm</span>llama...</span>
+
 `
     },
 
@@ -4680,60 +4694,82 @@ Yo soy <span class="g"><span class="chord">C</span>libre,</span> (Yo soy libreee
     {
         title: "Que Entre El Rey",
         artist: "Karen Espinosa",
-        key: "Dm",
-        type: "Alabanza",
+        key: "C#m",
+        type: "Adoración",
         content: `
 [Intro] 
-<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">Bb</span></span>
+<span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">A</span></span>
 
 [Verso 1]
-<span class="g"><span class="chord">Dm</span>Que</span> día tan her<span class="g"><span class="chord">C</span>moso</span> se<span class="g"><span class="chord">Bb</span>rá,</span>
-<span class="g"><span class="chord">Dm</span>El</span> día que te <span class="g"><span class="chord">F</span>vea</span> lle<span class="g"><span class="chord">Gm</span>gar,</span>
-<span class="g"><span class="chord">Dm</span>En</span> un caballo <span class="g"><span class="chord">Am</span>blanco</span> ven<span class="g"><span class="chord">Bb</span>drá,</span>
-El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span> <span class="g"><span class="chord">F</span>..</span>
-El Rey de <span class="g"><span class="chord">Bb</span>Gloria.</span> <span class="g"><span class="chord">C</span>..</span>
+<span class="g"><span class="chord">C#m</span>Que</span> día tan her<span class="g"><span class="chord">B</span>moso</span> se<span class="g"><span class="chord">A</span>rá,</span>
+<span class="g"><span class="chord">C#m</span>El</span> día que te <span class="g"><span class="chord">G#m</span>vea</span> lle<span class="g"><span class="chord">F#m</span>gar,</span>
+<span class="g"><span class="chord">Dm</span>En</span> un caballo <span class="g"><span class="chord">G#m</span>blanco</span> ven<span class="g"><span class="chord">A</span>drá,</span>
+El hijo del <span class="g"><span class="chord">F#m</span>hombre,</span> <span class="g"><span class="chord">G#m</span>..</span>
+El Rey de <span class="g"><span class="chord">A</span>Gloria.</span> <span class="g"><span class="chord">B</span>..</span>
 
 [Coro]
-Se <span class="g"><span class="chord">Bb</span>abren</span> los cielos,
-Sus <span class="g"><span class="chord">C</span>hijos</span> declaran,
-<span class="g"><span class="chord">F</span>Que</span> entre el <span class="g"><span class="chord">Bb</span>Rey,</span>
-<span class="g"><span class="chord">Dm</span>Que</span> entre el <span class="g"><span class="chord">C</span>Rey.</span>
+Se <span class="g"><span class="chord">A</span>abren</span> los cielos,
+Sus <span class="g"><span class="chord">B</span>hijos</span> declaran,
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
 
 [Coro 2]
-La <span class="g"><span class="chord">Bb</span>tierra</span> proclama,
-No hay nadie mas <span class="g"><span class="chord">C</span>digno,</span>
-<span class="g"><span class="chord">F</span>Que</span> entre el <span class="g"><span class="chord">Bb</span>Rey,</span>
-<span class="g"><span class="chord">Dm</span>Que</span> entre el <span class="g"><span class="chord">C</span>Rey.</span>  <span class="g"><span class="chord">Dm</span>..</span>   <span class="g"><span class="chord">F</span>..</span>  <span class="g"><span class="chord">Bb</span>ohoh</span>
+La <span class="g"><span class="chord">A</span>tierra</span> proclama,
+No hay nadie mas <span class="g"><span class="chord">B</span>digno,</span>
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
+
+[Intro] 
+<span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">G#m</span></span>
 
 [Verso 2]
-<span class="g"><span class="chord">Dm</span>La</span> cosecha <span class="g"><span class="chord">F</span>lista</span> es<span class="g"><span class="chord">Bb</span>tá,</span>
-<span class="g"><span class="chord">Dm</span>Lámparas</span> encen<span class="g"><span class="chord">F</span>didas</span> es<span class="g"><span class="chord">Gm</span>tán,</span>
-<span class="g"><span class="chord">Dm</span>El</span> viene con jus<span class="g"><span class="chord">C</span>ticia</span> y ver<span class="g"><span class="chord">Bb</span>dad,</span>
-El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span> <span class="g"><span class="chord">F</span>..</span>
-El Rey de <span class="g"><span class="chord">Bb</span>Gloria,</span>  <span class="g"><span class="chord">C</span>..</span>
-El hijo del <span class="g"><span class="chord">Gm</span>hombre,</span>  <span class="g"><span class="chord">F</span>..</span>
-El Rey de <span class="g"><span class="chord">Bb</span>Gloria.</span>  <span class="g"><span class="chord">C</span>..</span>
+<span class="g"><span class="chord">C#m</span>La</span> cosecha <span class="g"><span class="chord">G#m</span>lista</span> es<span class="g"><span class="chord">A</span>tá,</span>
+<span class="g"><span class="chord">C#m</span>Lámparas</span> encen<span class="g"><span class="chord">G#m</span>didas</span> es<span class="g"><span class="chord">F#m</span>tán,</span>
+<span class="g"><span class="chord">C#m</span>El</span> viene con jus<span class="g"><span class="chord">G#m</span>ticia</span> y ver<span class="g"><span class="chord">A</span>dad,</span>
+El hijo del <span class="g"><span class="chord">F#m</span>hombre,</span> <span class="g"><span class="chord">G#m</span>..</span>
+El Rey de <span class="g"><span class="chord">A</span>Gloria,</span>  <span class="g"><span class="chord">B</span>..</span>
+El hijo del <span class="g"><span class="chord">F#m</span>hombre,</span>  <span class="g"><span class="chord">G#m</span>..</span>
+El Rey de <span class="g"><span class="chord">A</span>Gloria.</span>  <span class="g"><span class="chord">B</span>..</span>
+
+[Coro]
+Se <span class="g"><span class="chord">A</span>abren</span> los cielos,
+Sus <span class="g"><span class="chord">B</span>hijos</span> declaran,
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
+
+[Coro 2]
+La <span class="g"><span class="chord">A</span>tierra</span> proclama,
+No hay nadie mas <span class="g"><span class="chord">B</span>digno,</span>
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
 
 [Interludio Pre-Ponte]
-<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
+<span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">B</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">G#m</span></span>
 
 [Puente]
-<span class="g"><span class="chord">Dm</span>El</span> que tiene ojos de fuego,
-<span class="g"><span class="chord">F</span>Y</span> su voz es como el mar,
-<span class="g"><span class="chord">Gm</span>El</span> que está sentado en su trono,
-<span class="g"><span class="chord">Bb</span>Digno</span> y santo siempre el se<span class="g"><span class="chord">C</span>rá,</span>
-<span class="g"><span class="chord">Dm</span>Presentado</span> como un cordero,
-<span class="g"><span class="chord">F</span>Y</span> ahora ruge como un león,
-<span class="g"><span class="chord">Gm</span>Pronto</span> viene por su iglesia,
-<span class="g"><span class="chord">Bb</span>Digno</span> y santo siempre el se<span class="g"><span class="chord">C</span>rá.</span>
+<span class="g"><span class="chord">A</span>El</span> que tiene ojos de fuego,
+<span class="g"><span class="chord">B</span>Y</span> su voz es como el mar,
+<span class="g"><span class="chord">G#m</span>El</span> que está sentado en su trono,
+<span class="g"><span class="chord">C#m</span>Digno</span> y santo <span class="g"><span class="chord">B</span>siempre</span> el será,
+<span class="g"><span class="chord">A</span>Presentado</span> como un cordero,
+<span class="g"><span class="chord">B</span>Y</span> ahora ruge como un león,
+<span class="g"><span class="chord">G#m</span>Pronto</span> viene por su iglesia,
+<span class="g"><span class="chord">C#m</span>Digno</span> y santo <span class="g"><span class="chord">B</span>siempre</span> el será,
+
+[Coro]
+Se <span class="g"><span class="chord">A</span>abren</span> los cielos,
+Sus <span class="g"><span class="chord">B</span>hijos</span> declaran,
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
+
+[Coro 2]
+La <span class="g"><span class="chord">A</span>tierra</span> proclama,
+No hay nadie mas <span class="g"><span class="chord">B</span>digno,</span>
+<span class="g"><span class="chord">E</span>Que</span> entre el <span class="g"><span class="chord">A</span>Rey,</span>
+<span class="g"><span class="chord">C#m</span>Que</span> entre el <span class="g"><span class="chord">B</span>Rey.</span>
 
 [Instrumental] 
-<span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">C</span></span>
-
-[Coro 3]
-Que ruja el le<span class="g"><span class="chord">Dm</span>ón,</span>
-Que la tierra se estre<span class="g"><span class="chord">C</span>mezca,</span>
-Ante la <span class="g"><span class="chord">Gm</span>majes</span><span class="g"><span class="chord">Bb</span>tad</span> de Je<span class="g"><span class="chord">C</span>sús.</span>
+<span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">B</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">B</span></span>
 `
     },
 
