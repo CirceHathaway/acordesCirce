@@ -4133,7 +4133,7 @@ Ya no hay tris<span class="g"><span class="chord">G#7</span>teza.</span>
 <span class="g"><span class="chord">A</span>La</span> la la la la la
 <span class="g"><span class="chord">B</span>La</span> la la la la la
 <span class="g"><span class="chord">G#7</span>La</span> la la la la la
-<span class="g"><span class="chord">C#m</span>La</span> la la la
+<span class="g"><span class="chord">G#7</span>La</span> <span class="g"><span class="chord">F#</span>La</span> <span class="g"><span class="chord">E</span>La</span> <span class="g"><span class="chord">C#m</span>La</span>
 
 [Verso 2]
 Aunque venga la enfermedad,
@@ -4146,6 +4146,13 @@ Aunque el de<span class="g"><span class="chord">A</span>sierto</span> me quiera 
 Mientras <span class="g"><span class="chord">B</span>viva</span> te alabaré,
 Aunque la hi<span class="g"><span class="chord">G#m</span>guera</span> no florezca,
 Mientras <span class="g"><span class="chord">C#m</span>viva</span> te alabaré.
+
+[Instrumental]
+<span class="g"><span class="chord">A</span>La</span> la la la la la
+<span class="g"><span class="chord">B</span>La</span> la la la la la
+<span class="g"><span class="chord">G#7</span>La</span> la la la la la
+<span class="g"><span class="chord">G#7</span>La</span> <span class="g"><span class="chord">F#</span>La</span> <span class="g"><span class="chord">E</span>La</span> <span class="g"><span class="chord">C#m</span>La</span>
+
 `
     },
 
