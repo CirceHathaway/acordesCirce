@@ -4938,4 +4938,64 @@ Porque tu <span class="g"><span class="chord">C</span>diestra,</span> me ha sost
 <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">C</span></span>
 `
     },
+
+    {
+        title: "Ya no soy Esclavo",
+        artist: "Julio melgar",
+        key: "A",
+        type: "Adoración",
+        content: `
+[Verso 1]
+Me envuelves hoy con una canción,
+Melodia de tu amor,
+Cantas libertad,
+En mi adversidad,
+Hasta que huya el temor.
+
+[Coro]
+Ya no soy un esclavo del temor,
+Yo soy hijo de Dios,
+Ya no soy un esclavo del temor,
+Yo soy hijo de Dios.
+
+[Verso 2]
+Desde el Vientre fuí escogido en tí,
+Me llamó el amor,
+De nuevo nací,
+Recibido en ti,
+Tu sangre en mi fluyó.
+
+[Coro]
+Ya no soy un esclavo del temor,
+Yo soy hijo de Dios,
+Ya no soy un esclavo del temor,
+Yo soy hijo de Dios.
+
+[Instrumental]
+x2
+<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Verso 3]
+Estoy rodeado por los brazos del padre,
+Estoy rodeado por canciones de libertad,
+Fuimos liberados,
+De ataduras,
+Somos los hijos y las hijas,
+Cantaremos li-bres.
+
+[Instrumental 2]
+x2
+<span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Coro 2]
+Abriste el mar para que yo camine,
+Tu amor ahogó todo el temor,
+Me rescataste y hoy yo te cantaré,
+Yo soy hijo de Dios.
+
+[Verso 4]
+Yo solo sé que yo soy su hijo,
+Y El es mi padre y mi padre me ama...
+`
+    },
 ];
