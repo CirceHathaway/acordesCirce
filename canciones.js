@@ -1663,6 +1663,7 @@ el e<span class="g"><span class="chord">C</span>jército</span> de Dios <span cl
         artist: "Jesús Adrián Romero",
         key: "C",
         type: "Adoración",
+        comentario: "Gi la hace en A7",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">C</span>De</span>tal manera él me a<span class="g"><span class="chord">G</span>mó,</span>
@@ -2818,7 +2819,7 @@ Te adoro a <span class="g"><span class="chord">F</span>ti.</span> <span class="g
 
 [Verso 2]
 <span class="g"><span class="chord">G</span>Con</span> todas mis <span class="g"><span class="chord">Em</span>fuerzas</span>
-Te a<span class="g"><span class="chord">Am</span>la</span><span class="g"><span class="chord">G</span>ba</span><span class="g"><span class="chord">D</span>ré,</span>
+Te a<span class="g"><span class="chord">Am</span>la</span><span class="g"><span class="chord">C</span>ba</span><span class="g"><span class="chord">D</span>ré,</span>
 <span class="g"><span class="chord">Em</span>Mi</span>adora<span class="g"><span class="chord">G</span>ción</span> eres <span class="g"><span class="chord">F</span>Tú.</span> <span class="g"><span class="chord">C</span>..</span> <span class="g"><span class="chord">D</span>..</span>
 
 [Coro]
@@ -4883,6 +4884,56 @@ Omnipo<span class="g"><span class="chord">A#</span>tente</span> no hay otro i<sp
 <span class="g"><span class="chord">C/E</span>Nada</span> se compara a ti
 <span class="g"><span class="chord">A</span>Nada</span> se compara
 <span class="g"><span class="chord">Dm</span>Jesús</span>
+`
+    },
+
+    {
+        title: "Soy Sano",
+        artist: "Ericson Alexander Morano",
+        key: "C",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">C</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">C</span>Tu</span> victorioso sal<span class="g"><span class="chord">G</span>vador</span> digno de adora<span class="g"><span class="chord">F</span>ción,</span>
+<span class="g"><span class="chord">C</span>Venciste</span> a la muerte en la <span class="g"><span class="chord">G</span>cruz</span> por tus llagas sano <span class="g"><span class="chord">F</span>soy,</span>
+Y <span class="g"><span class="chord">Am7</span>no</span> daremos <span class="g"><span class="chord">G</span>gloria</span> a nadie <span class="g"><span class="chord">F</span>mas,</span>
+Jesu<span class="g"><span class="chord">Dm</span>cristo</span> has ve<span class="g"><span class="chord">Am7</span>nido</span> a liber<span class="g"><span class="chord">G</span>tar.</span>
+
+[Coro]
+Soy <span class="g"><span class="chord">C</span>sano,</span> soy libre en Je<span class="g"><span class="chord">G</span>sús,</span>
+Fue allá en aquella <span class="g"><span class="chord">Am7</span>cruz</span> que el venció la enferme<span class="g"><span class="chord">F</span>dad,</span>
+A <span class="g"><span class="chord">C</span>el</span> sea la gloria y el po<span class="g"><span class="chord">G</span>der,</span>
+Me ha tocado con su <span class="g"><span class="chord">Am7</span>mano</span> he recibido sani<span class="g"><span class="chord">F</span>dad.</span>
+`
+    },
+
+    {
+        title: "Temprano yo te Buscaré",
+        artist: "Marcos Witt",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+<span class="g"><span class="chord">G</span>Temprano</span> yo te busca<span class="g"><span class="chord">D</span>ré,</span>
+<span class="g"><span class="chord">Am</span>De</span> madrugada, yo me acer<span class="g"><span class="chord">C</span>caré</span> a <span class="g"><span class="chord">D</span>ti,</span>
+<span class="g"><span class="chord">G</span>Mi</span> alma te anhela y tiene <span class="g"><span class="chord">D</span>sed,</span>
+<span class="g"><span class="chord">Am</span>Para</span> ver tu gloria <span class="g"><span class="chord">C</span>y</span> tu po<span class="g"><span class="chord">D</span>der.</span>
+
+[Coro]
+<span class="g"><span class="chord">G</span>Mi</span> so<span class="g"><span class="chord">D</span>corro</span> has sido <span class="g"><span class="chord">Em</span>tú,</span>
+En la <span class="g"><span class="chord">G</span>sombra</span> de tus <span class="g"><span class="chord">D</span>alas,</span>
+<span class="g"><span class="chord">C</span>Yo</span> me goza<span class="g"><span class="chord">D</span>ré.</span>
+
+[Coro 2]
+<span class="g"><span class="chord">G</span>Mi</span> alma es<span class="g"><span class="chord">D</span>tá</span> apegada a <span class="g"><span class="chord">Em</span>ti,</span>
+Porque tu <span class="g"><span class="chord">C</span>diestra,</span> me ha sosteni<span class="g"><span class="chord">D</span>do,</span>
+<span class="g"><span class="chord">Bm</span>Oh!</span> tu <span class="g"><span class="chord">Am</span>diestra</span> me ha soste<span class="g"><span class="chord">C</span>ni-</span><span class="g"><span class="chord">D</span>-</span><span class="g"><span class="chord">G</span>-do.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">C</span></span>
 `
     },
 ];
