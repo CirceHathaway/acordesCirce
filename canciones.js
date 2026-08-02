@@ -4899,6 +4899,8 @@ Omnipo<span class="g"><span class="chord">A#</span>tente</span> no hay otro i<sp
 [Verso 1]
 <span class="g"><span class="chord">C</span>Tu</span> victorioso sal<span class="g"><span class="chord">G</span>vador</span> digno de adora<span class="g"><span class="chord">F</span>ción,</span>
 <span class="g"><span class="chord">C</span>Venciste</span> a la muerte en la <span class="g"><span class="chord">G</span>cruz</span> por tus llagas sano <span class="g"><span class="chord">F</span>soy,</span>
+
+[Puente]
 Y <span class="g"><span class="chord">Am7</span>no</span> daremos <span class="g"><span class="chord">G</span>gloria</span> a nadie <span class="g"><span class="chord">F</span>mas,</span>
 Jesu<span class="g"><span class="chord">Dm</span>cristo</span> has ve<span class="g"><span class="chord">Am7</span>nido</span> a liber<span class="g"><span class="chord">G</span>tar.</span>
 
