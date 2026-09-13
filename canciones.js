@@ -4940,6 +4940,52 @@ Porque tu <span class="g"><span class="chord">C</span>diestra,</span> me ha sost
     },
 
     {
+        title: "Al que está Sentado",
+        artist: "Felsy Jones",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1]
+Al que está sen<span class="g"><span class="chord">G</span>tado</span> en el trono <span class="g"><span class="chord">Em</span>blanco,</span>
+A él sea la <span class="g"><span class="chord">C</span>gloria</span> y el honor,
+A él sea el im<span class="g"><span class="chord">Am</span>perio</span> y el po<span class="g"><span class="chord">D</span>der.</span>
+
+[Verso 2]
+Al que <span class="g"><span class="chord">G</span>vive</span> y reina,
+que venció la <span class="g"><span class="chord">Em</span>muerte,</span>
+Quién pagó nuestros de<span class="g"><span class="chord">Am</span>litos</span> en la <span class="g"><span class="chord">C</span>cruz,</span>
+Nos lleva de ti<span class="g"><span class="chord">Am</span>nieblas</span> a su <span class="g"><span class="chord">D</span>luz.</span>
+
+[Coro]
+A él es que <span class="g"><span class="chord">G</span>rindo</span> mi voz,
+y doblo mis <span class="g"><span class="chord">Em</span>rodillas</span> ante el gran yo soy,
+Es digno <span class="g"><span class="chord">Am</span>de recibir</span>
+<span class="g"><span class="chord">C</span>Toda</span> la <span class="g"><span class="chord">D</span>gloria.</span>
+
+[Coro 2]
+A él es que <span class="g"><span class="chord">G</span>entrego</span> mi canción,
+Él es la ra<span class="g"><span class="chord">Em</span>zón</span> de mi adoración,
+Mi único <span class="g"><span class="chord">C</span>motivo,</span>
+Mi melo<span class="g"><span class="chord">Am</span>día,</span>
+Y el a<span class="g"><span class="chord">C</span>nhelo</span> de mi <span class="g"><span class="chord">D</span>cora</span><span class="g"><span class="chord">G</span>zón.</span>
+
+[Instrumental]
+<span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">D</span></span>
+
+[Verso 3]
+<span class="g"><span class="chord">Em</span>Todo</span> es de mi <span class="g"><span class="chord">C</span>Cristo,</span> por <span class="g"><span class="chord">D</span>Él</span> y para <span class="g"><span class="chord">Em</span>Él...</span>
+
+[Coro 3]
+A Él sea la <span class="g"><span class="chord">C</span>glo</span><span class="g"><span class="chord">D</span>ria,</span> a Él sea la <span class="g"><span class="chord">Bm</span>glo</span><span class="g"><span class="chord">Em</span>ria</span>
+A Él sea la <span class="g"><span class="chord">C</span>glo</span><span class="g"><span class="chord">D</span>ria,</span> por siempre <span class="g"><span class="chord">Em</span>Amén.</span>
+
+[Verso 4]
+<span class="g"><span class="chord">Em</span>  Oh</span> profundas ri<span class="g"><span class="chord">C</span>quezas,</span> de la <span class="g"><span class="chord">D</span>sabiduría</span> de <span class="g"><span class="chord">Em</span>Dios,</span>
+Insondables sus <span class="g"><span class="chord">C</span>juicios,</span> y <span class="g"><span class="chord">D</span>sus</span> caminos <span class="g"><span class="chord">Em</span>son.</span>
+`
+    },
+
+    {
         title: "Ya no soy Esclavo",
         artist: "Julio melgar",
         key: "A",
