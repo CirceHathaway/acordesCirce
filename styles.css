@@ -525,3 +525,17 @@ tr:hover { background-color: #252525; }
 .btn-clip:hover { color: var(--text-primary); }
 .msg-sticker { background-color: transparent !important; padding: 0 !important; border: none !important; box-shadow: none !important; max-width: 50%; }
 .msg-sticker img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+/* --- ETIQUETA MULTIPLICADORA (x2, x3, etc.) --- */
+.bg-multiplier { 
+    background-color: #ffda93; /* Fondo verde claro */
+    border: 2px solid #000000; /* Borde verde fuerte */
+    padding: 3px 12px !important; 
+    box-shadow: 0 0 10px rgba(242, 174, 3, 0.302); /* Resplandor sutil */
+}
+.bg-multiplier .badge-label { 
+    color: #000000; /* Letra negra */ 
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: lowercase;
+}

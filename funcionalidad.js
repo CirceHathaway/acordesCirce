@@ -318,7 +318,9 @@ function closeSongUI() {
 function updateSongView() {
     if (currentSongIndex === -1) return;
     const song = songs[currentSongIndex];
-    let songOriginal = song.content;
+    
+    // TRUCO: Une [Coro] [x2] convirtiéndolo en [Coro|x2] antes de procesarlo
+    let songOriginal = song.content.replace(/\]\s*\[(x\s*\d+)\]/gi, '|$1]');
     
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     let currentSongNotes = savedSectionNotes[song.title] || {};
@@ -333,9 +335,13 @@ function updateSongView() {
     }
 
     for (let i = 1; i < sections.length; i += 2) {
-        let tag = sections[i].trim();
-        let content = sections[i+1] ? sections[i+1] : "";
+        // Separamos la etiqueta principal del multiplicador (si existe)
+        let rawTag = sections[i].trim();
+        let tagParts = rawTag.split('|');
+        let tag = tagParts[0].trim();
+        let multiplier = tagParts.length > 1 ? tagParts[1].trim() : null;
         
+        let content = sections[i+1] ? sections[i+1] : "";
         let secId = "", secClass = "", abrv = "", label = tag;
         const lowerTag = tag.toLowerCase();
 
@@ -365,12 +371,18 @@ function updateSongView() {
         
         let noteBtnClass = hasNote ? "section-note-btn has-note" : "section-note-btn";
 
+        // HTML del multiplicador (se renderiza solo si existe)
+        let multiplierHtml = multiplier ? `<div class="song-badge bg-multiplier"><span class="badge-label">${multiplier}</span></div>` : '';
+
         htmlOutput += `
         <div id="sec-${secId}" class="song-card">
             <div class="song-card-header">
-                <div class="song-badge ${secClass}">
-                    <span class="badge-circle">${abrv}</span>
-                    <span class="badge-label">${label}</span>
+                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <div class="song-badge ${secClass}">
+                        <span class="badge-circle">${abrv}</span>
+                        <span class="badge-label">${label}</span>
+                    </div>
+                    ${multiplierHtml}
                 </div>
                 <button class="${noteBtnClass}" onclick="window.openSectionNoteModal('${secId}', '${label}')" title="Anotaciones de ${label}">
                     ${noteIcon}
