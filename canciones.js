@@ -5539,21 +5539,18 @@ Es<span class="g"><span class="chord">Cm</span>píritu</span> de <span class="g"
 <span class="g"><span class="chord">A</span>Oh,</span> oh, oh, ho<span class="g"><span class="chord">F#m</span>ssana</span> al altísimo,
 <span class="g"><span class="chord">G#</span>Grande</span> es el se<span class="g"><span class="chord">G#</span>ñor.</span> <span class="g"><span class="chord">F#</span>..</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D#</span>..</span>
 
-[Interludio 3]
-<span class="g"><span class="chord">D#/G#</span>..</span> <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span> <span class="g"><span class="chord">C#m/G#</span>..</span>
-
 [Verso 6] [x2]
 Canta<span class="g"><span class="chord">C#m</span>ré</span> al señor por <span class="g"><span class="chord">B</span>siempre,</span>
 Su di<span class="g"><span class="chord">A</span>estra</span> es <span class="g"><span class="chord">B</span>todo</span> po<span class="g"><span class="chord">C#m</span>der.</span>
 
-[Verso 7]
+[Verso 7] [x2]
 Hecho a la <span class="g"><span class="chord">B</span>mar,</span> quien los perse<span class="g"><span class="chord">C#m</span>guía,</span>
 Jinete y ca<span class="g"><span class="chord">B</span>ballo,</span> hecho a la <span class="g"><span class="chord">C#m</span>mar.</span>
 
 [Puente 3]
 He<span class="g"><span class="chord">B</span>cho</span> a la <span class="g"><span class="chord">A</span>mar</span> los <span class="g"><span class="chord">F#m</span>carros</span> del fara<span class="g"><span class="chord">G#7</span>ón.</span> hey, hey
 
-[Coro 4]
+[Coro 4] [x2]
 Lara<span class="g"><span class="chord">C#m</span>lalalala,</span> 
 lara<span class="g"><span class="chord">B</span>lalalala,</span> 
 lara<span class="g"><span class="chord">A</span>lala</span><span class="g"><span class="chord">G#</span>lalala</span><span class="g"><span class="chord">C#m</span>la.</span>
