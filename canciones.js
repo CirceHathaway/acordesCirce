@@ -5330,74 +5330,53 @@ La un<span class="g"><span class="chord">G</span>ción</span> está <span class=
         type: "Alabanza",
         content: `
 [Intro] 
-Fm  G  G#  Bb  Cm
-G#  Bb  Gm  Cm
+<span class="g"><span class="chord">Fm#</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">G#</span></span> <span class="g"><span class="chord">Bb</span></span>  <span class="g"><span class="chord">Cm</span></span>
+<span class="g"><span class="chord">G#</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Cm</span></span>
 
 [Verso 1]
-Cm                   Fm              G7
-Alza tus ojos y mira la cosecha esta lista,
-Cm                   Fm              G7
-El tiempo ha llegado la mies está madura,
-Cm                   Fm              G7
-Esfuérzate y se valiente levántate y predica,
-  G#        Fm           G#            G
-A todas las naciones que cristo es la vida.
+<span class="g"><span class="chord">Cm</span>Alza</span> tus ojos y mira <span class="g"><span class="chord">Fm</span>la</span> cosecha esta <span class="g"><span class="chord">G7</span>lista,</span>
+El <span class="g"><span class="chord">Cm</span>tiempo</span> ha llegado la <span class="g"><span class="chord">Fm</span>mies</span> está ma<span class="g"><span class="chord">G7</span>dura,</span>
+Es<span class="g"><span class="chord">Cm</span>fuérzate</span> y se valiente le<span class="g"><span class="chord">Fm</span>vántate</span> y pre<span class="g"><span class="chord">G7</span>dica,</span>
+A <span class="g"><span class="chord">G#</span>todas</span> las na<span class="g"><span class="chord">Fm</span>ciones</span> que <span class="g"><span class="chord">G#</span>Cristo</span> es la <span class="g"><span class="chord">G</span>vida.</span>
 
-[Coro]
-     G#  Bb       Cm           Cm     B  A# D#/C#  
-Y será__llena la tierra de su gloria, .. ..  ..
-         G#  Bb        G              Cm
-Se cubrirá___como las aguas cubren la mar.
+[Coro]       
+Y se<span class="g"><span class="chord">G#</span>rá</span> 
+<span class="g"><span class="chord">Bb</span>..</span> llena la <span class="g"><span class="chord">G#</span>tierra</span> de su gloria, <span class="g"><span class="chord">B</span>..</span> <span class="g"><span class="chord">A#</span>..</span>  <span class="g"><span class="chord">D#/C#</span>..</span>
+Se cubri<span class="g"><span class="chord">G#</span>rá</span> <span class="g"><span class="chord">Bb</span>..</span> 
+como las <span class="g"><span class="chord">G</span>aguas</span> cubren la <span class="g"><span class="chord">Cm</span>mar.</span>
 
 [Puente]
-G               Cm   
-No, no hay otro nombre,
-G               Cm
-Dado a los hombres,
- Fm   Cm    Fm     G
-Jesucristo, es el señor.
+<span class="g"><span class="chord">G</span>No</span>, no hay otro <span class="g"><span class="chord">Cm</span>nombre,</span>
+<span class="g"><span class="chord">G</span>Dado</span> a los <span class="g"><span class="chord">Cm</span>hombres,</span>
+<span class="g"><span class="chord">Fm</span>Jesu</span><span class="g"><span class="chord">Cm</span>cristo</span> <span class="g"><span class="chord">Fm</span>es</span> el <span class="g"><span class="chord">G</span>Señor.</span>
 
 [Verso 2]
-Cm         Bb          Cm   G#  Bb
-Levántate, levántate señor, ..  ..
-Cm        G#      Bb   Cm   G#  Bb
-Levántate, levántate señor, ..  ..
+<span class="g"><span class="chord">Cm</span>Levántate,</span> le<span class="g"><span class="chord">Bb</span>vántate</span> Se<span class="g"><span class="chord">Cm</span>ñor,</span> <span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">Bb</span>..</span>
+<span class="g"><span class="chord">Cm</span>Levántate,</span> le<span class="g"><span class="chord">G#</span>vánta</span><span class="g"><span class="chord">Bb</span>te</span> Se<span class="g"><span class="chord">Cm</span>ñor,</span>
 
 [Verso 3]
-Fm                  A#       Cm
-Huyan delante de ti tus enemigos,
-      Fm                    G
-Se dispersen delante de ti todos aquellos,
-                      Cm
-Que aborrecen tu presencia.
+<span class="g"><span class="chord">Fm</span>Huyan</span> delante de ti <span class="g"><span class="chord">A#</span>tus</span> ene<span class="g"><span class="chord">Cm</span>migos,</span>
+Se dis<span class="g"><span class="chord">Fm</span>persen</span> delante de ti <span class="g"><span class="chord">G</span>todos</span> aquellos,
+Que aborrecen tu pre<span class="g"><span class="chord">Cm</span>sencia.</span>
 
 [Coro 2]
-Fm                    A#             Cm
-Tu presencia reinara, sobre todo imperio,
-Fm                      A#              G           Cm
-Tu presencia reinara, gobernara sobre todo principado.
+Tu pre<span class="g"><span class="chord">Fm</span>sencia</span> reinara, <span class="g"><span class="chord">A#</span>sobre</span> todo im<span class="g"><span class="chord">Cm</span>perio,</span>
+Tu pre<span class="g"><span class="chord">Fm</span>sencia</span> reinara, go<span class="g"><span class="chord">A#</span>bernará</span> sobre <span class="g"><span class="chord">G</span>todo</span> princi<span class="g"><span class="chord">Cm</span>pado.</span>
 
 [Puente 2]
-  Cm        Bb   Cm       
-Espíritu de te - mor, ¡huye!
-  Cm     Eb   D    Cm       
-Espíritu de  mal - dad, ¡huye!
-  Cm        Bb Cm      
-Espíritu de rencor, ¡huye!
-  Cm            G4
-Espíritu de división, ¡huye!
-  Cm        Bb Cm        
-Espíritu de enfermedad, ¡huye!
-  Cm        Eb   D     
-Espíritu de rebelión, ¡huye!
-  Cm        Bb Cm        
-Espíritu inmoral, ¡huye!
-    Cm       Eb    G4
-Espíritu de oscuridad, ¡huye!
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>te</span><span class="g"><span class="chord">Cm</span>mor,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>mal</span><span class="g"><span class="chord">Cm</span>dad,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>     
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>ren</span><span class="g"><span class="chord">Cm</span>cor,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">Cm</span>píritu</span> de divi<span class="g"><span class="chord">G4</span>sión,</span> ¡huye!      
+
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>enfer</span><span class="g"><span class="chord">Cm</span>medad,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>rebe</span><span class="g"><span class="chord">Cm</span>lión,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>       
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>inmo</span><span class="g"><span class="chord">Cm</span>ral,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">Cm</span>píritu</span> de <span class="g"><span class="chord">Eb</span>oscu</span><span class="g"><span class="chord">G4</span>dad,</span> ¡huye!
 
 [Interludio]
-G# A# Cm
-G# A# C#m
+<span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">A#</span>..</span> <span class="g"><span class="chord">Cm</span>..</span>
+<span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">A#</span>..</span> <span class="g"><span class="chord">C#m</span>..</span>
 
 [Verso 4]
 C#m       Db/F       F#m    D#/G      G#     C#m
@@ -5413,48 +5392,35 @@ C#m C#m B C#m x3
 F# G# C#m.
 
 [Verso 5]
-C#m
-Grande es el señor, creador del universo,
-B
-Canta y danza al rey que viene pronto,
-A               F#m
-De felicidad el corazón nos llena,
-G#              G#  F# E  D#
-Grande es el señor. .. .. ..
+<span class="g"><span class="chord">C#m</span>Grande</span> es el señor, creador del universo,
+<span class="g"><span class="chord">B</span>Canta</span> y danza al rey que viene pronto,
+<span class="g"><span class="chord">A</span>De</span> felicidad el <span class="g"><span class="chord">F#m</span>corazón</span> nos llena,
+<span class="g"><span class="chord">G#</span>Grande</span> es el se<span class="g"><span class="chord">G#</span>ñor.</span> <span class="g"><span class="chord">F#</span>..</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D#</span>..</span>
 
 [Coro 3]
-C#m
-Oh, oh, oh, hosanna al altísimo,
-B
-Oh, oh, oh, hosanna al altísimo,
-A                       F#m
-Oh, oh, oh, hosanna al altísimo,
-G#              G#  F# E  D#
-Grande es el señor. .. .. ..
+<span class="g"><span class="chord">C#m</span>Oh,</span> oh, oh, hosanna al altísimo,
+<span class="g"><span class="chord">B</span>Oh,</span> oh, oh, hosanna al altísimo,
+<span class="g"><span class="chord">A</span>Oh,</span> oh, oh, ho<span class="g"><span class="chord">F#m</span>ssana</span> al altísimo,
+<span class="g"><span class="chord">G#</span>Grande</span> es el se<span class="g"><span class="chord">G#</span>ñor.</span> <span class="g"><span class="chord">F#</span>..</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D#</span>..</span>
 
 [Interludio 3]
-D#/G#  A  B  C#m/G# 
+<span class="g"><span class="chord">D#/G#</span>..</span> <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span> <span class="g"><span class="chord">C#m/G#</span>..</span>
 
 [Verso 6] [x2]
-      C#m             B
-Cantaré al señor por siempre,
-      A       B      C#m
-Su diestra es todo poder.
+Canta<span class="g"><span class="chord">C#m</span>ré</span> al señor por <span class="g"><span class="chord">B</span>siempre,</span>
+Su di<span class="g"><span class="chord">A</span>estra</span> es <span class="g"><span class="chord">B</span>todo</span> po<span class="g"><span class="chord">C#m</span>der.</span>
 
 [Verso 7]
-            B                   C#m
-Hecho a la mar, quien los perseguía,
-            B                C#m
-Jinete y caballo, hecho a la mar.
-
+Hecho a la <span class="g"><span class="chord">B</span>mar,</span> quien los perse<span class="g"><span class="chord">C#m</span>guía,</span>
+Jinete y ca<span class="g"><span class="chord">B</span>ballo,</span> hecho a la <span class="g"><span class="chord">C#m</span>mar.</span>
 
 [Puente 3]
-   B        A       F#m           G#7
-Hecho a la mar los carros del faraón. hey, hey
+He<span class="g"><span class="chord">B</span>cho</span> a la <span class="g"><span class="chord">A</span>mar</span> los <span class="g"><span class="chord">F#m</span>carros</span> del fara<span class="g"><span class="chord">G#7</span>ón.</span> hey, hey
 
 [Coro 4]
-     C#m           B           A     G#   C#m
-Laralalalala, laralalalala, laralalalalalala.
+Lara<span class="g"><span class="chord">C#m</span>lalalala,</span> 
+lara<span class="g"><span class="chord">B</span>lalalala,</span> 
+lara<span class="g"><span class="chord">A</span>lala</span><span class="g"><span class="chord">G#</span>lalala</span><span class="g"><span class="chord">C#m</span>la.</span>
 `
     },
 
@@ -5503,6 +5469,94 @@ Nada deten<span class="g"><span class="chord">D</span>drá</span> tu fideli<span
 <span class="g"><span class="chord">D</span>Tu</span> fidelidad in<span class="g"><span class="chord">C</span>comparable</span> <span class="g"><span class="chord">G</span>es,</span>
 <span class="g"><span class="chord">Em</span>Nadie</span> como <span class="g"><span class="chord">D</span>tu</span> ben<span class="g"><span class="chord">Am</span>dito</span> Dios,
 <span class="g"><span class="chord">C</span>Grande</span> es <span class="g"><span class="chord">D</span>tu</span> fideli<span class="g"><span class="chord">G</span>dad.</span>
+`
+    },
+
+    {
+        title: "Jubilo Medley 2",
+        artist: "Apostolic Assembly",
+        key: "Cm",
+        type: "Alabanza",
+        content: `
+[Intro] 
+<span class="g"><span class="chord">Fm#</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">G#</span></span> <span class="g"><span class="chord">Bb</span></span>  <span class="g"><span class="chord">Cm</span></span>
+<span class="g"><span class="chord">G#</span></span> <span class="g"><span class="chord">Bb</span></span> <span class="g"><span class="chord">Gm</span></span> <span class="g"><span class="chord">Cm</span></span>
+
+[Verso 1]
+<span class="g"><span class="chord">Cm</span>Alza</span> tus ojos y mira <span class="g"><span class="chord">Fm</span>la</span> cosecha esta <span class="g"><span class="chord">G7</span>lista,</span>
+El <span class="g"><span class="chord">Cm</span>tiempo</span> ha llegado la <span class="g"><span class="chord">Fm</span>mies</span> está ma<span class="g"><span class="chord">G7</span>dura,</span>
+Es<span class="g"><span class="chord">Cm</span>fuérzate</span> y se valiente le<span class="g"><span class="chord">Fm</span>vántate</span> y pre<span class="g"><span class="chord">G7</span>dica,</span>
+A <span class="g"><span class="chord">G#</span>todas</span> las na<span class="g"><span class="chord">Fm</span>ciones</span> que <span class="g"><span class="chord">G#</span>Cristo</span> es la <span class="g"><span class="chord">G</span>vida.</span>
+
+[Coro]       
+Y se<span class="g"><span class="chord">G#</span>rá</span> 
+<span class="g"><span class="chord">Bb</span>..</span> llena la <span class="g"><span class="chord">G#</span>tierra</span> de su gloria, <span class="g"><span class="chord">B</span>..</span> <span class="g"><span class="chord">A#</span>..</span>  <span class="g"><span class="chord">D#/C#</span>..</span>
+Se cubri<span class="g"><span class="chord">G#</span>rá</span> <span class="g"><span class="chord">Bb</span>..</span> 
+como las <span class="g"><span class="chord">G</span>aguas</span> cubren la <span class="g"><span class="chord">Cm</span>mar.</span>
+
+[Puente]
+<span class="g"><span class="chord">G</span>No</span>, no hay otro <span class="g"><span class="chord">Cm</span>nombre,</span>
+<span class="g"><span class="chord">G</span>Dado</span> a los <span class="g"><span class="chord">Cm</span>hombres,</span>
+<span class="g"><span class="chord">Fm</span>Jesu</span><span class="g"><span class="chord">Cm</span>cristo</span> <span class="g"><span class="chord">Fm</span>es</span> el <span class="g"><span class="chord">G</span>Señor.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Cm</span>Levántate,</span> le<span class="g"><span class="chord">Bb</span>vántate</span> Se<span class="g"><span class="chord">Cm</span>ñor,</span> <span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">Bb</span>..</span>
+<span class="g"><span class="chord">Cm</span>Levántate,</span> le<span class="g"><span class="chord">G#</span>vánta</span><span class="g"><span class="chord">Bb</span>te</span> Se<span class="g"><span class="chord">Cm</span>ñor,</span>
+
+[Verso 3]
+<span class="g"><span class="chord">Fm</span>Huyan</span> delante de ti <span class="g"><span class="chord">A#</span>tus</span> ene<span class="g"><span class="chord">Cm</span>migos,</span>
+Se dis<span class="g"><span class="chord">Fm</span>persen</span> delante de ti <span class="g"><span class="chord">G</span>todos</span> aquellos,
+Que aborrecen tu pre<span class="g"><span class="chord">Cm</span>sencia.</span>
+
+[Coro 2]
+Tu pre<span class="g"><span class="chord">Fm</span>sencia</span> reinara, <span class="g"><span class="chord">A#</span>sobre</span> todo im<span class="g"><span class="chord">Cm</span>perio,</span>
+Tu pre<span class="g"><span class="chord">Fm</span>sencia</span> reinara, go<span class="g"><span class="chord">A#</span>bernará</span> sobre <span class="g"><span class="chord">G</span>todo</span> princi<span class="g"><span class="chord">Cm</span>pado.</span>
+
+[Puente 2]
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>te</span><span class="g"><span class="chord">Cm</span>mor,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>mal</span><span class="g"><span class="chord">Cm</span>dad,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>     
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>ren</span><span class="g"><span class="chord">Cm</span>cor,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">Cm</span>píritu</span> de divi<span class="g"><span class="chord">G4</span>sión,</span> ¡huye!      
+
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>enfer</span><span class="g"><span class="chord">Cm</span>medad,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>rebe</span><span class="g"><span class="chord">Cm</span>lión,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>       
+Es<span class="g"><span class="chord">cm</span>píritu</span> de <span class="g"><span class="chord">Bb</span>inmo</span><span class="g"><span class="chord">Cm</span>ral,</span> <span class="g"><span class="chord">G#</span>¡huye!</span> <span class="g"><span class="chord">Bb</span>..</span>
+Es<span class="g"><span class="chord">Cm</span>píritu</span> de <span class="g"><span class="chord">Eb</span>oscu</span><span class="g"><span class="chord">G4</span>dad,</span> ¡huye!
+
+[Interludio]
+<span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">A#</span>..</span> <span class="g"><span class="chord">Cm</span>..</span>
+<span class="g"><span class="chord">G#</span>..</span> <span class="g"><span class="chord">A#</span>..</span> <span class="g"><span class="chord">C#m</span>..</span>
+
+[Verso 5]
+<span class="g"><span class="chord">C#m</span>Grande</span> es el señor, creador del universo,
+<span class="g"><span class="chord">B</span>Canta</span> y danza al rey que viene pronto,
+<span class="g"><span class="chord">A</span>De</span> felicidad el <span class="g"><span class="chord">F#m</span>corazón</span> nos llena,
+<span class="g"><span class="chord">G#</span>Grande</span> es el se<span class="g"><span class="chord">G#</span>ñor.</span> <span class="g"><span class="chord">F#</span>..</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D#</span>..</span>
+
+[Coro 3]
+<span class="g"><span class="chord">C#m</span>Oh,</span> oh, oh, hosanna al altísimo,
+<span class="g"><span class="chord">B</span>Oh,</span> oh, oh, hosanna al altísimo,
+<span class="g"><span class="chord">A</span>Oh,</span> oh, oh, ho<span class="g"><span class="chord">F#m</span>ssana</span> al altísimo,
+<span class="g"><span class="chord">G#</span>Grande</span> es el se<span class="g"><span class="chord">G#</span>ñor.</span> <span class="g"><span class="chord">F#</span>..</span> <span class="g"><span class="chord">E</span>..</span> <span class="g"><span class="chord">D#</span>..</span>
+
+[Interludio 3]
+<span class="g"><span class="chord">D#/G#</span>..</span> <span class="g"><span class="chord">A</span>..</span> <span class="g"><span class="chord">B</span>..</span> <span class="g"><span class="chord">C#m/G#</span>..</span>
+
+[Verso 6] [x2]
+Canta<span class="g"><span class="chord">C#m</span>ré</span> al señor por <span class="g"><span class="chord">B</span>siempre,</span>
+Su di<span class="g"><span class="chord">A</span>estra</span> es <span class="g"><span class="chord">B</span>todo</span> po<span class="g"><span class="chord">C#m</span>der.</span>
+
+[Verso 7]
+Hecho a la <span class="g"><span class="chord">B</span>mar,</span> quien los perse<span class="g"><span class="chord">C#m</span>guía,</span>
+Jinete y ca<span class="g"><span class="chord">B</span>ballo,</span> hecho a la <span class="g"><span class="chord">C#m</span>mar.</span>
+
+[Puente 3]
+He<span class="g"><span class="chord">B</span>cho</span> a la <span class="g"><span class="chord">A</span>mar</span> los <span class="g"><span class="chord">F#m</span>carros</span> del fara<span class="g"><span class="chord">G#7</span>ón.</span> hey, hey
+
+[Coro 4]
+Lara<span class="g"><span class="chord">C#m</span>lalalala,</span> 
+lara<span class="g"><span class="chord">B</span>lalalala,</span> 
+lara<span class="g"><span class="chord">A</span>lala</span><span class="g"><span class="chord">G#</span>lalala</span><span class="g"><span class="chord">C#m</span>la.</span>
 `
     },
 ];
