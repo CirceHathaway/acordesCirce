@@ -5556,4 +5556,49 @@ lara<span class="g"><span class="chord">B</span>lalalala,</span>
 lara<span class="g"><span class="chord">A</span>lala</span><span class="g"><span class="chord">G#</span>lalala</span><span class="g"><span class="chord">C#m</span>la.</span>
 `
     },
+
+    {
+        title: "Desde que te conocí",
+        artist: "Eduardo Santoro",
+        key: "E",
+        type: "Adoración",
+        content: `
+[Intro]
+<span class="g"><span class="chord">E</span>..</span>
+
+[Verso 1]
+<span class="g"><span class="chord">E</span>Desde</span> que te conocí, desde <span class="g"><span class="chord">G#m</span>que</span> te recibí,
+Desde <span class="g"><span class="chord">C#m</span>que</span> experimente tu per<span class="g"><span class="chord">F#m</span>dón,</span> tu amor, tu paz,
+Algo <span class="g"><span class="chord">A</span>nuevo</span> en mí empezó por tu es<span class="g"><span class="chord">E</span>píritu</span> de a<span class="g"><span class="chord">C#m</span>mor</span>
+Es tu <span class="g"><span class="chord">A</span>vida</span> cual se<span class="g"><span class="chord">B</span>milla</span> que bro<span class="g"><span class="chord">A</span>to</span> en mi cora<span class="g"><span class="chord">E</span>zón.</span>
+
+[Verso 2] 
+Que mo<span class="g"><span class="chord">E</span>mento</span> tan feliz, que ale<span class="g"><span class="chord">G#m</span>gría</span> recibí,
+Al te<span class="g"><span class="chord">C#m</span>ner en</span> mi vida tu pre<span class="g"><span class="chord">F#m</span>sencia</span> celestial,
+Se de <span class="g"><span class="chord">A</span>dónde</span> vengo, se a <span class="g"><span class="chord">E</span>dónde</span> <span class="g"><span class="chord">C#m</span>voy,</span>
+Se quien <span class="g"><span class="chord">A</span>soy,</span> porque e<span class="g"><span class="chord">B</span>xisto</span> y tu pro<span class="g"><span class="chord">A</span>pósi</span><span class="g"><span class="chord">B</span>to</span> en <span class="g"><span class="chord">E</span>mi.</span>
+
+[Coro] [x2]
+Quiero <span class="g"><span class="chord">E</span>amar</span> oh Cristo,
+Quiero <span class="g"><span class="chord">G#m</span>dar</span> oh Cristo,
+Quiero <span class="g"><span class="chord">C#m</span>ser</span> oh Cristo como <span class="g"><span class="chord">F#m</span>tu,</span>
+Al ca<span class="g"><span class="chord">A</span>ído</span> levantar, al en<span class="g"><span class="chord">E</span>fermo</span> sa<span class="g"><span class="chord">C#m</span>nar,</span>
+A este <span class="g"><span class="chord">A</span>mundo</span> que ago<span class="g"><span class="chord">B</span>niza</span> tu re<span class="g"><span class="chord">A</span>medio</span> al<span class="g"><span class="chord">B</span>can</span><span class="g"><span class="chord">E</span>zar.</span>
+
+[Verso 3]
+Ahora <span class="g"><span class="chord">E</span>que</span> vives en mi,
+Ahora <span class="g"><span class="chord">G#m</span>que</span> te puedo oír,
+Ahora <span class="g"><span class="chord">C#m</span>que</span> crece en mi,
+Tu per<span class="g"><span class="chord">F#m</span>sona</span> sin igual,
+Quiero <span class="g"><span class="chord">A</span>dejar</span> que seas tú, para <span class="g"><span class="chord">E</span>que</span> no sea <span class="g"><span class="chord">C#m</span>yo,</span>
+El que <span class="g"><span class="chord">A</span>manda</span> al que <span class="g"><span class="chord">B</span>vean,</span>
+Pues a <span class="g"><span class="chord">A</span>ti</span> en mi <span class="g"><span class="chord">B</span>han</span> de <span class="g"><span class="chord">E</span>ver.</span>
+
+[Verso 4]
+Corre<span class="g"><span class="chord">E</span>ré</span> hasta alcanzar la co<span class="g"><span class="chord">G#m</span>rona</span> que darás,
+En el <span class="g"><span class="chord">C#m</span>día</span> en que regreses y nos <span class="g"><span class="chord">F#m</span>lleves</span> al hogar,
+Ahí <span class="g"><span class="chord">A</span>llanto</span> ya no habrá, la jus<span class="g"><span class="chord">E</span>ticia</span> reina<span class="g"><span class="chord">C#m</span>ra,</span>
+Desde el <span class="g"><span class="chord">A</span>trono</span> <span class="g"><span class="chord">B</span>santo</span> y <span class="g"><span class="chord">A</span>justo</span> <span class="g"><span class="chord">B</span>reina</span><span class="g"><span class="chord">E</span>ras.</span>
+`
+    },
 ];
