@@ -5601,4 +5601,36 @@ Ahí <span class="g"><span class="chord">A</span>llanto</span> ya no habrá, la 
 Desde el <span class="g"><span class="chord">A</span>trono</span> <span class="g"><span class="chord">B</span>santo</span> y <span class="g"><span class="chord">A</span>justo</span> <span class="g"><span class="chord">B</span>reina</span><span class="g"><span class="chord">E</span>ras.</span>
 `
     },
+
+    {
+        title: "Digno de adorar",
+        artist: "Iglesia Conexion con Dios",
+        key: "G",
+        type: "Adoración",
+        content: `
+[Verso 1] [x2]
+<span class="g"><span class="chord">G</span>Ángeles</span> y <span class="g"><span class="chord">A</span>santos,</span>
+Se <span class="g"><span class="chord">G</span>postran</span> ante <span class="g"><span class="chord">A</span>ti,</span>
+<span class="g"><span class="chord">G</span>Los</span> ancianos <span class="g"><span class="chord">A</span>rinden</span>
+Sus co<span class="g"><span class="chord">Bm</span>ronas</span> <span class="g"><span class="chord">A</span>ante</span> <span class="g"><span class="chord">G</span>ti,</span>
+Oh <span class="g"><span class="chord">A</span>gran</span> Se<span class="g"><span class="chord">D</span>ñor.</span>
+
+[Coro] [x2]
+Eres digno de ado<span class="g"><span class="chord">D</span>rar,</span>
+Eres digno de ado<span class="g"><span class="chord">A</span>rar,</span>
+Todo viene de <span class="g"><span class="chord">G</span>ti,</span>
+Y todo vuelve a <span class="g"><span class="chord">A</span>ti,</span>
+Tuya es la <span class="g"><span class="chord">D</span>gloria.</span>
+
+[Verso 2] [x4]
+<span class="g"><span class="chord">D</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">A</span>lante</span> de ti,
+<span class="g"><span class="chord">Bm</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">G</span>lante</span> de ti.
+
+[Puente]
+Tengo hambre de <span class="g"><span class="chord">D</span>ti,</span> de tu pre<span class="g"><span class="chord">F#m</span>sencia,</span>
+De tu fra<span class="g"><span class="chord">Bm</span>gancia,</span> de tu po<span class="g"><span class="chord">G</span>der.</span>
+Hambre que <span class="g"><span class="chord">D</span>duele,</span> que debi<span class="g"><span class="chord">F#m</span>lita,</span>
+Que deses<span class="g"><span class="chord">Bm</span>pera</span> por <span class="g"><span class="chord">G</span>ti.</span>
+`
+    },
 ];
