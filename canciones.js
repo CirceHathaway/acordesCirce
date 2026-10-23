@@ -5626,11 +5626,17 @@ Tuya es la <span class="g"><span class="chord">D</span>gloria.</span>
 <span class="g"><span class="chord">D</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">A</span>lante</span> de ti,
 <span class="g"><span class="chord">Bm</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">G</span>lante</span> de ti.
 
-[Puente]
-Tengo hambre de <span class="g"><span class="chord">D</span>ti,</span> de tu pre<span class="g"><span class="chord">F#m</span>sencia,</span>
-De tu fra<span class="g"><span class="chord">Bm</span>gancia,</span> de tu po<span class="g"><span class="chord">G</span>der.</span>
-Hambre que <span class="g"><span class="chord">D</span>duele,</span> que debi<span class="g"><span class="chord">F#m</span>lita,</span>
-Que deses<span class="g"><span class="chord">Bm</span>pera</span> por <span class="g"><span class="chord">G</span>ti.</span>
+[Coro]
+Vengo a ado<span class="g"><span class="chord">D</span>rarte,</span>
+Vengo a pos<span class="g"><span class="chord">A</span>trarme,</span>
+Vengo a de<span class="g"><span class="chord">Bm</span>cir,</span>
+Que eres mi <span class="g"><span class="chord">G</span>Dios.</span>
+
+[Coro 2]
+Eres simplemente <span class="g"><span class="chord">D</span>bello,</span>
+Simplemente <span class="g"><span class="chord">A</span>digno,</span>
+Tan maravi<span class="g"><span class="chord">Bm</span>lloso</span>
+para <span class="g"><span class="chord">G</span>mi.</span>
 `
     },
 
