@@ -5633,4 +5633,38 @@ Hambre que <span class="g"><span class="chord">D</span>duele,</span> que debi<sp
 Que deses<span class="g"><span class="chord">Bm</span>pera</span> por <span class="g"><span class="chord">G</span>ti.</span>
 `
     },
+
+    {
+        title: "Mi Dios",
+        artist: "Rey de Reyes",
+        key: "Gm",
+        type: "Alabanza",
+        content: `
+[Verso 1] 
+<span class="g"><span class="chord">Gm</span>Vino</span> del <span class="g"><span class="chord">D#</span>agua</span> hi<span class="g"><span class="chord">A#</span>ciste,</span>
+<span class="g"><span class="chord">Gm</span>Los</span> ojos <span class="g"><span class="chord">D#</span>del</span> ciego a<span class="g"><span class="chord">A#</span>briste,</span>
+No hay <span class="g"><span class="chord">Cm</span>nadie</span> como <span class="g"><span class="chord">F</span>tú.</span>
+
+[Verso 2]
+<span class="g"><span class="chord">Gm</span>En</span> la oscuri<span class="g"><span class="chord">D#</span>dad</span> tú bri<span class="g"><span class="chord">A#</span>llaste,</span>
+<span class="g"><span class="chord">Gm</span>Del</span> pozo <span class="g"><span class="chord">D#</span>tú me</span> sa<span class="g"><span class="chord">A#</span>caste,</span>
+No hay <span class="g"><span class="chord">Cm</span>nadie</span> como <span class="g"><span class="chord">F</span>tú.</span>
+
+[Coro]
+<span class="g"><span class="chord">Gm</span>Mi</span> Dios es grande, 
+<span class="g"><span class="chord">D#</span>Mi</span> Dios es fuerte,
+<span class="g"><span class="chord">A#</span>Eres</span> más alto que <span class="g"><span class="chord">F</span>cualquier</span> otro,
+<span class="g"><span class="chord">Gm</span>Dios</span> sanador, <span class="g"><span class="chord">D#</span>grande</span> en poder
+Mi <span class="g"><span class="chord">A#</span>Dios,</span> mi <span class="g"><span class="chord">F</span>Dios.</span>
+
+[Puente]
+<span class="g"><span class="chord">Gm</span>Si Dios</span> es con nosotros,
+<span class="g"><span class="chord">D#</span>¿Quién</span> podrá detenernos?
+<span class="g"><span class="chord">A#</span>Si Dios</span> es con nosotros,
+<span class="g"><span class="chord">F</span>No</span> hay nada que temer.
+
+[Instrumental]
+<span class="g"><span class="chord">Gm</span>..</span> <span class="g"><span class="chord">D#</span>..</span> <span class="g"><span class="chord">A#</span>..</span> <span class="g"><span class="chord">F</span>..</span>
+`
+    },
 ];
