@@ -5626,13 +5626,13 @@ Tuya es la <span class="g"><span class="chord">D</span>gloria.</span>
 <span class="g"><span class="chord">D</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">A</span>lante</span> de ti,
 <span class="g"><span class="chord">Bm</span>Día</span> y noche suba incienso de<span class="g"><span class="chord">G</span>lante</span> de ti.
 
-[Coro]
+[Cor2]
 Vengo a ado<span class="g"><span class="chord">D</span>rarte,</span>
 Vengo a pos<span class="g"><span class="chord">A</span>trarme,</span>
 Vengo a de<span class="g"><span class="chord">Bm</span>cir,</span>
 Que eres mi <span class="g"><span class="chord">G</span>Dios.</span>
 
-[Coro 2]
+[Coro 3]
 Eres simplemente <span class="g"><span class="chord">D</span>bello,</span>
 Simplemente <span class="g"><span class="chord">A</span>digno,</span>
 Tan maravi<span class="g"><span class="chord">Bm</span>lloso</span>
