@@ -26,7 +26,11 @@ let displaySongs = [];
 let currentSongIndex = -1; 
 let currentSemitones = 0; 
 let isSpanish = false; 
-let currentSectionNoteId = null; 
+let currentSectionNoteId = null;
+
+// NUEVO: Carga el respaldo de la nube de forma instantánea al abrir la app
+const backupCustom = localStorage.getItem('acordify_custom_backup');
+window.customSongsFirebase = backupCustom ? JSON.parse(backupCustom) : {};
 
 // LEER MEMORIA LOCAL
 let savedSize = localStorage.getItem('acordify_fontSize');
