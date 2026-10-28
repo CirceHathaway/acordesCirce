@@ -539,3 +539,32 @@ tr:hover { background-color: #252525; }
     font-weight: 900;
     text-transform: lowercase;
 }
+
+/* --- ESTILOS PARA EL EDITOR/CREADOR DE CANCIONES --- */
+.editor-body { background-color: var(--bg-color); }
+.editor-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: var(--card-bg); border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 200; }
+.btn-save-editor { background: #4cd137; color: #000; font-weight: bold; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-save-editor:disabled { background: #333; color: #666; cursor: not-allowed; }
+.editor-tabs { display: flex; background: var(--card-bg); border-bottom: 1px solid #333; }
+.tab-btn { flex: 1; padding: 15px 0; background: transparent; color: #888; border: none; font-weight: bold; font-size: 1rem; cursor: pointer; border-bottom: 3px solid transparent; transition: 0.2s; }
+.tab-btn.active { color: var(--text-primary); border-bottom-color: var(--text-primary); }
+.editor-container { padding: 20px; max-width: 700px; }
+.editor-view { display: none; }
+.editor-view.active { display: block; animation: fadeIn 0.3s ease; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; color: var(--text-secondary); margin-bottom: 8px; font-weight: bold; }
+.editor-input { width: 100%; background: #2f3640; border: 1px solid #444; color: #fff; padding: 12px; border-radius: 8px; font-size: 1rem; box-sizing: border-box; outline: none; }
+.editor-input:focus { border-color: var(--accent); }
+.add-section-bar { display: flex; gap: 10px; margin-bottom: 15px; }
+.btn-add-section { background: var(--btn-bg); color: #fff; border: 1px solid #555; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.editor-section-card { background: #252830; border-radius: 10px; padding: 15px; margin-bottom: 15px; border: 1px solid #333; }
+.editor-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.editor-section-title { font-weight: bold; color: var(--text-primary); font-size: 1.1rem; }
+.btn-remove-sec { background: none; border: none; cursor: pointer; font-size: 1.2rem; filter: grayscale(1); }
+.btn-remove-sec:hover { filter: grayscale(0); }
+.editor-textarea { width: 100%; height: 120px; background: #1a1c23; border: 1px solid #333; border-radius: 8px; color: #fff; padding: 10px; font-family: monospace; font-size: 1rem; resize: vertical; box-sizing: border-box; outline: none; white-space: pre; }
+.structure-row { display: flex; justify-content: space-between; align-items: center; background: #252830; padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #333; }
+.structure-name { font-weight: bold; color: #fff; font-size: 1.1rem; }
+.multiplier-controls { display: flex; align-items: center; gap: 15px; background: #1a1c23; padding: 5px; border-radius: 20px; }
+.btn-mult { background: #444; border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.mult-value { color: var(--text-primary); font-weight: bold; font-size: 1.1rem; min-width: 30px; text-align: center; }

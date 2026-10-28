@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador - Acordify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./icon-512.png" type="image/png">
+</head>
+<body class="editor-body">
+
+    <header class="editor-header">
+        <button class="btn-back-clean" onclick="window.location.href='index.html'">&lt; Volver</button>
+        <h2 style="margin:0; font-size:1.3rem;">Crear Canción</h2>
+        <button id="btnSave" class="btn-save-editor" onclick="saveSongToFirebase()" disabled>Guardar</button>
+    </header>
+
+    <div class="editor-tabs">
+        <button id="tab-detalles" class="tab-btn active" onclick="switchTab('detalles')">Detalles</button>
+        <button id="tab-contenido" class="tab-btn" onclick="switchTab('contenido')">Contenido</button>
+        <button id="tab-estructura" class="tab-btn" onclick="switchTab('estructura')">Estructura</button>
+    </div>
+
+    <div class="container editor-container">
+        
+        <!-- PESTAÑA DETALLES -->
+        <div id="view-detalles" class="editor-view active">
+            <div class="input-group">
+                <label>Título de la canción</label>
+                <input type="text" id="songTitle" class="editor-input" placeholder="Ej: Gracia Sublime" oninput="checkChanges()">
+            </div>
+            <div class="input-group">
+                <label>Artista / Banda</label>
+                <input type="text" id="songArtist" class="editor-input" placeholder="Ej: En Espíritu y en Verdad" oninput="checkChanges()">
+            </div>
+            <div class="input-group">
+                <label>Tonalidad (Nota original)</label>
+                <select id="songKey" class="editor-input" onchange="checkChanges()">
+                    <option value="C">C</option><option value="C#">C#</option><option value="D">D</option><option value="D#">D#</option>
+                    <option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option>
+                    <option value="G#">G#</option><option value="A">A</option><option value="A#">A#</option><option value="B">B</option>
+                    <option value="Cm">Cm</option><option value="C#m">C#m</option><option value="Dm">Dm</option><option value="D#m">D#m</option>
+                    <option value="Em">Em</option><option value="Fm">Fm</option><option value="F#m">F#m</option><option value="Gm">Gm</option>
+                    <option value="G#m">G#m</option><option value="Am">Am</option><option value="A#m">A#m</option><option value="Bm">Bm</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Tipo</label>
+                <select id="songType" class="editor-input" onchange="checkChanges()">
+                    <option value="Alabanza">Alabanza</option>
+                    <option value="Adoración">Adoración</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Tempo (Opcional)</label>
+                <input type="number" id="songTempo" class="editor-input" placeholder="Ej: 120" oninput="checkChanges()">
+            </div>
+        </div>
+
+        <!-- PESTAÑA CONTENIDO -->
+        <div id="view-contenido" class="editor-view">
+            <div class="add-section-bar">
+                <select id="sectionTypeSelector" class="editor-input" style="width: auto; flex: 1;">
+                    <option value="Intro">Intro</option>
+                    <option value="Verso 1">Verso 1</option>
+                    <option value="Verso 2">Verso 2</option>
+                    <option value="Verso 3">Verso 3</option>
+                    <option value="Coro">Coro</option>
+                    <option value="Coro 2">Coro 2</option>
+                    <option value="Puente">Puente</option>
+                    <option value="Instrumental">Instrumental</option>
+                    <option value="Final">Final</option>
+                </select>
+                <button class="btn-add-section" onclick="addSection()">+ Añadir</button>
+            </div>
+            <p style="font-size: 0.85rem; color: #aaa; margin-top: 5px;">Escribe el acorde entre corchetes antes de la sílaba. Ej: <b>e[A]s</b> o <b>[G]Dios</b>.</p>
+            
+            <div id="sectionsContainer" class="sections-container"></div>
+        </div>
+
+        <!-- PESTAÑA ESTRUCTURA -->
+        <div id="view-estructura" class="editor-view">
+            <p style="color: var(--text-secondary); text-align: center;">Define cuántas veces se repite cada sección en la canción.</p>
+            <div id="structureContainer" class="structure-container"></div>
+        </div>
+
+    </div>
+
+    <div id="toastNotification" class="custom-notification"></div>
+
+    <script type="module" src="editor.js"></script>
+</body>
+</html>

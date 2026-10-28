@@ -7,6 +7,8 @@ const ASSETS_TO_CACHE = [
   './styles.css',
   './canciones.js',
   './funcionalidad.js',
+  './crear.html',
+  './editor.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'

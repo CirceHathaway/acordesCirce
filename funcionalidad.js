@@ -112,7 +112,15 @@ window.filterByKey = function(selectedKey) {
 }
 
 window.applyGlobalFilters = function() { 
-    let filtered = songs.filter(song => { 
+    // Mezcla canciones.js con la nube
+    let allMergedSongs = [...songs];
+    if(window.customSongsFirebase) {
+        Object.keys(window.customSongsFirebase).forEach(key => {
+            allMergedSongs.push({ ...window.customSongsFirebase[key], fbId: key, isCustom: true });
+        });
+    }
+
+    let filtered = allMergedSongs.filter(song => { 
         if (activeFilters.type && song.type !== activeFilters.type) return false; 
         if (activeFilters.key && song.key !== activeFilters.key) return false; 
         if (activeFilters.search) { 
@@ -232,9 +240,35 @@ async function initFirebase() {
         app = appModule.initializeApp(firebaseConfig); db = dbModule.getDatabase(app);
         firebaseLoaded = true;
         if (isConnected) reconnectSession();
+        
+        // --- CONEXIÓN EXITOSA: Leer de Firebase y guardar respaldo ---
+        onValue(ref(db, 'custom_songs'), (snapshot) => {
+            window.customSongsFirebase = snapshot.val() || {};
+            
+            // Guardamos el respaldo en el celular para cuando no haya internet
+            localStorage.setItem('acordify_custom_backup', JSON.stringify(window.customSongsFirebase));
+            
+            if(window.location.pathname.includes('lista.html')) {
+                window.loadPlaylistMode(); 
+            } else {
+                window.applyGlobalFilters();
+            }
+        });
+
     } catch (error) {
-        console.warn("Modo Offline: No se pudo cargar Firebase.", error);
+        console.warn("Modo Offline: No se pudo cargar Firebase. Usando respaldo local.", error);
         firebaseLoaded = false;
+        
+        // --- MODO OFFLINE: Recuperar el respaldo guardado ---
+        const backup = localStorage.getItem('acordify_custom_backup');
+        window.customSongsFirebase = backup ? JSON.parse(backup) : {};
+        
+        // Renderizar la interfaz con las canciones del respaldo
+        if(window.location.pathname.includes('lista.html')) {
+            window.loadPlaylistMode();
+        } else {
+            window.applyGlobalFilters();
+        }
     }
 }
 
@@ -268,7 +302,11 @@ window.openSong = function(indexInGlobalArray) {
     else history.pushState({ view: 'song' }, null, '#song');
 
     currentSongIndex = indexInGlobalArray;
-    const song = songs[currentSongIndex];
+    
+    // Recupera la canción según si es Local o de Firebase
+    let song = typeof indexInGlobalArray === 'string' ? window.customSongsFirebase[indexInGlobalArray] : songs[indexInGlobalArray];
+    if(!song) return;
+
     currentSemitones = 0;
     
     document.getElementById('songListView').style.display = 'none';
@@ -284,10 +322,21 @@ window.openSong = function(indexInGlobalArray) {
     document.getElementById('detailTitle').innerText = song.title;
     document.querySelectorAll('.song-key-display').forEach(el => el.innerText = song.key);
 
+    // Habilita el botón de Editar si la canción viene de Firebase
+    const btnEdit = document.getElementById('btnEditSong');
+    if(btnEdit) {
+        if(typeof indexInGlobalArray === 'string') {
+            btnEdit.style.display = 'flex';
+            btnEdit.onclick = function() { window.location.href = `crear.html?edit=${indexInGlobalArray}`; };
+        } else {
+            btnEdit.style.display = 'none';
+        }
+    }
+
+    // Funciones de Comentario Principal (Sin Cambios)
     const fullCommentEl = document.getElementById('fullCommentText');
     const btnNotaMain = document.getElementById('btnNotaMain');
     const btnNotaBurger = document.getElementById('hamburgerCommentBtn');
-    
     if (song.comentario) {
         if (fullCommentEl) fullCommentEl.innerText = song.comentario;
         if (btnNotaMain) { btnNotaMain.style.display = 'flex'; btnNotaMain.classList.add('active-note-blink'); }
@@ -297,6 +346,8 @@ window.openSong = function(indexInGlobalArray) {
         if (btnNotaBurger) { btnNotaBurger.style.display = 'none'; btnNotaBurger.classList.remove('active-note-blink'); }
     }
     
+    // Inyecta directamente el contenido para que lo lea el sistema
+    window.currentSongContext = song;
     updateSongView();
     updateChordIcon();
     window.scrollTo(0,0);
@@ -317,7 +368,7 @@ function closeSongUI() {
 
 function updateSongView() {
     if (currentSongIndex === -1) return;
-    const song = songs[currentSongIndex];
+    const song = window.currentSongContext;
     
     // TRUCO: Une [Coro] [x2] convirtiéndolo en [Coro|x2] antes de procesarlo
     let songOriginal = song.content.replace(/\]\s*\[(x\s*\d+)\]/gi, '|$1]');
@@ -619,12 +670,16 @@ function renderTable(data) {
     if (data.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay resultados.</td></tr>'; return; } 
     let htmlContent = ''; 
     data.forEach((song, index) => { 
-        const originalIndex = songs.indexOf(song); 
+        // Si es de Firebase usa su ID (texto), sino su index original en el arreglo local
+        const originalIndex = song.isCustom ? song.fbId : songs.indexOf(song); 
         const isAdded = myPlaylist.includes(originalIndex); 
         const btnClass = isAdded ? "btn-add added" : "btn-add"; 
         const btnText = isAdded ? "✓" : "+"; 
-        const btnAction = isAdded ? "" : `onclick="window.addToPlaylist(${originalIndex}, this)"`; 
-        htmlContent += `<tr><td class="index-col">${index + 1}</td><td class="song-title" onclick="window.openSong(${originalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td><span class="artist-link" onclick="window.filterByArtist('${song.artist}')">${song.artist}</span></td><td class="action-col"><button id="addBtn-${originalIndex}" class="${btnClass}" ${btnAction}>${btnText}</button></td></tr>`; 
+        // Formateo comillas por si el ID es texto (FB) o int (Local)
+        const paramFormat = typeof originalIndex === 'string' ? `'${originalIndex}'` : originalIndex;
+        const btnAction = isAdded ? "" : `onclick="window.addToPlaylist(${paramFormat}, this)"`; 
+        
+        htmlContent += `<tr><td class="index-col">${index + 1}</td><td class="song-title" onclick="window.openSong(${paramFormat})">${song.title}${song.isCustom ? ' ☁️' : ''}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td><span class="artist-link" onclick="window.filterByArtist('${song.artist}')">${song.artist}</span></td><td class="action-col"><button id="addBtn-${originalIndex}" class="${btnClass}" ${btnAction}>${btnText}</button></td></tr>`; 
     }); 
     tbody.innerHTML = htmlContent; 
 }
@@ -650,8 +705,10 @@ window.removeFromPlaylist = function(index, rowElement) {
 window.loadPlaylistMode = function() { 
     const urlParams = new URLSearchParams(window.location.search); 
     const sharedIds = urlParams.get('ids'); 
-    let playlistIds = sharedIds ? sharedIds.split(',').map(Number) : myPlaylist; 
+    // Evita convertir los IDs de texto a "NaN"
+    let playlistIds = sharedIds ? sharedIds.split(',').map(id => isNaN(id) ? id : Number(id)) : myPlaylist; 
     currentContextList = playlistIds; 
+    
     if (sharedIds) { 
         const shareBtn = document.getElementById('shareListBtn'); 
         if(shareBtn) { 
@@ -659,7 +716,15 @@ window.loadPlaylistMode = function() {
             shareBtn.onclick = function() { myPlaylist = playlistIds; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.showNotification("¡Lista guardada!"); setTimeout(() => window.location.href = 'lista.html', 2000); }; 
         } 
     } 
-    displaySongs = playlistIds.map(id => songs[id]).filter(s => s !== undefined); 
+    
+    // Mapea buscando en Firebase (strings) o en JSON (números)
+    displaySongs = playlistIds.map(id => {
+        if (typeof id === 'string' && window.customSongsFirebase && window.customSongsFirebase[id]) {
+            return { ...window.customSongsFirebase[id], fbId: id, isCustom: true };
+        }
+        return songs[id];
+    }).filter(s => s !== undefined); 
+    
     renderPlaylistTable(displaySongs, playlistIds); 
 }
 
@@ -667,10 +732,20 @@ function renderPlaylistTable(songsData, originalIds) {
     const tbody = document.getElementById('tableBody'); 
     if(!tbody) return; 
     if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; } 
+    
     let htmlContent = ''; 
     songsData.forEach((song, i) => { 
         const globalIndex = originalIds[i]; 
-        htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;"><td class="index-col">${i + 1}</td><td class="song-title" onclick="window.openSong(${globalIndex})">${song.title}</td><td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td><td style="color: var(--text-white);">${song.artist}</td><td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${globalIndex}, this.closest('tr'))">×</button></td></tr>`; 
+        // Detecta si es texto y le pone comillas simples ('') para evitar errores de sintaxis HTML
+        const paramFormat = typeof globalIndex === 'string' ? `'${globalIndex}'` : globalIndex;
+        
+        htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;">
+            <td class="index-col">${i + 1}</td>
+            <td class="song-title" onclick="window.openSong(${paramFormat})">${song.title}${song.isCustom ? ' ☁️' : ''}</td>
+            <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
+            <td style="color: var(--text-white);">${song.artist}</td>
+            <td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${paramFormat}, this.closest('tr'))">×</button></td>
+        </tr>`; 
     }); 
     tbody.innerHTML = htmlContent; 
 }
