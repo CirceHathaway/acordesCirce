@@ -568,3 +568,22 @@ tr:hover { background-color: #252525; }
 .multiplier-controls { display: flex; align-items: center; gap: 15px; background: #1a1c23; padding: 5px; border-radius: 20px; }
 .btn-mult { background: #444; border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .mult-value { color: var(--text-primary); font-weight: bold; font-size: 1.1rem; min-width: 30px; text-align: center; }
+
+/* --- ESTILOS PARA NOTAS EN LA PLAYLIST --- */
+.playlist-note-row {
+    background-color: rgba(229, 142, 38, 0.15) !important;
+    border-left: 4px solid var(--accent);
+}
+.playlist-note-row:hover {
+    background-color: rgba(229, 142, 38, 0.25) !important;
+}
+.note-text-cell {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 1.05rem;
+    padding: 15px !important;
+}
+
+/* Indicadores de arrastre para PC */
+.draggable-row { cursor: grab; }
+.draggable-row.dragging { cursor: grabbing; }

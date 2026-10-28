@@ -688,6 +688,50 @@ function renderTable(data) {
     tbody.innerHTML = htmlContent; 
 }
 
+/* --- GESTIÓN DE NOTAS EN LISTA --- */
+window.openAddNoteModal = function() {
+    document.getElementById('playlistNoteInput').value = '';
+    document.getElementById('addNoteModal').style.display = 'flex';
+}
+
+window.closeAddNoteModal = function() {
+    document.getElementById('addNoteModal').style.display = 'none';
+}
+
+window.savePlaylistNote = function() {
+    const text = document.getElementById('playlistNoteInput').value.trim();
+    if (!text) return;
+    // Codificamos el texto para evitar que las comas rompan los Arrays de Firebase o URLs
+    const noteId = 'NOTE_' + encodeURIComponent(text);
+    myPlaylist.push(noteId);
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+    window.closeAddNoteModal();
+    if (window.location.pathname.includes('lista.html')) window.loadPlaylistMode();
+    window.showNotification("Anotación añadida 📝");
+    broadcastChange();
+}
+
+/* --- CIERRE GLOBAL DE MODALES (Actualizar onclick) --- */
+window.onclick = function(event) {
+    let keyModal = document.getElementById('keyModal'); 
+    let subKeyModal = document.getElementById('subKeyModal'); 
+    let confirmModal = document.getElementById('confirmModal'); 
+    let commentModal = document.getElementById('commentModal'); 
+    let sectionNoteModal = document.getElementById('sectionNoteModal');
+    let liveModal = document.getElementById('liveModal');
+    let addNoteModal = document.getElementById('addNoteModal'); // NUEVO
+
+    if (keyModal && event.target === keyModal) window.closeKeyModal();
+    if (subKeyModal && event.target === subKeyModal) window.closeSubKeyModal();
+    if (confirmModal && event.target === confirmModal) window.closeConfirmModal();
+    if (commentModal && event.target === commentModal) window.closeCommentModal();
+    if (sectionNoteModal && event.target === sectionNoteModal) window.closeSectionNoteModal();
+    if (liveModal && event.target === liveModal) window.closeLiveModal();
+    if (addNoteModal && event.target === addNoteModal) window.closeAddNoteModal(); // NUEVO
+    
+    window.closeHamburgerDropdown(); 
+}
+
 /* --- GESTIÓN DE PLAYLIST --- */
 window.addToPlaylist = function(index, btnElement) { if (!myPlaylist.includes(index)) { myPlaylist.push(index); localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); if(btnElement) { btnElement.innerText = "✓"; btnElement.classList.add('added'); btnElement.onclick = null; } window.showNotification("Canción agregada a tu lista"); broadcastChange(); } }
 window.removeFromPlaylist = function(index, rowElement) { 
@@ -695,7 +739,14 @@ window.removeFromPlaylist = function(index, rowElement) {
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
     if (rowElement && rowElement.parentNode) { 
         rowElement.parentNode.removeChild(rowElement); 
-        document.querySelectorAll('#tableBody .index-col').forEach((td, i) => { td.innerText = i + 1; }); 
+        // Actualizar números ignorando las filas de notas
+        let songCounter = 1;
+        document.querySelectorAll('#tableBody tr').forEach((row) => { 
+            const indexCell = row.querySelector('.index-col'); 
+            if(indexCell && !row.classList.contains('playlist-note-row')) {
+                indexCell.innerText = songCounter++;
+            }
+        }); 
         if(myPlaylist.length === 0) { 
             const t = document.getElementById('tableBody');
             if(t) t.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; 
@@ -709,8 +760,13 @@ window.removeFromPlaylist = function(index, rowElement) {
 window.loadPlaylistMode = function() { 
     const urlParams = new URLSearchParams(window.location.search); 
     const sharedIds = urlParams.get('ids'); 
-    // Evita convertir los IDs de texto a "NaN"
-    let playlistIds = sharedIds ? sharedIds.split(',').map(id => isNaN(id) ? id : Number(id)) : myPlaylist; 
+    
+    // Mapeo Inteligente: detecta strings (Notas o Firebase) vs enteros (JSON Local)
+    let playlistIds = sharedIds ? sharedIds.split(',').map(id => {
+        if (typeof id === 'string' && id.startsWith('NOTE_')) return id;
+        return isNaN(id) ? id : Number(id);
+    }) : myPlaylist; 
+    
     currentContextList = playlistIds; 
     
     if (sharedIds) { 
@@ -721,8 +777,11 @@ window.loadPlaylistMode = function() {
         } 
     } 
     
-    // Mapea buscando en Firebase (strings) o en JSON (números)
+    // Decodifica las notas o busca la canción donde corresponda
     displaySongs = playlistIds.map(id => {
+        if (typeof id === 'string' && id.startsWith('NOTE_')) {
+            return { isNote: true, text: decodeURIComponent(id.replace('NOTE_', '')) };
+        }
         if (typeof id === 'string' && window.customSongsFirebase && window.customSongsFirebase[id]) {
             return { ...window.customSongsFirebase[id], fbId: id, isCustom: true };
         }
@@ -738,30 +797,162 @@ function renderPlaylistTable(songsData, originalIds) {
     if (songsData.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:20px;">Lista vacía.</td></tr>'; return; } 
     
     let htmlContent = ''; 
-    songsData.forEach((song, i) => { 
+    let songCounter = 1;
+
+    songsData.forEach((item, i) => { 
         const globalIndex = originalIds[i]; 
-        // Detecta si es texto y le pone comillas simples ('') para evitar errores de sintaxis HTML
-        const paramFormat = typeof globalIndex === 'string' ? `'${globalIndex}'` : globalIndex;
+        // Escapa las comillas simples por si el texto tiene apóstrofes
+        const paramFormat = typeof globalIndex === 'string' ? `'${globalIndex.replace(/'/g, "\\'")}'` : globalIndex;
         
-        htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;">
-            <td class="index-col">${i + 1}</td>
-            <td class="song-title" onclick="window.openSong(${paramFormat})">${song.title}${song.isCustom ? ' ☁️' : ''}</td>
-            <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
-            <td style="color: var(--text-white);">${song.artist}</td>
-            <td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${paramFormat}, this.closest('tr'))">×</button></td>
-        </tr>`; 
+        if (item.isNote) {
+            htmlContent += `<tr data-index="${globalIndex}" class="draggable-row playlist-note-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;">
+                <td class="index-col" style="color:var(--accent); text-align:center;">•</td>
+                <td colspan="3" class="note-text-cell" style="color:var(--accent); font-weight:bold; font-style:italic;">${item.text}</td>
+                <td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${paramFormat}, this.closest('tr'))">×</button></td>
+            </tr>`; 
+        } else {
+            const song = item;
+            htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;">
+                <td class="index-col">${songCounter++}</td>
+                <td class="song-title" onclick="window.openSong(${paramFormat})">${song.title}${song.isCustom ? ' ☁️' : ''}</td>
+                <td><span style="background:#333; color: #ffda93; padding:2px 8px; border-radius:4px; font-weight:bold;">${song.key}</span></td>
+                <td style="color: var(--text-white);">${song.artist}</td>
+                <td class="action-col"><button class="btn-remove" onclick="window.removeFromPlaylist(${paramFormat}, this.closest('tr'))">×</button></td>
+            </tr>`; 
+        }
     }); 
     tbody.innerHTML = htmlContent; 
 }
 
-function setupDelegatedDragEvents() {
-    const tbody = document.getElementById('tableBody'); if (!tbody) return; let pressTimer, isDragging = false, draggingRow = null, startY = 0;
-    tbody.addEventListener('touchstart', (e) => { const row = e.target.closest('.draggable-row'); if (!row || e.target.classList.contains('btn-remove')) return; isDragging = false; startY = e.touches[0].clientY; pressTimer = setTimeout(() => { isDragging = true; draggingRow = row; row.classList.add('dragging'); if (navigator.vibrate) navigator.vibrate(50); }, 600); }, { passive: false });
-    tbody.addEventListener('touchmove', (e) => { if (!isDragging) { const currentY = e.touches[0].clientY; if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer); } else { e.preventDefault(); const currentY = e.touches[0].clientY; const elementBelow = document.elementFromPoint(e.touches[0].clientX, currentY); const rowBelow = elementBelow ? elementBelow.closest('tr') : null; if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) { const bounding = rowBelow.getBoundingClientRect(); const offset = bounding.y + (bounding.height / 2); if (currentY - offset > 0) rowBelow.after(draggingRow); else rowBelow.before(draggingRow); } } }, { passive: false });
-    const endDrag = (e) => { clearTimeout(pressTimer); if (isDragging && draggingRow) { isDragging = false; draggingRow.classList.remove('dragging'); draggingRow = null; saveNewOrder(); if(e) e.preventDefault(); } };
-    tbody.addEventListener('touchend', endDrag); tbody.addEventListener('touchcancel', () => { clearTimeout(pressTimer); if (draggingRow) draggingRow.classList.remove('dragging'); isDragging = false; draggingRow = null; });
+function saveNewOrder() { 
+    const rows = document.querySelectorAll('#tableBody tr'); 
+    const newPlaylist = []; 
+    rows.forEach(row => { 
+        const id = row.getAttribute('data-index'); 
+        if (id !== null) {
+            if (id.startsWith('NOTE_')) {
+                newPlaylist.push(id);
+            } else {
+                newPlaylist.push(isNaN(id) ? id : parseInt(id)); 
+            }
+        }
+    }); 
+    myPlaylist = newPlaylist; 
+    localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
+    if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist; 
+    
+    // Recalcula solo para canciones
+    let songCounter = 1;
+    rows.forEach((row) => { 
+        const indexCell = row.querySelector('.index-col'); 
+        if(indexCell && !row.classList.contains('playlist-note-row')) { 
+            indexCell.innerText = songCounter++; 
+        } 
+    }); 
+    window.showNotification("Orden guardado"); 
+    broadcastChange(); 
 }
-function saveNewOrder() { const rows = document.querySelectorAll('#tableBody tr'); const newPlaylist = []; rows.forEach(row => { const id = row.getAttribute('data-index'); if (id !== null) newPlaylist.push(parseInt(id)); }); myPlaylist = newPlaylist; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist; rows.forEach((row, index) => { const indexCell = row.querySelector('.index-col'); if(indexCell) indexCell.innerText = index + 1; }); window.showNotification("Orden guardado"); broadcastChange(); }
+
+function changeSongInPlaylist(direction) { 
+    if (!currentContextList || currentContextList.length === 0) return; 
+    let currentPos = currentContextList.indexOf(currentSongIndex); 
+    if (currentPos === -1) return; 
+    
+    let newPos = currentPos;
+    let nextSongID = null;
+    
+    // Salta automáticamente las filas que sean anotaciones
+    for (let i = 0; i < currentContextList.length; i++) {
+        newPos += direction;
+        if (newPos >= currentContextList.length) newPos = 0; 
+        else if (newPos < 0) newPos = currentContextList.length - 1; 
+        
+        nextSongID = currentContextList[newPos]; 
+        if (typeof nextSongID !== 'string' || !nextSongID.startsWith('NOTE_')) {
+            break; 
+        }
+    }
+    
+    if (nextSongID !== null && (typeof nextSongID !== 'string' || !nextSongID.startsWith('NOTE_'))) {
+        window.openSong(nextSongID); 
+    }
+}
+
+function setupDelegatedDragEvents() {
+    const tbody = document.getElementById('tableBody'); 
+    if (!tbody) return; 
+
+    let pressTimer, isDragging = false, draggingRow = null, startY = 0;
+
+    const handleStart = (e) => {
+        const row = e.target.closest('.draggable-row'); 
+        // No arrastrar si el clic es sobre un botón de eliminar
+        if (!row || e.target.closest('button')) return; 
+        
+        isDragging = false; 
+        startY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY; 
+        
+        // En escritorio se reacciona casi instantáneo (150ms), en móvil espera pulsación larga (600ms)
+        const delay = e.type.includes('touch') ? 600 : 150; 
+
+        pressTimer = setTimeout(() => { 
+            isDragging = true; 
+            draggingRow = row; 
+            row.classList.add('dragging'); 
+            if (navigator.vibrate) navigator.vibrate(50); 
+            
+            // Bloquea la selección de texto accidental en escritorio al arrastrar
+            if (e.type === 'mousedown') document.body.style.userSelect = 'none'; 
+        }, delay); 
+    };
+
+    const handleMove = (e) => {
+        if (!isDragging && draggingRow === null) {
+            const currentY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY; 
+            if (Math.abs(currentY - startY) > 10) clearTimeout(pressTimer); 
+        } else if (isDragging && draggingRow) { 
+            e.preventDefault(); 
+            const currentY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY; 
+            const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX; 
+            
+            // Oculta temporalmente la fila arrastrada para detectar qué fila HTML está físicamente debajo del cursor
+            draggingRow.style.visibility = 'hidden'; 
+            const elementBelow = document.elementFromPoint(currentX, currentY); 
+            draggingRow.style.visibility = ''; 
+
+            const rowBelow = elementBelow ? elementBelow.closest('tr') : null; 
+            if (rowBelow && rowBelow !== draggingRow && rowBelow.parentNode === tbody) { 
+                const bounding = rowBelow.getBoundingClientRect(); 
+                const offset = bounding.y + (bounding.height / 2); 
+                if (currentY - offset > 0) rowBelow.after(draggingRow); 
+                else rowBelow.before(draggingRow); 
+            } 
+        }
+    };
+
+    const handleEnd = (e) => { 
+        clearTimeout(pressTimer); 
+        document.body.style.userSelect = ''; 
+        if (isDragging && draggingRow) { 
+            isDragging = false; 
+            draggingRow.classList.remove('dragging'); 
+            draggingRow = null; 
+            saveNewOrder(); 
+            if (e && e.cancelable) e.preventDefault(); 
+        } 
+    };
+
+    // 1. Eventos Táctiles (Celular / Tablet)
+    tbody.addEventListener('touchstart', handleStart, { passive: false });
+    tbody.addEventListener('touchmove', handleMove, { passive: false });
+    tbody.addEventListener('touchend', handleEnd); 
+    tbody.addEventListener('touchcancel', handleEnd);
+
+    // 2. Eventos de Ratón (Modo Escritorio)
+    tbody.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove, { passive: false });
+    document.addEventListener('mouseup', handleEnd);
+}
 
 window.connectToSession = function() { if (!firebaseLoaded) { window.showNotification("Sin conexión para Live"); return; } const codeInput = document.getElementById('sessionCodeInput').value.trim().toUpperCase(); if (!codeInput) { alert("Ingresa la clave."); return; } if (!VALID_KEYS.includes(codeInput)) { alert("Clave incorrecta."); return; } currentUserKey = codeInput; sessionStorage.setItem('acordify_user_key', currentUserKey); isConnected = true; const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID); const chatRef = ref(db, 'chats/' + FIXED_ROOM_ID); const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID); myConnectionRef = push(connectionsRef); set(myConnectionRef, currentUserKey); onDisconnect(myConnectionRef).remove(); get(roomRef).then((snapshot) => { if (snapshot.exists() && snapshot.val()) { window.showNotification("Sincronizando con la banda... 📡"); } else { set(roomRef, myPlaylist).then(() => window.showNotification("Sala iniciada. Lista subida ☁️")); set(chatRef, null); } startListening(roomRef); startChatListener(); updateUIConnected(); window.closeLiveModal(); }).catch((error) => { console.error(error); alert("Error de conexión"); }); }
 function reconnectSession() { if (!firebaseLoaded || !currentUserKey) return; const roomRef = ref(db, 'sessions/' + FIXED_ROOM_ID); const connectionsRef = ref(db, 'connections/' + FIXED_ROOM_ID); myConnectionRef = push(connectionsRef); set(myConnectionRef, currentUserKey); onDisconnect(myConnectionRef).remove(); startListening(roomRef); startChatListener(); updateUIConnected(); broadcastChange(); }
@@ -787,4 +978,3 @@ let touchStartX = 0; let touchStartY = 0;
 document.addEventListener('touchstart', function(e) { if (document.getElementById('songDetailView').style.display === 'block') { touchStartX = e.changedTouches[0].screenX; touchStartY = e.changedTouches[0].screenY; } }, { passive: true }); 
 document.addEventListener('touchend', function(e) { if (document.getElementById('songDetailView').style.display === 'block') { let touchEndX = e.changedTouches[0].screenX; let touchEndY = e.changedTouches[0].screenY; handleSwipeGesture(touchStartX, touchEndX, touchStartY, touchEndY); } }, { passive: true });
 function handleSwipeGesture(startX, endX, startY, endY) { const diffX = startX - endX; const diffY = startY - endY; const absDiffX = Math.abs(diffX); const absDiffY = Math.abs(diffY); const minSwipeDistance = 60; if (absDiffX > absDiffY && absDiffX > minSwipeDistance) { if (diffX > 0) { changeSongInPlaylist(1); } else { changeSongInPlaylist(-1); } } }
-function changeSongInPlaylist(direction) { if (!currentContextList || currentContextList.length === 0) return; let currentPos = currentContextList.indexOf(currentSongIndex); if (currentPos === -1) return; let newPos = currentPos + direction; if (newPos >= currentContextList.length) newPos = 0; else if (newPos < 0) newPos = currentContextList.length - 1; let nextSongID = currentContextList[newPos]; window.openSong(nextSongID); }
