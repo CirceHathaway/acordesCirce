@@ -213,7 +213,13 @@ window.executeClearList = function() {
 
 window.sharePlaylistUrl = function() { 
     if (myPlaylist.length === 0) { window.showNotification("Lista vacía."); return; } 
-    const shareUrl = window.location.origin + window.location.pathname + '?ids=' + myPlaylist.join(','); 
+    
+    // Convertimos la lista entera a un texto JSON, luego a Base64, y aseguramos los caracteres para URL
+    const encodedList = encodeURIComponent(btoa(JSON.stringify(myPlaylist)));
+    
+    // Usamos el nuevo parámetro '?list=' en lugar del viejo '?ids='
+    const shareUrl = window.location.origin + window.location.pathname + '?list=' + encodedList; 
+    
     if (navigator.share) navigator.share({ title: 'Mi Lista', url: shareUrl }); 
     else { navigator.clipboard.writeText(shareUrl); window.showNotification("Link copiado!"); } 
 }
@@ -759,21 +765,42 @@ window.removeFromPlaylist = function(index, rowElement) {
 
 window.loadPlaylistMode = function() { 
     const urlParams = new URLSearchParams(window.location.search); 
-    const sharedIds = urlParams.get('ids'); 
+    const sharedList = urlParams.get('list'); // Nuevo formato blindado
+    const legacyIds = urlParams.get('ids');   // Viejo formato por si abren un link anterior
     
-    // Mapeo Inteligente: detecta strings (Notas o Firebase) vs enteros (JSON Local)
-    let playlistIds = sharedIds ? sharedIds.split(',').map(id => {
-        if (typeof id === 'string' && id.startsWith('NOTE_')) return id;
-        return isNaN(id) ? id : Number(id);
-    }) : myPlaylist; 
+    let playlistIds;
+    
+    if (sharedList) {
+        try {
+            // Desencriptamos el Base64 y lo volvemos a convertir en el Array original
+            playlistIds = JSON.parse(atob(sharedList)); 
+        } catch(e) {
+            console.error("Error al leer lista compartida", e);
+            playlistIds = myPlaylist;
+        }
+    } else if (legacyIds) {
+        // Soporte para los links viejos (separados por coma)
+        playlistIds = legacyIds.split(',').map(id => {
+            if (typeof id === 'string' && id.startsWith('NOTE_')) return id;
+            return isNaN(id) ? id : Number(id);
+        });
+    } else {
+        playlistIds = myPlaylist;
+    }
     
     currentContextList = playlistIds; 
     
-    if (sharedIds) { 
+    // Si entró por link, actualiza el botón para guardar la lista
+    if (sharedList || legacyIds) { 
         const shareBtn = document.getElementById('shareListBtn'); 
         if(shareBtn) { 
             shareBtn.innerText = "Guardar esta lista compartida"; 
-            shareBtn.onclick = function() { myPlaylist = playlistIds; localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); window.showNotification("¡Lista guardada!"); setTimeout(() => window.location.href = 'lista.html', 2000); }; 
+            shareBtn.onclick = function() { 
+                myPlaylist = playlistIds; 
+                localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
+                window.showNotification("¡Lista guardada!"); 
+                setTimeout(() => window.location.href = 'lista.html', 2000); 
+            }; 
         } 
     } 
     
