@@ -801,7 +801,6 @@ function renderPlaylistTable(songsData, originalIds) {
 
     songsData.forEach((item, i) => { 
         const globalIndex = originalIds[i]; 
-        // Escapa las comillas simples por si el texto tiene apóstrofes
         const paramFormat = typeof globalIndex === 'string' ? `'${globalIndex.replace(/'/g, "\\'")}'` : globalIndex;
         
         if (item.isNote) {
@@ -812,6 +811,7 @@ function renderPlaylistTable(songsData, originalIds) {
             </tr>`; 
         } else {
             const song = item;
+            // IMPORTANTE: Al hacer clic en la canción, mandamos a window.openSong el ID global, no la posición "i".
             htmlContent += `<tr data-index="${globalIndex}" class="draggable-row" oncontextmenu="window.event.preventDefault(); window.event.stopPropagation(); return false;">
                 <td class="index-col">${songCounter++}</td>
                 <td class="song-title" onclick="window.openSong(${paramFormat})">${song.title}${song.isCustom ? ' ☁️' : ''}</td>
@@ -827,21 +827,24 @@ function renderPlaylistTable(songsData, originalIds) {
 function saveNewOrder() { 
     const rows = document.querySelectorAll('#tableBody tr'); 
     const newPlaylist = []; 
+    
     rows.forEach(row => { 
-        const id = row.getAttribute('data-index'); 
+        let id = row.getAttribute('data-index'); 
         if (id !== null) {
-            if (id.startsWith('NOTE_')) {
+            // Si el ID es texto (Nota o ID de Firebase) se pushea como string. 
+            // Solo si es un número puramente numérico local se convierte a Int.
+            if (isNaN(id) || id.startsWith('NOTE_')) {
                 newPlaylist.push(id);
             } else {
-                newPlaylist.push(isNaN(id) ? id : parseInt(id)); 
+                newPlaylist.push(parseInt(id)); 
             }
         }
     }); 
+    
     myPlaylist = newPlaylist; 
     localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist)); 
     if (typeof currentContextList !== 'undefined') currentContextList = newPlaylist; 
     
-    // Recalcula solo para canciones
     let songCounter = 1;
     rows.forEach((row) => { 
         const indexCell = row.querySelector('.index-col'); 
@@ -855,27 +858,23 @@ function saveNewOrder() {
 
 function changeSongInPlaylist(direction) { 
     if (!currentContextList || currentContextList.length === 0) return; 
-    let currentPos = currentContextList.indexOf(currentSongIndex); 
+    
+    // Filtramos un arreglo nuevo (soloCanciones) ignorando los elementos de nota
+    const soloCanciones = currentContextList.filter(id => typeof id !== 'string' || !id.startsWith('NOTE_'));
+    if (soloCanciones.length === 0) return;
+
+    // Buscamos la canción actual dentro de ese arreglo filtrado
+    let currentPos = soloCanciones.indexOf(currentSongIndex); 
     if (currentPos === -1) return; 
     
-    let newPos = currentPos;
-    let nextSongID = null;
+    let newPos = currentPos + direction;
     
-    // Salta automáticamente las filas que sean anotaciones
-    for (let i = 0; i < currentContextList.length; i++) {
-        newPos += direction;
-        if (newPos >= currentContextList.length) newPos = 0; 
-        else if (newPos < 0) newPos = currentContextList.length - 1; 
-        
-        nextSongID = currentContextList[newPos]; 
-        if (typeof nextSongID !== 'string' || !nextSongID.startsWith('NOTE_')) {
-            break; 
-        }
-    }
+    // Loop infinito (si llega al final pasa al principio y viceversa)
+    if (newPos >= soloCanciones.length) newPos = 0; 
+    else if (newPos < 0) newPos = soloCanciones.length - 1; 
     
-    if (nextSongID !== null && (typeof nextSongID !== 'string' || !nextSongID.startsWith('NOTE_'))) {
-        window.openSong(nextSongID); 
-    }
+    let nextSongID = soloCanciones[newPos]; 
+    window.openSong(nextSongID); 
 }
 
 function setupDelegatedDragEvents() {
