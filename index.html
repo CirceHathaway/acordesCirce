@@ -32,7 +32,7 @@
             <div class="filters">
                 <button class="filter-btn" onclick="window.filterByType('Alabanza')">Alabanza</button>
                 <button class="filter-btn" onclick="window.filterByType('Adoración')">Adoración</button>
-                <button class="filter-btn" onclick="window.sortSongs('artist')">Artista</button>
+                <button class="filter-btn" onclick="window.openSingerModal()">Cantante</button>
                 <button class="filter-btn" onclick="window.openKeyModal()">Nota</button>
                 <button class="filter-btn" style="background:#e55039;" onclick="window.resetFilters()">Reset</button>
             </div>
@@ -202,6 +202,34 @@
     </div>
 
     <div id="modalOverlay" class="overlay-click-close" onclick="window.closeAllModals()"></div>
+
+    <!-- NUEVO MODAL: FILTRAR POR CANTANTE -->
+    <div id="singerFilterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="window.closeSingerFilterModal()">&times;</span>
+            <h2 style="color: var(--text-primary);">Selecciona un Cantante</h2>
+            <div class="key-grid">
+                <button class="key-btn" onclick="window.filterBySinger('Pastor')">Pastor</button>
+                <button class="key-btn" onclick="window.filterBySinger('Ángel')">Ángel</button>
+                <button class="key-btn" onclick="window.filterBySinger('Sam')">Sam</button>
+                <button class="key-btn" onclick="window.filterBySinger('Sol')">Sol</button>
+                <button class="key-btn" onclick="window.filterBySinger('Ale')">Ale</button>
+                <button class="key-btn" onclick="window.filterBySinger('Gisel')">Gisel</button>
+                <button class="key-btn" onclick="window.filterBySinger('Ruth')">Ruth</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUEVO MODAL: ELEGIR CANTANTE AL ABRIR CANCIÓN -->
+    <div id="chooseSingerModal" class="modal">
+        <div class="modal-content" style="max-width: 350px;">
+            <h3 style="color: var(--text-primary); margin-top: 0; font-size: 1.5rem;">¿Quién la canta?</h3>
+            <p style="color: var(--text-white); margin-bottom: 20px;">Esta canción es cantada por varias personas. Selecciona para ajustar la nota automáticamente.</p>
+            <div id="chooseSingerButtons" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Los botones se generan desde JS -->
+            </div>
+        </div>
+    </div>
 
     <footer class="custom-footer">
         <div class="footer-copyright">Copyright © 2026 | Acordify</div>

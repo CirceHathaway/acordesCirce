@@ -21,7 +21,7 @@ const scaleSpanish = ["DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#"
 const filterKeys = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 /* --- ESTADO GLOBAL (CON PERSISTENCIA) --- */
-let activeFilters = { type: null, key: null, search: '' };
+let activeFilters = { type: null, key: null, search: '', singer: null };
 let displaySongs = []; 
 let currentSongIndex = -1; 
 let currentSemitones = 0; 
@@ -116,7 +116,7 @@ window.filterByKey = function(selectedKey) {
 }
 
 window.applyGlobalFilters = function() { 
-    // Mezcla canciones.js con la nube
+    //Mezcla canciones .json con la nube
     let allMergedSongs = [...songs];
     if(window.customSongsFirebase) {
         Object.keys(window.customSongsFirebase).forEach(key => {
@@ -127,6 +127,23 @@ window.applyGlobalFilters = function() {
     let filtered = allMergedSongs.filter(song => { 
         if (activeFilters.type && song.type !== activeFilters.type) return false; 
         if (activeFilters.key && song.key !== activeFilters.key) return false; 
+        
+        // --- NUEVA LÓGICA DE CANTANTE ---
+        if (activeFilters.singer) {
+            // 1. Si la canción NO tiene cantante asignado, la ocultamos de la lista
+            if (!song.singer) {
+                return false;
+            } 
+            // 2. Si es un String ("Sol"), la ocultamos si el nombre no es exactamente igual
+            else if (typeof song.singer === 'string') {
+                if (song.singer !== activeFilters.singer) return false;
+            } 
+            // 3. Si es un Objeto {"Sol": "G"}, la ocultamos si ese cantante no está en la lista
+            else if (typeof song.singer === 'object') {
+                if (!song.singer.hasOwnProperty(activeFilters.singer)) return false;
+            }
+        }
+
         if (activeFilters.search) { 
             const query = activeFilters.search.toLowerCase(); 
             const matchesTitle = song.title.toLowerCase().includes(query); 
@@ -312,13 +329,42 @@ window.openSong = function(indexInGlobalArray) {
     else history.pushState({ view: 'song' }, null, '#song');
 
     currentSongIndex = indexInGlobalArray;
-    
-    // Recupera la canción según si es Local o de Firebase
     let song = typeof indexInGlobalArray === 'string' ? window.customSongsFirebase[indexInGlobalArray] : songs[indexInGlobalArray];
     if(!song) return;
 
-    currentSemitones = 0;
+    currentSemitones = 0; // Se resetea siempre por defecto
+    window.currentSongContext = song;
     
+    // --- LÓGICA DE MÚLTIPLES CANTANTES ---
+    if (song.singer && typeof song.singer === 'object') {
+        const modal = document.getElementById('chooseSingerModal');
+        const container = document.getElementById('chooseSingerButtons');
+        if (modal && container) {
+            container.innerHTML = '';
+            // Crear un botón por cada cantante que esté en el objeto
+            Object.keys(song.singer).forEach(singerName => {
+                const targetKey = song.singer[singerName];
+                const btn = document.createElement('button');
+                btn.className = 'key-btn';
+                btn.innerText = `${singerName} (${targetKey})`;
+                btn.onclick = function() {
+                    // Calculamos la distancia de semitonos entre la nota base de la canción y la nota del cantante
+                    currentSemitones = calculateSemitonesDifference(song.key, targetKey);
+                    modal.style.display = 'none';
+                    renderSongViewUI(song, indexInGlobalArray);
+                };
+                container.appendChild(btn);
+            });
+            modal.style.display = 'flex';
+            return; // Detenemos la carga de la vista hasta que elija
+        }
+    }
+    
+    // Si la canta una sola persona (string), o si no hay cantante, o si ya eligió, carga normal
+    renderSongViewUI(song, indexInGlobalArray);
+}
+
+function renderSongViewUI(song, indexInGlobalArray) {
     document.getElementById('songListView').style.display = 'none';
     document.getElementById('songDetailView').style.display = 'block';
     
@@ -330,9 +376,7 @@ window.openSong = function(indexInGlobalArray) {
     window.closeHamburgerDropdown();
 
     document.getElementById('detailTitle').innerText = song.title;
-    document.querySelectorAll('.song-key-display').forEach(el => el.innerText = song.key);
-
-    // Habilita el botón de Editar si la canción viene de Firebase
+    
     const btnEdit = document.getElementById('btnEditSong');
     if(btnEdit) {
         if(typeof indexInGlobalArray === 'string') {
@@ -343,7 +387,6 @@ window.openSong = function(indexInGlobalArray) {
         }
     }
 
-    // Funciones de Comentario Principal (Sin Cambios)
     const fullCommentEl = document.getElementById('fullCommentText');
     const btnNotaMain = document.getElementById('btnNotaMain');
     const btnNotaBurger = document.getElementById('hamburgerCommentBtn');
@@ -356,11 +399,30 @@ window.openSong = function(indexInGlobalArray) {
         if (btnNotaBurger) { btnNotaBurger.style.display = 'none'; btnNotaBurger.classList.remove('active-note-blink'); }
     }
     
-    // Inyecta directamente el contenido para que lo lea el sistema
-    window.currentSongContext = song;
     updateSongView();
     updateChordIcon();
     window.scrollTo(0,0);
+}
+
+// NUEVA FUNCIÓN: Calculadora matemática de semitonos 
+function calculateSemitonesDifference(baseKey, targetKey) {
+    // Normalizamos las notas (por si vienen con m, convertimos a bemoles si existen en flatMap)
+    let cleanBase = baseKey.replace('m', '');
+    let cleanTarget = targetKey.replace('m', '');
+    
+    if (flatMap[cleanBase]) cleanBase = flatMap[cleanBase];
+    if (flatMap[cleanTarget]) cleanTarget = flatMap[cleanTarget];
+
+    let baseIndex = scale.indexOf(cleanBase);
+    let targetIndex = scale.indexOf(cleanTarget);
+
+    if (baseIndex === -1 || targetIndex === -1) return 0; // Si hay un error, no transpone
+
+    // Diferencia natural hacia arriba
+    let diff = targetIndex - baseIndex;
+    if (diff < 0) diff += 12; 
+    
+    return diff;
 }
 
 window.goHome = function() { if (window.location.hash === '#song') history.back(); else closeSongUI(); }
@@ -468,6 +530,13 @@ function updateSongView() {
     if(document.getElementById('nav-c4')) document.getElementById('nav-c4').style.display = hasC4 ? 'flex' : 'none';
     if(document.getElementById('nav-ins')) document.getElementById('nav-ins').style.display = hasIns ? 'flex' : 'none';
     if(document.getElementById('nav-final')) document.getElementById('nav-final').style.display = hasFinal ? 'flex' : 'none';
+
+    document.querySelectorAll('.song-key-display').forEach(el => {
+        let cleanRoot = song.key.replace('m', '');
+        let isMinor = song.key.includes('m');
+        let displayedNote = transformNote(cleanRoot);
+        el.innerText = isMinor ? displayedNote + 'm' : displayedNote;
+    });
 
     let tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlOutput;
@@ -665,11 +734,20 @@ function updateFilterVisuals() {
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.innerText === activeFilters.type) btn.classList.add('active');
+        
         if ((btn.innerText === "Nota" || btn.innerText.startsWith("Nota: ")) && activeFilters.key) {
             btn.classList.add('active');
             btn.innerText = "Nota: " + activeFilters.key;
         } else if (btn.innerText.startsWith("Nota: ") && !activeFilters.key) {
             btn.innerText = "Nota";
+        }
+
+        // --- NUEVO: Indicador visual para Cantante ---
+        if ((btn.innerText === "Cantante" || btn.innerText.startsWith("Canta: ")) && activeFilters.singer) {
+            btn.classList.add('active');
+            btn.innerText = "Canta: " + activeFilters.singer;
+        } else if (btn.innerText.startsWith("Canta: ") && !activeFilters.singer) {
+            btn.innerText = "Cantante";
         }
     }); 
 }
@@ -717,6 +795,27 @@ window.savePlaylistNote = function() {
     broadcastChange();
 }
 
+/* --- GESTIÓN DE CANTANTE EN LISTA --- */
+window.openSingerModal = function() {
+    if (activeFilters.singer) {
+        // Si ya hay un cantante filtrado, al apretar el botón se quita el filtro (Toggle)
+        activeFilters.singer = null;
+        window.applyGlobalFilters();
+    } else {
+        document.getElementById('singerFilterModal').style.display = 'flex';
+    }
+}
+
+window.closeSingerFilterModal = function() {
+    document.getElementById('singerFilterModal').style.display = 'none';
+}
+
+window.filterBySinger = function(singerName) {
+    activeFilters.singer = singerName;
+    window.closeSingerFilterModal();
+    window.applyGlobalFilters();
+}
+
 /* --- CIERRE GLOBAL DE MODALES (Actualizar onclick) --- */
 window.onclick = function(event) {
     let keyModal = document.getElementById('keyModal'); 
@@ -725,7 +824,8 @@ window.onclick = function(event) {
     let commentModal = document.getElementById('commentModal'); 
     let sectionNoteModal = document.getElementById('sectionNoteModal');
     let liveModal = document.getElementById('liveModal');
-    let addNoteModal = document.getElementById('addNoteModal'); // NUEVO
+    let addNoteModal = document.getElementById('addNoteModal');
+    let singerFilterModal = document.getElementById('singerFilterModal');
 
     if (keyModal && event.target === keyModal) window.closeKeyModal();
     if (subKeyModal && event.target === subKeyModal) window.closeSubKeyModal();
@@ -733,7 +833,8 @@ window.onclick = function(event) {
     if (commentModal && event.target === commentModal) window.closeCommentModal();
     if (sectionNoteModal && event.target === sectionNoteModal) window.closeSectionNoteModal();
     if (liveModal && event.target === liveModal) window.closeLiveModal();
-    if (addNoteModal && event.target === addNoteModal) window.closeAddNoteModal(); // NUEVO
+    if (addNoteModal && event.target === addNoteModal) window.closeAddNoteModal();
+    if (singerFilterModal && event.target === singerFilterModal) window.closeSingerFilterModal();
     
     window.closeHamburgerDropdown(); 
 }

@@ -4,6 +4,7 @@ const songs = [
         artist: "Gadiel Espinosa",
         key: "A",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>A</span> el alto y sublime que <span class="g"><span class="chord">D</span>habita en la eternidad</span>
@@ -26,6 +27,7 @@ Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humil
         artist: "Ingrid Rosario",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Digno</span> y santo <span class="g"><span class="chord">Am</span>el cordero</span>
@@ -59,6 +61,7 @@ Y con el <span class="g"><span class="chord">Bm</span>quebrantado</span> y humil
         artist: "Rey de Reyes",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Se</span> oye un son del cielo
@@ -81,6 +84,10 @@ Te adoran <span class="g"><span class="chord">Em</span>hoy,</span><span class="g
         artist: "Marco Barrientos",
         key: "D",
         type: "Alabanza",
+        singer: {
+            "Pastor": "D",
+            "Sam": "D"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Ven,</span> es hora de ado<span class="g"><span class="chord">G</span>rar</span><span class="g"><span class="chord">D</span>le</span>
@@ -104,6 +111,7 @@ El es <span class="g"><span class="chord">D</span>Rey.</span>`
         artist: "José Luis Reyes",
         key: "G",
         type: "Adoración",
+        singer: "Sam",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Algo</span> está cayendo <span class="g"><span class="chord">Am</span>aquí</span>
@@ -128,6 +136,7 @@ Su gloria está <span class="g"><span class="chord">Em</span>aquí.</span> <span
         artist: "Marco Barrientos",
         key: "D",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Llenas</span> nuestro hogar de danza
@@ -157,6 +166,7 @@ Ale</span><span class="g"><span class="chord">G</span>luya</span> <span class="g
         artist: "Marcos Witt",
         key: "C",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">C</span>Al</span> que es digno de <span class="g"><span class="chord">F</span>recibir</span> la <span class="g"><span class="chord">G</span>gloria</span>
@@ -177,6 +187,11 @@ Al que <span class="g"><span class="chord">F</span>vive</span> vive por <span cl
         artist: "Marcos Brunet",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Ángel": "C",
+            "Sam": "C",
+            "Ruth": "E"
+        },
         comentario: "Ruth lo hace en E+.",
         content: `
 [Verso 1]
@@ -211,6 +226,7 @@ este es el <span class="g"><span class="chord">G</span>pacto.</span>`
         artist: "Rey de Reyes",
         key: "A",
         type: "Adoración",
+        singer: "Sam",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>Anhelo</span> Conocerte Espíritu <span class="g"><span class="chord">D</span>Santo</span>
@@ -230,6 +246,7 @@ Como <span class="g"><span class="chord">F#m</span>fuente</span>de agua de viva
         artist: "Alexis Peña",
         key: "G",
         type: "Adoración",
+        singer: "Sam",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Como</span> Zaque<span class="g"><span class="chord">D</span>o, yo quiero</span> su<span class="g"><span class="chord">Em7</span>bir</span>
@@ -261,6 +278,7 @@ Porque el Señor es mi gran a<span class="g"><span class="chord">C</span>mor,</s
         artist: "Su Presencia",
         key: "C",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Coro]
 <span class="g"><span class="chord">F</span>Que</span> todo lo que <span class="g"><span class="chord">C</span>soy,</span> ben<span class="g"><span class="chord">G</span>diga</span> al Se<span class="g"><span class="chord">Am</span>ñor.</span>
@@ -292,6 +310,7 @@ Y <span class="g"><span class="chord">F</span>en</span> ese <span class="g"><spa
         artist: "Miel San Marcos",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>A</span>Ti atribuimos la <span class="g"><span class="chord">C</span>gloria,</span>
@@ -305,6 +324,10 @@ A <span class="g"><span class="chord">G</span>ti</span>atribuimos <span class="g
         artist: "Danilo Montero",
         key: "D",
         type: "Alabanza",
+        singer: {
+            "Pastor": "D",
+            "Sam": "D"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Abre</span> mis ojos oh Cristo,
@@ -340,6 +363,7 @@ Yo quiero <span class="g"><span class="chord">D</span>verte.</span>`
         artist: "Neway Music",
         key: "F",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Siento</span> que sin ti,
@@ -372,6 +396,7 @@ A donde i<span class="g"><span class="chord">C</span>ré</span> Jehová sin <spa
         artist: "Jesús Adrián Romero",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Al</span> estar ante <span class="g"><span class="chord">A</span>ti,</span>
@@ -403,6 +428,11 @@ Todo lo que e<span class="g"><span class="chord">Em</span>xiste</span> es por <s
         artist: "Marco Barrientos",
         key: "A",
         type: "Alabanza",
+        singer: {
+            "Pastor": "A",
+            "Sam": "A",
+            "Ale": "A"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>Aleluya,</span> Alelu<span class="g"><span class="chord">D</span>ya,</span>
@@ -427,6 +457,11 @@ Digno eres <span class="g"><span class="chord">D</span>Tú,</span> Digno eres T�
         artist: "Marcos Brunet",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Ángel": "G",
+            "Sam": "G",
+            "Gisel": "C"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Quiero</span> conocerte <span class="g"><span class="chord">Em7</span>cada día más a ti,</span>
@@ -448,6 +483,10 @@ sea la <span class="g"><span class="chord">C</span>gloria,</span> sea la <span c
         artist: "Marcos Witt",
         key: "E",
         type: "Alabanza",
+        singer: {
+            "Pastor": "E",
+            "Ale": "E"
+        },
         comentario:"Si la canta Ale, es en la misma nota.",
         content: `
 [Verso 1]
@@ -467,6 +506,7 @@ Tu <span class="g"><span class="chord">A</span>nom</span><span class="g"><span c
         artist: "Danilo Montero",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Bueno</span> es ala<span class="g"><span class="chord">C</span>bar,</span> oh Se<span class="g"><span class="chord">D</span>ñor,</span>tu <span class="g"><span class="chord">C</span>nom</span><span class="g"><span class="chord">D</span>bre,</span>
@@ -487,6 +527,10 @@ Grande es tu <span class="g"><span class="chord">D</span>gloria.</span>`
         artist: "Vino Nuevo",
         key: "E",
         type: "Adoración",
+        singer: {
+            "Sol": "E",
+            "Gisel": "E"
+        },
         comentario:"Si la canta Gisel, la nota es la misma. (Antes del final 'si no hubiera conocido' hay que hacer F#m y pasar a A+ para cerrar)",
         content: `
 [Verso 1]
@@ -507,6 +551,7 @@ Al Dios que me <span class="g"><span class="chord">E</span>ama.</span>`
         artist: "Himno",
         key: "D",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Cuan</span>do Cristo <span class="g"><span class="chord">G</span>vino</span>a mi cora<span class="g"><span class="chord">D</span>zón,</span>
@@ -530,6 +575,10 @@ y <span class="g"><span class="chord">Em</span>ábre</span><span class="g"><span
         artist: "En Espíritu y en Verdad",
         key: "A",
         type: "Adoración",
+        singer: {
+            "Pastor": "A",
+            "Sam": "A"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>El</span> esplendor de un Rey,
@@ -578,6 +627,10 @@ Cuán grande es <span class="g"><span class="chord">A</span>ÉL.</span>`
         artist: "Marco Barrientos",
         key: "D",
         type: "Adoración",
+        singer: {
+            "Pastor": "D",
+            "Ángel": "D"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Quiero</span> estar en tu pre<span class="g"><span class="chord">Em</span>sencia,</span><span class="g"><span class="chord">A</span>..</span>
@@ -615,6 +668,7 @@ Yo quiero <span class="g"><span class="chord">Bm</span>más,</span>y más y <spa
         artist: "Marcos Witt",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 De <span class="g"><span class="chord">D</span>gloria</span> en <span class="g"><span class="chord">A</span>gloria</span> te <span class="g"><span class="chord">Bm</span>veo,</span>
@@ -644,6 +698,10 @@ Y <span class="g"><span class="chord">Em7</span>reflejar</span> al <span class="
         artist: "Rey de Reyes",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Pastor": "C",
+            "Gisel": "G"
+        },
         comentario:"Si la canta Gisel, la nota es en G+.",
         content: `
 [Verso 1]
@@ -662,6 +720,10 @@ No hay <span class="g"><span class="chord">F</span>otro</span>como <span class="
         artist: "Marcos Brunet",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Pastor": "G",
+            "Sam": "G"
+        },
         content: `
 [Verso 1]
 No <span class="g"><span class="chord">G</span>tengo</span> nada para ofrecer,
@@ -691,6 +753,7 @@ Solo ante ti yo me incl<span class="g"><span class="chord">C</span>ino.</span>`
         artist: "Generación 12",
         key: "B",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Intro] 
 <span class="g"><span class="chord">B</span></span><span class="g"><span class="chord">F#</span></span><span class="g"><span class="chord">G#</span></span><span class="g"><span class="chord">E</span></span>
@@ -724,6 +787,10 @@ Alelu<span class="g"><span class="chord">E</span>ya.</span>
         artist: "Marco Barrientos",
         key: "D",
         type: "Adoración",
+        singer: {
+            "Pastor": "D",
+            "Gisel": "D"
+        },
         comentario:"Si la canta Gi, es en la misma nota.",
         content: ` 
 [Verso 1]
@@ -744,6 +811,7 @@ Descansa en <span class="g"><span class="chord">Em</span>ti,</span> <span class=
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: ` 
 [Verso 1]
 <span class="g"><span class="chord">G</span>Quiero</span> escuchar tu <span class="g"><span class="chord">D</span>dulce voz,</span>
@@ -767,6 +835,11 @@ Nada <span class="g"><span class="chord">Am</span>más</span> que escu<span clas
         artist: "Danilo Montero",
         key: "Am",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Am",
+            "Ángel": "Bm",
+            "Sam": "Bm"
+        },
         comentario: "Nota para Ángel en Bm.",
         content: ` 
 [Verso 1]
@@ -796,6 +869,7 @@ Y no hay <span class="g"><span class="chord">C</span>nadie</span> como <span cla
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: ` 
 [Verso 1]
 <span class="g"><span class="chord">G</span>Al</span> borde de tu gran <span class="g"><span class="chord">Em</span>trono</span>
@@ -818,6 +892,7 @@ Tu <span class="g"><span class="chord">C</span>nombre</span> es <span class="g">
         artist: "Marcos Witt",
         key: "Em",
         type: "Adoración",
+        singer: "Pastor",
         content: ` 
 [Verso 1]
 Me has to<span class="g"><span class="chord">Em</span>mado</span> en tus brazos
@@ -856,6 +931,10 @@ Ante <span class="g"><span class="chord">D</span>ti.</span>
         artist: "En espíritu y en Verdad",
         key: "A",
         type: "Alabanza",
+        singer: {
+            "Sam": "A",
+            "Ángel": "A"
+        },
         content: `
 [Intro] 
 <span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">D</span></span>
@@ -911,6 +990,7 @@ Tu vida diste a<span class="g"><span class="chord">A</span>hí</span> y ahora li
         artist: "Marcos Witt",
         key: "A",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>Cerca</span> de Ti yo quiero es<span class="g"><span class="chord">C#m</span>tar,</span>
@@ -931,6 +1011,10 @@ Tú co<span class="g"><span class="chord">D</span>noces</span><span class="g"><s
         artist: "Marcos Witt",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Pastor": "C",
+            "Sol": "G"
+        },
         comentario:"Si la canta Sol, la nota es en G.",
         content: `
 [Verso 1]
@@ -969,6 +1053,10 @@ Mi alma clama por <span class="g"><span class="chord">G</span>ti.</span>
         artist: "Alejandro del Bosque",
         key: "F",
         type: "Alabanza",
+        singer: {
+            "Pastor": "F",
+            "Ale": "F"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Los</span> cielos cuentan tu gloria Señor,
@@ -995,6 +1083,7 @@ Y como el cielo y <span class="g"><span class="chord">Dm</span>las estrellas,</s
         artist: "Marcos Witt",
         key: "C",
         type: "Adoración",
+        singer: "Sol",
         comentario:"Nota de Sol",
         content: `
 [Verso 1]
@@ -1011,6 +1100,7 @@ Y procla<span class="g"><span class="chord">F</span>mar</span><span class="g"><s
         artist: "Alejandro del Bosque",
         key: "Bm",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Santo,</span> Santo, <span class="g"><span class="chord">Bm</span>Santo,</span> sen<span class="g"><span class="chord">G</span>tado</span> en majes<span class="g"><span class="chord">A</span>tad,</span>
@@ -1038,6 +1128,7 @@ Procla<span class="g"><span class="chord">G</span>mando</span> sin ce<span class
         artist: "Perfume de Alabanza",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Siento</span> tu amor
@@ -1069,6 +1160,7 @@ quiero ado<span class="g"><span class="chord">Am</span>rarte</span> bende<span c
         artist: "Jaime Murrell",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> quiero más de <span class="g"><span class="chord">C</span>ti,</span> más de <span class="g"><span class="chord">D</span>ti,</span>
@@ -1090,6 +1182,7 @@ Yo quiero men<span class="g"><span class="chord">Am</span>guar</span><span class
         artist: "Rene Gonzáles",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> sé que <span class="g"><span class="chord">C</span>estás</span> a<span class="g"><span class="chord">G</span>quí,</span>
@@ -1109,6 +1202,10 @@ y <span class="g"><span class="chord">Am</span>sé</span>que transfor<span class
         artist: "Marco Barrientos",
         key: "D",
         type: "Adoración",
+        singer: {
+            "Pastor": "D",
+            "Gisel": "C"
+        },
         comentario:"Si la canta Gisel, la nota es en C+.",
         content: `
 [Verso 1]
@@ -1132,6 +1229,7 @@ Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"
         artist: "Rey de Reyes",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Ven</span> <span class="g"><span class="chord">A</span>Santo</span> Es<span class="g"><span class="chord">Bm7</span>píritu,</span>
@@ -1150,6 +1248,10 @@ Te <span class="g"><span class="chord">A</span>quiero</span> cono<span class="g"
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Pastor": "G",
+            "Gisel": "C"
+        },
         comentario:"Si la canta Gi, la nota es en C+.",
         content: `
 [Verso 1]
@@ -1176,6 +1278,7 @@ Me <span class="g"><span class="chord">D</span>llena</span> de tu <span class="g
         artist: "Himno",
         key: "C",
         type: "Adoración",
+        singer: "Sam",
         comentario:"Nota para Sam",
         content: `
 [Verso 1]
@@ -1191,6 +1294,10 @@ yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class=
         artist: "Marcos Witt",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Pastor": "C",
+            "Gisel": "B"
+        },
         comentario:"Si la canta Gisel, la nota es en B+ y la engancha con Quiero llenar tu trono de alabanza.",
         content: `
 [Verso 1]
@@ -1206,6 +1313,7 @@ yo quiero <span class="g"><span class="chord">C</span>más</span> y <span class=
         artist: "Eduardo Santoro",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Cuando</span> todo parece oscuro, cuando <span class="g"><span class="chord">C</span>difícil</span> es decidir,
@@ -1242,6 +1350,10 @@ Pues nuestra <span class="g"><span class="chord">D</span>fe</span> y victoria cr
         artist: "Marco Barrientos",
         key: "Em",
         type: "Adoración",
+        singer: {
+            "Pastor": "Em",
+            "Ale": "Em"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>Todo</span> es de mi <span class="g"><span class="chord">C</span>Cristo,</span> por <span class="g"><span class="chord">D</span>Él</span> y para <span class="g"><span class="chord">Em</span>Él...</span>
@@ -1260,6 +1372,7 @@ Insondables sus <span class="g"><span class="chord">C</span>juicios,</span> y <s
         artist: "Perfume de Alabanza",
         key: "D",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Una</span> ver<span class="g"><span class="chord">A</span>tiente</span> de ala<span class="g"><span class="chord">Bm</span>banza,</span>
@@ -1286,6 +1399,7 @@ Todo el <span class="g"><span class="chord">F#m</span>fruto</span> de nuestro a<
         artist: "Perfume de Alabanza",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> quiero darte <span class="g"><span class="chord">Bm</span>gloria</span> Señor
@@ -1303,6 +1417,10 @@ han <span class="g"><span class="chord">D</span>sido</span> <span class="g"><spa
         artist: "Danilo Montero",
         key: "D",
         type: "Alabanza",
+        singer: {
+            "Pastor": "D",
+            "Ale": "D"
+        },
         comentario:"Si la canta Ale, es en la misma nota.",
         content: `
 [Verso 1]
@@ -1331,6 +1449,10 @@ Con mi <span class="g"><span class="chord">G</span>canto</span> te alaba<span cl
         artist: "Don Moen",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Partor": "G",
+            "Sam": "G"
+        },
         comentario:"Si la canta Sam, es en la misma nota.",
         content: `
 [Verso 1]
@@ -1353,6 +1475,7 @@ Y <span class="g"><span class="chord">Eb</span>agua</span> en el desi<span class
         artist: "Marco Barrientos",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Mi</span> corazón late por <span class="g"><span class="chord">D/F#</span>ti,</span>
@@ -1380,6 +1503,7 @@ Por que <span class="g"><span class="chord">D</span>tú,</span> solo <span class
         artist: "Danilo Montero",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Sentado</span> en su trono, rodeado de <span class="g"><span class="chord">Em</span>luz,</span>
@@ -1408,6 +1532,7 @@ Por que <span class="g"><span class="chord">D</span>tú,</span> solo <span class
         artist: "Oasis Ministry",
         key: "D",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Instrumental]
 <span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">A</span></span>
@@ -1435,6 +1560,10 @@ Hasta que tu <span class="g"><span class="chord">D</span>gloria</span> i<span cl
         artist: "Julio Melgar",
         key: "Am",
         type: "Adoración",
+        singer: {
+            "Pastor": "Am",
+            "Sam": "Am"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Am</span>Quiero</span> levantar a ti mis <span class="g"><span class="chord">F</span>manos</span>
@@ -1462,6 +1591,7 @@ Pre<span class="g"><span class="chord">C</span>cioso</span> hijo de <span class=
         artist: "Renan Carías",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Cuando <span class="g"><span class="chord">G</span>lloras</span> por las <span class="g"><span class="chord">C</span>veces</span> que in<span class="g"><span class="chord">G</span>tentaste</span>
@@ -1490,6 +1620,7 @@ en <span class="g"><span class="chord">G</span>paz</span> en <span class="g"><sp
         artist: "Marco Barrientos",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Coro]
 <span class="g"><span class="chord">G</span>No</span>hay nadie como tú,
@@ -1518,6 +1649,10 @@ para <span class="g"><span class="chord">D</span>mí.`
         artist: "Miel San Marcos",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Pastor": "A",
+            "Sam": "C"
+        },
         comentario: "Nota para Sam. El G/B puede ser un Bm. Nota para el pastor es en A",
         content: `
 [Verso 1]
@@ -1546,6 +1681,11 @@ Y a<span class="g"><span class="chord">F</span>quí</span> permanece<span class=
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Pastor": "G",
+            "Gisel": "E",
+            "Sol": "E"
+        },
         comentario:"Si la canta Gisel o Sol, la nota es en E+.",
         content: `
 [Verso 1]
@@ -1569,6 +1709,10 @@ A<span class="g"><span class="chord">C</span>mén,</span> A<span class="g"><span
         artist: "Samuel Hernández",
         key: "D",
         type: "Adoración",
+        singer: {
+            "Pastor": "D",
+            "Ale": "D"
+        },
         comentario:"Si la canta Alejandro, la nota es la misma.",
         content: `
 [Verso 1]
@@ -1598,6 +1742,7 @@ Cuando le<span class="g"><span class="chord">A9</span>vanto</span> mis <span cla
         artist: "Marco Barrientos",
         key: "A",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Intro] 
 <span class="g"><span class="chord">A</span></span><span class="g"><span class="chord">E</span></span><span class="g"><span class="chord">D</span></span>
@@ -1635,6 +1780,10 @@ Y veremos tu fuerza, y majes<span class="g"><span class="chord">A</span>tad.</sp
         artist: "Marco Barrientos",
         key: "Em",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Em",
+            "Ruth": "Cm"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>El</span>Señor es<span class="g"><span class="chord">C</span>tá</span> en este lu<span class="g"><span class="chord">D</span>gar...</span>
@@ -1662,6 +1811,10 @@ el e<span class="g"><span class="chord">C</span>jército</span> de Dios <span cl
         artist: "Jesús Adrián Romero",
         key: "C",
         type: "Adoración",
+        singer: {
+            "Pastor": "C",
+            "Gisel": "A"
+        },
         comentario: "Gi la hace en A7",
         content: `
 [Verso 1]
@@ -1698,6 +1851,10 @@ por que él mu<span class="g"><span class="chord">G</span>rió</span> por mí, <
         artist: "Marcos Witt",
         key: "Em",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Em",
+            "Sam": "Em"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>Tu</span> eres Dios, <span class="g"><span class="chord">C</span>eres</span> Rey, <span class="g"><span class="chord">D</span>eres</span> grande y te<span class="g"><span class="chord">Em</span>mible,</span>
@@ -1719,6 +1876,10 @@ Al<span class="g"><span class="chord">C</span>tísi</span><span class="g"><span 
         artist: "Jesús Adrián Romero",
         key: "Em",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Em",
+            "Sam": "Em"
+        },
         content: `
 [Verso 1]
 Con mi <span class="g"><span class="chord">Em</span>Dios</span> yo <span class="g"><span class="chord">D</span>saltaré</span> los <span class="g"><span class="chord">Em</span>muros,</span> <span class="g"><span class="chord">C</span>..</span><span class="g"><span class="chord">D</span>..</span>
@@ -1738,6 +1899,7 @@ Mi <span class="g"><span class="chord">B7</span>alto</span> refugio, mi <span cl
         artist: "Jaime Murrell",
         key: "F",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Porque</span> grande es Jehová,
@@ -1761,6 +1923,7 @@ Nuestro <span class="g"><span class="chord">F</span>Dios.`
         artist: "Danilo Montero",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Hay</span> momentos que
@@ -1791,6 +1954,7 @@ No hay na<span class="g"><span class="chord">F</span>da</span> alrede<span class
         artist: "Danilo Montero",
         key: "Em",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>Señor</span> llévame a tus Atrios
@@ -1815,6 +1979,7 @@ Tóca<span class="g"><span class="chord">Am</span>me,</span> limpia<span class="
         artist: "Juan Carlos Alvarado",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Co<span class="g"><span class="chord">G</span>nozco</span> que todo lo <span class="g"><span class="chord">C</span>puedes,</span>
@@ -1841,6 +2006,7 @@ Y me arre<span class="g"><span class="chord">C</span>pien</span><span class="g">
         artist: "Essential Worship",
         key: "G",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 Te amo <span class="g"><span class="chord">G</span>Dios,</span>
@@ -1895,6 +2061,7 @@ Yo <span class="g"><span class="chord">D</span>canta</span><span class="g"><span
         artist: "Montesanto",
         key: "G",
         type: "Adoración",
+        singer: "Sam",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Viniste</span> a mi ca<span class="g"><span class="chord">C</span>sa,</span>
@@ -1931,6 +2098,7 @@ Solo quiero estar contigo,
         artist: "Fresca Unción",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Tengo</span> un perfume <span class="g"><span class="chord">C</span>que,</span>
@@ -1949,6 +2117,7 @@ Re<span class="g"><span class="chord">C</span>cibe</span> mi a<span class="g"><s
         artist: "Jaime Murrell",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 A<span class="g"><span class="chord">G</span>quí</span> es<span class="g"><span class="chord">D</span>toy,</span> <span class="g"><span class="chord">Em7</span>..</span> 
@@ -1975,6 +2144,7 @@ para <span class="g"><span class="chord">D</span>Ti.`
         artist: "Perfume de Alabanza",
         key: "G",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Pertenezco</span> a ti, Señor Je<span class="g"><span class="chord">D/F#</span>sús,</span>
@@ -2000,6 +2170,7 @@ Al<span class="g"><span class="chord">G</span>canza,</span> oh Dios, mi cora<spa
         artist: "Don Moen",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Yo</span> solo quiero es<span class="g"><span class="chord">Am</span>tar</span> donde tú estás,
@@ -2032,6 +2203,7 @@ Yo quiero es<span class="g"><span class="chord">F</span>tar</span> donde tú es<
         artist: "Himno",
         key: "Em",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>No</span>sé por qué, Señor tú me tocaste
@@ -2084,6 +2256,7 @@ Gloria <span class="g"><span class="chord">C</span>mí</span><span class="g"><sp
         artist: "Danny Berríos",
         key: "F",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Dios</span> no rechaza oración,
@@ -2169,6 +2342,10 @@ A<span class="g"><span class="chord">Gm</span>laba</span> a <span class="g"><spa
         artist: "Marcos Witt",
         key: "Am",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Am",
+            "Sam": "Am"
+        },
         content: `
 [Intro]
 <span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">F</span></span><span class="g"><span class="chord">G</span></span>
@@ -2190,6 +2367,10 @@ Hay po<span class="g"><span class="chord">Em</span>der</span> para ven<span clas
         artist: "Marco Barrientos",
         key: "Am",
         type: "Alabanza",
+        singer: {
+            "Pastor": "Am",
+            "Sam": "Am"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Am</span>Alza</span> tus ojos y <span class="g"><span class="chord">F</span>mira,</span>
@@ -2220,6 +2401,7 @@ como las <span class="g"><span class="chord">Em</span>aguas</span> cubren al <sp
         artist: "Christine D' Clario",
         key: "A",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">A</span>Dios</span> bienvenido a este lugar,
@@ -2268,6 +2450,7 @@ Ohh!! Gran Dios.`
         artist: "Himno",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>En</span> el monte calvario
@@ -2311,6 +2494,7 @@ Y mi <span class="g"><span class="chord">D</span>ser</span> puede <span class="g
         artist: "Himno",
         key: "C",
         type: "Adoración",
+        singer: "Pastor",
         comentario: "Si canta 'Digo si...' usa la misma secuencia de notas",
         content: `
 <span class="g"><span class="chord">C</span>Dios</span> es<span class="g"><span class="chord">G</span>tá</span> a<span class="g"><span class="chord">Am</span>quí,</span>
@@ -2324,6 +2508,7 @@ Tan <span class="g"><span class="chord">F</span>cierto</span> como yo le <span c
         artist: "Rey de Reyes",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Espíritu</span> <span class="g"><span class="chord">C</span>Santo</span> yo <span class="g"><span class="chord">D</span>   te</span> nece<span class="g"><span class="chord">Bm</span>sito,</span><span class="g"><span class="chord">Em</span>..</span>
@@ -2343,6 +2528,7 @@ Espíritu <span class="g"><span class="chord">Am</span>Santo,</span>
         artist: "Marcos Witt",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 A <span class="g"><span class="chord">D</span>ti,</span> el <span class="g"><span class="chord">G</span>Alfa</span> y la O<span class="g"><span class="chord">D</span>mega,</span>
@@ -2369,6 +2555,7 @@ que <span class="g"><span class="chord">Em7</span>siempre</span> viva <span clas
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Al es<span class="g"><span class="chord">G</span>tar</span> en la pre<span class="g"><span class="chord">Bm</span>sencia</span> de tu di<span class="g"><span class="chord">Em</span>vinidad,</span>
@@ -2394,6 +2581,7 @@ Te a<span class="g"><span class="chord">G</span>doro</span> a tí Se<span class=
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Como el <span class="g"><span class="chord">G</span>ciervo</span> <span class="g"><span class="chord">Em</span>busca</span> por las <span class="g"><span class="chord">Bm</span>aguas,</span>
@@ -2413,6 +2601,10 @@ Yo <span class="g"><span class="chord">Am7</span>tengo</span> <span class="g"><s
         artist: "Juan Carlos Alvarado",
         key: "Em",
         type: "Adoración",
+        singer: {
+            "Pastor": "Em",
+            "Sam": "Em"
+        },
         comentario:"Si la canta Sam, es en la misma nota.",
         content: `
 [Verso 1]
@@ -2445,6 +2637,7 @@ Je<span class="g"><span class="chord">C</span>sús,</span>
         artist: "Himno",
         key: "D",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Fuente</span> de agua <span class="g"><span class="chord">G</span>viva,</span>
@@ -2468,6 +2661,11 @@ Je<span class="g"><span class="chord">C</span>sús,</span>
         artist: "En Espíritu y en Verdad",
         key: "C",
         type: "Alabanza",
+        singer: {
+            "Pastor": "C",
+            "Sam": "C",
+            "Ruth": "G"
+        },
         comentario: "Ruth la hace en G+",
         content: `
 [Verso 1]
@@ -2506,6 +2704,7 @@ Bajada de nota para terminar
         artist: "Danny Berrios",
         key: "F",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Hay</span> una <span class="g"><span class="chord">A#</span>unción</span> a<span class="g"><span class="chord">C</span>quí,</span>
@@ -2526,6 +2725,7 @@ Será i<span class="g"><span class="chord">F</span>gual.`
         artist: "Marco Barrientos",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Intro] 
 <span class="g"><span class="chord">G</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">Bm</span></span><span class="g"><span class="chord">C</span></span>
@@ -2556,6 +2756,7 @@ A<span class="g"><span class="chord">Bm</span>mor</span> sin <span class="g"><sp
         artist: "Marco Barrientos",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Cuando</span> llames quiero <span class="g"><span class="chord">Em</span>responder,</span>
@@ -2584,6 +2785,7 @@ Es<span class="g"><span class="chord">F</span>píritu</span> de Dios ven sobre <
         artist: "Marco Barrientos",
         key: "A",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Ante <span class="g"><span class="chord">A</span>ti</span> <span class="g"><span class="chord">E</span>doblo</span> mi ro<span class="g"><span class="chord">F#m</span>dilla,</span> 
@@ -2626,8 +2828,12 @@ Re<span class="g"><span class="chord">D</span>cibe</span> el re<span class="g"><
     {
         title: "Cantaré de tu Amor",
         artist: "Danilo Montero",
-        key: "C",
+        key: "F",
         type: "Adoración",
+        singer: {
+            "Pastor": "F",
+            "Sol": "A#"
+        },
         comentario:"Si la canta Sol, la nota inicial es A#.",
         content: `
 [Verso 1]
@@ -2658,6 +2864,7 @@ De tu <span class="g"><span class="chord">F</span>gran</span> a<span class="g"><
         artist: "Danilo Montero",
         key: "Em",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>El</span> es el rey infi<span class="g"><span class="chord">C</span>nito en poder,</span>
@@ -2688,6 +2895,7 @@ Su <span class="g"><span class="chord">Em</span>trono</span> en el cielo <span c
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Cristo</span> te e<span class="g"><span class="chord">C</span>xalto,</span>
@@ -2712,6 +2920,7 @@ Que solo <span class="g"><span class="chord">C</span>tu</span> eres <span class=
         artist: "Juan Carlos Alvarado",
         key: "Bm",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Mi <span class="g"><span class="chord">Bm</span>Salvador</span> no esta muerto,
@@ -2728,6 +2937,7 @@ pues <span class="g"><span class="chord">G</span>él</span> resuci<span class="g
         artist: "Marcos Witt",
         key: "F",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Cuan</span> bello es el se<span class="g"><span class="chord">Gm7</span>ñor,</span>
@@ -2747,6 +2957,7 @@ Nunca se agota<span class="g"><span class="chord">Am7</span>rá,</span>
         artist: "Rey de Reyes",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Coro]
 Cuando esta iglesia te a<span class="g"><span class="chord">G</span>lava,</span>
@@ -2772,6 +2983,7 @@ Des<span class="g"><span class="chord">C</span>ciende</span> tu pre<span class="
         artist: "Jaime Murrell",
         key: "E",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Mi anhe<span class="g"><span class="chord">E</span>lo,</span>
@@ -2794,6 +3006,7 @@ En tu pre<span class="g"><span class="chord">A</span>sen</span><span class="g"><
         artist: "Jesús Adrián Romero",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Espe<span class="g"><span class="chord">G</span>rar</span> en ti , di<span class="g"><span class="chord">Em</span>fícil</span> se que es,
@@ -2820,6 +3033,7 @@ tu siempre <span class="g"><span class="chord">Am</span>tienes</span> <span clas
         artist: "Rey de Reyes",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Este</span> es mi de<span class="g"><span class="chord">Em</span>seo</span>
@@ -2848,6 +3062,7 @@ Dios <span class="g"><span class="chord">C</span>haz</span> tu <span class="g"><
         artist: "Marco Barrientos",
         key: "A",
         type: "Adoración",
+        singer: "Pastor",
         comentario:"Termina haciendo D y E en el final",
         content: `
 [Verso 1]
@@ -2878,6 +3093,7 @@ Digno eres se<span class="g"><span class="chord">D</span>ñor.</span> <span clas
         artist: "Yashira Guidini",
         key: "G",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Canto</span> una alabanza sin <span class="g"><span class="chord">D</span>igual,</span>
@@ -2920,6 +3136,10 @@ no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><spa
         artist: "Lenny Salcedo",
         key: "Am",
         type: "Adoración",
+        singer: {
+            "Ángel": "Am",
+            "Ale": "Am"
+        },
         comentario:"La tonalidad es en Em",
         content: `
 [Verso 1]
@@ -2976,6 +3196,10 @@ Todo obra para <span class="g"><span class="chord">C</span>bien.</span> <span cl
         artist: "Himno",
         key: "Bm",
         type: "Alabanza",
+        singer: {
+            "Sol": "Bm",
+            "Ruth": "Am"
+        },
         content: `
 [Verso 1]
 Cuando el Se<span class="g"><span class="chord">Bm</span>ñor</span> hiciere volver la cautivi<span class="g"><span class="chord">A</span>dad,</span>
@@ -3004,6 +3228,7 @@ Pues a lle<span class="g"><span class="chord">G</span>vado</span> todo mi do<spa
         artist: "Juan Carlos Alvarado",
         key: "Cm",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 El victo<span class="g"><span class="chord">Cm</span>rioso</span> vive en mí,
@@ -3024,6 +3249,7 @@ Pues la vic<span class="g"><span class="chord">G#</span>toria</span> es <span cl
         artist: "Marcos Witt",
         key: "Em",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>Haz</span> cam<span class="g"><span class="chord">C</span>biado</span> mi la<span class="g"><span class="chord">D</span>mento</span> en <span class="g"><span class="chord">Em</span>baile,</span>
@@ -3053,6 +3279,10 @@ por <span class="g"><span class="chord">B7</span>todas</span> tus mara<span clas
         artist: "Art Aguilera",
         key: "Dm",
         type: "Alabanza",
+        singer: {
+            "Ángel": "Dm",
+            "Ruth": "Em"
+        },
         comentario: "Ruth la hace en Em",
         content: `
 [Verso 1]
@@ -3088,6 +3318,10 @@ Hay <span class="g"><span class="chord">Dm</span>liber</span><span class="g"><sp
         artist: "Marco Barrientos",
         key: "Bm",
         type: "Alabanza",
+        singer: {
+            "Sam": "Bm",
+            "Ruth": "Dm"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Bm</span>Levantamos</span> <span class="g"><span class="chord">A</span>un clamor,</span>
@@ -3140,6 +3374,7 @@ Jesucristo, Jesucrito es <span class="g"><span class="chord">Bm</span>Rey.</span
         artist: "Miel San Marcos",
         key: "C",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Intro] 
 <span class="g"><span class="chord">C</span></span><span class="g"><span class="chord">F</span></span><span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">G</span></span>
@@ -3192,6 +3427,7 @@ Tu <span class="g"><span class="chord">Am</span>me levantaras,</span> Se<span cl
         artist: "Grupo Grace",
         key: "D",
         type: "Adoración",
+        singer: "Sam",
         content: `
 [Intro] 
 <span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">F#m</span></span><span class="g"><span class="chord">Bm7</span></span><span class="g"><span class="chord">G</span></span>
@@ -3248,6 +3484,7 @@ Son los brazos de pa<span class="g"><span class="chord">Bm7</span>pá.</span>
         artist: "En Espíritu y en Verdad",
         key: "D",
         type: "Alabanza",
+        singer: "Sam",
         content: `
 [Coro]
 Vamos <span class="g"><span class="chord">D</span>a cantar,</span> con la música del cielo,
@@ -3283,6 +3520,7 @@ Vivimos <span class="g"><span class="chord">D</span>hoy.</span>
         artist: "Oasis Ministry",
         key: "Dm",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 Se si<span class="g"><span class="chord">Dm7</span>ente</span> tu gloria en este lu<span class="g"><span class="chord">C</span>gar,</span>
@@ -3306,6 +3544,7 @@ Si le buscas <span class="g"><span class="chord">G#m</span>él se</span> manifes
         artist: "Juan Carlos Alvarado",
         key: "G",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 ¿<span class="g"><span class="chord">G</span>Quién</span> nos se<span class="g"><span class="chord">Bm</span>parará</span> <span class="g"><span class="chord">C</span>del amor</span> de <span class="g"><span class="chord">D</span>Cristo?</span>
@@ -3336,6 +3575,7 @@ En Cristo Je<span class="g"><span class="chord">G</span>sús.</span>
         artist: "Marcos Witt",
         key: "D",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Yo te</span> <span class="g"><span class="chord">G</span>busco,</span>
@@ -3360,6 +3600,7 @@ Te <span class="g"><span class="chord">F#m</span>a</span><span class="g"><span c
         artist: "Cristal Lewis",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Se que <span class="g"><span class="chord">G</span>mi</span> reden<span class="g"><span class="chord">D</span>tor</span> <span class="g"><span class="chord">Em</span>vive,</span>
@@ -3390,6 +3631,7 @@ Espe<span class="g"><span class="chord">C</span>rando</span> que  él regr<span 
         artist: "Miel San Marcos",
         key: "Am",
         type: "Alabanza",
+        singer: "Sam",
         content: `
 [Intro] 
 <span class="g"><span class="chord">Am</span></span><span class="g"><span class="chord">F</span></span><span class="g"><span class="chord">Em</span></span><span class="g"><span class="chord">Am</span></span>
@@ -3445,6 +3687,7 @@ Es nu<span class="g"><span class="chord">F</span>estro</span> <span class="g"><s
         artist: "Adoración La IBI",
         key: "G",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Mil generaciones,</span>
@@ -3516,6 +3759,10 @@ Santo por si<span class="g"><span class="chord">G</span>empre.</span>
         artist: "Miel San Marcos",
         key: "Cm",
         type: "Alabanza",
+        singer: {
+            "Sam": "Cm",
+            "Ruth": "D#m"
+        },
         comentario: "Ruth lo hace en D#m, yo uso el transpose",
         content: `
 [Intro] 
@@ -3589,6 +3836,7 @@ Caen los <span class="g"><span class="chord">Cm</span>muros,</span> <span class=
         artist: "Conquistando Fronteras",
         key: "D",
         type: "Alabanza",
+        singer: "Ángel",
         content: `
 [Intro] 
 <span class="g"><span class="chord">D</span></span><span class="g"><span class="chord">G</span></span>
@@ -3619,6 +3867,7 @@ A tu pre<span class="g"><span class="chord">G</span>sencia,</span> cantando sant
         artist: "Juan Carlos Alvarado",
         key: "Em",
         type: "Alabanza",
+        singer: "Pastor",
         content: `
 [Verso 1]
 Pues <span class="g"><span class="chord">Am</span>tu</span> glo<span class="g"><span class="chord">D</span>rioso</span> <span class="g"><span class="chord">G</span>eres</span> <span class="g"><span class="chord">Em</span>Señor,</span>
@@ -3649,6 +3898,10 @@ Todo el <span class="g"><span class="chord">C</span>día</span> <span class="g">
         artist: "Hillsong",
         key: "D",
         type: "Adoración",
+        singer: {
+            "Pastor": "D",
+            "Sol": "D",
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>Oh luz</span> del <span class="g"><span class="chord">A</span>mundo</span> ba<span class="g"><span class="chord">G</span>jaste</span> a la os<span class="g"><span class="chord">A</span>curidad,</span>
@@ -3689,6 +3942,7 @@ Ver <span class="g"><span class="chord">A</span>mi</span> pe<span class="g"><spa
         artist: "Marco Barrientos",
         key: "F",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">F</span>Te</span> entrego hoy Señor mi <span class="g"><span class="chord">A#</span>corazón,</span>
@@ -3740,6 +3994,7 @@ Que resuci<span class="g"><span class="chord">A</span>to,</span> <span class="g"
         artist: "Marco Barrientos",
         key: "G",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Verso 1]
 De<span class="g"><span class="chord">G</span>lante</span> de tu trono,
@@ -3762,6 +4017,10 @@ Y que <span class="g"><span class="chord">C</span>eres</span> todo <span class="
         artist: "Himno",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Sol": "G",
+            "Gisel": "G" 
+        },
         comentario:"Esta nota es para Sol.",
         content: `
 [Verso 1]
@@ -3783,6 +4042,7 @@ no vuelvo atrás, no <span class="g"><span class="chord">C</span>vuel</span><spa
         artist: "Jesús Adrián Romero",
         key: "D",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">D</span>La mies</span> es <span class="g"><span class="chord">A</span>mucha,</span> <span class="g"><span class="chord">Bm</span>hay gran</span> necesi<span class="g"><span class="chord">F#m</span>dad,</span>
@@ -3806,6 +4066,7 @@ Yo i<span class="g"><span class="chord">D</span>ré.</span>
         artist: "Angel Fontora",
         key: "G",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Verso 1]
 Hoy siento tu pre<span class="g"><span class="chord">G</span>sencia,</span>
@@ -3838,6 +4099,7 @@ tu palabra tie<span class="g"><span class="chord">G</span>ne</span> poder, tie<s
         artist: "Marcos Witt",
         key: "D",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Verso 1]
 Re<span class="g"><span class="chord">D</span>nuéva</span><span class="g"><span class="chord">G</span>me,</span> Se<span class="g"><span class="chord">A</span>ñor</span> Je<span class="g"><span class="chord">F#m</span>sús,</span>
@@ -3858,6 +4120,7 @@ Porque <span class="g"><span class="chord">D</span>todo</span> lo que <span clas
         artist: "Himno",
         key: "G",
         type: "Adoración",
+        singer: "Ángel",
         content: `
 [Verso 1]
 Su<span class="g"><span class="chord">G</span>blime</span> gracia <span class="g"><span class="chord">C</span>del</span> Se<span class="g"><span class="chord">G</span>ñor,</span>
@@ -3896,6 +4159,7 @@ Su <span class="g"><span class="chord">Em</span>amor</span> que <span class="g">
         artist: "Generación 12",
         key: "A#m",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "Está en la nota para Ruth, la original está en Am",
         content: `
 [Intro]
@@ -3930,6 +4194,7 @@ sa<span class="g"><span class="chord">D#m</span>túrame</span> de <span class="g
         artist: "Marcos Brunet",
         key: "A#",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "La nota es para Ruth, la original esta en A",
         content: `
 [Verso 1]
@@ -3980,6 +4245,7 @@ Dueño de mis <span class="g"><span class="chord">F</span>días.</span>
         artist: "Conquistando Fronteras",
         key: "A#m",
         type: "Adoración",
+        singer: "Ruth",
         content: `
 [Intro]
 <span class="g"><span class="chord">A#m</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">Am</span></span>
@@ -4035,6 +4301,7 @@ A <span class="g"><span class="chord">C</span>Jesús</span> <span class="g"><spa
         artist: "Dahiara",
         key: "G#m",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Intro]
 <span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">F#</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">D#4</span></span>
@@ -4094,6 +4361,7 @@ Espe<span class="g"><span class="chord">B</span>ra</span>mos por ti.
         artist: "Montesanto",
         key: "Bm",
         type: "Alabanza",
+        singer: "Ruth",
         content: `
 [Intro]
 <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">A</span></span>
@@ -4126,6 +4394,7 @@ Bauti<span class="g"><span class="chord">G</span>zados</span> en fuego.
         artist: "Montesanto",
         key: "C#m",
         type: "Alabanza",
+        singer: "Ruth",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">C#m</span>En</span> Santiago uno, verso dos,
@@ -4183,6 +4452,7 @@ Mientras <span class="g"><span class="chord">C#m</span>viva</span> te alabaré.
         artist: "New Wine",
         key: "Dm",
         type: "Alabanza",
+        singer: "Ruth",
         content: `
 [Verso 1] [x2]
 <span class="g"><span class="chord">Dm</span>Dios</span> nos llama a expander Su reino y llevar,
@@ -4347,6 +4617,7 @@ Hoy va a llo<span class="g"><span class="chord">C</span>ver,</span> otra vez.
         artist: "MiSion",
         key: "Gm",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "Esta es la nota de Ruth, la original está en Dm",
         content: `
 [Intro]
@@ -4376,6 +4647,7 @@ Que<span class="g"><span class="chord">Cm</span>mó</span> los otros a<span clas
         artist: "Kabed",
         key: "Em",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1]
 <span class="g"><span class="chord">Em</span>Pusiste</span> en mi tu mano de presencia me ro<span class="g"><span class="chord">D</span>deaste,</span>
@@ -4414,6 +4686,7 @@ No puedo es<span class="g"><span class="chord">B</span>tar</span> si no estás t
         artist: "Marcos Brunet",
         key: "D#m",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "D#m es la tónica de la canción, que es para Ruth. La original esta en Dm. La canción se engancha con Que Ruja el León en D#m",
         content: `
 [Intro] 
@@ -4490,6 +4763,7 @@ La <span class="g"><span class="chord">D</span>tierra</span> <span class="g"><sp
         artist: "MiSion",
         key: "D#m",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "Esta es la nota para Ruth, la original esta en F#m",
         content: `
 [Intro]
@@ -4524,6 +4798,7 @@ Y odia la iniqui<span class="g"><span class="chord">D#m</span>dad.</span>
         artist: "Barak",
         key: "F#m",
         type: "Adoración",
+        singer: "Ruth",
         content: `
 [Intro]
 <span class="g"><span class="chord">F#m</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">E</span></span> <span class="g"><span class="chord">C#</span></span>
@@ -4558,6 +4833,7 @@ Es<span class="g"><span class="chord">F#m</span>píritu,</span> es<span class="g
         artist: "En Espíritu Y En Verdad",
         key: "G",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "Es la nota de Ruth, el original está en D.",
         content: `
 [Verso 1]
@@ -4599,6 +4875,7 @@ En tu pre<span class="g"><span class="chord">Em7</span>sencia</span> <span class
         artist: "Marcos Brunet",
         key: "C#m",
         type: "Adoración",
+        singer: "Ruth",
         comentario: "Es la nota de Ruth, la original esta en F#m",
         content: `
 [Intro]
@@ -4637,6 +4914,7 @@ Yo en<span class="g"><span class="chord">G#m</span>cuentro</span> mi lu<span cla
         artist: "Jesús Culture",
         key: "Bm",
         type: "Adoración",
+        singer: "Ruth",
         content: `
 [Intro] [x2]
 <span class="g"><span class="chord">Bm</span></span> <span class="g"><span class="chord">G9</span></span>
@@ -4712,6 +4990,7 @@ Yo soy <span class="g"><span class="chord">C</span>libre,</span> (Yo soy libreee
         artist: "Karen Espinosa",
         key: "C#m",
         type: "Adoración",
+        singer: "Ruth",
         content: `
 [Intro] 
 <span class="g"><span class="chord">C#m</span></span> <span class="g"><span class="chord">G#m</span></span> <span class="g"><span class="chord">A</span></span>
@@ -4794,6 +5073,7 @@ No hay nadie mas <span class="g"><span class="chord">B</span>digno,</span>
         artist: "Passion",
         key: "D",
         type: "Alabanza",
+        singer: "Sam",
         content: `
 [Intro] 
 <span class="g"><span class="chord">D</span></span>
@@ -4849,6 +5129,7 @@ Glorioso <span class="g"><span class="chord">G</span>día,</span> tu sangre me r
         artist: "New Wine",
         key: "Dm",
         type: "Alabanza",
+        singer: "Ruth",
         content: `
 [Intro]
 <span class="g"><span class="chord">Dm</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">Am</span></span> <span class="g"><span class="chord">Dm</span></span> 
@@ -4900,6 +5181,7 @@ Omnipo<span class="g"><span class="chord">A#</span>tente</span> no hay otro i<sp
         artist: "Ericson Alexander Morano",
         key: "C",
         type: "Alabanza",
+        singer: "Ale",
         content: `
 [Intro] 
 <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">G</span></span> <span class="g"><span class="chord">F</span></span> <span class="g"><span class="chord">C</span></span>
@@ -4925,6 +5207,10 @@ Me ha tocado con su <span class="g"><span class="chord">Am7</span>mano</span> he
         artist: "Marcos Witt",
         key: "G",
         type: "Adoración",
+        singer: {
+            "Ángel": "G",
+            "Pastor": "F"
+        },
         content: `
 [Verso 1]
 <span class="g"><span class="chord">G</span>Temprano</span> yo te busca<span class="g"><span class="chord">D</span>ré,</span>
@@ -4952,6 +5238,7 @@ Porque tu <span class="g"><span class="chord">C</span>diestra,</span> me ha sost
         artist: "Felsy Jones",
         key: "G",
         type: "Adoración",
+        singer: "Ale",
         content: `
 [Verso 1]
 Al que está sen<span class="g"><span class="chord">G</span>tado</span> en el trono <span class="g"><span class="chord">Em</span>blanco,</span>
@@ -4998,6 +5285,10 @@ Insondables sus <span class="g"><span class="chord">C</span>juicios,</span> y <s
         artist: "Julio melgar",
         key: "A",
         type: "Adoración",
+        singer: {
+            "Ángel": "A",
+            "Sam": "A"
+        },
         content: `
 [Verso 1]
 Me envuelves hoy con una canción,
@@ -5056,6 +5347,7 @@ Y El es mi padre y mi padre me ama...
         artist: "Barak",
         key: "C#m",
         type: "Alabanza",
+        singer: "Sam",
         content: `
 [Intro]
 <span class="g"><span class="chord">C#m</span>..</span>
@@ -5128,6 +5420,7 @@ El es <span class="g"><span class="chord">A</span>Dios</span> El es <span class=
         artist: "New Wine",
         key: "Em",
         type: "Alabanza",
+        singer: "Ruth",
         content: `
 [Intro] 
 <span class="g"><span class="chord">Em</span></span> <span class="g"><span class="chord">C</span></span> <span class="g"><span class="chord">D</span></span> <span class="g"><span class="chord">Em</span></span>
@@ -5184,6 +5477,7 @@ Por su <span class="g"><span class="chord">Em</span>iglesia.</span>
         artist: "En Espiritu Y En Verdad",
         key: "A#",
         type: "Alabanza",
+        singer: "Ruth",
         comentario: "Ruth la hace en C, yo uso el transpose",
         content: `
 [Intro]
@@ -5562,6 +5856,7 @@ lara<span class="g"><span class="chord">A</span>lala</span><span class="g"><span
         artist: "Eduardo Santoro",
         key: "E",
         type: "Adoración",
+        singer: "Pastor",
         content: `
 [Intro]
 <span class="g"><span class="chord">E</span>..</span>
@@ -5607,6 +5902,7 @@ Desde el <span class="g"><span class="chord">A</span>trono</span> <span class="g
         artist: "Iglesia Conexion con Dios",
         key: "G",
         type: "Adoración",
+        singer: "Sol",
         content: `
 [Verso 1] [x2]
 <span class="g"><span class="chord">G</span>Ángeles</span> y <span class="g"><span class="chord">A</span>santos,</span>
@@ -5645,6 +5941,7 @@ para <span class="g"><span class="chord">G</span>mi.</span>
         artist: "Rey de Reyes",
         key: "Gm",
         type: "Alabanza",
+        singer: "Sam",
         content: `
 [Verso 1] 
 <span class="g"><span class="chord">Gm</span>Vino</span> del <span class="g"><span class="chord">D#</span>agua</span> hi<span class="g"><span class="chord">A#</span>ciste,</span>
