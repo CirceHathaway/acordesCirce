@@ -826,6 +826,7 @@ window.onclick = function(event) {
     let liveModal = document.getElementById('liveModal');
     let addNoteModal = document.getElementById('addNoteModal');
     let singerFilterModal = document.getElementById('singerFilterModal');
+    let chooseSingerModal = document.getElementById('chooseSingerModal');
 
     if (keyModal && event.target === keyModal) window.closeKeyModal();
     if (subKeyModal && event.target === subKeyModal) window.closeSubKeyModal();
@@ -835,6 +836,9 @@ window.onclick = function(event) {
     if (liveModal && event.target === liveModal) window.closeLiveModal();
     if (addNoteModal && event.target === addNoteModal) window.closeAddNoteModal();
     if (singerFilterModal && event.target === singerFilterModal) window.closeSingerFilterModal();
+    if (chooseSingerModal && event.target === chooseSingerModal) {
+        chooseSingerModal.style.display = 'none'; 
+    }
     
     window.closeHamburgerDropdown(); 
 }

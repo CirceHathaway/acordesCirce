@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 let songSections = [];
+let songSingers = {}; // NUEVO: Diccionario temporal para guardar cantantes y notas
 let editingFirebaseId = null; 
 
 window.showNotification = function(message) {
@@ -40,6 +41,36 @@ window.checkChanges = function() {
     const title = document.getElementById('songTitle').value.trim();
     const artist = document.getElementById('songArtist').value.trim();
     document.getElementById('btnSave').disabled = !(title && artist && songSections.length > 0);
+}
+
+// --- GESTIÓN DE CANTANTES ---
+window.addSinger = function() {
+    const name = document.getElementById('singerNameSelect').value;
+    const note = document.getElementById('singerKeySelect').value;
+    // Si no eligen nota, asume la nota original de la canción
+    songSingers[name] = note === "" ? document.getElementById('songKey').value : note;
+    renderSingers();
+    checkChanges();
+}
+
+window.removeSinger = function(name) {
+    delete songSingers[name];
+    renderSingers();
+    checkChanges();
+}
+
+function renderSingers() {
+    const container = document.getElementById('singerContainer');
+    container.innerHTML = '';
+    Object.keys(songSingers).forEach(name => {
+        const div = document.createElement('div');
+        div.style.cssText = "display: flex; justify-content: space-between; background: #353b48; padding: 8px 15px; border-radius: 8px; align-items: center;";
+        div.innerHTML = `
+            <span style="font-weight: bold;">${name} <span style="color: var(--text-primary); margin-left: 5px;">(${songSingers[name]})</span></span>
+            <button class="btn-remove-sec" style="font-size: 1rem; padding: 0;" onclick="removeSinger('${name}')">✖</button>
+        `;
+        container.appendChild(div);
+    });
 }
 
 // Gestión de Secciones (Contenido)
@@ -113,7 +144,6 @@ function renderStructureView() {
 
 // El Traductor de [A] a HTML
 function parseToAcordifyHTML(rawText) {
-    // Reemplaza [Acorde]resto_de_palabra por la estructura HTML
     return rawText.replace(/\[(.*?)\]([^\s.,;?!]*)([,;?!.]*)/g, '<span class="g"><span class="chord">$1</span>$2$3</span>');
 }
 
@@ -128,6 +158,25 @@ window.saveSongToFirebase = async function() {
         const multTag = sec.multiplier > 1 ? ` [x${sec.multiplier}]` : "";
         finalContent += `\n[${sec.name}]${multTag}\n${parsedHtml}\n`;
     });
+    
+    let capoValue = document.getElementById('songCapo').value;
+    let finalComentario = capoValue ? `Capotraste: Traste ${capoValue}` : null;
+    
+    // Procesar objeto Singer: si hay 1 solo, lo guardamos como string. Si hay varios, como objeto.
+    let finalSinger = null;
+    const singerKeys = Object.keys(songSingers);
+    if (singerKeys.length === 1) {
+        // Truco: Si solo hay uno, verificamos si la nota asignada es diferente a la original.
+        // Si es igual, lo guardamos como String ("Sol"). Si es diferente, como objeto {"Sol": "G"}.
+        const sName = singerKeys[0];
+        if (songSingers[sName] === document.getElementById('songKey').value) {
+            finalSinger = sName; 
+        } else {
+            finalSinger = songSingers; 
+        }
+    } else if (singerKeys.length > 1) {
+        finalSinger = songSingers;
+    }
 
     const newSong = {
         title: document.getElementById('songTitle').value.trim(),
@@ -136,7 +185,10 @@ window.saveSongToFirebase = async function() {
         type: document.getElementById('songType').value,
         tempo: document.getElementById('songTempo').value || "",
         content: finalContent,
-        raw_sections: songSections // Guardamos la data cruda para poder editarla en el futuro
+        comentario: finalComentario, 
+        singer: finalSinger, 
+        raw_sections: songSections,
+        raw_singers: songSingers 
     };
 
     try {
@@ -172,8 +224,17 @@ window.onload = async function() {
             document.getElementById('songKey').value = data.key;
             document.getElementById('songType').value = data.type || 'Alabanza';
             document.getElementById('songTempo').value = data.tempo || '';
+            
+            if (data.comentario && data.comentario.includes("Capotraste")) {
+                let traste = data.comentario.match(/\d+/);
+                if (traste) document.getElementById('songCapo').value = traste[0];
+            }
+            
             songSections = data.raw_sections || [];
+            songSingers = data.raw_singers || {};
+            
             renderSections();
+            renderSingers();
             document.getElementById('btnSave').disabled = false;
         }
     }
