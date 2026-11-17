@@ -448,10 +448,13 @@ function updateSongView() {
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     let currentSongNotes = savedSectionNotes[song.title] || {};
     
-    let hasIntro = false, hasV1 = false, hasV2 = false, hasV3 = false, hasV4 = false, hasV5 = false, hasV6 = false, hasP = false, hasP2 = false, hasC = false, hasC2 = false, hasC3 = false, hasC4 = false, hasIns = false, hasFinal = false;
-    
-    const sections = songOriginal.split(/\[(.*?)\]/g);
+    // EXPRESIÓN REGULAR CORREGIDA: Solo detecta secciones al inicio de una línea
+    const sections = songOriginal.split(/^\s*\[(.*?)\]/gm);
     let htmlOutput = "";
+
+    // Nuevo contenedor para los botones dinámicos
+    const navContainer = document.getElementById('sectionsNav');
+    if(navContainer) navContainer.innerHTML = '';
 
     if (sections[0] && sections[0].trim() !== "") {
         htmlOutput += `<div class="song-card"><div class="song-lyrics">${sections[0]}</div></div>`;
@@ -468,22 +471,28 @@ function updateSongView() {
         let secId = "", secClass = "", abrv = "", label = tag;
         const lowerTag = tag.toLowerCase();
 
-        if (lowerTag === 'intro') { secId = 'intro'; secClass = 'bg-intro'; abrv = 'IN'; hasIntro = true; }
-        else if (lowerTag === 'verso' || lowerTag === 'verso 1') { secId = 'v1'; secClass = 'bg-v1'; abrv = 'V1'; hasV1 = true; }
-        else if (lowerTag === 'verso 2') { secId = 'v2'; secClass = 'bg-v2'; abrv = 'V2'; hasV2 = true; }
-        else if (lowerTag === 'verso 3') { secId = 'v3'; secClass = 'bg-v3'; abrv = 'V3'; hasV3 = true; }
-        else if (lowerTag === 'verso 4') { secId = 'v4'; secClass = 'bg-v4'; abrv = 'V4'; hasV4 = true; }
-        else if (lowerTag === 'verso 5') { secId = 'v5'; secClass = 'bg-v5'; abrv = 'V5'; hasV5 = true; }
-        else if (lowerTag === 'verso 6') { secId = 'v6'; secClass = 'bg-v6'; abrv = 'V6'; hasV6 = true; }
-        else if (lowerTag === 'puente') { secId = 'p'; secClass = 'bg-p'; abrv = 'P'; hasP = true; }
-        else if (lowerTag === 'puente 2') { secId = 'p2'; secClass = 'bg-p2'; abrv = 'P2'; hasP2 = true; }
-        else if (lowerTag === 'coro') { secId = 'c'; secClass = 'bg-c'; abrv = 'C'; hasC = true; }
-        else if (lowerTag === 'coro 2') { secId = 'c2'; secClass = 'bg-c2'; abrv = 'C2'; hasC2 = true; }
-        else if (lowerTag === 'coro 3') { secId = 'c3'; secClass = 'bg-c3'; abrv = 'C3'; hasC3 = true; }
-        else if (lowerTag === 'coro 4') { secId = 'c4'; secClass = 'bg-c4'; abrv = 'C4'; hasC4 = true; }
-        else if (lowerTag === 'instrumental') { secId = 'ins'; secClass = 'bg-ins'; abrv = 'INS'; hasIns = true; }
-        else if (lowerTag === 'final') { secId = 'final'; secClass = 'bg-final'; abrv = 'F'; hasFinal = true; }
-        else { secId = 'misc'; secClass = 'bg-v1'; abrv = tag.substring(0,2).toUpperCase(); } 
+        // Mapeo de estilos y abreviaturas
+        if (lowerTag === 'intro') { secId = 'intro'; secClass = 'bg-intro'; abrv = 'IN'; }
+        else if (lowerTag === 'verso' || lowerTag === 'verso 1') { secId = 'v1'; secClass = 'bg-v1'; abrv = 'V1'; }
+        else if (lowerTag === 'verso 2') { secId = 'v2'; secClass = 'bg-v2'; abrv = 'V2'; }
+        else if (lowerTag === 'verso 3') { secId = 'v3'; secClass = 'bg-v3'; abrv = 'V3'; }
+        else if (lowerTag === 'verso 4') { secId = 'v4'; secClass = 'bg-v4'; abrv = 'V4'; }
+        else if (lowerTag === 'verso 5') { secId = 'v5'; secClass = 'bg-v5'; abrv = 'V5'; }
+        else if (lowerTag === 'verso 6') { secId = 'v6'; secClass = 'bg-v6'; abrv = 'V6'; }
+        else if (lowerTag === 'puente') { secId = 'p'; secClass = 'bg-p'; abrv = 'P'; }
+        else if (lowerTag === 'puente 2') { secId = 'p2'; secClass = 'bg-p2'; abrv = 'P2'; }
+        else if (lowerTag === 'coro') { secId = 'c'; secClass = 'bg-c'; abrv = 'C'; }
+        else if (lowerTag === 'coro 2') { secId = 'c2'; secClass = 'bg-c2'; abrv = 'C2'; }
+        else if (lowerTag === 'coro 3') { secId = 'c3'; secClass = 'bg-c3'; abrv = 'C3'; }
+        else if (lowerTag === 'coro 4') { secId = 'c4'; secClass = 'bg-c4'; abrv = 'C4'; }
+        else if (lowerTag === 'instrumental') { secId = 'ins'; secClass = 'bg-ins'; abrv = 'INS'; }
+        else if (lowerTag === 'final') { secId = 'final'; secClass = 'bg-final'; abrv = 'F'; }
+        else { 
+            // Manejo de secciones creadas dinámicamente que no coincidan con las estándar
+            secId = 'sec-' + Date.now() + i; 
+            secClass = 'bg-v1'; 
+            abrv = tag.substring(0,2).toUpperCase(); 
+        } 
         
         content = content.replace(/^\s+|\s+$/g, '');
         
@@ -497,6 +506,7 @@ function updateSongView() {
         // HTML del multiplicador (se renderiza solo si existe)
         let multiplierHtml = multiplier ? `<div class="song-badge bg-multiplier"><span class="badge-label">${multiplier}</span></div>` : '';
 
+        // Creamos la tarjeta
         htmlOutput += `
         <div id="sec-${secId}" class="song-card">
             <div class="song-card-header">
@@ -513,30 +523,27 @@ function updateSongView() {
             </div>
             <div class="song-lyrics">${content}</div>
         </div>`;
+
+        // GENERAMOS EL BOTÓN DE NAVEGACIÓN DINÁMICO Y EN ORDEN
+        if(navContainer) {
+            // Extraer solo la clase del color (removiendo 'bg-')
+            let colorClass = secClass.replace('bg-', '') + '-btn';
+            
+            // Caso especial para las secciones dinámicas (misc)
+            if (secId.startsWith('sec-')) colorClass = 'v1-btn'; 
+            
+            navContainer.innerHTML += `<button class="section-btn ${colorClass}" style="display:flex;" onclick="window.scrollToSection('${secId}')" title="${label}">${abrv}</button>`;
+        }
     }
 
-    if(document.getElementById('nav-intro')) document.getElementById('nav-intro').style.display = hasIntro ? 'flex' : 'none';
-    if(document.getElementById('nav-v1')) document.getElementById('nav-v1').style.display = hasV1 ? 'flex' : 'none';
-    if(document.getElementById('nav-v2')) document.getElementById('nav-v2').style.display = hasV2 ? 'flex' : 'none';
-    if(document.getElementById('nav-v3')) document.getElementById('nav-v3').style.display = hasV3 ? 'flex' : 'none';
-    if(document.getElementById('nav-v4')) document.getElementById('nav-v4').style.display = hasV4 ? 'flex' : 'none';
-    if(document.getElementById('nav-v5')) document.getElementById('nav-v5').style.display = hasV5 ? 'flex' : 'none';
-    if(document.getElementById('nav-v6')) document.getElementById('nav-v6').style.display = hasV6 ? 'flex' : 'none';
-    if(document.getElementById('nav-p'))  document.getElementById('nav-p').style.display  = hasP  ? 'flex' : 'none';
-    if(document.getElementById('nav-p2')) document.getElementById('nav-p2').style.display = hasP2 ? 'flex' : 'none';
-    if(document.getElementById('nav-c'))  document.getElementById('nav-c').style.display  = hasC  ? 'flex' : 'none';
-    if(document.getElementById('nav-c2')) document.getElementById('nav-c2').style.display = hasC2 ? 'flex' : 'none';
-    if(document.getElementById('nav-c3')) document.getElementById('nav-c3').style.display = hasC3 ? 'flex' : 'none';
-    if(document.getElementById('nav-c4')) document.getElementById('nav-c4').style.display = hasC4 ? 'flex' : 'none';
-    if(document.getElementById('nav-ins')) document.getElementById('nav-ins').style.display = hasIns ? 'flex' : 'none';
-    if(document.getElementById('nav-final')) document.getElementById('nav-final').style.display = hasFinal ? 'flex' : 'none';
-
+    // --- NUEVO CÓDIGO (TRANSPOSICIÓN Y MÚLTIPLES CANTANTES) ---
     document.querySelectorAll('.song-key-display').forEach(el => {
         let cleanRoot = song.key.replace('m', '');
         let isMinor = song.key.includes('m');
         let displayedNote = transformNote(cleanRoot);
         el.innerText = isMinor ? displayedNote + 'm' : displayedNote;
     });
+    // --- HASTA ACÁ ---
 
     let tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlOutput;

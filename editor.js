@@ -144,7 +144,9 @@ function renderStructureView() {
 
 // El Traductor de [A] a HTML
 function parseToAcordifyHTML(rawText) {
-    return rawText.replace(/\[(.*?)\]([^\s.,;?!]*)([,;?!.]*)/g, '<span class="g"><span class="chord">$1</span>$2$3</span>');
+    // Separa el acorde de la sílaba inmediatamente siguiente de forma precisa
+    // Capta [Acorde] seguido de cualquier texto hasta el próximo espacio, signo o nuevo [Acorde]
+    return rawText.replace(/\[(.*?)\]([^\[\s]*)/g, '<span class="g"><span class="chord">$1</span>$2</span>');
 }
 
 window.saveSongToFirebase = async function() {
