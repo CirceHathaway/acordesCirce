@@ -632,7 +632,7 @@ window.closeHamburgerDropdown = function() { const dropdown = document.getElemen
 /* --- MANEJO DE ESTADOS DE NOTAS POR SECCIÓN (LECTURA Y EDICIÓN) --- */
 window.openSectionNoteModal = function(secId, secLabel) {
     currentSectionNoteId = secId;
-    const songTitle = songs[currentSongIndex].title;
+    const songTitle = window.currentSongContext.title; // CORRECCIÓN: Usa la canción actual sin importar el origen
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     let currentSongNotes = savedSectionNotes[songTitle] || {};
     
@@ -664,7 +664,7 @@ window.activateSectionNoteEdit = function() {
 }
 
 window.cancelSectionNoteEdit = function() {
-    const songTitle = songs[currentSongIndex].title;
+    const songTitle = window.currentSongContext.title; // CORRECCIÓN
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     let currentSongNotes = savedSectionNotes[songTitle] || {};
     
@@ -686,7 +686,7 @@ window.closeSectionNoteModal = function() {
 window.saveSectionNote = function() {
     if (!currentSectionNoteId) return;
     const text = document.getElementById('sectionNoteTextarea').value.trim();
-    const songTitle = songs[currentSongIndex].title;
+    const songTitle = window.currentSongContext.title; // CORRECCIÓN
     
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     if (!savedSectionNotes[songTitle]) savedSectionNotes[songTitle] = {};
@@ -705,7 +705,7 @@ window.saveSectionNote = function() {
 
 window.deleteSectionNote = function() {
     if (!currentSectionNoteId) return;
-    const songTitle = songs[currentSongIndex].title;
+    const songTitle = window.currentSongContext.title; // CORRECCIÓN
     
     let savedSectionNotes = JSON.parse(localStorage.getItem('acordify_section_notes')) || {};
     if (savedSectionNotes[songTitle]) {
